@@ -1,0 +1,17 @@
+# API 키 — 절대 커밋 금지
+automation/.env
+콘텐츠/.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 토큰 파일
+automation/data/token.json
+
+# 플러그인 내부 폴더 (불필요)
+.bkit/
+.omc/
+.claude/
