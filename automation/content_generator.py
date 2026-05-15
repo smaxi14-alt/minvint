@@ -5,6 +5,7 @@ from datetime import date
 from anthropic import Anthropic
 from config import ANTHROPIC_API_KEY, START_DATE, DATA_DIR
 from content_tracker import get_recent_topics
+from performance_analyzer import get_top_patterns, build_weight_boosts, format_for_prompt
 
 logger = logging.getLogger(__name__)
 client = Anthropic(api_key=ANTHROPIC_API_KEY)
@@ -112,7 +113,7 @@ def get_current_phase() -> int:
     return 3
 
 
-def generate_post(slot: str, phase: int | None = None) -> tuple[str, str]:
+def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
     if phase is None:
         phase = get_current_phase()
 
@@ -123,9 +124,24 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str]:
     template_key = random.choice(cfg["templates"])
     template = SEEDS["templates"][template_key]
 
-    # 다양성 파라미터 랜덤 선택
-    ending_style = _weighted_pick(list(SEEDS["endings"].values()))
-    tone = _weighted_pick(TONES)
+    # 성과 패턴 로드 → 가중치 보정
+    patterns = get_top_patterns()
+    boosts = build_weight_boosts(patterns)
+
+    # 어투 선택 (상위 패턴이 있으면 해당 항목 가중치 1.5배)
+    tone_items = [
+        {**t, "weight": t["weight"] * (1.5 if t["name"] == boosts.get("tone") else 1)}
+        for t in TONES
+    ]
+    tone = _weighted_pick(tone_items)
+
+    # 마무리 유형 선택 (상위 패턴 보정)
+    ending_items = [
+        {**e, "weight": e["weight"] * (1.5 if e["label"] == boosts.get("ending_style") else 1)}
+        for e in SEEDS["endings"].values()
+    ]
+    ending_style = _weighted_pick(ending_items)
+
     length = _weighted_pick(LENGTHS)
 
     # 마무리 유형별 지시문 구성
@@ -143,6 +159,7 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str]:
 
     recent = get_recent_topics(days=7)
     recent_str = "\n".join(f"- {t}" for t in recent[-10:]) if recent else "없음"
+    performance_str = format_for_prompt(patterns)
 
     system_prompt = f"""당신은 13년차 보험설계사입니다. 쓰레드(Threads) SNS에 올릴 글을 씁니다.
 
@@ -172,6 +189,9 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str]:
 [최근 발행 글 주제 (반복 금지)]
 {recent_str}
 
+[성과 기반 개선 힌트]
+{performance_str}
+
 글 내용만 출력하세요. 제목, 태그, 설명 없이 본문만."""
 
     user_prompt = f"""소재: {theme}
@@ -188,5 +208,10 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str]:
     )
 
     text = response.content[0].text.strip()
-    logger.info(f"Generated {len(text)}자 ({content_type})")
-    return text, content_type
+    meta = {
+        "tone": tone["name"],
+        "ending_style": ending_style["label"],
+        "template": template_key,
+    }
+    logger.info(f"Generated {len(text)}자 ({content_type}) tone={meta['tone']} ending={meta['ending_style']}")
+    return text, content_type, meta

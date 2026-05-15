@@ -18,9 +18,9 @@ def _save(data):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def log_post(slot: str, content_type: str, text: str, post_id: str, phase: int):
+def log_post(slot: str, content_type: str, text: str, post_id: str, phase: int, meta: dict = None):
     data = _load()
-    data["posts"].append({
+    entry = {
         "date": date.today().isoformat(),
         "timestamp": datetime.now().isoformat(),
         "slot": slot,
@@ -28,7 +28,12 @@ def log_post(slot: str, content_type: str, text: str, post_id: str, phase: int):
         "phase": phase,
         "post_id": post_id,
         "text": text,
-    })
+    }
+    if meta:
+        entry["tone"] = meta.get("tone")
+        entry["ending_style"] = meta.get("ending_style")
+        entry["template"] = meta.get("template")
+    data["posts"].append(entry)
     _save(data)
 
 

@@ -28,12 +28,12 @@ def main():
     phase = get_current_phase()
     logger.info(f"Phase={phase} slot={args.slot} 시작")
 
-    text, content_type = generate_post(args.slot, phase)
-    logger.info(f"글 생성 완료 ({len(text)}자)")
+    text, content_type, meta = generate_post(args.slot, phase)
+    logger.info(f"글 생성 완료 ({len(text)}자) tone={meta['tone']} ending={meta['ending_style']}")
     logger.info(f"\n{'='*45}\n{text}\n{'='*45}")
 
     post_id = post_to_buffer(text)
-    log_post(args.slot, content_type, text, post_id, phase)
+    log_post(args.slot, content_type, text, post_id, phase, meta)
     logger.info(f"발행 완료: post_id={post_id}")
 
 
