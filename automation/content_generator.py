@@ -9,6 +9,25 @@ from content_tracker import get_recent_topics
 logger = logging.getLogger(__name__)
 client = Anthropic(api_key=ANTHROPIC_API_KEY)
 
+TONES = [
+    {"name": "건조한",   "weight": 30, "instruction": "건조하고 담담한 어투. 감정 표현 최소화. 사실만 전달."},
+    {"name": "직접적",   "weight": 25, "instruction": "직접적이고 단호한 어투. 서론 없이 바로 핵심부터."},
+    {"name": "회고적",   "weight": 20, "instruction": "회고적이고 사색적인 어투. 천천히 생각하며 쓰는 느낌."},
+    {"name": "씁쓸한",   "weight": 15, "instruction": "약간 씁쓸하거나 자조 섞인 어투. 유머 없이 쓸쓸하게."},
+    {"name": "위트있는", "weight": 10, "instruction": "약간 위트 있고 가벼운 어투. 과장 없이 자연스러운 반전."},
+]
+
+LENGTHS = [
+    {"name": "짧은 글", "weight": 25, "instruction": "100~170자. 5줄 이내. 핵심만 남기고 다 쳐냄."},
+    {"name": "중간 글", "weight": 50, "instruction": "200~320자. 6~9줄. 기본 구조 충실히."},
+    {"name": "긴 글",   "weight": 25, "instruction": "330~480자. 10줄 이상. 풍부한 서술. 단 500자 초과 금지."},
+]
+
+
+def _weighted_pick(items: list) -> dict:
+    weights = [item["weight"] for item in items]
+    return random.choices(items, weights=weights, k=1)[0]
+
 with open(DATA_DIR / "content_seeds.json", "r", encoding="utf-8") as f:
     SEEDS = json.load(f)
 
@@ -49,42 +68,36 @@ CONTENT_CONFIG = {
         "label": "어그로·공감",
         "themes": SEEDS["themes"]["agro_empathy"],
         "templates": ["confession", "reversal", "observation", "numbers", "taboo"],
-        "endings": SEEDS["ending_questions"]["agro"],
         "guide": "40대 가장의 일상 공감 콘텐츠. 와이프·자식·직장·동창·나이듦·돈 격차 소재. 데이터 없어도 됨.",
     },
     "agro_finance": {
         "label": "어그로·재테크",
         "themes": SEEDS["themes"]["agro_empathy"] + SEEDS["themes"]["finance"],
         "templates": ["confession", "reversal", "shock_stat", "numbers", "observation"],
-        "endings": SEEDS["ending_questions"]["agro"] + SEEDS["ending_questions"]["finance"],
         "guide": "공감 소재 또는 가벼운 재테크 관찰. 7:3 비율로 공감 위주.",
     },
     "finance": {
         "label": "재테크",
         "themes": SEEDS["themes"]["finance"],
         "templates": ["shock_stat", "two_numbers", "time_comparison", "generation_gap", "simulation"],
-        "endings": SEEDS["ending_questions"]["finance"],
         "guide": "데이터 기반 재테크 인사이트. 통계 1개 + 13년차 해석 1줄 구조. 출처는 글 끝에 짧게.",
     },
     "finance_insurance": {
         "label": "재테크·보험 인사이트",
         "themes": SEEDS["themes"]["finance"] + SEEDS["themes"]["insurance_insight"],
         "templates": ["shock_stat", "checklist", "two_numbers", "observation"],
-        "endings": SEEDS["ending_questions"]["finance"] + SEEDS["ending_questions"]["insight"],
         "guide": "재테크 또는 보험 관찰자 인사이트. 영업 없음. 체크리스트로 자연스러운 진단 연결.",
     },
     "job_insight": {
         "label": "직업 인사이트",
         "themes": SEEDS["themes"]["job_insight"],
         "templates": ["observation", "confession", "reversal", "numbers"],
-        "endings": SEEDS["ending_questions"]["insight"] + SEEDS["ending_questions"]["agro"],
         "guide": "13년 보험 일하면서 본 패턴. 관찰자 포지션. '영업'이 아니라 '관찰'로.",
     },
     "diagnosis": {
         "label": "진단소",
         "themes": SEEDS["themes"]["diagnosis"],
         "templates": ["checklist", "shock_stat", "reversal", "observation"],
-        "endings": SEEDS["ending_questions"]["insight"],
         "guide": "실제 익명 사례 또는 진단 체크리스트. 마지막에 카톡 CTA 1개 포함.",
     },
 }
@@ -109,7 +122,24 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str]:
     theme = random.choice(cfg["themes"])
     template_key = random.choice(cfg["templates"])
     template = SEEDS["templates"][template_key]
-    ending = random.choice(cfg["endings"])
+
+    # 다양성 파라미터 랜덤 선택
+    ending_style = _weighted_pick(list(SEEDS["endings"].values()))
+    tone = _weighted_pick(TONES)
+    length = _weighted_pick(LENGTHS)
+
+    # 마무리 유형별 지시문 구성
+    ending_rule = ending_style["rule"]
+    if ending_style["label"] == "질문형":
+        examples = ending_style["examples"]
+        # content_type에 맞는 예시 카테고리 선택
+        if content_type in ("agro", "agro_finance"):
+            pool = examples["agro"]
+        elif content_type in ("finance", "finance_insurance"):
+            pool = examples["finance"]
+        else:
+            pool = examples["insight"]
+        ending_rule += f" 예시 참고(그대로 쓰지 말고 소재에 맞게 변형): \"{random.choice(pool)}\""
 
     recent = get_recent_topics(days=7)
     recent_str = "\n".join(f"- {t}" for t in recent[-10:]) if recent else "없음"
@@ -121,14 +151,14 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str]:
 또래에게 솔직하게 말하는 선배 스타일. 전문가 자랑 없음. 관찰자 포지션.
 
 [글쓰기 규칙]
-1. 200~350자 (이상적). 500자 절대 초과 금지.
+1. {length['instruction']}
 2. 줄바꿈 자주 — 2~3문장마다 한 줄씩
 3. 숫자는 구체적으로 (월 300만원 ❌ / 월 317만원 ✅)
-4. 결론 먼저, 마지막에 질문
+4. 결론 먼저, 근거 뒤에
 5. 과장 표현 절대 금지 (최고, 완벽, 꼭, 반드시)
-6. 마지막 줄: 특정 그룹 호명형 질문 1개 (답 강요 없음)
+6. 마무리: {ending_rule}
 7. 이모지 사용 안 함
-8. 너무 격식적이지 않은 자연스러운 말투
+8. 어투: {tone['instruction']}
 
 [운영 지침]
 {PHASE_INSTRUCTIONS[phase]}
@@ -146,7 +176,7 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str]:
 
     user_prompt = f"""소재: {theme}
 템플릿: {template['name']} — {template['structure']}
-마무리 질문 예시: {ending}
+마무리 스타일: {ending_style['label']} / 어투: {tone['name']} / 길이: {length['name']}
 
 위 조건으로 오늘 {slot} 슬롯에 올릴 쓰레드 글 1개를 작성하세요."""
 
