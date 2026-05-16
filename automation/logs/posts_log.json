@@ -29,6 +29,18 @@
       "tone": "직접적",
       "ending_style": "선언형",
       "template": "shock_stat"
+    },
+    {
+      "date": "2026-05-16",
+      "timestamp": "2026-05-16T06:40:58.008858",
+      "slot": "noon",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a081171ea38df1e1b938354",
+      "text": "남편이 통장 공개 안 하면 결혼 망한다고들 하지.\n근데 13년 보면 반대 부부가 더 많다.\n\n투명한 줄 알았던 부부가 돈으로 싸우고,\n비밀 유지하던 부부가 오래간다.\n\n차이는 신뢰가 아니라 기준.\n얼마를 쓰든 괜찮은지, 언제부터 공유할지를 미리 정한 쪽이 싸우지 않는다.\n\n당신 부부는 돈 규칙을 정했어?",
+      "tone": "직접적",
+      "ending_style": "질문형",
+      "template": "reversal"
     }
   ]
 }
