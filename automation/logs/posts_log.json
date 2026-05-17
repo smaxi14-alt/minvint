@@ -89,6 +89,18 @@
       "tone": "회고적",
       "ending_style": "질문형",
       "template": "observation"
+    },
+    {
+      "date": "2026-05-17",
+      "timestamp": "2026-05-17T15:43:47.567402",
+      "slot": "evening",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a09e22cb30d707b9aaf233e",
+      "text": "와이프한테 절대 물어보지 않는 게 하나 있다.\n카드값이 얼마나 나왔는지.\n\n물으면 \"왜, 뭐 문제라도 있어?\" 이 한 마디다.\n실은 문제가 있는 거고, 내가 아는 것도 알고 있는데.\n\n비상금 통장을 따로 두는 사람들 많잖아.\n어쩌면 그게 아니라 서로를 믿지 못하는 게 아닐까.\n통장보다 대화가 먼저인데 말이다.",
+      "tone": "회고적",
+      "ending_style": "독백형",
+      "template": "taboo"
     }
   ]
 }
