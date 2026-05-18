@@ -113,6 +113,18 @@
       "tone": "씁쓸한",
       "ending_style": "질문형",
       "template": "confession"
+    },
+    {
+      "date": "2026-05-18",
+      "timestamp": "2026-05-18T14:47:10.678919",
+      "slot": "evening",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a0b26686a06e8af234ac82b",
+      "text": "동창 중에 공부를 제일 못했던 놈이 지금 제일 잘산다.\n\n월 2천만원대 수입이라고 한다. 남 얘기지만 들으면 한숨이 나온다.\n\n13년을 보니 패턴이 보인다. 성적순이 아니라 끈기순이었다. 그것도 방향 맞춘 끈기.\n\n공부 못했던 놈은 일찍 포기했거든. \n공부 잘했던 우린 그걸 못 했다.",
+      "tone": "씁쓸한",
+      "ending_style": "독백형",
+      "template": "numbers"
     }
   ]
 }
