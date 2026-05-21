@@ -197,6 +197,18 @@
       "tone": "건조한",
       "ending_style": "질문형",
       "template": "reversal"
+    },
+    {
+      "date": "2026-05-21",
+      "timestamp": "2026-05-21T10:54:53.203184",
+      "slot": "evening",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a0ee474f10856ffebd312da",
+      "text": "와이프와 내 통장 쓰는 방식이 정확히 반대다.\n\n내건 남아야 느껴지는 통장.\n와이프건 써야 느껴지는 통장.\n\n처음엔 싸웠다. 13년 지나니 이게 싸움이 아니라 차이구나 싶더라.\n\n남은 돈으로 미래를 본다는 게, 쓴 돈으로 현재를 본다는 게. 둘 다 틀린 게 아니었다.\n\n당신 부부는 어느 쪽인가.",
+      "tone": "회고적",
+      "ending_style": "질문형",
+      "template": "numbers"
     }
   ]
 }
