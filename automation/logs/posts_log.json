@@ -317,6 +317,18 @@
       "tone": "건조한",
       "ending_style": "질문형",
       "template": "confession"
+    },
+    {
+      "date": "2026-05-25",
+      "timestamp": "2026-05-25T12:06:26.888467",
+      "slot": "evening",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a143b3bb653d69d6537a5d2",
+      "text": "40대 되니 동창들과 연락이 70% 끊겼다.\n\n자연스러운 거더라. 20대는 누구나 꿈 얘기했고, 30대는 경쟁 상대였는데, 40대 되니 남은 게 없었다.\n\n13년을 보니 결국 그게 다다. 돈도 시간도 자식도 아니고, 그냥 함께할 것 같은 사람이 남는 거.\n\n너는 처음 누가 없어졌을 때 깨달았어?",
+      "tone": "회고적",
+      "ending_style": "질문형",
+      "template": "numbers"
     }
   ]
 }
