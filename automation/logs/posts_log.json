@@ -365,6 +365,18 @@
       "tone": "건조한",
       "ending_style": "질문형",
       "template": "taboo"
+    },
+    {
+      "date": "2026-05-26",
+      "timestamp": "2026-05-26T19:34:43.823762",
+      "slot": "evening",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a15f5cc501dac1cec2bd4cb",
+      "text": "와이프 카드값을 처음 봤을 때 손이 떨렸다.\n월 847만원.\n\n비상금 통장에서 꺼낸 돈으로 메운 지 벌써 3개월째다.\n뭐가 비상금인지 모르겠다.\n\n이제 알겠다.\n40대 가장한테 비상금 따위는 없다는 걸.",
+      "tone": "씁쓸한",
+      "ending_style": "관찰형",
+      "template": "confession"
     }
   ]
 }
