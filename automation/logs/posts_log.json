@@ -761,6 +761,18 @@
       "tone": "직접적",
       "ending_style": "질문형",
       "template": "confession"
+    },
+    {
+      "date": "2026-06-08",
+      "timestamp": "2026-06-08T15:48:36.821103",
+      "slot": "evening",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a26e44d7f1deaccbf64416c",
+      "text": "월급 700만원과 월급 400만원.\n차이는 300만원이 아니라 통장 잔액이다.\n\n13년을 보니 패턴이 있다.\n잘 버는 사람은 쓰는 속도가 빠르고,\n잘 모으는 사람은 쓰는 속도가 느리다.\n그게 전부다.\n\n월급이 많다고 통장이 불지 않는다.\n그냥 쓸 게 많아진다.",
+      "tone": "씁쓸한",
+      "ending_style": "독백형",
+      "template": "numbers"
     }
   ]
 }
