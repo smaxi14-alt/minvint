@@ -15,7 +15,8 @@ logger = logging.getLogger(__name__)
 
 from content_generator import generate_post, get_current_phase
 from buffer_poster import post_to_buffer
-from content_tracker import log_post
+from content_tracker import log_post, was_posted_today
+from persona_manager import update_facts_from_post
 
 
 def main():
@@ -23,7 +24,14 @@ def main():
     parser.add_argument(
         "--slot", required=True, choices=["morning", "noon", "evening"]
     )
+    parser.add_argument(
+        "--force", action="store_true", help="오늘 이미 발행된 슬롯도 강제 재실행"
+    )
     args = parser.parse_args()
+
+    if not args.force and was_posted_today(args.slot):
+        logger.info(f"[{args.slot}] 오늘 이미 발행됨. 건너뜀. (강제 실행: --force)")
+        return
 
     phase = get_current_phase()
     logger.info(f"Phase={phase} slot={args.slot} 시작")
@@ -35,6 +43,9 @@ def main():
     post_id = post_to_buffer(text)
     log_post(args.slot, content_type, text, post_id, phase, meta)
     logger.info(f"발행 완료: post_id={post_id}")
+
+    # 발행 글에서 새 페르소나 사실 추출 → persona_store.json 업데이트
+    update_facts_from_post(text)
 
 
 if __name__ == "__main__":

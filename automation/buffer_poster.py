@@ -25,7 +25,6 @@ def _headers() -> dict:
 
 
 def _build_mutation(text: str) -> str:
-    # 어제 buffer_post.py와 동일한 인라인 방식 — ChannelId 타입 문제 없음
     escaped = text.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
     return f"""
 mutation {{
@@ -33,7 +32,6 @@ mutation {{
     channelId: "{BUFFER_CHANNEL_ID}"
     text: "{escaped}"
     schedulingType: automatic
-    assets: []
     mode: shareNow
   }}) {{
     ... on PostActionSuccess {{

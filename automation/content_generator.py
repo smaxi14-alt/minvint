@@ -4,8 +4,10 @@ import logging
 from datetime import date
 from anthropic import Anthropic
 from config import ANTHROPIC_API_KEY, START_DATE, DATA_DIR
-from content_tracker import get_recent_topics
+from content_tracker import get_recent_topics, get_recent_usage
 from performance_analyzer import get_top_patterns, build_weight_boosts, format_for_prompt
+from persona_manager import get_persona_summary
+from trend_researcher import get_trend_themes
 
 logger = logging.getLogger(__name__)
 client = Anthropic(api_key=ANTHROPIC_API_KEY)
@@ -29,8 +31,40 @@ def _weighted_pick(items: list) -> dict:
     weights = [item["weight"] for item in items]
     return random.choices(items, weights=weights, k=1)[0]
 
+
+def _diversity_pick(items: list, recent_counts: dict, weight_key: str = "name") -> any:
+    """최근 사용 빈도를 반영해 다양성을 보장하며 선택.
+
+    - items가 dict 리스트일 경우: weight_key 필드로 최근 사용 횟수 조회,
+      base weight에 패널티(1/(사용횟수+1)) 적용.
+    - items가 str 리스트일 경우: 각 문자열을 키로 조회해 패널티 적용.
+    """
+    if not items:
+        return None
+
+    if isinstance(items[0], dict):
+        weights = []
+        for item in items:
+            key = item.get(weight_key, "")
+            base = item.get("weight", 1)
+            count = recent_counts.get(key, 0)
+            # 최근 1회 → 0.5배, 2회 → 0.33배, 3회+ → 0.25배
+            penalty = 1.0 / (count + 1) if count > 0 else 1.0
+            weights.append(base * penalty)
+        return random.choices(items, weights=weights, k=1)[0]
+    else:
+        weights = []
+        for item in items:
+            count = recent_counts.get(item, 0)
+            penalty = 1.0 / (count + 1) if count > 0 else 1.0
+            weights.append(penalty)
+        return random.choices(items, weights=weights, k=1)[0]
+
 with open(DATA_DIR / "content_seeds.json", "r", encoding="utf-8") as f:
     SEEDS = json.load(f)
+
+# 같은 프로세스 실행 내 이미 사용한 소재 — 배치 중복 방지
+_SESSION_THEMES: set[str] = set()
 
 # Phase별 운영 지침
 PHASE_INSTRUCTIONS = {
@@ -57,10 +91,13 @@ PHASE_INSTRUCTIONS = {
 }
 
 # 슬롯별 콘텐츠 타입 매트릭스
+# YouTube 소재 70% / 어그로·일상 20% / 재테크 10% 믹스 기준
+# morning=어그로(20%), noon=YouTube경제뉴스(35%), evening=YouTube직업인사이트(35%)
+# Phase 1 evening: agro_finance(공감+재테크 혼합)로 재테크 10% 커버
 SLOT_MATRIX = {
-    "morning": {1: "agro",          2: "agro",           3: "agro"},
-    "noon":    {1: "agro_finance",  2: "finance",        3: "finance_insurance"},
-    "evening": {1: "agro",          2: "job_insight",    3: "diagnosis"},
+    "morning": {1: "agro",         2: "agro",          3: "agro"},
+    "noon":    {1: "economy_news", 2: "economy_news",   3: "economy_news"},
+    "evening": {1: "agro_finance", 2: "job_insight",    3: "job_insight"},
 }
 
 # 콘텐츠 타입별 설정
@@ -101,6 +138,18 @@ CONTENT_CONFIG = {
         "templates": ["checklist", "shock_stat", "reversal", "observation"],
         "guide": "실제 익명 사례 또는 진단 체크리스트. 마지막에 카톡 CTA 1개 포함.",
     },
+    "economy_news": {
+        "label": "경제뉴스 인사이트",
+        "themes": SEEDS["themes"]["economy_news"],
+        "templates": ["shock_stat", "two_numbers", "time_comparison", "reversal", "observation"],
+        "guide": "오늘 경제뉴스 1개를 13년차 재무상담사 관점으로 해석. '기사는 이렇게 썼지만 실제 의미는...' 구조. 핵심 1~2줄 + 내 한 마디. 출처는 자연스럽게 짧게 언급.",
+    },
+    "book_insight": {
+        "label": "책 인사이트",
+        "themes": SEEDS["themes"]["book_insight"],
+        "templates": ["observation", "reversal", "confession", "numbers"],
+        "guide": "읽은 책 한 구절 또는 핵심 개념 + 13년 상담 경험과 연결. 독후감 형식 아님 — 짧은 생각 공유. '책에서 이런 말 봤는데 실제로 상담하다 보면...' 연결 구조.",
+    },
 }
 
 
@@ -113,34 +162,108 @@ def get_current_phase() -> int:
     return 3
 
 
+# 계절 제한 맵 (content_seeds.json의 "seasonal" 섹션)
+_SEASONAL: dict[str, list[int]] = SEEDS.get("seasonal", {})
+
+
+def _in_season(theme: str) -> bool:
+    """해당 소재가 현재 월에 사용 가능한지 확인. 제한 없으면 True."""
+    allowed_months = _SEASONAL.get(theme)
+    if not allowed_months:
+        return True
+    return date.today().month in allowed_months
+
+
+def _filter_seasonal(themes: list[str]) -> list[str]:
+    """시즌 외 소재를 제거. 전부 제외되면 원본 전체 반환(fallback)."""
+    filtered = [t for t in themes if _in_season(t)]
+    if not filtered:
+        logger.debug("계절 필터 후 후보 없음 — 원본 전체 사용")
+        return themes
+    removed = len(themes) - len(filtered)
+    if removed:
+        logger.debug(f"계절 필터: {removed}개 소재 제외됨 (현재 {date.today().month}월)")
+    return filtered
+
+
 def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
     if phase is None:
         phase = get_current_phase()
 
     content_type = SLOT_MATRIX[slot][phase]
+
+    # 최근 사용 현황 로드 (다양성 보장)
+    recent_usage = get_recent_usage(days=14)
+
+    # 다양성 모니터 보정 파일 로드 (없으면 빈 dict)
+    _override: dict = {}
+    _override_path = DATA_DIR / "diversity_override.json"
+    if _override_path.exists():
+        try:
+            with open(_override_path, "r", encoding="utf-8") as _f:
+                _override = json.load(_f)
+        except Exception:
+            pass
+    _theme_excl  = set(_override.get("theme_exclusions", []))
+    _ending_boost = _override.get("ending_boosts",   {})
+    _tone_boost   = _override.get("tone_boosts",     {})
+
+    # content_type_exclusions 강제 적용 — 일상글 비율 초과 시 대체 타입으로 교체
+    _ct_excl = set(_override.get("content_type_exclusions", []))
+    if content_type in _ct_excl:
+        _slot_fallback = {
+            "morning": "economy_news",
+            "noon":    "finance",
+            "evening": "book_insight",
+        }
+        _alt = _slot_fallback.get(slot, "economy_news")
+        if _alt in _ct_excl:
+            # fallback도 제외 목록이면 제외되지 않은 타입 중 랜덤 선택
+            _safe = [ct for ct in CONTENT_CONFIG if ct not in _ct_excl]
+            _alt = random.choice(_safe) if _safe else content_type
+        logger.info(f"[다양성] content_type '{content_type}' → '{_alt}' (일상글 비율 초과 보정)")
+        content_type = _alt
+
     cfg = CONTENT_CONFIG[content_type]
 
-    theme = random.choice(cfg["themes"])
-    template_key = random.choice(cfg["templates"])
+    # 소재(theme) 선택 — 트렌드 혼합 → 시즌 필터 → 세션+override 중복 제거 → 다양성 가중치
+    trend_themes = get_trend_themes(content_type)
+    combined_pool = trend_themes * 2 + cfg["themes"]
+    themes_pool = _filter_seasonal(combined_pool)
+    excl_all = _SESSION_THEMES | _theme_excl
+    deduped_pool = [t for t in themes_pool if t not in excl_all]
+    if not deduped_pool:
+        logger.debug("세션+override 중복 제거 후 후보 없음 — 전체 풀 사용")
+        deduped_pool = themes_pool
+    theme = _diversity_pick(deduped_pool, recent_usage["themes"])
+    _SESSION_THEMES.add(theme)
+    is_trend = theme in trend_themes
+
+    # 템플릿 선택 — 최근 자주 쓴 템플릿은 낮은 확률로
+    template_key = _diversity_pick(cfg["templates"], recent_usage["templates"])
     template = SEEDS["templates"][template_key]
 
     # 성과 패턴 로드 → 가중치 보정
     patterns = get_top_patterns()
     boosts = build_weight_boosts(patterns)
 
-    # 어투 선택 (상위 패턴이 있으면 해당 항목 가중치 1.5배)
+    # 어투 선택 — 성과 보정(1.5배) + override boost + 다양성 패널티 동시 적용
     tone_items = [
-        {**t, "weight": t["weight"] * (1.5 if t["name"] == boosts.get("tone") else 1)}
+        {**t, "weight": t["weight"]
+            * (1.5 if t["name"] == boosts.get("tone") else 1)
+            * _tone_boost.get(t["name"], 1.0)}
         for t in TONES
     ]
-    tone = _weighted_pick(tone_items)
+    tone = _diversity_pick(tone_items, recent_usage["tones"])
 
-    # 마무리 유형 선택 (상위 패턴 보정)
+    # 마무리 유형 선택 — 성과 보정 + override boost + 다양성 패널티 동시 적용
     ending_items = [
-        {**e, "weight": e["weight"] * (1.5 if e["label"] == boosts.get("ending_style") else 1)}
+        {**e, "weight": e["weight"]
+            * (1.5 if e["label"] == boosts.get("ending_style") else 1)
+            * _ending_boost.get(e["label"], 1.0)}
         for e in SEEDS["endings"].values()
     ]
-    ending_style = _weighted_pick(ending_items)
+    ending_style = _diversity_pick(ending_items, recent_usage["endings"], weight_key="label")
 
     length = _weighted_pick(LENGTHS)
 
@@ -160,6 +283,24 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
     recent = get_recent_topics(days=7)
     recent_str = "\n".join(f"- {t}" for t in recent[-10:]) if recent else "없음"
     performance_str = format_for_prompt(patterns)
+    persona_str = get_persona_summary()
+
+    # 최근 2주 소재·템플릿 사용 빈도 요약 (다양성 힌트로 Claude에게 전달)
+    theme_usage  = recent_usage["themes"]
+    tmpl_usage   = recent_usage["templates"]
+    ending_usage = recent_usage["endings"]
+    theme_usage_str = (
+        "\n".join(f"  - {t} ({c}회)" for t, c in sorted(theme_usage.items(), key=lambda x: -x[1])[:8])
+        if theme_usage else "없음"
+    )
+    tmpl_usage_str = (
+        ", ".join(f"{t}({c}회)" for t, c in sorted(tmpl_usage.items(), key=lambda x: -x[1]))
+        if tmpl_usage else "없음"
+    )
+    ending_usage_str = (
+        ", ".join(f"{e}({c}회)" for e, c in sorted(ending_usage.items(), key=lambda x: -x[1]))
+        if ending_usage else "없음"
+    )
 
     system_prompt = f"""당신은 13년차 보험설계사입니다. 쓰레드(Threads) SNS에 올릴 글을 씁니다.
 
@@ -186,22 +327,38 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
 [콘텐츠 지침]
 {cfg['guide']}
 
-[최근 발행 글 주제 (반복 금지)]
+[최근 발행 글 주제 (반복 금지 — 이 주제들과 겹치는 글 금지)]
 {recent_str}
+
+[최근 2주 소재·템플릿 사용 현황 (다양성 확보 참고)]
+소재 사용 빈도:
+{theme_usage_str}
+템플릿 빈도: {tmpl_usage_str}
+마무리 빈도: {ending_usage_str}
+→ 위에서 자주 나온 소재·구조·마무리와 최대한 다른 방향으로 작성하세요.
 
 [성과 기반 개선 힌트]
 {performance_str}
 
+{persona_str}
+
 글 내용만 출력하세요. 제목, 태그, 설명 없이 본문만."""
+
+    trend_note = (
+        "※ 이 소재는 오늘 실시간 뉴스에서 추출한 트렌드 소재입니다. "
+        "현재 사람들이 관심 갖는 이슈임을 반영해 시의성 있게 작성하되, "
+        "페르소나(13년차 보험설계사 관찰자 시점)는 유지하세요."
+        if is_trend else ""
+    )
 
     user_prompt = f"""소재: {theme}
 템플릿: {template['name']} — {template['structure']}
 마무리 스타일: {ending_style['label']} / 어투: {tone['name']} / 길이: {length['name']}
-
+{trend_note}
 위 조건으로 오늘 {slot} 슬롯에 올릴 쓰레드 글 1개를 작성하세요."""
 
     response = client.messages.create(
-        model="claude-haiku-4-5-20251001",
+        model="claude-opus-4-7",
         max_tokens=700,
         system=system_prompt,
         messages=[{"role": "user", "content": user_prompt}],
@@ -212,6 +369,13 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
         "tone": tone["name"],
         "ending_style": ending_style["label"],
         "template": template_key,
+        "theme": theme,
     }
-    logger.info(f"Generated {len(text)}자 ({content_type}) tone={meta['tone']} ending={meta['ending_style']}")
+    meta["is_trend"] = is_trend
+    source_label = "트렌드" if is_trend else "seeds"
+    logger.info(
+        f"Generated {len(text)}자 ({content_type}) [{source_label}] "
+        f"tone={meta['tone']} ending={meta['ending_style']} "
+        f"template={template_key} theme={theme[:25]}"
+    )
     return text, content_type, meta

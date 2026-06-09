@@ -9,9 +9,15 @@ LOGS_DIR = BASE_DIR / "logs"
 
 load_dotenv(BASE_DIR / ".env")
 
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
-BUFFER_ACCESS_TOKEN = os.getenv("BUFFER_ACCESS_TOKEN", "")
-BUFFER_CHANNEL_ID = os.getenv("BUFFER_CHANNEL_ID", "")
+ANTHROPIC_API_KEY           = os.getenv("ANTHROPIC_API_KEY", "")
+NAVER_CLIENT_ID             = os.getenv("NAVER_CLIENT_ID", "")
+NAVER_CLIENT_SECRET         = os.getenv("NAVER_CLIENT_SECRET", "")
+BUFFER_ACCESS_TOKEN         = os.getenv("BUFFER_ACCESS_TOKEN", "")
+BUFFER_CHANNEL_ID           = os.getenv("BUFFER_CHANNEL_ID", "")
+BUFFER_INSTAGRAM_CHANNEL_ID = os.getenv("BUFFER_INSTAGRAM_CHANNEL_ID", "")
+
+INSTAGRAM_HOUR   = int(os.getenv("INSTAGRAM_HOUR",   "9"))
+INSTAGRAM_MINUTE = int(os.getenv("INSTAGRAM_MINUTE", "0"))
 
 START_DATE_STR = os.getenv("START_DATE", date.today().isoformat())
 START_DATE = date.fromisoformat(START_DATE_STR)

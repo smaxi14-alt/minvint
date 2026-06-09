@@ -29,11 +29,21 @@ from config import (
     MORNING_HOUR, MORNING_MINUTE,
     NOON_HOUR, NOON_MINUTE,
     EVENING_HOUR, EVENING_MINUTE,
+    INSTAGRAM_HOUR, INSTAGRAM_MINUTE,
     START_DATE,
 )
 from content_generator import generate_post, get_current_phase
 from buffer_poster import post_to_buffer
 from content_tracker import log_post, was_posted_today
+from persona_manager import update_facts_from_post
+from diversity_monitor import run_once as diversity_check
+
+try:
+    from instagram_pipeline import run_instagram_pipeline
+    _instagram_available = True
+except ImportError:
+    _instagram_available = False
+    logger.warning("instagram_pipeline 모듈 없음 — Instagram 슬롯 비활성화")
 
 
 def _check_config():
@@ -60,12 +70,22 @@ def run_slot(slot: str):
     logger.info(f"[{slot}] Phase {phase} 시작 — 글 생성 중...")
 
     try:
-        text, content_type = generate_post(slot, phase)
-        logger.info(f"[{slot}] 생성 완료 ({len(text)}자):\n{'-'*40}\n{text}\n{'-'*40}")
+        text, content_type, meta = generate_post(slot, phase)
+        logger.info(
+            f"[{slot}] 생성 완료 ({len(text)}자) "
+            f"tone={meta.get('tone')} template={meta.get('template')} "
+            f"theme={str(meta.get('theme',''))[:20]}\n{'-'*40}\n{text}\n{'-'*40}"
+        )
 
         post_id = post_to_buffer(text)
-        log_post(slot, content_type, text, post_id, phase)
+        log_post(slot, content_type, text, post_id, phase, meta)
         logger.info(f"[{slot}] 발행 성공. post_id={post_id}")
+
+        # 발행 글에서 새 페르소나 사실 추출 → persona_store.json 업데이트
+        update_facts_from_post(text)
+
+        # 발행 직후 다양성 감시 — override 파일 갱신 (silent)
+        diversity_check(silent=True)
 
     except Exception as e:
         logger.error(f"[{slot}] 실패: {e}", exc_info=True)
@@ -83,6 +103,18 @@ def evening():
     run_slot("evening")
 
 
+def instagram():
+    if not _instagram_available:
+        logger.info("[instagram] 모듈 없음 — 건너뜀")
+        return
+    run_instagram_pipeline()
+
+
+def daily_diversity_report():
+    logger.info("[다양성] 일일 보고 시작")
+    diversity_check(silent=False)
+
+
 if __name__ == "__main__":
     _check_config()
 
@@ -97,7 +129,8 @@ if __name__ == "__main__":
     logger.info(
         f"스케줄: 모닝 {MORNING_HOUR}:{MORNING_MINUTE:02d} | "
         f"점심 {NOON_HOUR}:{NOON_MINUTE:02d} | "
-        f"저녁 {EVENING_HOUR}:{EVENING_MINUTE:02d} (KST)"
+        f"저녁 {EVENING_HOUR}:{EVENING_MINUTE:02d} | "
+        f"Instagram 카드뉴스 {INSTAGRAM_HOUR}:{INSTAGRAM_MINUTE:02d} (KST)"
     )
     logger.info("종료: Ctrl+C")
     logger.info("=" * 50)
@@ -121,6 +154,18 @@ if __name__ == "__main__":
         CronTrigger(hour=EVENING_HOUR, minute=EVENING_MINUTE),
         id="evening",
         name="Evening Post",
+    )
+    scheduler.add_job(
+        instagram,
+        CronTrigger(hour=INSTAGRAM_HOUR, minute=INSTAGRAM_MINUTE),
+        id="instagram",
+        name="Instagram Card News",
+    )
+    scheduler.add_job(
+        daily_diversity_report,
+        CronTrigger(hour=0, minute=5),
+        id="diversity_report",
+        name="Daily Diversity Report",
     )
 
     try:

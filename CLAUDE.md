@@ -53,6 +53,47 @@
 
 ---
 
+## 이미지·영상 생성 워크플로우 (nanobanana pro 고정 — 전 에이전트 필수 준수)
+
+> **이 규칙은 예외 없이 항상 적용된다.** 카드뉴스·썸네일·슬라이드·쓰레드 이미지 등 모든 시각 산출물은 반드시 아래 방식으로 생성한다.
+
+### 고정 생성 도구
+
+```
+도구:   mcp__nanobanana__generate_image
+모델:   model: "pro"  ← 절대 변경 금지 (settings.json 훅으로 normal 모델 차단됨)
+API:    Google API (.env의 GOOGLE_API_KEY 사용)
+```
+
+- PIL, Pillow, 로컬 이미지 합성 라이브러리 사용 금지 (삭제됨)
+- Figma는 디자인 토큰 참조용으로만 사용, 이미지 생성에 사용하지 않음
+
+### 고정 순서
+
+```
+1. 브랜드 로딩    → _context/design-style-guide.md + _context/brand-guidelines.md
+2. DESIGN.md 로딩 → .claude/DESIGN.md (컬러·타이포 토큰 참조)
+3. 이미지 생성    → mcp__nanobanana__generate_image (model: "pro")
+4. 저장           → 콘텐츠/[시리즈명]/ 폴더
+```
+
+### 한국어 텍스트 처리 원칙
+
+- 한국어 텍스트는 프롬프트에 **정확히 따옴표 안에** 명시
+- nanobanana pro는 한글 텍스트를 정확하게 렌더링함 (오타 발생률 낮음)
+- 생성 후 텍스트 오류 발견 시 프롬프트 수정 후 재생성
+
+### 디자인 컨텍스트 로딩 우선순위
+
+| 순위 | 파일 | 내용 |
+|------|------|------|
+| 1 | `_context/design-style-guide.md` | 브랜드 컬러·타이포·레이아웃 |
+| 2 | `_context/brand-guidelines.md` | 보이스·페르소나·금지 표현 |
+| 3 | `.claude/DESIGN.md` | 디자인 토큰 참조 (Figma 추출) |
+| 4 | `_templates/card-news-template.md` | 슬라이드 구조 |
+
+---
+
 ## 에이전트 역할 정의
 
 이 프로젝트는 에이전트 팀 방식으로 운영된다. 작업 유형에 따라 아래 역할 중 하나를 맡아 수행한다.
@@ -68,10 +109,10 @@
 **산출 형식**: 채널별 완성 텍스트, 제목 후보 3안
 
 ### 3. 디자인 에이전트 (Design Agent)
-**담당**: 카드뉴스 레이아웃 지시서, 썸네일 기획, 그래프·표 데이터 시각화 설계  
-**작업 기준**: `_context/design-style-guide.md` + `_templates/card-news-template.md` + `_templates/` 이미지 레퍼런스  
-**산출 형식**: 디자인 브리프(텍스트), 슬라이드별 요소 배치 명세서  
-**카드뉴스 작업 시**: 반드시 `_templates/card-news-template.md`를 복사해서 시작
+**담당**: 카드뉴스·썸네일·슬라이드 이미지 생성 (Figma 플러그인 우선)  
+**작업 기준**: `.claude/DESIGN.md` → `_context/design-style-guide.md` → `_templates/card-news-template.md` 순서로 로딩  
+**생성 도구**: Figma 플러그인(`figma-use` 스킬 + `use_figma` MCP) → 폴백: nanobanana pro  
+**카드뉴스 작업 시**: 반드시 DESIGN.md 로딩 후 Figma로 생성 → `get_screenshot`으로 추출
 
 ### 4. SEO·배포 에이전트 (Distribution Agent)
 **담당**: 블로그 SEO 최적화, 키워드 분석, 해시태그 세트, 채널별 최적 포스팅 시각  
