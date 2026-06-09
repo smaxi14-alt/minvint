@@ -11,7 +11,7 @@ from config import BUFFER_ACCESS_TOKEN, BUFFER_CHANNEL_ID
 
 logger = logging.getLogger(__name__)
 
-API_URL = "https://api.buffer.com"
+API_URL = "https://api.buffer.com/graphql"
 
 def _headers() -> dict:
     return {
