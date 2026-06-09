@@ -1,13 +1,18 @@
-2026-05-14 16:03:54,727 [INFO] ==================================================
-2026-05-14 16:03:54,728 [INFO] 쓰레드 자동 발행 스케줄러 시작
-2026-05-14 16:03:54,728 [INFO] 운영 시작일: 2026-05-14  |  경과: 0일  |  현재 Phase: 1
-2026-05-14 16:03:54,728 [INFO] 스케줄: 모닝 7:30 | 점심 12:30 | 저녁 21:00 (KST)
-2026-05-14 16:03:54,728 [INFO] 종료: Ctrl+C
-2026-05-14 16:03:54,729 [INFO] ==================================================
-2026-05-14 16:03:54,749 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2026-05-14 16:03:54,749 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2026-05-14 16:03:54,750 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
-2026-05-14 16:03:54,775 [INFO] Added job "Morning Post" to job store "default"
-2026-05-14 16:03:54,776 [INFO] Added job "Noon Post" to job store "default"
-2026-05-14 16:03:54,776 [INFO] Added job "Evening Post" to job store "default"
-2026-05-14 16:03:54,776 [INFO] Scheduler started
+2026-06-04 14:33:18,995 [WARNING] instagram_pipeline 모듈 없음 — Instagram 슬롯 비활성화
+2026-06-04 14:33:18,996 [INFO] ==================================================
+2026-06-04 14:33:18,996 [INFO] 쓰레드 자동 발행 스케줄러 시작
+2026-06-04 14:33:18,996 [INFO] 운영 시작일: 2026-05-14  |  경과: 21일  |  현재 Phase: 1
+2026-06-04 14:33:18,996 [INFO] 스케줄: 모닝 7:30 | 점심 12:30 | 저녁 21:00 | Instagram 카드뉴스 9:00 (KST)
+2026-06-04 14:33:18,996 [INFO] 종료: Ctrl+C
+2026-06-04 14:33:18,997 [INFO] ==================================================
+2026-06-04 14:33:19,018 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-04 14:33:19,018 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-04 14:33:19,019 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-04 14:33:19,019 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-04 14:33:19,019 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-06-04 14:33:19,022 [INFO] Added job "Morning Post" to job store "default"
+2026-06-04 14:33:19,023 [INFO] Added job "Noon Post" to job store "default"
+2026-06-04 14:33:19,023 [INFO] Added job "Evening Post" to job store "default"
+2026-06-04 14:33:19,023 [INFO] Added job "Instagram Card News" to job store "default"
+2026-06-04 14:33:19,024 [INFO] Added job "Daily Diversity Report" to job store "default"
+2026-06-04 14:33:19,024 [INFO] Scheduler started
