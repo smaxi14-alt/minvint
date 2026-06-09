@@ -274,6 +274,11 @@ def get_youtube_themes(content_type: str) -> list[str]:
         logger.info(f"[yt] 캐시 반환 ({content_type}): {len(result)}개")
         return result
 
+    # 새 날: processed_ids 초기화 — 같은 영상도 새로 분석해 최신 소재 반영
+    prev_insights = cache.get("insights_by_type", {})
+    cache["processed_ids"] = []
+    _save_cache(cache)
+
     primary_raw  = os.getenv("YOUTUBE_CHANNELS_PRIMARY", "")
     fallback_raw = os.getenv("YOUTUBE_CHANNELS_FALLBACK", "")
 
@@ -281,7 +286,14 @@ def get_youtube_themes(content_type: str) -> list[str]:
     if not primary_raw and not fallback_raw:
         legacy = os.getenv("YOUTUBE_CHANNELS", "")
         if not legacy:
-            return []
+            # 채널 미설정 — 전일 캐시라도 반환
+            if any(prev_insights.values()):
+                logger.info("[yt] 채널 미설정 — 전일 캐시 소재 사용")
+                cache = _load_cache()
+                cache["insights_by_type"] = prev_insights
+                cache["insights_date"]    = today
+                _save_cache(cache)
+            return prev_insights.get(content_type, [])
         primary_raw = legacy
 
     PRIMARY_THRESHOLD = 3
@@ -301,7 +313,13 @@ def get_youtube_themes(content_type: str) -> list[str]:
             for t, themes in ch_insights.items():
                 all_type_insights[t].extend(themes)
 
+    # 모든 채널에서 소재가 없으면 전일 캐시 소재로 폴백 (영상 없거나 스크립트 추출 실패 시)
+    if not any(all_type_insights.values()) and any(prev_insights.values()):
+        logger.info("[yt] 새 소재 없음 — 전일 캐시 소재 사용")
+        all_type_insights = prev_insights
+
     # 당일 캐시 저장 (이후 같은 날 모든 타입 호출은 캐시 사용)
+    cache = _load_cache()  # analyze_channel이 저장한 processed_ids 반영
     cache["insights_by_type"] = all_type_insights
     cache["insights_date"]    = today
     _save_cache(cache)
