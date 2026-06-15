@@ -57,6 +57,8 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           BUFFER_ACCESS_TOKEN: ${{ secrets.BUFFER_ACCESS_TOKEN }}
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           START_DATE: ${{ vars.START_DATE }}
           YOUTUBE_CHANNELS_PRIMARY: ${{ vars.YOUTUBE_CHANNELS_PRIMARY }}
           YOUTUBE_CHANNELS_FALLBACK: ${{ vars.YOUTUBE_CHANNELS_FALLBACK }}

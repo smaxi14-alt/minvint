@@ -1,16 +1,15 @@
 """
-유튜브 채널 스크립트 분석기
+유튜브 채널 RSS 분석기
 
 역할:
-  설정된 YouTube 채널의 최신 영상 스크립트를 수집·분석해
+  설정된 YouTube 채널의 최신 영상 제목을 RSS로 수집·분석해
   모든 콘텐츠 타입의 소재로 변환.
 
 흐름:
-  1. 채널 /videos 페이지에서 최신 영상 최대 5개 조회
+  1. 채널 RSS 피드에서 최신 영상 최대 5개 조회 (IP 차단 없음)
   2. 이미 처리한 영상 제외 (youtube_cache.json)
-  3. youtube-transcript-api 로 스크립트 추출
-  4. Claude haiku 로 핵심 인사이트 → 전체 content_type별 소재 변환
-  5. youtube_cache.json 에 당일 캐시 저장
+  3. Claude haiku 로 제목 → 전체 content_type별 소재 변환
+  4. youtube_cache.json 에 당일 캐시 저장
 """
 
 import json
@@ -48,14 +47,11 @@ _TYPE_GUIDES = {
 
 def _get_channel_id(handle_or_url: str) -> str | None:
     """@handle 또는 채널 URL → channel_id(UCxxx) 변환."""
-    # 이미 channel_id 형식
     if re.match(r"^UC[a-zA-Z0-9_-]{22}$", handle_or_url):
         return handle_or_url
-    # URL에 channel_id 포함
     match = re.search(r"channel/(UC[a-zA-Z0-9_-]{22})", handle_or_url)
     if match:
         return match.group(1)
-    # @handle → 채널 페이지 파싱
     handle = handle_or_url.split("/")[-1]
     if not handle.startswith("@"):
         handle = f"@{handle}"
@@ -79,61 +75,42 @@ def _get_channel_id(handle_or_url: str) -> str | None:
     return None
 
 
-def _fetch_videos_from_page(handle_or_url: str) -> list[dict]:
-    """채널 /videos 페이지 파싱으로 최신 영상 5개 반환 (RSS 불가 채널 대응)."""
-    handle = handle_or_url.split("/")[-1]
-    if not handle.startswith("@"):
-        handle = f"@{handle}"
-    url = f"https://www.youtube.com/{urllib.parse.quote(handle)}/videos"
-    try:
-        req = urllib.request.Request(url, headers={
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0",
-            "Accept-Language": "ko-KR,ko;q=0.9",
-        })
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            html = resp.read().decode("utf-8")
+def _fetch_videos_via_rss(handle_or_url: str) -> list[dict]:
+    """YouTube RSS 피드로 최신 영상 5개 반환 (cloud IP 차단 없음)."""
+    import xml.etree.ElementTree as ET
 
-        # video ID 추출 (길이 정보 직전에 나오는 패턴)
-        video_ids = re.findall(r'"videoId":"([a-zA-Z0-9_-]{11})"', html)
-        seen: set[str] = set()
-        unique_ids = []
-        for vid_id in video_ids:
-            if vid_id not in seen:
-                seen.add(vid_id)
-                unique_ids.append(vid_id)
-            if len(unique_ids) >= 5:
-                break
-
-        videos = []
-        for vid_id in unique_ids:
-            title = _get_video_title(vid_id)
-            videos.append({
-                "id":    vid_id,
-                "title": title,
-                "url":   f"https://www.youtube.com/watch?v={vid_id}",
-            })
-
-        logger.info(f"[yt] 페이지 파싱 {len(videos)}개 영상 조회 ({handle})")
-        return videos
-    except Exception as e:
-        logger.warning(f"[yt] 채널 페이지 조회 실패: {e}")
+    channel_id = _get_channel_id(handle_or_url)
+    if not channel_id:
+        logger.warning(f"[yt] channel_id 추출 실패: {handle_or_url}")
         return []
 
-
-def _get_video_title(video_id: str) -> str:
-    """영상 페이지에서 제목 추출."""
-    url = f"https://www.youtube.com/watch?v={video_id}"
+    url = f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
     try:
-        req = urllib.request.Request(url, headers={
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-            "Accept-Language": "ko-KR,ko;q=0.9",
-        })
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            html = resp.read().decode("utf-8")
-        m = re.search(r'<title>(.*?) - YouTube</title>', html)
-        return m.group(1) if m else video_id
-    except Exception:
-        return video_id
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            xml_data = resp.read().decode("utf-8")
+
+        root = ET.fromstring(xml_data)
+        ns = {
+            "atom": "http://www.w3.org/2005/Atom",
+            "yt":   "http://www.youtube.com/xml/schemas/2015",
+            "media":"http://search.yahoo.com/mrss/",
+        }
+        videos = []
+        for entry in root.findall("atom:entry", ns)[:5]:
+            vid_id = entry.findtext("yt:videoId", namespaces=ns) or ""
+            title  = entry.findtext("atom:title", namespaces=ns) or vid_id
+            desc   = ""
+            media  = entry.find("media:group", ns)
+            if media is not None:
+                desc = (media.findtext("media:description", namespaces=ns) or "")[:200]
+            videos.append({"id": vid_id, "title": title, "desc": desc})
+
+        logger.info(f"[yt] RSS {len(videos)}개 영상 조회 ({handle_or_url})")
+        return videos
+    except Exception as e:
+        logger.warning(f"[yt] RSS 조회 실패 ({handle_or_url}): {e}")
+        return []
 
 
 def _load_cache() -> dict:
@@ -148,34 +125,11 @@ def _save_cache(cache: dict):
         json.dump(cache, f, ensure_ascii=False, indent=2)
 
 
-def _get_transcript(video_id: str) -> str:
-    """youtube-transcript-api 로 스크립트 추출. 실패 시 빈 문자열."""
-    try:
-        from youtube_transcript_api import YouTubeTranscriptApi
-        api = YouTubeTranscriptApi()
-        try:
-            segments = api.fetch(video_id, languages=["ko", "ko-KR"])
-        except Exception:
-            # 자동 생성 자막 포함 전체 목록에서 시도
-            tl = api.list(video_id)
-            t  = next(iter(tl), None)
-            if t is None:
-                return ""
-            segments = api.fetch(video_id, languages=[t.language_code])
-        text = " ".join(seg.text for seg in segments)
-        logger.info(f"[yt] 스크립트 {len(text)}자 추출 ({video_id})")
-        return text[:6000]  # 토큰 절약
-    except ImportError:
-        logger.warning("[yt] youtube-transcript-api 미설치 — pip install youtube-transcript-api")
-        return ""
-    except Exception as e:
-        logger.warning(f"[yt] 스크립트 추출 실패 ({video_id}): {e}")
-        return ""
-
-
-def _extract_insights_all_types(title: str, transcript: str) -> dict[str, list[str]]:
-    """Claude haiku 로 영상 내용 → 전체 content_type별 소재 dict 추출."""
-    content = f"제목: {title}\n\n스크립트:\n{transcript[:3000]}" if transcript else f"제목: {title}"
+def _extract_insights_all_types(title: str, desc: str = "") -> dict[str, list[str]]:
+    """Claude haiku 로 영상 제목/설명 → 전체 content_type별 소재 dict 추출."""
+    content = f"제목: {title}"
+    if desc:
+        content += f"\n설명: {desc[:200]}"
     guides_str = "\n".join(f'- "{k}": {v}' for k, v in _TYPE_GUIDES.items())
 
     prompt = f"""아래는 한국 경제 분석가의 유튜브 영상입니다.
@@ -220,10 +174,10 @@ JSON 반환 예시:
 
 def analyze_channel(channel_handle: str) -> dict[str, list[str]]:
     """
-    채널의 새 영상을 분석해 content_type별 소재 dict 반환.
+    채널의 새 영상을 RSS로 조회해 content_type별 소재 dict 반환.
     이미 처리한 영상은 건너뜀 (youtube_cache.json processed_ids 기준).
     """
-    videos    = _fetch_videos_from_page(channel_handle)
+    videos    = _fetch_videos_via_rss(channel_handle)
     cache     = _load_cache()
     processed = set(cache.get("processed_ids", []))
 
@@ -235,10 +189,9 @@ def analyze_channel(channel_handle: str) -> dict[str, list[str]]:
     logger.info(f"[yt] 새 영상 {len(new_videos)}개 분석 시작")
     merged: dict[str, list[str]] = {t: [] for t in _ALL_TYPES}
 
-    for video in new_videos[:2]:  # 최대 2개 처리 (API 비용 절약)
+    for video in new_videos[:3]:  # RSS는 제목만이라 3개까지 처리
         logger.info(f"[yt] 분석: {video['title']}")
-        transcript = _get_transcript(video["id"])
-        type_insights = _extract_insights_all_types(video["title"], transcript)
+        type_insights = _extract_insights_all_types(video["title"], video.get("desc", ""))
         for t, themes in type_insights.items():
             merged[t].extend(themes)
         processed.add(video["id"])

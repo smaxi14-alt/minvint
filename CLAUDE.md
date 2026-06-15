@@ -5,6 +5,31 @@
 
 ---
 
+## ⚠️ 필수 자동화 규칙 — 모든 에이전트 반드시 준수
+
+### automation/.env 수정 시 GitHub 동기화 의무
+
+`automation/.env` 파일의 값을 수정하면 **반드시 즉시** 아래 명령을 실행한다.
+
+```powershell
+python automation/sync_github.py
+```
+
+이 규칙은 예외 없이 적용된다. `.env`를 수정하고 동기화를 빠뜨리면 GitHub Actions 자동 발행이 구 설정으로 실행된다.
+
+#### 동기화 대상
+
+| 종류 | 항목 |
+|------|------|
+| Secrets | `ANTHROPIC_API_KEY`, `BUFFER_ACCESS_TOKEN`, `BUFFER_CHANNEL_ID`, `THREADS_ACCESS_TOKEN`, `NAVER_CLIENT_ID`, `NAVER_CLIENT_SECRET`, `GOOGLE_API_KEY` |
+| Variables | `START_DATE`, `YOUTUBE_CHANNELS_PRIMARY`, `YOUTUBE_CHANNELS_FALLBACK` |
+
+#### GitHub Actions 워크플로우
+- `.github/workflows/threads-post.yml` — 매일 07:30 / 12:30 / 21:00 KST 자동 발행
+- `.github/workflows/threads-insights.yml` — 매일 02:00 KST 인사이트 수집
+
+---
+
 ## 프로젝트 개요
 
 **클라이언트**: GA(법인대리점) 소속 보험설계사 / 경력 7~15년 베테랑  
