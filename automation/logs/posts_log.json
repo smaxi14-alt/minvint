@@ -891,6 +891,20 @@
       "template": "shock_stat",
       "theme": "부자 관찰기: 돈 많이 버는 사람 vs 잘 모으는 사람",
       "is_trend": false
+    },
+    {
+      "date": "2026-06-17",
+      "timestamp": "2026-06-17T08:39:54.107845",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a325d51298f24ea6a7ac679",
+      "text": "월소득 상위 10% 가구의 평균 저축률이 22%. 중위소득 가구는 28%.\n\n더 많이 버는데 덜 모은다.\n\n소득 늘면 소비도 같이 늘어서다. 차 바꾸고, 집 늘리고, 애들 학원 하나 더 보내고.\n\n13년 보면서 느낀 건, 자산은 연봉이 아니라 격차에서 쌓인다. 버는 거랑 쓰는 거 사이.\n\n연봉 오른 만큼 통장도 두꺼워졌음? 40대 가장들.",
+      "tone": "직접적",
+      "ending_style": "질문형",
+      "template": "shock_stat",
+      "theme": "잘 버는 사람 vs 잘 모으는 사람 차이",
+      "is_trend": false
     }
   ]
 }
