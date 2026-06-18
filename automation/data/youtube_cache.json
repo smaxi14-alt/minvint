@@ -1,33 +1,30 @@
 {
   "processed_ids": [
-    "MIUpAQiHT6s",
-    "ExMSSMSxaVs",
-    "oUgP0f6ye5o",
     "GFoFB4qandY",
+    "EvWC1sd2VaA",
     "9r1ZMfEEMME",
-    "EvWC1sd2VaA"
+    "-n-BN4bdVwo",
+    "oUgP0f6ye5o",
+    "ExMSSMSxaVs"
   ],
-  "last_check": "2026-06-17T08:39:38.802978+00:00",
-  "insights_date": "2026-06-17",
+  "last_check": "2026-06-18T08:22:56.580025+00:00",
+  "insights_date": "2026-06-18",
   "insights_by_type": {
     "agro": [],
-    "agro_finance": [
-      "조선업 슈퍼사이클 초입, 지금이 진입 타이밍일까?"
-    ],
-    "finance": [
-      "20년 자본시장 현장 데이터 기반 조선업 투자 분석"
-    ],
+    "agro_finance": [],
+    "finance": [],
     "finance_insurance": [],
     "job_insight": [
-      "통계 기반 데이터 분석으로 시장 인사이트 도출하기"
+      "IT애널리스트가 본 반도체·디스플레이·배터리 산업의 미래"
     ],
     "diagnosis": [],
     "economy_news": [
+      "6월 FOMC 금리동결, 연준의 통화정책 기조 변화",
+      "케빈 워시 의장의 포워드 가이던스 삭제 신호",
       "지정학적 리스크가 반도체·디스플레이 산업에 미치는 영향",
-      "지정학적 리스크가 반도체·디스플레이·2차전지 산업에 미치는 영향",
-      "조선업 슈퍼사이클 현재와 미래 전망",
-      "빅테크 증자까지 하며 AI에 올인하는 이유",
-      "반도체가 고점일까? 빅테크 실적이 답한다",
+      "지정학적 리스크가 한국 시장·산업에 미치는 영향",
+      "빅테크 증자까지 감행하며 AI에 올인하는 이유",
+      "반도체 산업이 고점인지 확인하는 ISM제조업지수 해석",
       "삼성전자 고점을 결정하는 단 하나의 변수는?"
     ],
     "book_insight": []
