@@ -961,6 +961,20 @@
       "template": "confession",
       "theme": "코스피 9000시대, 직장인 일상도 초밥·편의점으로 양극화",
       "is_trend": true
+    },
+    {
+      "date": "2026-06-20",
+      "timestamp": "2026-06-20T07:11:38.560739",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a363d22cc3bc13e7ada23cf",
+      "text": "삼성전자 10만원 돌파 기사가 떴다.\n\n13년 동안 이 종목 들고 있는 고객들 봐왔다.\n고점 칠 때마다 공통점이 하나 있더라.\n실적도 아니고 외국인 수급도 아니다.\n\n택시 기사님이 먼저 물어보기 시작할 때.\n미용실에서 옆자리 손님이 얘기할 때.\n2017년에도 그랬고 2021년에도 그랬다.\n\n지금은 아직 그 단계가 아닌 것 같다.\n주변이 조용한 게 오히려 신호다.",
+      "tone": "회고적",
+      "ending_style": "선언형",
+      "template": "observation",
+      "theme": "삼성전자 고점을 결정하는 단 하나의 변수는?",
+      "is_trend": true
     }
   ]
 }

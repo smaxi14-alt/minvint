@@ -1,28 +1,30 @@
 {
   "processed_ids": [
-    "oUgP0f6ye5o",
-    "-n-BN4bdVwo",
     "GFoFB4qandY",
-    "9r1ZMfEEMME",
     "EvWC1sd2VaA",
-    "ExMSSMSxaVs"
+    "MTArcr5M4kA",
+    "-n-BN4bdVwo",
+    "ExMSSMSxaVs",
+    "9r1ZMfEEMME"
   ],
-  "last_check": "2026-06-19T00:11:49.966432+00:00",
-  "insights_date": "2026-06-19",
+  "last_check": "2026-06-20T07:11:22.763615+00:00",
+  "insights_date": "2026-06-20",
   "insights_by_type": {
     "agro": [],
-    "agro_finance": [],
+    "agro_finance": [
+      "증시 상승해도 원화 가치는 떨어지는 이상한 현상"
+    ],
     "finance": [],
     "finance_insurance": [],
     "job_insight": [],
     "diagnosis": [],
     "economy_news": [
-      "연준 기준금리 동결, 포워드 가이던스 삭제의 의미",
-      "6월 FOMC 성명문 간결화, 시장에 미칠 영향 분석",
-      "지정학적 리스크가 반도체·디스플레이 산업에 미치는 영향",
-      "지정학적 리스크가 반도체·디스플레이·2차전지 산업에 미치는 영향",
-      "빅테크 기업들의 증자 결정, AI 투자 경쟁의 실체",
-      "반도체 산업이 고점인가? 빅테크의 실제 신호 읽기",
+      "환율 상승이 수출 호황과 역행하는 이유 분석",
+      "6월 FOMC 기준금리 동결, 포워드 가이던스 삭제의 의미",
+      "연준의 성명문 간결화가 시사하는 통화정책 기조 변화",
+      "지정학적 리스크가 반도체·디스플레이 등 핵심산업에 미치는 영향",
+      "빅테크 증자까지 감행하며 AI에 올인하는 이유",
+      "반도체 고점 논란, ISM제조업지수로 경기 신호 읽기",
       "삼성전자 고점을 결정하는 단 하나의 변수는?"
     ],
     "book_insight": []
