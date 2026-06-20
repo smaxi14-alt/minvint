@@ -975,6 +975,20 @@
       "template": "observation",
       "theme": "삼성전자 고점을 결정하는 단 하나의 변수는?",
       "is_trend": true
+    },
+    {
+      "date": "2026-06-20",
+      "timestamp": "2026-06-20T14:00:37.819118",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a369cfb85c1c7cceb0bb921",
+      "text": "13년 보면서 알게 된 거.\n\n월 1,200만원 버는 원장님은 카드값에 허덕이고, 월 480만원 버는 공무원은 9년 만에 4억을 모았다.\n\n버는 거랑 남는 건 다른 문제더라.\n\n나는 어느 쪽이냐고? …그건 묻지 말자.",
+      "tone": "위트있는",
+      "ending_style": "독백형",
+      "template": "confession",
+      "theme": "부자 관찰기: 돈 많이 버는 사람 vs 잘 모으는 사람",
+      "is_trend": false
     }
   ]
 }
