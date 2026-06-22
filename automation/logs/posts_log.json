@@ -1045,6 +1045,20 @@
       "template": "confession",
       "theme": "회식 '못 마시겠다' 첫 거절",
       "is_trend": false
+    },
+    {
+      "date": "2026-06-22",
+      "timestamp": "2026-06-22T23:51:42.909745",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a39ca8685b9dc3f4146cb0e",
+      "text": "40대 되면 좀 단단해질 줄 알았다.\n\n근데 아니더라.\n\n체력은 떨어지고, 후배는 치고 올라오고, 부모님은 늙어간다.\n\n단단해진 게 아니라, 무뎌진 거였다.\n\n요즘은 거울 볼 시간도 줄었다.",
+      "tone": "씁쓸한",
+      "ending_style": "관찰형",
+      "template": "reversal",
+      "theme": "40대 되면서 처음으로 느낀 것",
+      "is_trend": false
     }
   ]
 }
