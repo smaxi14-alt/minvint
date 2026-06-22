@@ -1031,6 +1031,20 @@
       "template": "observation",
       "theme": "동창회 후 통장 잔고 들여다본 횟수",
       "is_trend": false
+    },
+    {
+      "date": "2026-06-22",
+      "timestamp": "2026-06-22T09:26:04.282337",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a38ffa5ab05597554ba34b0",
+      "text": "어제 회식에서 처음으로 \"못 마시겠습니다\" 했다.\n\n13년 다니면서 처음이다.\n팀장이 따라주는데 잔을 살짝 밀었다.\n\n이상하게 손이 떨렸다.\n거절이 이렇게 어려운 일이었나.\n\n집에 와서 생각해보니, 못 마시는 게 아니라 안 마시고 싶었던 거였다.\n다음 날 일정이, 애 등원이, 내 간이 더 중요해진 거다.\n\n40대 넘어가니 술자리에서 빠지는 선배들 이유를 이제 알겠다.\n아무도 뭐라 안 했다. 나만 어색했다.",
+      "tone": "직접적",
+      "ending_style": "관찰형",
+      "template": "confession",
+      "theme": "회식 '못 마시겠다' 첫 거절",
+      "is_trend": false
     }
   ]
 }
