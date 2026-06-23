@@ -1073,6 +1073,20 @@
       "template": "shock_stat",
       "theme": "AI 버블 우려와 분산 투자 원칙 점검",
       "is_trend": false
+    },
+    {
+      "date": "2026-06-23",
+      "timestamp": "2026-06-23T23:37:08.089564",
+      "slot": "morning",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a3b189c213b174aabbfbb40",
+      "text": "9월 PCE 2.3%. 근원 PCE 2.8%.\n\n기사 헤드라인은 \"인플레 둔화\"라고 썼다.\n그런데 연준 목표치는 2.0%다.\n\n0.8%p 차이.\n작아 보이지만 이게 금리 인하 시점을 몇 달씩 미루는 숫자다.\n\n13년 일하면서 본 건데, 사람들은 \"둔화\"라는 단어에 안심하고 대출을 늘린다.\n정작 금리는 그 자리에 그대로 있는데.\n\n기사 제목이랑 내 통장 이자율은 따로 움직인다.",
+      "tone": "건조한",
+      "ending_style": "관찰형",
+      "template": "two_numbers",
+      "theme": "PCE 물가지수로 읽는 금리 인상 가능성",
+      "is_trend": true
     }
   ]
 }
