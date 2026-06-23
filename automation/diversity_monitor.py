@@ -41,7 +41,7 @@ THRESHOLDS = {
     },
     "template":     {"window_days": 14, "max_ratio": 0.40},
     "tone":         {"window_days": 14, "max_ratio": 0.45},
-    "theme":        {"window_days": 7,  "max_count": 2},
+    "theme":        {"window_days": 7,  "max_count": 1},
     "content_type": {
         "window_days": 14,
         "agro_types": ["agro", "agro_finance"],
