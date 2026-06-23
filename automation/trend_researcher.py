@@ -17,7 +17,7 @@ import logging
 import urllib.request
 import urllib.parse
 import urllib.error
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 from config import ANTHROPIC_API_KEY, NAVER_CLIENT_ID, NAVER_CLIENT_SECRET, DATA_DIR
@@ -110,7 +110,8 @@ def _set_cache(content_type: str, themes: list[str]):
     cache = _load_cache()
     # 오래된 캐시 정리 (7일 이상)
     today = date.today().isoformat()
-    cache = {k: v for k, v in cache.items() if k[:10] >= str(date.today().toordinal() - 7)[:10]}
+    cutoff = (date.today() - timedelta(days=7)).isoformat()
+    cache = {k: v for k, v in cache.items() if k[:10] >= cutoff}
     cache[_cache_key(content_type)] = themes
     _save_cache(cache)
 

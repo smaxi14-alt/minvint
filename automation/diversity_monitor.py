@@ -220,7 +220,7 @@ def print_report(ending_r, template_r, tone_r, theme_r, content_type_r, override
     for kind, cnt in sorted(content_type_r["counts"].items(), key=lambda x: -x[1]):
         ratio = content_type_r["ratios"].get(kind, 0)
         tag   = " [일상글]" if kind in agro_types else ""
-        flag  = " ⚠" if content_type_r["warnings"] and kind in agro_types and content_type_r["agro_ratio"] > THRESHOLDS["content_type"]["max_agro_ratio"] else ""
+        flag  = " ⚠" if content_type_r["warnings"] and kind in agro_types and content_type_r["agro_ratio"] > content_type_r.get("max_agro", 0.75) else ""
         print(f"  {kind:<18} {_bar(ratio)} {ratio:5.1%}  ({cnt}회){tag}{flag}")
     if not content_type_r["counts"]:
         print("  데이터 없음")

@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-06-23T16:23:11",
+  "ending_boosts": {
+    "관찰형": 2.5,
+    "여운형": 2.5
+  },
+  "template_boosts": {},
+  "tone_boosts": {},
+  "theme_exclusions": [],
+  "content_type_exclusions": [
+    "agro",
+    "agro_finance"
+  ]
+}
