@@ -1059,6 +1059,20 @@
       "template": "reversal",
       "theme": "40대 되면서 처음으로 느낀 것",
       "is_trend": false
+    },
+    {
+      "date": "2026-06-23",
+      "timestamp": "2026-06-23T07:02:41.016364",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a3a2f884f0ceb745be38b8c",
+      "text": "엔비디아 한 종목이 코스피 전체 시총보다 크다.\n\n오늘 한경 기사 보다가 멈췄다.\n시총 4조 달러. 한국 증시 전부 합친 것보다 많다.\n\nAI 버블 얘기 나오는 게 이상한 일이 아니다.\n근데 13년 일하면서 본 건, 버블이냐 아니냐 맞추는 사람보다 한 바구니에 안 담은 사람이 끝까지 살아남더라.\n\n엔비디아 비중 점검할 때가 된 것 같다.\n나도 오늘 저녁에 비중 한 번 들여다봐야겠다.",
+      "tone": "직접적",
+      "ending_style": "독백형",
+      "template": "shock_stat",
+      "theme": "AI 버블 우려와 분산 투자 원칙 점검",
+      "is_trend": false
     }
   ]
 }

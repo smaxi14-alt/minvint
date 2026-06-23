@@ -1,33 +1,32 @@
 {
   "processed_ids": [
     "ExMSSMSxaVs",
-    "_HU5OwZ6T6g",
-    "EvWC1sd2VaA",
     "GFoFB4qandY",
     "MTArcr5M4kA",
-    "-n-BN4bdVwo"
+    "-n-BN4bdVwo",
+    "_HU5OwZ6T6g",
+    "EvWC1sd2VaA"
   ],
-  "last_check": "2026-06-22T09:25:48.608279+00:00",
-  "insights_date": "2026-06-22",
+  "last_check": "2026-06-23T07:02:22.297740+00:00",
+  "insights_date": "2026-06-23",
   "insights_by_type": {
-    "agro": [
-      "증시 오르는데 환율만 올라 월급 환전가 떨어지는 현상"
+    "agro": [],
+    "agro_finance": [
+      "증시 올라도 환율 오르면 수출 이득 줄어든다"
     ],
-    "agro_finance": [],
-    "finance": [
-      "증시 상승 중에도 원화 가치 하락하는 이례적 현상 분석"
-    ],
+    "finance": [],
     "finance_insurance": [],
     "job_insight": [],
     "diagnosis": [],
     "economy_news": [
-      "금리·환율·주식 연동성 약해지는 국내 경제 신호",
+      "증시 상승과 원화 하락의 역설적 현상 분석",
       "6월 FOMC 기준금리 동결, 포워드 가이던스 삭제의 의미",
       "연준 통화정책 기조 변화가 금융시장에 미칠 영향",
       "지정학적 리스크가 반도체·디스플레이 산업에 미치는 영향",
-      "연준의 금리정책 기조 변화와 PCE물가지수의 영향",
-      "빅테크 증자까지 감행하는 AI 투자 열풍의 배경",
-      "반도체 고점 논쟁, ISM제조업지수로 읽는 경기신호"
+      "케빈 워시의 연준 정책 전환이 시장에 미칠 영향",
+      "PCE 물가지수로 읽는 금리 인상 가능성",
+      "빅테크 증자까지 단행하며 AI에 올인하는 이유",
+      "반도체 고점 논쟁, ISM제조업지수로 경기 신호 읽기"
     ],
     "book_insight": []
   }
