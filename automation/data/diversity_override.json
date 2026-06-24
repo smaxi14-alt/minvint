@@ -1,14 +1,12 @@
 {
-  "generated_at": "2026-06-24T14:26:06",
+  "generated_at": "2026-06-24T23:44:46",
   "ending_boosts": {
-    "선언형": 1.56
+    "질문형": 1.41
   },
   "template_boosts": {
-    "two_numbers": 2.22
+    "two_numbers": 2.33
   },
-  "tone_boosts": {
-    "씁쓸한": 1.6
-  },
+  "tone_boosts": {},
   "theme_exclusions": [
     "잘 버는 사람 vs 잘 모으는 사람 차이",
     "5년 전 다짐과 지금 현실의 갭",
@@ -24,7 +22,11 @@
     "40대 되면서 처음으로 느낀 것",
     "AI 버블 우려와 분산 투자 원칙 점검",
     "PCE 물가지수로 읽는 금리 인상 가능성",
-    "증시 상승과 원화 하락의 역설적 현상 분석"
+    "증시 상승과 원화 하락의 역설적 현상 분석",
+    "40대 머니무브: 주식 팔아 집 사는 자산 재배치 움직임"
   ],
-  "content_type_exclusions": []
+  "content_type_exclusions": [
+    "agro",
+    "agro_finance"
+  ]
 }
