@@ -1,14 +1,13 @@
 {
-  "generated_at": "2026-06-24T06:59:21",
+  "generated_at": "2026-06-24T14:26:06",
   "ending_boosts": {
-    "질문형": 1.59,
-    "선언형": 1.49
+    "선언형": 1.56
   },
   "template_boosts": {
-    "two_numbers": 2.11
+    "two_numbers": 2.22
   },
   "tone_boosts": {
-    "씁쓸한": 1.52
+    "씁쓸한": 1.6
   },
   "theme_exclusions": [
     "잘 버는 사람 vs 잘 모으는 사람 차이",
@@ -24,10 +23,8 @@
     "회식 '못 마시겠다' 첫 거절",
     "40대 되면서 처음으로 느낀 것",
     "AI 버블 우려와 분산 투자 원칙 점검",
-    "PCE 물가지수로 읽는 금리 인상 가능성"
+    "PCE 물가지수로 읽는 금리 인상 가능성",
+    "증시 상승과 원화 하락의 역설적 현상 분석"
   ],
-  "content_type_exclusions": [
-    "agro",
-    "agro_finance"
-  ]
+  "content_type_exclusions": []
 }
