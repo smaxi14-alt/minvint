@@ -1,8 +1,9 @@
 {
-  "generated_at": "2026-06-25T14:29:42",
+  "generated_at": "2026-06-25T23:54:19",
   "ending_boosts": {},
   "template_boosts": {
-    "time_comparison": 2.19
+    "two_numbers": 1.37,
+    "time_comparison": 2.29
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -21,7 +22,8 @@
     "증시 상승과 원화 하락의 역설적 현상 분석",
     "40대 머니무브: 주식 팔아 집 사는 자산 재배치 움직임",
     "인플레이션 고착화와 실질 구매력 하락 계산",
-    "금투세·종부세 변화가 내 포트폴리오에 미치는 영향"
+    "금투세·종부세 변화가 내 포트폴리오에 미치는 영향",
+    "부모님 병원비 처음으로 송금한 날"
   ],
   "content_type_exclusions": []
 }

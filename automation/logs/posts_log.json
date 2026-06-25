@@ -1157,6 +1157,20 @@
       "template": "reversal",
       "theme": "부모님 병원비 처음으로 송금한 날",
       "is_trend": false
+    },
+    {
+      "date": "2026-06-25",
+      "timestamp": "2026-06-25T23:54:37.052105",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a3dbfb56648d884a77ff5ce",
+      "text": "20년 직장인이 절대 말 안 하는 거.\n\n\"사표 써봤다\"가 아니라 \"사표 써보는 상상을 매일 한다\"는 거.\n\n진짜 쓸 용기 없어서 머릿속으로만 쓴다.\n\n오늘도 출근길에 한 번 썼다 지웠다.",
+      "tone": "위트있는",
+      "ending_style": "독백형",
+      "template": "taboo",
+      "theme": "20년 직장생활 처음으로 사표 쓰는 상상",
+      "is_trend": false
     }
   ]
 }
