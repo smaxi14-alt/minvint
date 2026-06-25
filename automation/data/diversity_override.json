@@ -1,9 +1,8 @@
 {
-  "generated_at": "2026-06-25T06:59:07",
+  "generated_at": "2026-06-25T14:29:42",
   "ending_boosts": {},
   "template_boosts": {
-    "two_numbers": 2.1,
-    "time_comparison": 2.1
+    "time_comparison": 2.19
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -21,7 +20,8 @@
     "PCE 물가지수로 읽는 금리 인상 가능성",
     "증시 상승과 원화 하락의 역설적 현상 분석",
     "40대 머니무브: 주식 팔아 집 사는 자산 재배치 움직임",
-    "인플레이션 고착화와 실질 구매력 하락 계산"
+    "인플레이션 고착화와 실질 구매력 하락 계산",
+    "금투세·종부세 변화가 내 포트폴리오에 미치는 영향"
   ],
   "content_type_exclusions": []
 }
