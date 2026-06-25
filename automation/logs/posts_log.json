@@ -1129,6 +1129,20 @@
       "template": "time_comparison",
       "theme": "인플레이션 고착화와 실질 구매력 하락 계산",
       "is_trend": false
+    },
+    {
+      "date": "2026-06-25",
+      "timestamp": "2026-06-25T06:59:31.612415",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a3cd1cbe0cca07abbbc81f2",
+      "text": "금투세 5천만원 공제, 종부세 공시가 12억.\n\n기사는 \"중산층 부담 완화\"라고 썼다.\n\n근데 13년 일하면서 보니까, 이 두 숫자 둘 다 우리 같은 월급쟁이엔 해당 안 된다.\n주식 양도차익 5천만원 넘게 벌어본 적도 없고, 12억짜리 집은 더더욱 없다.\n\n세제 개편 뉴스 볼 때마다 느낀다.\n나는 그 어디에도 안 껴 있다.\n\n완화든 강화든, 내 통장은 그대로다.",
+      "tone": "씁쓸한",
+      "ending_style": "선언형",
+      "template": "two_numbers",
+      "theme": "금투세·종부세 변화가 내 포트폴리오에 미치는 영향",
+      "is_trend": false
     }
   ]
 }

@@ -1,15 +1,12 @@
 {
-  "generated_at": "2026-06-24T23:44:46",
-  "ending_boosts": {
-    "질문형": 1.41
-  },
+  "generated_at": "2026-06-25T06:59:07",
+  "ending_boosts": {},
   "template_boosts": {
-    "two_numbers": 2.33
+    "two_numbers": 2.1,
+    "time_comparison": 2.1
   },
   "tone_boosts": {},
   "theme_exclusions": [
-    "잘 버는 사람 vs 잘 모으는 사람 차이",
-    "5년 전 다짐과 지금 현실의 갭",
     "자식한테 게임기 사주지 말자던 약속 깬 날",
     "공부 못했던 친구가 동창 중 제일 부자",
     "코스피 9000시대, 직장인 일상도 초밥·편의점으로 양극화",
@@ -23,10 +20,8 @@
     "AI 버블 우려와 분산 투자 원칙 점검",
     "PCE 물가지수로 읽는 금리 인상 가능성",
     "증시 상승과 원화 하락의 역설적 현상 분석",
-    "40대 머니무브: 주식 팔아 집 사는 자산 재배치 움직임"
+    "40대 머니무브: 주식 팔아 집 사는 자산 재배치 움직임",
+    "인플레이션 고착화와 실질 구매력 하락 계산"
   ],
-  "content_type_exclusions": [
-    "agro",
-    "agro_finance"
-  ]
+  "content_type_exclusions": []
 }
