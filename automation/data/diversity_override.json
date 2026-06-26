@@ -1,9 +1,8 @@
 {
-  "generated_at": "2026-06-26T07:06:05",
+  "generated_at": "2026-06-26T14:21:52",
   "ending_boosts": {},
   "template_boosts": {
-    "time_comparison": 2.08,
-    "taboo": 2.08
+    "taboo": 2.17
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -23,7 +22,8 @@
     "인플레이션 고착화와 실질 구매력 하락 계산",
     "금투세·종부세 변화가 내 포트폴리오에 미치는 영향",
     "부모님 병원비 처음으로 송금한 날",
-    "20년 직장생활 처음으로 사표 쓰는 상상"
+    "20년 직장생활 처음으로 사표 쓰는 상상",
+    "환율이 증시 상승과 반대로 움직이는 이유는 금리 차이"
   ],
   "content_type_exclusions": []
 }
