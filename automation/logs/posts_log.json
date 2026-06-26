@@ -1199,6 +1199,20 @@
       "template": "confession",
       "theme": "40대 가구 평균 자산 vs 중위값 격차",
       "is_trend": false
+    },
+    {
+      "date": "2026-06-26",
+      "timestamp": "2026-06-26T23:44:33.105279",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a3f0ed686a25c6558c08631",
+      "text": "동창회 가면 다들 차 얘기 골프 얘기는 하는데\n통장 잔고 얘기는 아무도 안 한다.\n\n월 2000 버는 그 친구도, 카드값 돌려막는 친구도\n이 부분만큼은 입을 다문다.\n\n이유는 단순하다.\n숫자 까는 순간 20년 우정이 거래로 바뀌니까.\n\n차는 보여줄 수 있고 시계는 자랑할 수 있는데\n잔고는 들킨 쪽이 진다.\n\n그래서 동창회는 영원히 술값 얘기로 끝난다.",
+      "tone": "위트있는",
+      "ending_style": "선언형",
+      "template": "taboo",
+      "theme": "부자 동창 vs 가난한 동창 자산 격차",
+      "is_trend": false
     }
   ]
 }
