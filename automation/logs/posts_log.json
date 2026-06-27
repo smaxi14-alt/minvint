@@ -1227,6 +1227,20 @@
       "template": "time_comparison",
       "theme": "주식은 오르는데 원화는 내려가는 이유",
       "is_trend": true
+    },
+    {
+      "date": "2026-06-27",
+      "timestamp": "2026-06-27T13:39:28.248905",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a3fd28768e970d73623fe1a",
+      "text": "통계청 자료 보니까 40대 순자산 상위 10% 기준이 약 12억이더라.\n\n부동산 빼면 절반은 날아간다.\n\n13년간 고객들 자산 들여다보면서 본 건데,\n상위권에 있는 사람들 공통점이 하나 있다.\n\n자기 돈이 어디 들어가 있는지 정확히 안다.\n나는 솔직히 지난달 카드값도 헷갈리는데.\n\n12억이라는 숫자보다, 자기 자산을 한 줄로 설명하는 사람이 생각보다 적다는 게 더 인상 깊었다.",
+      "tone": "위트있는",
+      "ending_style": "관찰형",
+      "template": "observation",
+      "theme": "40대 순자산 분포 (상위 10% 기준점)",
+      "is_trend": false
     }
   ]
 }

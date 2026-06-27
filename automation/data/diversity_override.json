@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-06-27T06:40:32",
-  "ending_boosts": {},
+  "generated_at": "2026-06-27T13:39:05",
+  "ending_boosts": {
+    "질문형": 1.39
+  },
   "template_boosts": {
-    "two_numbers": 1.4,
-    "time_comparison": 1.4,
-    "taboo": 1.4
+    "two_numbers": 1.45,
+    "taboo": 1.45
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -25,7 +26,8 @@
     "20년 직장생활 처음으로 사표 쓰는 상상",
     "환율이 증시 상승과 반대로 움직이는 이유는 금리 차이",
     "40대 가구 평균 자산 vs 중위값 격차",
-    "부자 동창 vs 가난한 동창 자산 격차"
+    "부자 동창 vs 가난한 동창 자산 격차",
+    "주식은 오르는데 원화는 내려가는 이유"
   ],
   "content_type_exclusions": []
 }
