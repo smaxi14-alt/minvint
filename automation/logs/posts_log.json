@@ -1213,6 +1213,20 @@
       "template": "taboo",
       "theme": "부자 동창 vs 가난한 동창 자산 격차",
       "is_trend": false
+    },
+    {
+      "date": "2026-06-27",
+      "timestamp": "2026-06-27T06:41:03.400489",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a3f707708ab52e3fdf46013",
+      "text": "5년 전 코스피 3000, 환율 1180원.\n\n지금 코스피 비슷한데 환율은 1400원 위.\n\n같은 지수인데 달러로 환산하면 우리만 20% 깎인 셈이다.\n\n뉴스는 '증시 회복'이라 쓰는데, 13년 일하면서 본 건 숫자가 같아 보일 때가 제일 무서웠다.\n\n회복이 아니라, 그냥…",
+      "tone": "씁쓸한",
+      "ending_style": "여운형",
+      "template": "time_comparison",
+      "theme": "주식은 오르는데 원화는 내려가는 이유",
+      "is_trend": true
     }
   ]
 }
