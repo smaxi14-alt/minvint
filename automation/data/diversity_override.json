@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-27T13:39:05",
+  "generated_at": "2026-06-27T23:35:15",
   "ending_boosts": {
-    "질문형": 1.39
+    "질문형": 1.44
   },
   "template_boosts": {
-    "two_numbers": 1.45,
-    "taboo": 1.45
+    "two_numbers": 1.5,
+    "taboo": 1.5
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -27,7 +27,8 @@
     "환율이 증시 상승과 반대로 움직이는 이유는 금리 차이",
     "40대 가구 평균 자산 vs 중위값 격차",
     "부자 동창 vs 가난한 동창 자산 격차",
-    "주식은 오르는데 원화는 내려가는 이유"
+    "주식은 오르는데 원화는 내려가는 이유",
+    "40대 순자산 분포 (상위 10% 기준점)"
   ],
   "content_type_exclusions": []
 }
