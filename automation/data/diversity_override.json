@@ -1,11 +1,9 @@
 {
-  "generated_at": "2026-06-28T07:12:22",
-  "ending_boosts": {
-    "질문형": 1.48
-  },
+  "generated_at": "2026-06-28T13:43:19",
+  "ending_boosts": {},
   "template_boosts": {
-    "two_numbers": 1.55,
-    "taboo": 1.55
+    "two_numbers": 1.6,
+    "taboo": 1.6
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -26,7 +24,8 @@
     "부자 동창 vs 가난한 동창 자산 격차",
     "주식은 오르는데 원화는 내려가는 이유",
     "40대 순자산 분포 (상위 10% 기준점)",
-    "중학교 때 꿈과 지금 직업 사이의 거리"
+    "중학교 때 꿈과 지금 직업 사이의 거리",
+    "현대차, 피지컬 AI 기업으로의 변신 추진 중"
   ],
   "content_type_exclusions": []
 }
