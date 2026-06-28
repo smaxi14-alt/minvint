@@ -1255,6 +1255,20 @@
       "template": "reversal",
       "theme": "중학교 때 꿈과 지금 직업 사이의 거리",
       "is_trend": false
+    },
+    {
+      "date": "2026-06-28",
+      "timestamp": "2026-06-28T07:12:51.954581",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a40c96a37c4dee3e0c865bc",
+      "text": "5년 전 현대차는 그냥 자동차 회사였다.\n\n지금은 피지컬 AI 기업으로 간다고 한다. 오늘 기사 한 줄.\n\n회사가 5년 만에 정체성을 바꾸는 동안, 나는 5년째 같은 자리에서 같은 일 하고 있더라.\n\n비슷한 40대들, 5년 전이랑 뭐가 달라졌음?",
+      "tone": "씁쓸한",
+      "ending_style": "질문형",
+      "template": "time_comparison",
+      "theme": "현대차, 피지컬 AI 기업으로의 변신 추진 중",
+      "is_trend": true
     }
   ]
 }
