@@ -1283,6 +1283,20 @@
       "template": "reversal",
       "theme": "월 식비 30만원 절감한 가계부 쓰기 3종 세트 비법",
       "is_trend": true
+    },
+    {
+      "date": "2026-06-28",
+      "timestamp": "2026-06-28T23:40:52.334725",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a41b0fcd022399df5495dcb",
+      "text": "정년 앞둔 선배들이 술자리에서 절대 안 하는 말이 있다.\n\n\"퇴직하면 뭐 할지 모르겠다.\"\n\n직함 떼면 명함 한 장 안 남는 거,\n본인이 제일 먼저 안다.\n\n그래서 더 안 꺼내는 거고.",
+      "tone": "위트있는",
+      "ending_style": "여운형",
+      "template": "taboo",
+      "theme": "은퇴 후 사회적 권위와 역할을 내려놓는 중년 남성의 현실",
+      "is_trend": true
     }
   ]
 }

@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-28T13:43:19",
+  "generated_at": "2026-06-28T23:40:34",
   "ending_boosts": {},
   "template_boosts": {
-    "two_numbers": 1.6,
-    "taboo": 1.6
+    "two_numbers": 1.65,
+    "taboo": 1.65
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -25,7 +25,8 @@
     "주식은 오르는데 원화는 내려가는 이유",
     "40대 순자산 분포 (상위 10% 기준점)",
     "중학교 때 꿈과 지금 직업 사이의 거리",
-    "현대차, 피지컬 AI 기업으로의 변신 추진 중"
+    "현대차, 피지컬 AI 기업으로의 변신 추진 중",
+    "월 식비 30만원 절감한 가계부 쓰기 3종 세트 비법"
   ],
   "content_type_exclusions": []
 }
