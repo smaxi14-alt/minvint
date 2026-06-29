@@ -1311,6 +1311,20 @@
       "template": "numbers",
       "theme": "동창 경조사 봉투 액수 쓰다 멈춘 이유",
       "is_trend": false
+    },
+    {
+      "date": "2026-06-29",
+      "timestamp": "2026-06-29T23:35:58.707262",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a430157c1a435f7fb02cb7c",
+      "text": "40대 남자들이 약통 사진 안 올리는 이유.\n\n오메가3, 밀크씨슬, 루테인. 책상 위에 늘어놨는데 SNS엔 안 올린다.\n\n의욕이 떨어진 게 아니라, 의욕을 약으로 버티는 중이라는 걸 들키기 싫은 거다.\n\nALT 48 찍힌 날 삼겹살 먹은 나는 그 줄에 당당히 서 있다.",
+      "tone": "위트있는",
+      "ending_style": "선언형",
+      "template": "taboo",
+      "theme": "의욕 떨어진 40대, 콜레스테롤·영양제로 건강 관리하는 이유",
+      "is_trend": true
     }
   ]
 }
