@@ -27,6 +27,20 @@
       "template": "time_comparison",
       "theme": "소비자물가 vs 생산자물가 괴리 — 다음에 올 것",
       "is_trend": false
+    },
+    {
+      "date": "2026-06-30",
+      "timestamp": "2026-06-30T14:15:34.165602",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a43cf7e1e42905afea3a223",
+      "text": "가계대출 중 신용대출·카드론 비중이 38%다.\n\n주담대만 부채라고 생각하는 사람 많은데, 실제로는 신용대출·카드론·리볼빙이 절반 가까이 차지한다.\n\n이게 무서운 건 금리다. 주담대는 4%대인데 카드론은 14%, 리볼빙은 17%까지 간다.\n\n증권 수천 장 들여다보니, 무너지는 가계는 주담대 때문이 아니라 그 옆에 붙은 신용 부채 때문에 무너지더라.\n\n큰 빚보다 작은 빚이 더 빨리 갉아먹는다.",
+      "tone": "직접적",
+      "ending_style": "독백형",
+      "template": "shock_stat",
+      "theme": "주담대 외 신용·카드 부채 비율 실태",
+      "is_trend": false
     }
   ]
 }
