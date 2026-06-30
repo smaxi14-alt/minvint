@@ -13,6 +13,20 @@
       "template": "numbers",
       "theme": "후배한테 밥 한 끼 쏘면서 든 생각",
       "is_trend": false
+    },
+    {
+      "date": "2026-06-30",
+      "timestamp": "2026-06-30T07:06:32.158678",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a436af012b5ef0372d5085b",
+      "text": "생산자물가가 소비자물가보다 먼저 움직인다.\n\n5년 전 PPI 104, CPI 105. 지금 PPI 122, CPI 115.\n생산단에서 7포인트 더 올랐는데 아직 소비자가격에 다 안 붙었다.\n\n증권 수천 장 들여다보니, 이런 격차는 6~9개월 뒤에 장바구니로 온다.\n\n내년 상반기 지출 계획, 지금 세워두는 거 어떻게 생각함?",
+      "tone": "성찰적",
+      "ending_style": "질문형",
+      "template": "time_comparison",
+      "theme": "소비자물가 vs 생산자물가 괴리 — 다음에 올 것",
+      "is_trend": false
     }
   ]
 }

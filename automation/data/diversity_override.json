@@ -1,9 +1,18 @@
 {
-  "generated_at": "2026-06-30T00:00:00",
-  "_note": "새 계정 생성으로 전체 초기화. 이전 발행 이력 기반 제외 소재 삭제.",
-  "ending_boosts": {},
+  "generated_at": "2026-06-30T07:06:06",
+  "ending_boosts": {
+    "질문형": 2.5,
+    "독백형": 2.5,
+    "관찰형": 2.5,
+    "여운형": 2.5
+  },
   "template_boosts": {},
   "tone_boosts": {},
-  "theme_exclusions": [],
-  "content_type_exclusions": []
+  "theme_exclusions": [
+    "후배한테 밥 한 끼 쏘면서 든 생각"
+  ],
+  "content_type_exclusions": [
+    "agro",
+    "agro_finance"
+  ]
 }
