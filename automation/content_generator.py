@@ -16,7 +16,7 @@ TONES = [
     {"name": "건조한",   "weight": 30, "instruction": "건조하고 담담한 어투. 감정 표현 최소화. 사실만 전달."},
     {"name": "직접적",   "weight": 25, "instruction": "직접적이고 단호한 어투. 서론 없이 바로 핵심부터."},
     {"name": "회고적",   "weight": 20, "instruction": "회고적이고 사색적인 어투. 천천히 생각하며 쓰는 느낌."},
-    {"name": "씁쓸한",   "weight": 15, "instruction": "약간 씁쓸하거나 자조 섞인 어투. 유머 없이 쓸쓸하게."},
+    {"name": "성찰적",   "weight": 15, "instruction": "과거를 성찰하는 여유 있는 어투. 경험에서 배운 것을 담담하게. 자조나 열등감 없이."},
     {"name": "위트있는", "weight": 10, "instruction": "약간 위트 있고 가벼운 어투. 과장 없이 자연스러운 반전."},
 ]
 
@@ -59,6 +59,34 @@ def _diversity_pick(items: list, recent_counts: dict, weight_key: str = "name") 
             penalty = 1.0 / (count + 1) if count > 0 else 1.0
             weights.append(penalty)
         return random.choices(items, weights=weights, k=1)[0]
+
+# ─── 브랜드 안전 규칙 ─────────────────────────────────────────────────────────
+# 재무상담사 신뢰 자산 보호. 이 규칙을 위반하는 글은 발행 전 폐기·재생성한다.
+BRAND_SAFETY_PROMPT = """
+[브랜드 안전 규칙 — 절대 위반 금지]
+이 계정은 재무상담사 신뢰 자산 구축이 목적이다.
+아래 소재·톤이 포함된 글을 쓰면 잠재 고객의 신뢰를 즉시 잃는다.
+
+✕ 재정 결핍 신호: "통장 잔고 없다", "돈이 없어서 못", "삼각김밥", "편의점 끼니", "축의금 얼마 내야", "적금 못 깨고" 류
+✕ 열등감·비교 패배: 동창·친구가 잘 사는 것을 부러워하거나 내가 뒤처진 느낌
+✕ 재정 박탈감: 지출 부담이 커서 못 한다, 형편이 안 된다는 뉘앙스
+✕ 자기비하: "나만 아직 월급쟁이", "나는 못 모았다", 자조 섞인 패배감
+
+○ 대신 이렇게 써라: 여유 있는 관찰자, 먼저 정리된 선배, 베푸는 사람의 시선
+○ 비교는 "내가 부러움"이 아니라 "내가 관찰한 패턴" 형태로만
+"""
+
+BRAND_SAFETY_CHECK_PROMPT = """다음 SNS 글이 재무상담사의 신뢰 이미지를 훼손하는지 판단하세요.
+
+훼손 기준:
+1. 재정 부족·결핍을 직접 드러냄 (통장 없다, 못 산다, 축의금 고민 등)
+2. 동창·친구에 비해 내가 열등하거나 뒤처진 느낌을 표현함
+3. 경제적 박탈감·자조감이 글의 핵심 감정임
+4. 재무상담사에게 돈을 맡기고 싶지 않게 만드는 내용임
+
+판단: FAIL 또는 PASS 한 단어만 반환.
+FAIL이면 콜론 뒤에 이유 한 줄 추가. 예) FAIL: 동창보다 뒤처진 열등감이 글 전체를 관통함
+PASS면 그냥 PASS만."""
 
 with open(DATA_DIR / "content_seeds.json", "r", encoding="utf-8") as f:
     SEEDS = json.load(f)
@@ -106,13 +134,13 @@ CONTENT_CONFIG = {
         "label": "어그로·공감",
         "themes": SEEDS["themes"]["agro_empathy"],
         "templates": ["confession", "reversal", "observation", "numbers", "taboo"],
-        "guide": "40대 가장의 일상 공감 콘텐츠. 와이프·자식·직장·동창·나이듦·돈 격차 소재. 데이터 없어도 됨.",
+        "guide": "40대 가장의 일상 공감 콘텐츠. 자식·직장·나이듦·건강·가족 소재 중심. 여유 있는 관찰자 시선 유지. 재정 부족·열등감·동창 비교 소재 절대 사용 금지.",
     },
     "agro_finance": {
         "label": "어그로·재테크",
         "themes": SEEDS["themes"]["agro_empathy"] + SEEDS["themes"]["finance"],
         "templates": ["confession", "reversal", "shock_stat", "numbers", "observation"],
-        "guide": "공감 소재 또는 가벼운 재테크 관찰. 7:3 비율로 공감 위주.",
+        "guide": "공감 소재 또는 가벼운 재테크 관찰. 7:3 비율로 공감 위주. 재정 결핍·남 부러워하기·동창 비교 소재 절대 사용 금지. 관찰자·선배 포지션 유지.",
     },
     "finance": {
         "label": "재테크",
@@ -151,6 +179,27 @@ CONTENT_CONFIG = {
         "guide": "읽은 책 한 구절 또는 핵심 개념 + 13년 상담 경험과 연결. 독후감 형식 아님 — 짧은 생각 공유. '책에서 이런 말 봤는데 실제로 상담하다 보면...' 연결 구조.",
     },
 }
+
+
+def _brand_safety_check(text: str) -> tuple[bool, str]:
+    """생성된 글이 재무상담사 신뢰 이미지를 훼손하는지 Claude haiku로 검사.
+    반환: (통과: bool, 이유: str) — 통과하면 (True, ""), 실패하면 (False, 이유)
+    """
+    try:
+        response = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=80,
+            messages=[{"role": "user", "content": f"{BRAND_SAFETY_CHECK_PROMPT}\n\n[글]\n{text}"}],
+        )
+        result = response.content[0].text.strip()
+        if result.upper().startswith("FAIL"):
+            reason = result.split(":", 1)[-1].strip() if ":" in result else result
+            logger.warning(f"[brand_safety] FAIL — {reason}")
+            return False, reason
+        return True, ""
+    except Exception as e:
+        logger.warning(f"[brand_safety] 검사 실패 (통과 처리): {e}")
+        return True, ""
 
 
 def get_current_phase() -> int:
@@ -306,7 +355,9 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
 
 [페르소나]
 40대 중반, 13년차 GA 소속 보험설계사. 가족 있는 가장.
-또래에게 솔직하게 말하는 선배 스타일. 전문가 자랑 없음. 관찰자 포지션.
+삶이 정돈된 여유 있는 선배. 전문가 자랑 없음. 관찰자 포지션.
+재정적으로 안정된 사람의 시선 — 결핍이 아니라 선택의 언어로 말함.
+{BRAND_SAFETY_PROMPT}
 
 [글쓰기 규칙]
 1. {length['instruction']}
@@ -357,14 +408,30 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
 {trend_note}
 위 조건으로 오늘 {slot} 슬롯에 올릴 쓰레드 글 1개를 작성하세요."""
 
-    response = client.messages.create(
-        model="claude-opus-4-7",
-        max_tokens=700,
-        system=system_prompt,
-        messages=[{"role": "user", "content": user_prompt}],
-    )
+    for attempt in range(3):
+        response = client.messages.create(
+            model="claude-opus-4-7",
+            max_tokens=700,
+            system=system_prompt,
+            messages=[{"role": "user", "content": user_prompt}],
+        )
+        text = response.content[0].text.strip()
 
-    text = response.content[0].text.strip()
+        # 브랜드 안전 검증 — 실패 시 최대 2회 재생성
+        passed, fail_reason = _brand_safety_check(text)
+        if passed:
+            break
+        if attempt < 2:
+            logger.warning(f"[brand_safety] 재생성 시도 {attempt + 1}/2 — {fail_reason}")
+            user_prompt_retry = (
+                f"{user_prompt}\n\n"
+                f"⚠️ 이전 생성글 거부됨: {fail_reason}\n"
+                "재정 결핍·열등감·동창 비교 소재를 완전히 제거하고 다시 작성하세요."
+            )
+            user_prompt = user_prompt_retry
+        else:
+            logger.error(f"[brand_safety] 3회 시도 모두 실패. 마지막 글로 발행. 수동 확인 필요.")
+
     meta = {
         "tone": tone["name"],
         "ending_style": ending_style["label"],
