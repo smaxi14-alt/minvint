@@ -1,1 +1,18 @@
-{"posts": []}
+{
+  "posts": [
+    {
+      "date": "2026-06-30",
+      "timestamp": "2026-06-30T06:28:19.658680",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a4361fc52b55280ecbe1ea1",
+      "text": "4만 7천 원.\n\n후배 밥값 계산하고 카드 영수증 봤다.\n\n13년 전엔 이 금액에 손이 떨렸는데, 지금은 머뭇거림이 없다.\n\n돈의 크기가 아니라 손의 속도가 바뀐 거더라고.\n\n그게 시간이 준 거다.",
+      "tone": "회고적",
+      "ending_style": "선언형",
+      "template": "numbers",
+      "theme": "후배한테 밥 한 끼 쏘면서 든 생각",
+      "is_trend": false
+    }
+  ]
+}
