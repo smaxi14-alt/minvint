@@ -69,6 +69,20 @@
       "template": "confession",
       "theme": "와이프 생일에 직접 예약하고 챙긴 이야기",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-01",
+      "timestamp": "2026-07-01T23:52:31.265425",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a45a8373d945d673dd7a63a",
+      "text": "사실 나는 명절마다 고객 안부 문자 안 돌린다.\n\n귀찮아서가 아니라, 형식적인 인사 받는 기분 나도 싫어서.\n\n근데 오늘 아침 8년 전에 계약한 분이 먼저 문자를 보냈다.\n\"부장님, 요즘 잘 지내시죠. 아드님 많이 컸겠네요.\"\n\n이 일 하면서 배운 게 하나 있다.\n먼저 안 챙겨도, 진짜는 알아서 남더라.\n\n계약서보다 오래 가는 게 있다는 걸,\n13년 지나고서야.",
+      "tone": "직접적",
+      "ending_style": "여운형",
+      "template": "confession",
+      "theme": "오래된 고객한테서 온 안부 문자",
+      "is_trend": false
     }
   ]
 }
