@@ -83,6 +83,20 @@
       "template": "confession",
       "theme": "오래된 고객한테서 온 안부 문자",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-02",
+      "timestamp": "2026-07-02T06:53:11.695904",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a460acfb53518f4cd7e2a28",
+      "text": "ISA 가입자 중 세액공제 한도 꽉 채운 비율, 8%대다.\n\n나머지 92%는 계좌만 열어놓고 방치. 통장 하나 더 만든 셈이다.\n\n증권 수천 장 들여다보니, 상품 가입보다 한도 관리가 자산을 더 벌린다.\n\n계좌 있는 분들, 올해 얼마 넣으셨어요?",
+      "tone": "직접적",
+      "ending_style": "질문형",
+      "template": "shock_stat",
+      "theme": "ISA·연금저축 세제 혜택 활용 실태 점검",
+      "is_trend": false
     }
   ]
 }
