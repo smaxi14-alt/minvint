@@ -111,6 +111,20 @@
       "template": "observation",
       "theme": "5년 전 다짐과 지금 현실의 갭",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-02",
+      "timestamp": "2026-07-02T23:40:24.986444",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a46f6e0bb7dc73d99b2416e",
+      "text": "40대 직장인이 회사에서 절대 안 하는 말.\n\n\"요즘 일이 재밌어요.\"\n\n이거 입 밖에 내는 순간 일이 두 배로 온다.\n그래서 다들 표정 관리한다. 피곤한 척, 바쁜 척, 딱 그만큼.\n\n상담하다 보면 이 나이대 남자들 공통점이 있는데,\n회사에선 지쳐 보이는데 통장 관리는 은근 촘촘하다.\n\n권태로운 얼굴이 사실 제일 안전한 얼굴이더라.",
+      "tone": "위트있는",
+      "ending_style": "관찰형",
+      "template": "taboo",
+      "theme": "일에 권태를 느끼는 40대 퇴근 요정의 일상",
+      "is_trend": true
     }
   ]
 }
