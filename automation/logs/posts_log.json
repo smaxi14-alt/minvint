@@ -125,6 +125,20 @@
       "template": "taboo",
       "theme": "일에 권태를 느끼는 40대 퇴근 요정의 일상",
       "is_trend": true
+    },
+    {
+      "date": "2026-07-03",
+      "timestamp": "2026-07-03T06:45:50.279979",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a475a973c4cbed3feaf5d09",
+      "text": "LPDDR 현물가 3분기 대비 40% 넘게 올랐다.\n\n같은 기간 관련주는 20% 남짓 올랐다.\n\n증권 수천 장 들여다보니, 현물가랑 주가 사이 이 갭이 벌어질 때가 진짜 물량 부족 신호였다.\n\n기사는 \"공급난\"이라 쓰지만, 시장은 이미 한 발 먼저 반응 중이다.",
+      "tone": "직접적",
+      "ending_style": "관찰형",
+      "template": "two_numbers",
+      "theme": "LPDDR 공급 부족 현상 심화 중",
+      "is_trend": true
     }
   ]
 }
