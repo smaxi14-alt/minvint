@@ -1,9 +1,14 @@
 {
-  "generated_at": "2026-07-04T13:21:12",
+  "generated_at": "2026-07-04T23:33:57",
   "ending_boosts": {},
-  "template_boosts": {},
+  "template_boosts": {
+    "numbers": 1.17,
+    "time_comparison": 1.17,
+    "taboo": 1.17,
+    "two_numbers": 1.17
+  },
   "tone_boosts": {
-    "위트있는": 1.73
+    "위트있는": 1.87
   },
   "theme_exclusions": [
     "후배한테 밥 한 끼 쏘면서 든 생각",
@@ -18,7 +23,8 @@
     "LPDDR 공급 부족 현상 심화 중",
     "투자 양극화 심화…부동산으로 수렴하는 자산 흐름",
     "회사에서 '꼰대'라는 말 처음 들었을 때",
-    "수출 모멘텀 약화가 경제에 미치는 영향"
+    "수출 모멘텀 약화가 경제에 미치는 영향",
+    "자식한테 게임기 사주지 말자던 약속 깬 날"
   ],
   "content_type_exclusions": []
 }

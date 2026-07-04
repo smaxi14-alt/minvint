@@ -195,6 +195,20 @@
       "template": "confession",
       "theme": "자식한테 게임기 사주지 말자던 약속 깬 날",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-04",
+      "timestamp": "2026-07-04T23:34:14.580654",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a499870b3f33d21402851dd",
+      "text": "부모님 병원비 처음 송금한 날, 마음이 무거울 줄 알았다.\n\n근데 아니었다. 오히려 담담했다.\n\n13년 보니까 이런 순간을 미리 준비한 사람과 아닌 사람은 표정이 다르더라.\n\n내 표정이 어땠는지는, 송금하고 나서야 알았다.",
+      "tone": "회고적",
+      "ending_style": "관찰형",
+      "template": "reversal",
+      "theme": "부모님 병원비 처음으로 송금한 날",
+      "is_trend": false
     }
   ]
 }
