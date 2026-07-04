@@ -181,6 +181,20 @@
       "template": "observation",
       "theme": "수출 모멘텀 약화가 경제에 미치는 영향",
       "is_trend": true
+    },
+    {
+      "date": "2026-07-04",
+      "timestamp": "2026-07-04T13:21:36.746878",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a4908d66917141d453d7a00",
+      "text": "아들 초등학교 들어갈 때 아내랑 약속했다.\n게임기는 절대 안 사준다.\n\n그 약속, 아들 5학년 크리스마스에 깼다.\n스위치 사서 트리 밑에 놔뒀다.\n\n명분은 많았다. 반 애들 다 있다, 공부 스트레스 풀어야 한다.\n근데 그날 밤 침대에서 알았다.\n내가 사주고 싶었던 거다. 애 핑계 댄 것뿐이지.\n\n부모 노릇 하면서 배운 건 하나다.\n원칙보다 내 감정이 먼저 무너진다.",
+      "tone": "성찰적",
+      "ending_style": "선언형",
+      "template": "confession",
+      "theme": "자식한테 게임기 사주지 말자던 약속 깬 날",
+      "is_trend": false
     }
   ]
 }
