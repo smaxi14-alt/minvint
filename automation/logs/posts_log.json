@@ -209,6 +209,20 @@
       "template": "reversal",
       "theme": "부모님 병원비 처음으로 송금한 날",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-05",
+      "timestamp": "2026-07-05T06:53:30.106521",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a49ff62b3f33d21402ae306",
+      "text": "반도체 업황 좋아지면 주가 오른다, 다들 그렇게 안다.\n\n실제로는 업황 피크 나오기 6~9개월 전에 주가가 먼저 꺾인다.\n\n증권 수천 장 들여다보니 개인 매수 시점은 대부분 뉴스 나온 뒤였다.\n\n지표가 좋을 때가 가장 늦은 타이밍이더라.",
+      "tone": "건조한",
+      "ending_style": "독백형",
+      "template": "reversal",
+      "theme": "반도체 업황 사이클과 국내 주식 타이밍 판단",
+      "is_trend": false
     }
   ]
 }
