@@ -1,16 +1,14 @@
 {
-  "generated_at": "2026-07-05T06:53:04",
-  "ending_boosts": {
-    "독백형": 1.4
-  },
+  "generated_at": "2026-07-05T13:27:18",
+  "ending_boosts": {},
   "template_boosts": {
-    "numbers": 1.25,
-    "time_comparison": 1.25,
-    "taboo": 1.25,
-    "two_numbers": 1.25
+    "numbers": 1.33,
+    "time_comparison": 1.33,
+    "taboo": 1.33,
+    "two_numbers": 1.33
   },
   "tone_boosts": {
-    "위트있는": 2.0
+    "위트있는": 2.13
   },
   "theme_exclusions": [
     "후배한테 밥 한 끼 쏘면서 든 생각",
@@ -27,7 +25,8 @@
     "회사에서 '꼰대'라는 말 처음 들었을 때",
     "수출 모멘텀 약화가 경제에 미치는 영향",
     "자식한테 게임기 사주지 말자던 약속 깬 날",
-    "부모님 병원비 처음으로 송금한 날"
+    "부모님 병원비 처음으로 송금한 날",
+    "반도체 업황 사이클과 국내 주식 타이밍 판단"
   ],
   "content_type_exclusions": []
 }
