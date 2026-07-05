@@ -1,14 +1,16 @@
 {
-  "generated_at": "2026-07-05T13:27:18",
-  "ending_boosts": {},
+  "generated_at": "2026-07-05T23:37:16",
+  "ending_boosts": {
+    "질문형": 1.43
+  },
   "template_boosts": {
-    "numbers": 1.33,
-    "time_comparison": 1.33,
-    "taboo": 1.33,
-    "two_numbers": 1.33
+    "numbers": 1.42,
+    "time_comparison": 1.42,
+    "taboo": 1.42,
+    "two_numbers": 1.42
   },
   "tone_boosts": {
-    "위트있는": 2.13
+    "위트있는": 1.36
   },
   "theme_exclusions": [
     "후배한테 밥 한 끼 쏘면서 든 생각",
@@ -26,7 +28,8 @@
     "수출 모멘텀 약화가 경제에 미치는 영향",
     "자식한테 게임기 사주지 말자던 약속 깬 날",
     "부모님 병원비 처음으로 송금한 날",
-    "반도체 업황 사이클과 국내 주식 타이밍 판단"
+    "반도체 업황 사이클과 국내 주식 타이밍 판단",
+    "은퇴 후 필요 월 생활비 vs 현재 준비금"
   ],
   "content_type_exclusions": []
 }

@@ -237,6 +237,20 @@
       "template": "observation",
       "theme": "은퇴 후 필요 월 생활비 vs 현재 준비금",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-05",
+      "timestamp": "2026-07-05T23:37:35.563622",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a4aeab8dd9abec2b40d9dbe",
+      "text": "삼성전자 8만원에 팔고 나왔다.\n\n그날 밤 잠이 잘 왔다. 다음 주에 9만원 찍는 거 보고서야 잠이 안 왔다.\n\n상담하다 보면 익절 후회하는 사람이 손절 후회하는 사람보다 많더라. 수익 봤는데 왜 억울하지.\n\n40대에 이 감정 처음 겪어본 사람?",
+      "tone": "회고적",
+      "ending_style": "질문형",
+      "template": "confession",
+      "theme": "익절 후회하는 40대, 수익 탈출 vs 수익률 사이 갈등",
+      "is_trend": true
     }
   ]
 }
