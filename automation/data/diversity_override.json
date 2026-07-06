@@ -1,16 +1,14 @@
 {
-  "generated_at": "2026-07-05T23:37:16",
-  "ending_boosts": {
-    "질문형": 1.43
-  },
+  "generated_at": "2026-07-06T07:59:20",
+  "ending_boosts": {},
   "template_boosts": {
-    "numbers": 1.42,
-    "time_comparison": 1.42,
-    "taboo": 1.42,
-    "two_numbers": 1.42
+    "numbers": 1.5,
+    "time_comparison": 1.5,
+    "taboo": 1.5,
+    "two_numbers": 1.5
   },
   "tone_boosts": {
-    "위트있는": 1.36
+    "위트있는": 1.44
   },
   "theme_exclusions": [
     "후배한테 밥 한 끼 쏘면서 든 생각",
@@ -29,7 +27,8 @@
     "자식한테 게임기 사주지 말자던 약속 깬 날",
     "부모님 병원비 처음으로 송금한 날",
     "반도체 업황 사이클과 국내 주식 타이밍 판단",
-    "은퇴 후 필요 월 생활비 vs 현재 준비금"
+    "은퇴 후 필요 월 생활비 vs 현재 준비금",
+    "익절 후회하는 40대, 수익 탈출 vs 수익률 사이 갈등"
   ],
   "content_type_exclusions": []
 }
