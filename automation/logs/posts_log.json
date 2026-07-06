@@ -279,6 +279,20 @@
       "template": "reversal",
       "theme": "아이 방에서 자는 척하다 들은 말",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-06",
+      "timestamp": "2026-07-06T23:40:44.982546",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a4c3cf5f423a893028e6e54",
+      "text": "회사 선배가 어제 명퇴 통보 받았다고 연락 왔다.\n\n오래 하다 보니 보이는 패턴 하나.\n잘리기 전에 준비한 사람이랑, 잘리고 나서 준비하는 사람.\n5년 뒤 격차가 상상 이상으로 벌어진다.\n\n50 넘기 전에 뭐 하나는 만들어놔야 하지 않을까?",
+      "tone": "성찰적",
+      "ending_style": "질문형",
+      "template": "observation",
+      "theme": "회사 선배 명예퇴직 통보 소식에 든 생각",
+      "is_trend": false
     }
   ]
 }
