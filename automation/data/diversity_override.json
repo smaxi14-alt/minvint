@@ -1,15 +1,12 @@
 {
-  "generated_at": "2026-07-07T06:59:02",
+  "generated_at": "2026-07-07T14:29:40",
   "ending_boosts": {},
   "template_boosts": {
-    "numbers": 1.75,
-    "time_comparison": 1.75,
-    "taboo": 1.75,
-    "two_numbers": 1.75
+    "numbers": 1.83,
+    "taboo": 1.83,
+    "two_numbers": 1.83
   },
-  "tone_boosts": {
-    "위트있는": 1.68
-  },
+  "tone_boosts": {},
   "theme_exclusions": [
     "후배한테 밥 한 끼 쏘면서 든 생각",
     "소비자물가 vs 생산자물가 괴리 — 다음에 올 것",
@@ -31,7 +28,8 @@
     "익절 후회하는 40대, 수익 탈출 vs 수익률 사이 갈등",
     "기준금리 동결·인상·인하 결정의 실제 의미",
     "아이 방에서 자는 척하다 들은 말",
-    "회사 선배 명예퇴직 통보 소식에 든 생각"
+    "회사 선배 명예퇴직 통보 소식에 든 생각",
+    "고금리·고환율 '3고(高)' 속 자영업자 대출 1,100조 원 육박"
   ],
   "content_type_exclusions": []
 }
