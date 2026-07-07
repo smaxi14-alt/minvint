@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-07T14:29:40",
+  "generated_at": "2026-07-07T23:30:31",
   "ending_boosts": {},
   "template_boosts": {
-    "numbers": 1.83,
-    "taboo": 1.83,
-    "two_numbers": 1.83
+    "numbers": 1.92,
+    "taboo": 1.92,
+    "two_numbers": 1.92
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -29,7 +29,8 @@
     "기준금리 동결·인상·인하 결정의 실제 의미",
     "아이 방에서 자는 척하다 들은 말",
     "회사 선배 명예퇴직 통보 소식에 든 생각",
-    "고금리·고환율 '3고(高)' 속 자영업자 대출 1,100조 원 육박"
+    "고금리·고환율 '3고(高)' 속 자영업자 대출 1,100조 원 육박",
+    "중학교 때 꿈과 지금 직업 사이의 거리"
   ],
   "content_type_exclusions": []
 }

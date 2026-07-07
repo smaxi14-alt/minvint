@@ -321,6 +321,20 @@
       "template": "observation",
       "theme": "중학교 때 꿈과 지금 직업 사이의 거리",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-07",
+      "timestamp": "2026-07-07T23:30:51.508171",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a4d8c23282891171faf8f91",
+      "text": "마흔여덟.\n\n빠르게 가려다 되돌아온 거리를 계산해보니 12년쯤 된다.\n\n오래 하다 보니 알겠다. 빠른 길은 대개 남의 길이었다.\n\n내 길은 느려도 내 보폭이었다는 거, 이제야 안다.",
+      "tone": "회고적",
+      "ending_style": "독백형",
+      "template": "numbers",
+      "theme": "빠른 것보다 맞는 것이 중요하다는 걸 안 나이",
+      "is_trend": false
     }
   ]
 }
