@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-06T23:40:26",
+  "generated_at": "2026-07-07T06:59:02",
   "ending_boosts": {},
   "template_boosts": {
-    "numbers": 1.67,
-    "time_comparison": 1.67,
-    "taboo": 1.67,
-    "two_numbers": 1.67
+    "numbers": 1.75,
+    "time_comparison": 1.75,
+    "taboo": 1.75,
+    "two_numbers": 1.75
   },
   "tone_boosts": {
-    "위트있는": 1.6
+    "위트있는": 1.68
   },
   "theme_exclusions": [
     "후배한테 밥 한 끼 쏘면서 든 생각",
@@ -30,7 +30,8 @@
     "은퇴 후 필요 월 생활비 vs 현재 준비금",
     "익절 후회하는 40대, 수익 탈출 vs 수익률 사이 갈등",
     "기준금리 동결·인상·인하 결정의 실제 의미",
-    "아이 방에서 자는 척하다 들은 말"
+    "아이 방에서 자는 척하다 들은 말",
+    "회사 선배 명예퇴직 통보 소식에 든 생각"
   ],
   "content_type_exclusions": []
 }
