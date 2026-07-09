@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-09T14:54:48",
+  "generated_at": "2026-07-09T23:47:22",
   "ending_boosts": {},
   "template_boosts": {
-    "taboo": 2.08,
-    "two_numbers": 2.08
+    "taboo": 2.17,
+    "two_numbers": 2.17
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -25,7 +25,8 @@
     "고금리·고환율 '3고(高)' 속 자영업자 대출 1,100조 원 육박",
     "중학교 때 꿈과 지금 직업 사이의 거리",
     "빠른 것보다 맞는 것이 중요하다는 걸 안 나이",
-    "상반기 4대 금융그룹 순이익 11조 돌파, 최대 실적 기록"
+    "상반기 4대 금융그룹 순이익 11조 돌파, 최대 실적 기록",
+    "탈모약 처방전 처음 받은 날"
   ],
   "content_type_exclusions": []
 }
