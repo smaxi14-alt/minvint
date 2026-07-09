@@ -349,6 +349,20 @@
       "template": "observation",
       "theme": "상반기 4대 금융그룹 순이익 11조 돌파, 최대 실적 기록",
       "is_trend": true
+    },
+    {
+      "date": "2026-07-09",
+      "timestamp": "2026-07-09T14:55:16.918023",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a4fb64dd4453bdb5c19f078",
+      "text": "월 3만 8천 원.\n\n탈모약 처방전 처음 받은 날 계산해봤다.\n1년이면 45만 원, 10년이면 456만 원.\n\n머리 지키는 값이 이 정도구나 싶었는데,\n현장에서 보면 40대 남자들 지출 목록에 이 항목 조용히 늘어나는 중이다.\n보험료보다 안 빠뜨린다, 이건.\n\n거울 앞에서 진지해지는 나이가 있더라.",
+      "tone": "위트있는",
+      "ending_style": "독백형",
+      "template": "numbers",
+      "theme": "탈모약 처방전 처음 받은 날",
+      "is_trend": false
     }
   ]
 }
