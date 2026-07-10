@@ -152,6 +152,20 @@ def _markdown_to_blocks(body: str) -> list[tuple[str, object]]:
     return blocks
 
 
+def _get_latest_table(driver: webdriver.Chrome, timeout: float = 5):
+    """문서에 표가 여러 개 있을 수 있으므로 항상 가장 마지막(최신) 표를 반환한다.
+    (.se-table은 단수 조회 시 항상 첫 번째 표만 가리켜 두 번째 표부터는
+    엉뚱한 표를 조작하게 되는 버그가 있었음)
+    """
+    end_time = time.time() + timeout
+    while time.time() < end_time:
+        tables = driver.find_elements(By.CSS_SELECTOR, ".se-table")
+        if tables:
+            return tables[-1]
+        time.sleep(0.2)
+    raise NoSuchElementException("표 요소를 찾지 못함 (.se-table)")
+
+
 def _insert_table(driver: webdriver.Chrome, rows: list[list[str]]):
     """실제 SmartEditor 표 컴포넌트를 삽입하고 셀을 채운다.
     표 버튼 클릭 시 기본 3행×3열 표가 생성됨 — 필요한 만큼 행을 늘려서 채운다.
@@ -161,15 +175,20 @@ def _insert_table(driver: webdriver.Chrome, rows: list[list[str]]):
     table_btn.click()
     time.sleep(0.6)
 
-    table_el = driver.find_element(By.CSS_SELECTOR, ".se-table")
-
     n_rows = len(rows)
     extra_rows_needed = max(0, n_rows - 3)
     for _ in range(extra_rows_needed):
+        # 행 추가마다 표 컴포넌트가 재렌더링되어 이전 참조가 stale해질 수 있어
+        # 매번 다시 조회한다 (문서에 표가 여러 개면 항상 마지막 표 기준).
+        table_el = _get_latest_table(driver)
         row_items = table_el.find_elements(By.CSS_SELECTOR, ".se-cell-controlbar-row .se-cell-controlbar-item")
-        row_items[-1].find_element(By.CSS_SELECTOR, ".se-cell-add-button").click()
+        add_btn = row_items[-1].find_element(By.CSS_SELECTOR, ".se-cell-add-button")
+        # 표 위치에 따라 크기 조절 버튼(.se-cell-size-button)이 같은 좌표에 겹쳐
+        # 네이티브 클릭이 가로채이는 경우가 있어 JS로 직접 클릭한다.
+        driver.execute_script("arguments[0].click();", add_btn)
         time.sleep(0.3)
 
+    table_el = _get_latest_table(driver)  # 행 추가로 재렌더링됐을 수 있어 재조회
     cells = table_el.find_elements(By.CSS_SELECTOR, "td.se-cell")
     idx = 0
     for row in rows:
@@ -183,7 +202,7 @@ def _insert_table(driver: webdriver.Chrome, rows: list[list[str]]):
 
     # 표 바로 아래 여백을 클릭해 포커스를 표 밖으로 이동시킨다 (표 자체 기준
     # 상대 좌표라 이전 문단 상태와 무관하게 항상 안정적으로 표 뒤로 이동 가능).
-    table_el = driver.find_element(By.CSS_SELECTOR, ".se-table")  # 셀 채우기로 재렌더링됐을 수 있어 재조회
+    table_el = _get_latest_table(driver)  # 셀 채우기로 재렌더링됐을 수 있어 재조회
     table_height = table_el.rect["height"]
     ActionChains(driver).move_to_element(table_el).move_by_offset(
         0, int(table_height / 2) + 20
@@ -214,7 +233,41 @@ def _type_body(driver: webdriver.Chrome, body_markdown: str):
         time.sleep(0.05)
 
 
-def _insert_image(driver: webdriver.Chrome, image_path: str) -> bool:
+def _ensure_window_focused(window, attempts: int = 5) -> bool:
+    """윈도우에 실제 OS 포커스가 가도록 확인·재시도한다.
+
+    SetForegroundWindow류 API(activate())는 Windows가 백그라운드 프로세스의
+    포커스 탈취를 차단하는 경우가 있어 실패할 수 있다 — 이 경우 타이틀바를
+    실제 마우스로 클릭한다 (마우스 클릭은 이 제약을 받지 않아 훨씬 안정적).
+    """
+    for _ in range(attempts):
+        active = gw.getActiveWindow()
+        if active and active.title == window.title:
+            return True
+
+        try:
+            window.activate()
+        except Exception:
+            pass
+        time.sleep(0.4)
+
+        active = gw.getActiveWindow()
+        if active and active.title == window.title:
+            return True
+
+        try:
+            click_x = window.left + window.width // 2
+            click_y = window.top + 10  # 타이틀바 부근
+            pyautogui.click(click_x, click_y)
+        except Exception:
+            pass
+        time.sleep(0.5)
+
+    active = gw.getActiveWindow()
+    return bool(active and active.title == window.title)
+
+
+def _insert_image(driver: webdriver.Chrome, image_path: str, max_retries: int = 3) -> bool:
     """이미지를 업로드한다.
 
     네이버 블로그 발행 API는 2020년 종료됐고, '사진' 버튼은 웹페이지 안의 파일 입력창이
@@ -227,55 +280,75 @@ def _insert_image(driver: webdriver.Chrome, image_path: str) -> bool:
       유니코드를 제대로 입력하지 못해 실패한다 — 반드시 클립보드 붙여넣기로 처리.
     - 대화상자에 실제 OS 포커스가 갔는지 매 단계 확인 후에만 키 입력을 보낸다.
       확인 안 되면 절대 타이핑하지 않고 중단 (다른 창에 잘못 입력되는 사고 방지).
+    - OS 포커스 타이밍은 100% 결정적이지 않으므로 실패 시 대화상자를 닫고
+      처음부터 재시도한다 (기본 3회). 마지막까지 실패하면 이미지 없이 안전하게
+      계속 진행한다 (발행 자체는 막지 않음).
     """
-    photo_btn = driver.find_element(By.CSS_SELECTOR, ".se-image-toolbar-button")
-    photo_btn.click()
-
-    dialog = None
-    for _ in range(20):
-        matches = gw.getWindowsWithTitle("열기")
-        if matches:
-            dialog = matches[0]
-            break
-        time.sleep(0.3)
-
-    if dialog is None:
-        logger.warning("[naver] 이미지 업로드: 네이티브 파일 대화상자를 찾지 못함 — 이미지 없이 진행")
-        return False
-
-    try:
-        dialog.activate()
-    except Exception:
-        pass
-    time.sleep(0.7)
-
-    active = gw.getActiveWindow()
-    if not active or active.title != dialog.title:
-        logger.warning("[naver] 이미지 업로드: 대화상자 포커스 확인 실패 — 안전을 위해 중단")
+    # 이전 시도에서 남았을 수 있는 동일 제목의 낡은 대화상자와 헷갈리지 않도록 정리
+    for stale in gw.getWindowsWithTitle("열기"):
         try:
-            pyautogui.press("esc")
+            stale.close()
         except Exception:
             pass
-        return False
 
-    pyautogui.hotkey("alt", "n")  # 파일 이름 입력란으로 포커스
-    time.sleep(0.3)
-    pyautogui.hotkey("ctrl", "a")
-    time.sleep(0.1)
-    pyperclip.copy(image_path)
-    time.sleep(0.1)
-    pyautogui.hotkey("ctrl", "v")
-    time.sleep(0.5)
+    for attempt in range(1, max_retries + 1):
+        photo_btn = driver.find_element(By.CSS_SELECTOR, ".se-image-toolbar-button")
+        photo_btn.click()
 
-    active2 = gw.getActiveWindow()
-    if not active2 or active2.title != dialog.title:
-        logger.warning("[naver] 이미지 업로드: 경로 입력 중 포커스 이동 감지 — Enter 보내지 않고 중단")
-        return False
+        dialog = None
+        for _ in range(20):
+            matches = gw.getWindowsWithTitle("열기")
+            if matches:
+                dialog = matches[0]
+                break
+            time.sleep(0.3)
 
-    pyautogui.press("enter")
-    logger.info("[naver] 이미지 업로드 중...")
-    time.sleep(8)  # 업로드 + 편집기 반영 대기
-    return True
+        if dialog is None:
+            logger.warning(f"[naver] 이미지 업로드 시도 {attempt}/{max_retries}: 대화상자를 찾지 못함")
+            time.sleep(1)
+            continue
+
+        if not _ensure_window_focused(dialog):
+            logger.warning(f"[naver] 이미지 업로드 시도 {attempt}/{max_retries}: 포커스 확보 실패 — 재시도")
+            try:
+                pyautogui.press("esc")
+            except Exception:
+                pass
+            time.sleep(1)
+            continue
+
+        pyautogui.hotkey("alt", "n")  # 파일 이름 입력란으로 포커스
+        time.sleep(0.3)
+        pyautogui.hotkey("ctrl", "a")
+        time.sleep(0.1)
+        pyperclip.copy(image_path)
+        time.sleep(0.1)
+        pyautogui.hotkey("ctrl", "v")
+        time.sleep(0.5)
+
+        if not _ensure_window_focused(dialog, attempts=2):
+            logger.warning(f"[naver] 이미지 업로드 시도 {attempt}/{max_retries}: 입력 중 포커스 이탈 — 재시도")
+            try:
+                pyautogui.press("esc")
+            except Exception:
+                pass
+            time.sleep(1)
+            continue
+
+        pyautogui.press("enter")
+        logger.info(f"[naver] 이미지 업로드 중... (시도 {attempt}/{max_retries})")
+        time.sleep(8)  # 업로드 + 편집기 반영 대기
+
+        try:
+            driver.find_element(By.CSS_SELECTOR, ".se-components-wrap img")
+            logger.info(f"[naver] 이미지 업로드 성공 (시도 {attempt}/{max_retries})")
+            return True
+        except NoSuchElementException:
+            logger.warning(f"[naver] 이미지 업로드 시도 {attempt}/{max_retries}: 업로드 확인 안 됨 — 재시도")
+            continue
+
+    logger.warning(f"[naver] 이미지 업로드 {max_retries}회 모두 실패 — 이미지 없이 계속 진행")
+    return False
 
 
 def post_to_naver_blog(
