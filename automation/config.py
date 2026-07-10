@@ -16,6 +16,9 @@ BUFFER_ACCESS_TOKEN         = os.getenv("BUFFER_ACCESS_TOKEN", "")
 BUFFER_CHANNEL_ID           = os.getenv("BUFFER_CHANNEL_ID", "")
 BUFFER_INSTAGRAM_CHANNEL_ID = os.getenv("BUFFER_INSTAGRAM_CHANNEL_ID", "")
 
+NAVER_BLOG_ID               = os.getenv("NAVER_BLOG_ID", "")
+NAVER_BLOG_PW               = os.getenv("NAVER_BLOG_PW", "")
+
 INSTAGRAM_HOUR   = int(os.getenv("INSTAGRAM_HOUR",   "9"))
 INSTAGRAM_MINUTE = int(os.getenv("INSTAGRAM_MINUTE", "0"))
 
