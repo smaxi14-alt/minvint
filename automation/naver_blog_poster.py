@@ -114,25 +114,19 @@ def _login(driver: webdriver.Chrome):
     logger.info("[naver] ID/PW 자동 로그인 성공")
 
 
-def _markdown_table_to_text(table_lines: list[str]) -> list[str]:
-    """마크다운 표를 '항목 | Before | After' 형태의 읽기 쉬운 텍스트 줄 목록으로 변환.
-    (실제 SmartEditor 표 컴포넌트 자동 삽입은 자동화 리스크가 높아 1차 버전에서는 텍스트로 대체)
-    """
+def _markdown_table_rows(table_lines: list[str]) -> list[list[str]]:
+    """마크다운 표를 [[셀,셀,...], ...] 행 목록으로 변환 (구분선 제거)."""
     rows = [l.strip() for l in table_lines if l.strip().startswith("|")]
     rows = [r for r in rows if not re.match(r"^\|[\s:|-]+\|$", r)]  # 구분선(---) 제거
-    lines = []
-    for row in rows:
-        cells = [c.strip() for c in row.strip("|").split("|")]
-        lines.append(" | ".join(cells))
-    return lines
+    return [[c.strip() for c in r.strip("|").split("|")] for r in rows]
 
 
-def _markdown_to_blocks(body: str) -> list[tuple[str, str]]:
-    """블로그 본문 마크다운을 (종류, 텍스트) 블록 목록으로 변환.
-    종류: "header"(소제목, 굵게 처리), "para"(일반 문단), "table"(표 → 텍스트 줄)
+def _markdown_to_blocks(body: str) -> list[tuple[str, object]]:
+    """블로그 본문 마크다운을 (종류, 내용) 블록 목록으로 변환.
+    종류: "header"(소제목, 굵게), "para"(일반 문단), "table"(행 목록 list[list[str]])
     """
     lines = body.splitlines()
-    blocks: list[tuple[str, str]] = []
+    blocks: list[tuple[str, object]] = []
     i = 0
     while i < len(lines):
         line = lines[i]
@@ -144,8 +138,7 @@ def _markdown_to_blocks(body: str) -> list[tuple[str, str]]:
             while i < len(lines) and lines[i].strip().startswith("|"):
                 table_block.append(lines[i])
                 i += 1
-            for row_text in _markdown_table_to_text(table_block):
-                blocks.append(("table", row_text))
+            blocks.append(("table", _markdown_table_rows(table_block)))
             continue
         elif stripped == "" or stripped == "---":
             pass
@@ -156,23 +149,63 @@ def _markdown_to_blocks(body: str) -> list[tuple[str, str]]:
     return blocks
 
 
+def _insert_table(driver: webdriver.Chrome, rows: list[list[str]]):
+    """실제 SmartEditor 표 컴포넌트를 삽입하고 셀을 채운다.
+    표 버튼 클릭 시 기본 3행×3열 표가 생성됨 — 필요한 만큼 행을 늘려서 채운다.
+    (열은 이 프로젝트 표 포맷이 항상 3열이라 3열 고정으로 처리)
+    """
+    table_btn = driver.find_element(By.CSS_SELECTOR, ".se-table-toolbar-button")
+    table_btn.click()
+    time.sleep(0.6)
+
+    table_el = driver.find_element(By.CSS_SELECTOR, ".se-table")
+
+    n_rows = len(rows)
+    extra_rows_needed = max(0, n_rows - 3)
+    for _ in range(extra_rows_needed):
+        row_items = table_el.find_elements(By.CSS_SELECTOR, ".se-cell-controlbar-row .se-cell-controlbar-item")
+        row_items[-1].find_element(By.CSS_SELECTOR, ".se-cell-add-button").click()
+        time.sleep(0.3)
+
+    cells = table_el.find_elements(By.CSS_SELECTOR, "td.se-cell")
+    idx = 0
+    for row in rows:
+        for cell_text in row:
+            if idx >= len(cells):
+                break
+            cells[idx].click()
+            time.sleep(0.1)
+            driver.switch_to.active_element.send_keys(cell_text)
+            idx += 1
+
+    # 표 바로 아래 여백을 클릭해 포커스를 표 밖으로 이동시킨다 (표 자체 기준
+    # 상대 좌표라 이전 문단 상태와 무관하게 항상 안정적으로 표 뒤로 이동 가능).
+    table_el = driver.find_element(By.CSS_SELECTOR, ".se-table")  # 셀 채우기로 재렌더링됐을 수 있어 재조회
+    table_height = table_el.rect["height"]
+    ActionChains(driver).move_to_element(table_el).move_by_offset(
+        0, int(table_height / 2) + 20
+    ).click().perform()
+    time.sleep(0.2)
+
+
 def _type_body(driver: webdriver.Chrome, body_markdown: str):
     """실제 키보드 입력(send_keys)으로 본문을 채운다.
     SmartEditor는 React 기반이라 DOM을 직접 조작(innerHTML)하면 화면에 반영되지 않는다 —
     반드시 실제 키 입력 이벤트를 통해서만 편집기 내부 상태가 갱신된다.
     """
     blocks = _markdown_to_blocks(body_markdown)
-    for kind, text in blocks:
+    for kind, content in blocks:
+        if kind == "table":
+            _insert_table(driver, content)
+            continue
+
         active = driver.switch_to.active_element
         if kind == "header":
             ActionChains(driver).key_down(Keys.CONTROL).send_keys("b").key_up(Keys.CONTROL).perform()
-            active.send_keys(text)
-            active2 = driver.switch_to.active_element
+            active.send_keys(content)
             ActionChains(driver).key_down(Keys.CONTROL).send_keys("b").key_up(Keys.CONTROL).perform()
-        elif kind == "table":
-            active.send_keys(f"▪ {text}")
         else:
-            active.send_keys(text)
+            active.send_keys(content)
         active_final = driver.switch_to.active_element
         active_final.send_keys(Keys.ENTER)
         time.sleep(0.05)
