@@ -11,6 +11,10 @@ __pycache__/
 # 토큰 파일
 automation/data/token.json
 
+# 네이버 블로그 로그인 세션 (쿠키 포함 — 절대 커밋 금지) + 디버그 스크린샷
+automation/data/naver_chrome_profile/
+automation/data/naver_*.png
+
 # 플러그인 내부 폴더 (불필요)
 .bkit/
 .omc/
