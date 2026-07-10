@@ -391,6 +391,36 @@
       "template": "time_comparison",
       "theme": "AI 시대 세계 증시의 흐름 변화 주목",
       "is_trend": true
+    },
+    {
+      "date": "2026-07-09",
+      "timestamp": "2026-07-10T16:21:05.594207",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a509d58f50a99bddccee5b1",
+      "text": "잘 버는 사람과 잘 모으는 사람은 다른 종족이다.\n\n그동안 봐온 걸로는, 연봉 1억 넘는 사람 중에도 순자산이 3억 안 되는 경우가 흔했다.\n반대로 월 실수령 380만 원으로 12억 만든 사람도 봤다.\n\n차이는 딱 하나였다.\n\"들어오면 먼저 뗀다\"와 \"쓰고 남으면 모은다\".\n\n잘 모으는 사람은 월급날 자동이체가 6~7개씩 걸려있다.\n연금, 청약, ISA, 적금, 펀드. 남는 돈으로 산다.\n\n잘 버는데 못 모으는 사람은 반대다.\n카드값 나가고, 경조사 치르고, 아이 학원비 내고, 남는 걸 모으려 한다.\n그런데 남는 돈은 늘 없다. 소득이 늘어도 없다.\n\n소득 크기보다 순서가 자산을 만든다.\n이건 13년 내내 예외가 없었다.\n\n40대 들어와서 자동이체 몇 개 걸어두셨나.",
+      "tone": "건조한",
+      "ending_style": "질문형",
+      "template": "observation",
+      "theme": "잘 버는 사람 vs 잘 모으는 사람 차이",
+      "is_trend": false,
+      "note": "makeup post - buffer outage catchup"
+    },
+    {
+      "date": "2026-07-09",
+      "timestamp": "2026-07-10T16:22:01.607746",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a509d8f64765dbcaed189af",
+      "text": "미국 10년물 4.3%, 한국 10년물 3.1%.\n\n1.2%p 차이다.\n\n기사에선 \"한미 금리 역전 심화\"라고 쓴다.\n실무에서 보면 이건 방향이 다르다는 뜻이다.\n\n미국은 아직 물가를 못 잡았고, 한국은 이미 경기 둔화를 채권시장이 먼저 반영하고 있다.\n\n같은 장기채라도 담고 있는 그림이 다르다.\n\n숫자 하나 볼 게 아니라, 두 숫자의 간격을 봐야 한다.",
+      "tone": "건조한",
+      "ending_style": "선언형",
+      "template": "two_numbers",
+      "theme": "미국 국채 금리와 국내 장기채 수익률 괴리 해석",
+      "is_trend": false,
+      "note": "makeup post - buffer outage catchup"
     }
   ]
 }
