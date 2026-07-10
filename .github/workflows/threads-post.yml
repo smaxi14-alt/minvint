@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write  # 로그 커밋용
+      issues: write    # 실패 알림용
 
     steps:
       - uses: actions/checkout@v4
@@ -85,4 +86,29 @@ jobs:
           git add automation/data/youtube_cache.json 2>/dev/null || true
           git diff --staged --quiet || git commit -m "log: ${{ steps.slot.outputs.slot }} $(TZ=Asia/Seoul date +%Y-%m-%d)"
           git push
+
+      - name: Notify on failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create auto-post-failure --color FF0000 --description "쓰레드 자동 발행 실패 알림" 2>/dev/null || true
+          BODY="발행 실패: slot=${{ steps.slot.outputs.slot }} / 시각(KST)=$(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') / [실행 로그](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
+          OPEN_ISSUE=$(gh issue list --label auto-post-failure --state open --json number --jq '.[0].number // empty')
+          if [ -n "$OPEN_ISSUE" ]; then
+            gh issue comment "$OPEN_ISSUE" --body "$BODY"
+          else
+            gh issue create --title "🚨 쓰레드 자동 발행 실패" --label auto-post-failure --body "$BODY"
+          fi
+
+      - name: Close recovered issue
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          OPEN_ISSUE=$(gh issue list --label auto-post-failure --state open --json number --jq '.[0].number // empty')
+          if [ -n "$OPEN_ISSUE" ]; then
+            gh issue comment "$OPEN_ISSUE" --body "✅ 정상 복구됨: slot=${{ steps.slot.outputs.slot }} / 시각(KST)=$(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
+            gh issue close "$OPEN_ISSUE"
+          fi
 

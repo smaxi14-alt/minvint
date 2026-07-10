@@ -329,6 +329,27 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
             pool = examples["insight"]
         ending_rule += f" 예시 참고(그대로 쓰지 말고 소재에 맞게 변형): \"{random.choice(pool)}\""
 
+    # 경력 표현 풀 — "증권"류 표현은 보험 진단 맥락(finance_insurance/diagnosis/job_insight)에서만 사용.
+    # 그 외 콘텐츠(경제뉴스·재테크·일상 등)에서는 "증권"이 주식 용어로 오독될 수 있어 제외하고,
+    # 실제 쓰일 때도 "보험 증권"으로 명시해 의미를 분명히 한다.
+    _career_phrases = [
+        "13년 보니까 ~",
+        "현장에서 보면 ~",
+        "고객 수백 명 보고 나서야 알았는데 ~",
+        "오래 하다 보니 ~",
+        "이 일 하면서 ~",
+        "설계사로 13년 있다 보니 ~",
+        "상담하다 보면 ~",
+        "실무에서 보면 ~",
+        "경험상 ~",
+        "수년 지나고 보니 ~",
+        "그동안 봐온 걸로는 ~",
+        "일하면서 느낀 건데 ~",
+    ]
+    if content_type in ("finance_insurance", "diagnosis", "job_insight"):
+        _career_phrases.append("보험 증권 수천 장 들여다보니 ~")
+    _career_phrases_str = "\n".join(f"  ▸ \"{p}\"" for p in _career_phrases)
+
     recent = get_recent_topics(days=7)
     recent_str = "\n".join(f"- {t}" for t in recent[-10:]) if recent else "없음"
     performance_str = format_for_prompt(patterns)
@@ -370,18 +391,9 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
 - 결론부터. 숫자로. 설교 없이.
 - "~해야 합니다" 식의 설교체 금지. 대신 경력을 녹인 관찰 어투로.
   경력 표현은 아래 풀에서 매번 다르게 골라 쓰되, 한 글에 한 번만 쓴다.
-  ▸ "13년 보니까 ~"
-  ▸ "현장에서 보면 ~"
-  ▸ "고객 수백 명 보고 나서야 알았는데 ~"
-  ▸ "오래 하다 보니 ~"
-  ▸ "이 일 하면서 ~"
-  ▸ "설계사로 13년 있다 보니 ~"
-  ▸ "증권 수천 장 들여다보니 ~"
-  ▸ "상담하다 보면 ~"
-  ▸ "실무에서 보면 ~"
-  ▸ "경험상 ~"
-  ▸ "수년 지나고 보니 ~"
-  절대 같은 글에서 두 번 이상 반복하지 않는다.
+{_career_phrases_str}
+  "보험 증권"(진단 관련 글에서만 등장)과 "13년"류 표현이 최근 글에서 반복되지 않도록
+  매번 다른 표현을 고른다. 절대 같은 글에서 두 번 이상 반복하지 않는다.
 - 자기 약점도 말하되, 현재의 자신이 더 중요하다. 가볍게 지나간다.
 - 공감할 때도 담담하다. "나도 그랬어"가 아니라 "그 나이 되면 다 그런 시기 있어."
 {BRAND_SAFETY_PROMPT}
