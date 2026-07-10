@@ -225,15 +225,19 @@ def post_to_naver_blog(title: str, body_markdown: str, tags: list[str], dry_run:
         driver.get(f"https://blog.naver.com/{NAVER_BLOG_ID}?Redirect=Write")
         wait = WebDriverWait(driver, 15)
 
-        # 작성 중인 글이 있으면 뜨는 확인 팝업 처리
+        wait.until(EC.frame_to_be_available_and_switch_to_it((By.ID, "mainFrame")))
+
+        # "작성 중인 글이 있습니다 — 이어서 작성하시겠습니까?" 팝업 처리.
+        # 이 팝업은 mainFrame(iframe) 안에 렌더링되며 약간의 지연 후 나타날 수 있다 —
+        # 취소를 눌러 새 글로 시작 (짧게 대기 후 없으면 그냥 진행).
         try:
-            popup_cancel = driver.find_element(By.CSS_SELECTOR, ".se-popup-button-cancel")
+            popup_cancel = WebDriverWait(driver, 3).until(
+                EC.element_to_be_clickable((By.CSS_SELECTOR, ".se-popup-button-cancel"))
+            )
             popup_cancel.click()
             time.sleep(0.5)
-        except NoSuchElementException:
+        except TimeoutException:
             pass
-
-        wait.until(EC.frame_to_be_available_and_switch_to_it((By.ID, "mainFrame")))
 
         title_area = wait.until(
             EC.presence_of_element_located((By.CSS_SELECTOR, ".se-title-text .se-text-paragraph"))
