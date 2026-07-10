@@ -23,6 +23,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from webdriver_manager.chrome import ChromeDriverManager
+import pygetwindow as gw
+import pyautogui
+import pyperclip
 
 from config import DATA_DIR, NAVER_BLOG_ID, NAVER_BLOG_PW
 
@@ -211,14 +214,88 @@ def _type_body(driver: webdriver.Chrome, body_markdown: str):
         time.sleep(0.05)
 
 
-def post_to_naver_blog(title: str, body_markdown: str, tags: list[str], dry_run: bool = False) -> str:
+def _insert_image(driver: webdriver.Chrome, image_path: str) -> bool:
+    """이미지를 업로드한다.
+
+    네이버 블로그 발행 API는 2020년 종료됐고, '사진' 버튼은 웹페이지 안의 파일 입력창이
+    아니라 **OS 네이티브 '열기' 대화상자**를 직접 연다 (셀레니움의 표준 send_keys 방식이
+    통하지 않는 이유). 이 대화상자에 실제 마우스/키보드 자동화(pyautogui)로 경로를
+    입력해 업로드한다.
+
+    주의:
+    - 경로에 한글(예: "문서", "마케팅" 폴더명)이 포함되면 pyautogui.write()가
+      유니코드를 제대로 입력하지 못해 실패한다 — 반드시 클립보드 붙여넣기로 처리.
+    - 대화상자에 실제 OS 포커스가 갔는지 매 단계 확인 후에만 키 입력을 보낸다.
+      확인 안 되면 절대 타이핑하지 않고 중단 (다른 창에 잘못 입력되는 사고 방지).
+    """
+    photo_btn = driver.find_element(By.CSS_SELECTOR, ".se-image-toolbar-button")
+    photo_btn.click()
+
+    dialog = None
+    for _ in range(20):
+        matches = gw.getWindowsWithTitle("열기")
+        if matches:
+            dialog = matches[0]
+            break
+        time.sleep(0.3)
+
+    if dialog is None:
+        logger.warning("[naver] 이미지 업로드: 네이티브 파일 대화상자를 찾지 못함 — 이미지 없이 진행")
+        return False
+
+    try:
+        dialog.activate()
+    except Exception:
+        pass
+    time.sleep(0.7)
+
+    active = gw.getActiveWindow()
+    if not active or active.title != dialog.title:
+        logger.warning("[naver] 이미지 업로드: 대화상자 포커스 확인 실패 — 안전을 위해 중단")
+        try:
+            pyautogui.press("esc")
+        except Exception:
+            pass
+        return False
+
+    pyautogui.hotkey("alt", "n")  # 파일 이름 입력란으로 포커스
+    time.sleep(0.3)
+    pyautogui.hotkey("ctrl", "a")
+    time.sleep(0.1)
+    pyperclip.copy(image_path)
+    time.sleep(0.1)
+    pyautogui.hotkey("ctrl", "v")
+    time.sleep(0.5)
+
+    active2 = gw.getActiveWindow()
+    if not active2 or active2.title != dialog.title:
+        logger.warning("[naver] 이미지 업로드: 경로 입력 중 포커스 이동 감지 — Enter 보내지 않고 중단")
+        return False
+
+    pyautogui.press("enter")
+    logger.info("[naver] 이미지 업로드 중...")
+    time.sleep(8)  # 업로드 + 편집기 반영 대기
+    return True
+
+
+def post_to_naver_blog(
+    title: str,
+    body_markdown: str,
+    tags: list[str],
+    image_path: str | None = None,
+    dry_run: bool = False,
+) -> str:
     """네이버 블로그에 글을 발행한다.
 
+    image_path를 주면 제목 바로 다음에 대표 이미지 1장을 삽입한다 (업로드 실패 시
+    경고만 남기고 이미지 없이 계속 진행 — 발행 자체를 막지 않음).
     dry_run=True면 제목/본문을 채우고 스크린샷만 남긴 뒤 발행 버튼은 누르지 않는다.
     (최초 셀렉터 검증용 — 실제 발행 전 반드시 한 번 dry_run으로 확인 권장)
     반환: 발행된 글 URL (dry_run이면 "DRY_RUN")
     """
-    driver = _build_driver(headless=not dry_run)
+    # 이미지 업로드는 실제 OS 네이티브 대화상자를 조작해야 해서 화면에 보이는
+    # 브라우저 창이 필요하다 — headless로는 동작하지 않는다.
+    driver = _build_driver(headless=(dry_run is False and image_path is None))
     try:
         _login(driver)
 
@@ -249,6 +326,11 @@ def post_to_naver_blog(title: str, body_markdown: str, tags: list[str], dry_run:
         time.sleep(0.2)
         active_title.send_keys(Keys.ENTER)  # 제목 → 본문 첫 문단으로 포커스 이동
         time.sleep(0.3)
+
+        if image_path:
+            if _insert_image(driver, image_path):
+                logger.info("[naver] 대표 이미지 삽입 완료")
+            time.sleep(0.3)
 
         _type_body(driver, body_markdown)
 

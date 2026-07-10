@@ -6,3 +6,6 @@ google-genai>=1.0.0
 youtube-transcript-api>=0.6.0
 selenium>=4.20.0
 webdriver-manager>=4.0.0
+pyautogui>=0.9.54
+pygetwindow>=0.0.9
+pyperclip>=1.11.0

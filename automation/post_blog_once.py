@@ -1,6 +1,13 @@
 """
 네이버 블로그 1회 발행 스크립트 (Windows 작업 스케줄러용).
-Usage: python post_blog_once.py [--dry-run] [--force]
+Usage: python post_blog_once.py [--dry-run] [--force] [--image PATH]
+
+--image: 대표 이미지 파일 경로. 네이버 사진 업로드는 OS 네이티브 대화상자를
+자동화하는 방식이라 화면이 보이는 상태여야 한다 — 지정 시 자동으로 headless가
+꺼진다. 이미지는 nanobanana(mcp__nanobanana__generate_image, model="pro")로
+미리 생성해서 경로를 넘겨줄 것 — 이 스크립트 자체는 이미지를 생성하지 않는다
+(CLAUDE.md 이미지 생성 규칙: 반드시 nanobanana pro 사용, 이건 Claude 세션에서만
+호출 가능한 MCP 도구라 완전 무인 스케줄 실행에서는 이미지 없이 텍스트+표만 발행됨).
 """
 import argparse
 import logging
@@ -22,6 +29,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="발행 없이 초안만 채워 스크린샷 확인")
     parser.add_argument("--force", action="store_true", help="이번 주 이미 발행됐어도 강제 실행")
+    parser.add_argument("--image", default=None, help="대표 이미지로 삽입할 로컬 파일 경로 (nanobanana로 미리 생성)")
     args = parser.parse_args()
 
     if not args.force and not args.dry_run and was_posted_this_week():
@@ -34,7 +42,7 @@ def main():
     logger.info(f"\n{'='*50}\n{body}\n{'='*50}")
     logger.info(f"태그: {tags}")
 
-    url = post_to_naver_blog(title, body, tags, dry_run=args.dry_run)
+    url = post_to_naver_blog(title, body, tags, image_path=args.image, dry_run=args.dry_run)
 
     if not args.dry_run:
         log_post(series, title, url, tags)
