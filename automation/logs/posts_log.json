@@ -377,6 +377,20 @@
       "template": "reversal",
       "theme": "이미 잘하는데도 더 열심히 해야 하는 40대 임원의 불안감",
       "is_trend": true
+    },
+    {
+      "date": "2026-07-10",
+      "timestamp": "2026-07-10T06:59:23.609372",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a5098436052a71169c87943",
+      "text": "5년 전 S&P500 시총 1위는 애플.\n지금은 엔비디아. 시총 4조 달러 넘겼다.\n\n경험상 이런 교체는 10년에 한 번 온다.\n40대가 놓치면 안 되는 건 종목이 아니라, 판이 바뀌는 속도다.\n\n바뀔 땐 조용히 바뀐다.",
+      "tone": "건조한",
+      "ending_style": "선언형",
+      "template": "time_comparison",
+      "theme": "AI 시대 세계 증시의 흐름 변화 주목",
+      "is_trend": true
     }
   ]
 }
