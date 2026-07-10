@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-10T14:22:33",
+  "generated_at": "2026-07-10T23:31:58",
   "ending_boosts": {},
   "template_boosts": {
     "taboo": 2.5,
-    "two_numbers": 1.5
+    "two_numbers": 1.55
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -27,7 +27,8 @@
     "이미 잘하는데도 더 열심히 해야 하는 40대 임원의 불안감",
     "AI 시대 세계 증시의 흐름 변화 주목",
     "잘 버는 사람 vs 잘 모으는 사람 차이",
-    "미국 국채 금리와 국내 장기채 수익률 괴리 해석"
+    "미국 국채 금리와 국내 장기채 수익률 괴리 해석",
+    "퇴근 후 집 앞에서 5분 더 차 안에 앉아있는 이유"
   ],
   "content_type_exclusions": []
 }
