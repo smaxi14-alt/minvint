@@ -36,16 +36,28 @@ def main():
         logger.info("이번 주 이미 블로그 글이 발행됨. 건너뜀. (강제 실행: --force)")
         return
 
-    title, candidates, body, series, tags = generate_blog_post()
-    logger.info(f"글 생성 완료 — 시리즈: {series}")
-    logger.info("제목 후보:\n" + "\n".join(f"  {i+1}. {c}" for i, c in enumerate(candidates)))
-    logger.info(f"\n{'='*50}\n{body}\n{'='*50}")
-    logger.info(f"태그: {tags}")
+    post = generate_blog_post()
+    logger.info(f"글 생성 완료 — 시리즈: {post['series']}")
+    logger.info("제목 후보:\n" + "\n".join(f"  {i+1}. {c}" for i, c in enumerate(post["title_candidates"])))
+    logger.info(f"후킹유형={post['hook_type']} 비유분야={post['metaphor_domain']}")
+    logger.info(f"\n{'='*50}\n{post['body']}\n{'='*50}")
+    logger.info(f"태그: {post['tags']}")
+    if len(post["image_specs"]) < 5:
+        logger.warning(f"이미지 스펙 {len(post['image_specs'])}개 (완전 무인 실행이라 --image 없이는 텍스트+표만 발행됨)")
 
-    url = post_to_naver_blog(title, body, tags, image_path=args.image, dry_run=args.dry_run)
+    url = post_to_naver_blog(post["title"], post["body"], post["tags"], image_path=args.image, dry_run=args.dry_run)
 
     if not args.dry_run:
-        log_post(series, title, url, tags)
+        log_post(
+            post["series"],
+            post["title"],
+            url,
+            post["tags"],
+            hook_type=post["hook_type"],
+            metaphor_domain=post["metaphor_domain"],
+            signature=post["signature"],
+            elements_used=post["elements_used"],
+        )
         logger.info(f"발행 및 로그 기록 완료: {url}")
     else:
         logger.info("dry-run 모드 — 로그 기록 생략. data/naver_dry_run.png 확인 후 --dry-run 없이 재실행하세요.")

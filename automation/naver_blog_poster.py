@@ -126,7 +126,8 @@ def _markdown_table_rows(table_lines: list[str]) -> list[list[str]]:
 
 def _markdown_to_blocks(body: str) -> list[tuple[str, object]]:
     """블로그 본문 마크다운을 (종류, 내용) 블록 목록으로 변환.
-    종류: "header"(소제목, 굵게), "para"(일반 문단), "table"(행 목록 list[list[str]])
+    종류: "header"(소제목, 굵게), "para"(일반 문단), "table"(행 목록 list[list[str]]),
+         "image_marker"((style, prompt) — blog_generator.py의 [[IMAGE:style:설명]] 마커)
     """
     lines = body.splitlines()
     blocks: list[tuple[str, object]] = []
@@ -134,8 +135,11 @@ def _markdown_to_blocks(body: str) -> list[tuple[str, object]]:
     while i < len(lines):
         line = lines[i]
         stripped = line.strip()
+        image_match = re.match(r"^\[\[IMAGE:(infographic|photo):(.+?)\]\]$", stripped)
         if stripped.startswith("## "):
             blocks.append(("header", stripped[3:].strip()))
+        elif image_match:
+            blocks.append(("image_marker", (image_match.group(1), image_match.group(2).strip())))
         elif stripped.startswith("|"):
             table_block = []
             while i < len(lines) and lines[i].strip().startswith("|"):
@@ -210,27 +214,73 @@ def _insert_table(driver: webdriver.Chrome, rows: list[list[str]]):
     time.sleep(0.2)
 
 
-def _type_body(driver: webdriver.Chrome, body_markdown: str):
+def _type_body(driver: webdriver.Chrome, body_markdown: str, image_map: dict[int, str] | None = None):
     """실제 키보드 입력(send_keys)으로 본문을 채운다.
     SmartEditor는 React 기반이라 DOM을 직접 조작(innerHTML)하면 화면에 반영되지 않는다 —
     반드시 실제 키 입력 이벤트를 통해서만 편집기 내부 상태가 갱신된다.
+
+    image_map: blog_generator.py의 [[IMAGE:style:설명]] 마커 등장 순서(0-indexed)를
+    실제 로컬 이미지 파일 경로에 매핑한 dict. 없는 인덱스는 마커만 건너뛰고 계속 진행.
     """
     blocks = _markdown_to_blocks(body_markdown)
+    image_map = image_map or {}
+    image_counter = 0
     for kind, content in blocks:
         if kind == "table":
             _insert_table(driver, content)
             continue
 
+        if kind == "image_marker":
+            style, prompt = content
+            image_path = image_map.get(image_counter)
+            if image_path:
+                if _insert_image(driver, image_path):
+                    logger.info(f"[naver] 이미지 삽입 완료 ({image_counter + 1}번째, style={style})")
+                else:
+                    logger.warning(f"[naver] 이미지 삽입 실패 — 건너뜀 ({image_counter + 1}번째)")
+            else:
+                logger.debug(f"[naver] image_map에 {image_counter}번째 항목 없음 — 마커 건너뜀")
+            image_counter += 1
+            continue
+
         active = driver.switch_to.active_element
         if kind == "header":
-            ActionChains(driver).key_down(Keys.CONTROL).send_keys("b").key_up(Keys.CONTROL).perform()
             active.send_keys(content)
+            # _context/blog-style-guide.md 기준: 소제목은 19px + 굵게로 본문(15px)과
+            # 위계를 구분한다. 방금 입력한 줄 전체를 선택한 뒤 적용.
+            active2 = driver.switch_to.active_element
+            active2.send_keys(Keys.HOME)
+            ActionChains(driver).key_down(Keys.SHIFT).send_keys(Keys.END).key_up(Keys.SHIFT).perform()
+            time.sleep(0.1)
+            _set_font_size(driver, 19)
             ActionChains(driver).key_down(Keys.CONTROL).send_keys("b").key_up(Keys.CONTROL).perform()
+            # 선택 상태로 Enter를 보내면 텍스트가 지워지므로 커서를 줄 끝으로 이동시켜 선택 해제
+            driver.switch_to.active_element.send_keys(Keys.END)
+            driver.switch_to.active_element.send_keys(Keys.ENTER)
+            # 새로 만들어진 문단이 헤더 서식(굵게+19px)을 그대로 물려받으므로
+            # 본문 기본값으로 되돌린다 (되돌리지 않으면 이후 모든 문단이 헤더처럼 보임).
+            _set_font_size(driver, 15)
+            ActionChains(driver).key_down(Keys.CONTROL).send_keys("b").key_up(Keys.CONTROL).perform()
+            time.sleep(0.05)
+            continue
         else:
             active.send_keys(content)
         active_final = driver.switch_to.active_element
         active_final.send_keys(Keys.ENTER)
         time.sleep(0.05)
+
+
+def _set_font_size(driver: webdriver.Chrome, size: int):
+    """현재 선택 영역(또는 커서 위치)에 폰트 크기를 적용한다."""
+    try:
+        fontsize_btn = driver.find_element(By.CSS_SELECTOR, ".se-font-size-code-toolbar-button")
+        fontsize_btn.click()
+        time.sleep(0.3)
+        size_btn = driver.find_element(By.CSS_SELECTOR, f".se-toolbar-option-font-size-code-fs{size}-button")
+        driver.execute_script("arguments[0].click();", size_btn)
+        time.sleep(0.2)
+    except NoSuchElementException:
+        logger.debug(f"[naver] 폰트크기({size}px) 적용 실패 — 건너뜀")
 
 
 def _ensure_window_focused(window, attempts: int = 5) -> bool:
@@ -356,19 +406,25 @@ def post_to_naver_blog(
     body_markdown: str,
     tags: list[str],
     image_path: str | None = None,
+    image_map: dict[int, str] | None = None,
     dry_run: bool = False,
 ) -> str:
     """네이버 블로그에 글을 발행한다.
 
-    image_path를 주면 제목 바로 다음에 대표 이미지 1장을 삽입한다 (업로드 실패 시
-    경고만 남기고 이미지 없이 계속 진행 — 발행 자체를 막지 않음).
+    image_path를 주면 제목 바로 다음에 대표 이미지 1장을 삽입한다 (단일 이미지용,
+    하위 호환 목적). image_map을 주면 본문 안의 [[IMAGE:style:설명]] 마커
+    등장 순서(0-indexed)에 맞춰 여러 장을 본문 곳곳에 삽입한다 (blog_generator.py의
+    다중 이미지 스펙과 연동). 둘 다 줄 수 있음 — image_path는 제목 바로 다음,
+    image_map은 본문 마커 위치에 각각 삽입된다.
+    업로드 실패 시 경고만 남기고 이미지 없이 계속 진행 (발행 자체를 막지 않음).
     dry_run=True면 제목/본문을 채우고 스크린샷만 남긴 뒤 발행 버튼은 누르지 않는다.
     (최초 셀렉터 검증용 — 실제 발행 전 반드시 한 번 dry_run으로 확인 권장)
     반환: 발행된 글 URL (dry_run이면 "DRY_RUN")
     """
     # 이미지 업로드는 실제 OS 네이티브 대화상자를 조작해야 해서 화면에 보이는
     # 브라우저 창이 필요하다 — headless로는 동작하지 않는다.
-    driver = _build_driver(headless=(dry_run is False and image_path is None))
+    needs_visible = dry_run or image_path is not None or bool(image_map)
+    driver = _build_driver(headless=not needs_visible)
     try:
         _login(driver)
 
@@ -405,7 +461,7 @@ def post_to_naver_blog(
                 logger.info("[naver] 대표 이미지 삽입 완료")
             time.sleep(0.3)
 
-        _type_body(driver, body_markdown)
+        _type_body(driver, body_markdown, image_map=image_map)
 
         # 타이핑이 실제로 반영됐는지 확인 (React 기반 에디터라 타이밍 이슈 발생 가능)
         for attempt in range(3):
