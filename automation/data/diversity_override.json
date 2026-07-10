@@ -1,10 +1,9 @@
 {
-  "generated_at": "2026-07-10T06:59:01",
+  "generated_at": "2026-07-10T14:22:33",
   "ending_boosts": {},
   "template_boosts": {
-    "time_comparison": 1.35,
-    "taboo": 2.25,
-    "two_numbers": 2.25
+    "taboo": 2.5,
+    "two_numbers": 1.5
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -25,7 +24,10 @@
     "빠른 것보다 맞는 것이 중요하다는 걸 안 나이",
     "상반기 4대 금융그룹 순이익 11조 돌파, 최대 실적 기록",
     "탈모약 처방전 처음 받은 날",
-    "이미 잘하는데도 더 열심히 해야 하는 40대 임원의 불안감"
+    "이미 잘하는데도 더 열심히 해야 하는 40대 임원의 불안감",
+    "AI 시대 세계 증시의 흐름 변화 주목",
+    "잘 버는 사람 vs 잘 모으는 사람 차이",
+    "미국 국채 금리와 국내 장기채 수익률 괴리 해석"
   ],
   "content_type_exclusions": []
 }

@@ -421,6 +421,20 @@
       "theme": "미국 국채 금리와 국내 장기채 수익률 괴리 해석",
       "is_trend": false,
       "note": "makeup post - buffer outage catchup"
+    },
+    {
+      "date": "2026-07-10",
+      "timestamp": "2026-07-10T14:23:01.102774",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a51003b4da1cb45deab9ff7",
+      "text": "퇴근하고 집 앞 주차장에서 5분씩 앉아있다 들어간다.\n\n시동 끄고, 라디오도 끄고, 그냥 앉아있는다.\n누가 시켜서가 아니라 그 5분이 필요해서.\n\n집 문 열면 아빠 모드, 남편 모드로 바로 전환해야 하는데\n그 스위치가 예전만큼 빨리 안 눌린다.\n\n일하면서 느낀 건데, 40대 남자들 차 안에서 보내는 시간이 은근히 길다.\n주차는 다 해놓고 안 내리는 사람들.\n\n그 5분이 뭔지 물어본 적 있는데 대답이 다 비슷했다.\n\"그냥 좀 있다 들어가려고요.\"",
+      "tone": "회고적",
+      "ending_style": "관찰형",
+      "template": "confession",
+      "theme": "퇴근 후 집 앞에서 5분 더 차 안에 앉아있는 이유",
+      "is_trend": false
     }
   ]
 }
