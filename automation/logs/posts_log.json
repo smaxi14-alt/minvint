@@ -449,6 +449,20 @@
       "template": "numbers",
       "theme": "20년 직장생활 처음으로 사표 쓰는 상상",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-11",
+      "timestamp": "2026-07-11T05:56:53.908359",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a51db1ea27e00341f99d30a",
+      "text": "5년 전 코스피 3300. 지금 2600대.\n\n그동안 미국은 두 배 갔다.\n\n실무에서 보면 이 갭을 \"언젠간 따라잡겠지\"로 버틴 사람과, 비중을 옮긴 사람의 계좌가 지금 완전히 다르다.\n\n패권 싸움은 5년 더 간다. 방향을 정하는 건 지금이다.",
+      "tone": "성찰적",
+      "ending_style": "선언형",
+      "template": "time_comparison",
+      "theme": "미·중 패권 경쟁, 한국 증시 변동성 커지는 중",
+      "is_trend": true
     }
   ]
 }
