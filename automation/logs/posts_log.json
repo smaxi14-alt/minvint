@@ -463,6 +463,20 @@
       "template": "time_comparison",
       "theme": "미·중 패권 경쟁, 한국 증시 변동성 커지는 중",
       "is_trend": true
+    },
+    {
+      "date": "2026-07-11",
+      "timestamp": "2026-07-11T13:15:11.064315",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a5241d63e68ff0f8dcba6c1",
+      "text": "거울 보다가 멈췄다.\n\n웃을 때 눈가 주름 잡히는 각도가 아버지랑 똑같더라.\n\n일하면서 느낀 건데, 사람은 부모 표정을 40대 후반부터 닮기 시작한다. 유전이 아니라 살아온 방식이 얼굴에 앉는 거다.\n\n40대 남자들, 요즘 거울 앞에서 누구 얼굴 보이나?",
+      "tone": "성찰적",
+      "ending_style": "질문형",
+      "template": "observation",
+      "theme": "부모님 닮아가는 내 표정",
+      "is_trend": false
     }
   ]
 }

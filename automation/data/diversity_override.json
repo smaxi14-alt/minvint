@@ -1,9 +1,11 @@
 {
-  "generated_at": "2026-07-11T05:56:22",
-  "ending_boosts": {},
+  "generated_at": "2026-07-11T13:14:50",
+  "ending_boosts": {
+    "질문형": 1.39
+  },
   "template_boosts": {
     "taboo": 2.5,
-    "two_numbers": 1.6
+    "two_numbers": 1.65
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -26,7 +28,8 @@
     "잘 버는 사람 vs 잘 모으는 사람 차이",
     "미국 국채 금리와 국내 장기채 수익률 괴리 해석",
     "퇴근 후 집 앞에서 5분 더 차 안에 앉아있는 이유",
-    "20년 직장생활 처음으로 사표 쓰는 상상"
+    "20년 직장생활 처음으로 사표 쓰는 상상",
+    "미·중 패권 경쟁, 한국 증시 변동성 커지는 중"
   ],
   "content_type_exclusions": []
 }
