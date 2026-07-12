@@ -1,9 +1,8 @@
 {
-  "generated_at": "2026-07-12T06:16:25",
+  "generated_at": "2026-07-12T13:16:26",
   "ending_boosts": {},
   "template_boosts": {
-    "taboo": 2.5,
-    "two_numbers": 1.75
+    "taboo": 2.5
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -26,7 +25,8 @@
     "20년 직장생활 처음으로 사표 쓰는 상상",
     "미·중 패권 경쟁, 한국 증시 변동성 커지는 중",
     "부모님 닮아가는 내 표정",
-    "40대가 되어서야 지갑을 제대로 산 이유"
+    "40대가 되어서야 지갑을 제대로 산 이유",
+    "인플레이션 고착화와 실질 구매력 하락 계산"
   ],
   "content_type_exclusions": []
 }

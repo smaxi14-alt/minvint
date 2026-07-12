@@ -505,6 +505,20 @@
       "template": "two_numbers",
       "theme": "인플레이션 고착화와 실질 구매력 하락 계산",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-12",
+      "timestamp": "2026-07-12T13:16:45.715283",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a5393b69372accfada37618",
+      "text": "이혼 사유 1위가 성격 차이라는데.\n\n상담하다 보면 그 성격 차이 안에 돈 얘기가 절반이다.\n한 명은 모으자, 한 명은 지금 쓰자.\n둘 다 틀린 게 아닌데 대화 방식이 없었을 뿐.\n\n우리 부부도 15년 걸려서 겨우 중간을 찾았다.",
+      "tone": "성찰적",
+      "ending_style": "독백형",
+      "template": "shock_stat",
+      "theme": "결혼 생활 돈 가치관 차이",
+      "is_trend": false
     }
   ]
 }
