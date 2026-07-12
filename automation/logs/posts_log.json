@@ -519,6 +519,20 @@
       "template": "shock_stat",
       "theme": "결혼 생활 돈 가치관 차이",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-12",
+      "timestamp": "2026-07-12T23:29:38.036797",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a5423589cf8918f1dcdfbb9",
+      "text": "부모님은 자식한테 아픈 얘기 잘 안 한다.\n\n지난주 아버지 허리 시술 얘기, 끝나고 나서야 들었다.\n걱정 끼치기 싫었다고.\n\n근데 그날 처음 알았다. 부모님 걱정보다 내 몸이 먼저 걱정되던 거.\n\n이제 내가 그 나이로 가고 있구나.",
+      "tone": "건조한",
+      "ending_style": "독백형",
+      "template": "taboo",
+      "theme": "처음으로 부모님보다 내가 더 걱정되던 날",
+      "is_trend": false
     }
   ]
 }
