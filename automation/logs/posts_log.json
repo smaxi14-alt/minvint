@@ -603,6 +603,20 @@
       "template": "confession",
       "theme": "50대 되기 전 반드시 점검해야 할 숫자 3개",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-14",
+      "timestamp": "2026-07-14T23:27:02.117966",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a56c5becbfbd9dc13349de1",
+      "text": "부모님은 병원비 얘기를 자식한테 먼저 안 꺼낸다.\n\n미안해서가 아니라, 자식 삶에 그림자 지우기 싫어서다.\n\n이번 달 아버지 병원비를 처음 내가 송금했다.\n전화로 \"받았다\" 한 마디, 그게 다였다.\n\n말 안 하는 자리에도 순서가 있다.",
+      "tone": "회고적",
+      "ending_style": "선언형",
+      "template": "taboo",
+      "theme": "부모님 병원비 처음으로 송금한 날",
+      "is_trend": false
     }
   ]
 }

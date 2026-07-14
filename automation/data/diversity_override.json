@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-14T13:39:02",
+  "generated_at": "2026-07-14T23:26:35",
   "ending_boosts": {
-    "질문형": 1.41
+    "질문형": 1.44
   },
   "template_boosts": {
-    "taboo": 2.1,
-    "two_numbers": 1.5
+    "taboo": 2.15,
+    "two_numbers": 1.54
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -29,7 +29,8 @@
     "삼성전자 잠정실적 발표 임박",
     "자식한테 게임기 사주지 말자던 약속 깬 날",
     "40대 직장인, 주식 지키려 카드론까지…빚의 악순환",
-    "부동산 PF 리스크와 40대 내 집 마련 타이밍"
+    "부동산 PF 리스크와 40대 내 집 마련 타이밍",
+    "50대 되기 전 반드시 점검해야 할 숫자 3개"
   ],
   "content_type_exclusions": []
 }
