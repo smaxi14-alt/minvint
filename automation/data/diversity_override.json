@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-15T05:44:53",
+  "generated_at": "2026-07-15T13:39:44",
   "ending_boosts": {
-    "질문형": 1.52
+    "질문형": 1.56
   },
   "template_boosts": {
-    "taboo": 1.46,
-    "two_numbers": 1.46
+    "taboo": 1.5,
+    "two_numbers": 1.5
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -28,7 +28,8 @@
     "40대 직장인, 주식 지키려 카드론까지…빚의 악순환",
     "부동산 PF 리스크와 40대 내 집 마련 타이밍",
     "50대 되기 전 반드시 점검해야 할 숫자 3개",
-    "부모님 병원비 처음으로 송금한 날"
+    "부모님 병원비 처음으로 송금한 날",
+    "전세 시장 위축과 월세 전환 가속화의 가계 영향"
   ],
   "content_type_exclusions": []
 }
