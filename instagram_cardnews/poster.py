@@ -146,7 +146,13 @@ def _build_carousel_mutation(caption: str, media_urls: list[str]) -> str:
     ImageAssetInput.url: String!. 기존 `media: [{url,type}]` 필드는 스키마에
     아예 존재하지 않아 "Field media is not defined by type CreatePostInput"
     검증 오류로 항상 실패했다(과거 실험 스크립트 _post_instagram.py의 추측이
-    틀렸던 것으로 확인됨)."""
+    틀렸던 것으로 확인됨).
+
+    또한 인스타그램은 metadata.instagram.type이 필수다("Instagram posts
+    require a type" 오류로 실측 확인) — PostType enum에 실제로 존재하는
+    "carousel" 값을 사용(다른 값: post/reel/story/short 등, introspection으로
+    확인). shouldShareToFeed도 NON_NULL이라 항상 명시해야 한다.
+    isAiGenerated는 실제로 AI가 생성한 콘텐츠이므로 정직하게 true로 표기."""
     escaped = caption.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
     asset_items = ", ".join(f'{{ image: {{ url: "{u}" }} }}' for u in media_urls)
     return f"""
@@ -155,6 +161,13 @@ mutation {{
     channelId: "{BUFFER_IG_CHANNEL_ID}"
     text: "{escaped}"
     assets: [{asset_items}]
+    metadata: {{
+      instagram: {{
+        type: carousel
+        shouldShareToFeed: true
+        isAiGenerated: true
+      }}
+    }}
     schedulingType: automatic
     mode: shareNow
   }}) {{
