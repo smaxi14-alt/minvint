@@ -1,0 +1,45 @@
+{
+  "id": "20260716_thread_6a466e0ea13d6119040e8079",
+  "source_type": "thread",
+  "source_ref": {
+    "post_id": "6a466e0ea13d6119040e8079",
+    "slot": "evening",
+    "phase": 1,
+    "content_type": "agro_finance"
+  },
+  "created_at": "2026-07-16T14:18:49.311670",
+  "status": "pending_selection",
+  "persona": "park_gwajang",
+  "slides": [
+    {
+      "slide_no": 1,
+      "role": "HOOK",
+      "headline": "오래 하다 보니 5년 전 다짐이랑 지금이 얼마나 벌어지는지 자주 본다.",
+      "subtext": "5년",
+      "design_note": "빅넘버 강조, 딥네이비 배경"
+    },
+    {
+      "slide_no": 2,
+      "role": "PROBLEM",
+      "headline": "\"5년 안에 1억 모은다\"고 적어놓은 사람들.",
+      "subtext": "",
+      "design_note": ""
+    },
+    {
+      "slide_no": 3,
+      "role": "INSIGHT",
+      "headline": "숫자를 지키는 사람은 처음부터 여유분을 25% 깔고 시작한다.",
+      "subtext": "",
+      "design_note": "결론 문장 그대로"
+    },
+    {
+      "slide_no": 4,
+      "role": "CTA",
+      "headline": "카톡 채널에서 무료 진단 신청",
+      "subtext": "이 카드 배우자에게 공유해보세요",
+      "design_note": "오렌지 CTA 버튼"
+    }
+  ],
+  "caption_seed": "오래 하다 보니 5년 전 다짐이랑 지금이 얼마나 벌어지는지 자주 본다.",
+  "hashtags": []
+}

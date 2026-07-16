@@ -1,0 +1,45 @@
+{
+  "id": "20260716_thread_6a4d8c23282891171faf8f91",
+  "source_type": "thread",
+  "source_ref": {
+    "post_id": "6a4d8c23282891171faf8f91",
+    "slot": "morning",
+    "phase": 1,
+    "content_type": "agro"
+  },
+  "created_at": "2026-07-16T14:18:49.345516",
+  "status": "pending_selection",
+  "persona": "common",
+  "slides": [
+    {
+      "slide_no": 1,
+      "role": "HOOK",
+      "headline": "마흔여덟.",
+      "subtext": "12년",
+      "design_note": "빅넘버 강조, 딥네이비 배경"
+    },
+    {
+      "slide_no": 2,
+      "role": "PROBLEM",
+      "headline": "빠르게 가려다 되돌아온 거리를 계산해보니 12년쯤 된다.",
+      "subtext": "",
+      "design_note": ""
+    },
+    {
+      "slide_no": 3,
+      "role": "INSIGHT",
+      "headline": "내 길은 느려도 내 보폭이었다는 거, 이제야 안다.",
+      "subtext": "",
+      "design_note": "결론 문장 그대로"
+    },
+    {
+      "slide_no": 4,
+      "role": "CTA",
+      "headline": "카톡 채널에서 무료 진단 신청",
+      "subtext": "이 카드 배우자에게 공유해보세요",
+      "design_note": "오렌지 CTA 버튼"
+    }
+  ],
+  "caption_seed": "마흔여덟.",
+  "hashtags": []
+}

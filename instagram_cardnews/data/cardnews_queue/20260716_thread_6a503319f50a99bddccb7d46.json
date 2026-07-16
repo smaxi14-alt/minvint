@@ -1,0 +1,45 @@
+{
+  "id": "20260716_thread_6a503319f50a99bddccb7d46",
+  "source_type": "thread",
+  "source_ref": {
+    "post_id": "6a503319f50a99bddccb7d46",
+    "slot": "morning",
+    "phase": 1,
+    "content_type": "agro"
+  },
+  "created_at": "2026-07-16T14:18:49.350776",
+  "status": "pending_selection",
+  "persona": "common",
+  "slides": [
+    {
+      "slide_no": 1,
+      "role": "HOOK",
+      "headline": "40대 임원쯤 되면 여유로울 줄 알았다.",
+      "subtext": "3년",
+      "design_note": "빅넘버 강조, 딥네이비 배경"
+    },
+    {
+      "slide_no": 2,
+      "role": "PROBLEM",
+      "headline": "아니더라.",
+      "subtext": "",
+      "design_note": ""
+    },
+    {
+      "slide_no": 3,
+      "role": "INSIGHT",
+      "headline": "그 자리가 그렇더라.",
+      "subtext": "",
+      "design_note": "결론 문장 그대로"
+    },
+    {
+      "slide_no": 4,
+      "role": "CTA",
+      "headline": "카톡 채널에서 무료 진단 신청",
+      "subtext": "이 카드 배우자에게 공유해보세요",
+      "design_note": "오렌지 CTA 버튼"
+    }
+  ],
+  "caption_seed": "40대 임원쯤 되면 여유로울 줄 알았다.",
+  "hashtags": []
+}

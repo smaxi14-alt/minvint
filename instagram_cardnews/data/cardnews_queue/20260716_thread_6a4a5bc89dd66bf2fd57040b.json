@@ -1,0 +1,45 @@
+{
+  "id": "20260716_thread_6a4a5bc89dd66bf2fd57040b",
+  "source_type": "thread",
+  "source_ref": {
+    "post_id": "6a4a5bc89dd66bf2fd57040b",
+    "slot": "evening",
+    "phase": 1,
+    "content_type": "agro_finance"
+  },
+  "created_at": "2026-07-16T14:18:49.332112",
+  "status": "pending_selection",
+  "persona": "common",
+  "slides": [
+    {
+      "slide_no": 1,
+      "role": "HOOK",
+      "headline": "은퇴 후 월 생활비 얼마 필요하냐 물으면 대부분 \"한 300만원?\" 한다",
+      "subtext": "300만원",
+      "design_note": "빅넘버 강조, 딥네이비 배경"
+    },
+    {
+      "slide_no": 2,
+      "role": "PROBLEM",
+      "headline": "증권 수천 장 들여다보니 실제 지출은 380~420만원 사이가 많다.",
+      "subtext": "",
+      "design_note": ""
+    },
+    {
+      "slide_no": 3,
+      "role": "INSIGHT",
+      "headline": "계산기 두드리는 데 10분이면 되는 걸, 다들 20년을 미룬다.",
+      "subtext": "",
+      "design_note": "결론 문장 그대로"
+    },
+    {
+      "slide_no": 4,
+      "role": "CTA",
+      "headline": "카톡 채널에서 무료 진단 신청",
+      "subtext": "이 카드 배우자에게 공유해보세요",
+      "design_note": "오렌지 CTA 버튼"
+    }
+  ],
+  "caption_seed": "은퇴 후 월 생활비 얼마 필요하냐 물으면 대부분 \"한 300만원?\" 한다.",
+  "hashtags": []
+}

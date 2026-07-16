@@ -1,0 +1,45 @@
+{
+  "id": "20260716_thread_6a499870b3f33d21402851dd",
+  "source_type": "thread",
+  "source_ref": {
+    "post_id": "6a499870b3f33d21402851dd",
+    "slot": "morning",
+    "phase": 1,
+    "content_type": "agro"
+  },
+  "created_at": "2026-07-16T14:18:49.328893",
+  "status": "pending_selection",
+  "persona": "common",
+  "slides": [
+    {
+      "slide_no": 1,
+      "role": "HOOK",
+      "headline": "부모님 병원비 처음 송금한 날, 마음이 무거울 줄 알았다.",
+      "subtext": "13년",
+      "design_note": "빅넘버 강조, 딥네이비 배경"
+    },
+    {
+      "slide_no": 2,
+      "role": "PROBLEM",
+      "headline": "근데 아니었다.",
+      "subtext": "",
+      "design_note": ""
+    },
+    {
+      "slide_no": 3,
+      "role": "INSIGHT",
+      "headline": "내 표정이 어땠는지는, 송금하고 나서야 알았다.",
+      "subtext": "",
+      "design_note": "결론 문장 그대로"
+    },
+    {
+      "slide_no": 4,
+      "role": "CTA",
+      "headline": "카톡 채널에서 무료 진단 신청",
+      "subtext": "이 카드 배우자에게 공유해보세요",
+      "design_note": "오렌지 CTA 버튼"
+    }
+  ],
+  "caption_seed": "부모님 병원비 처음 송금한 날, 마음이 무거울 줄 알았다.",
+  "hashtags": []
+}

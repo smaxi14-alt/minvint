@@ -1,0 +1,45 @@
+{
+  "id": "20260716_thread_6a4bc9b7fc550a23e0fd56a5",
+  "source_type": "thread",
+  "source_ref": {
+    "post_id": "6a4bc9b7fc550a23e0fd56a5",
+    "slot": "evening",
+    "phase": 1,
+    "content_type": "agro_finance"
+  },
+  "created_at": "2026-07-16T14:18:49.337953",
+  "status": "pending_selection",
+  "persona": "common",
+  "slides": [
+    {
+      "slide_no": 1,
+      "role": "HOOK",
+      "headline": "아들 방에서 자는 척했다.",
+      "subtext": "13년",
+      "design_note": "빅넘버 강조, 딥네이비 배경"
+    },
+    {
+      "slide_no": 2,
+      "role": "PROBLEM",
+      "headline": "고2 아들이 친구랑 통화하는 소리를 우연히 듣게 됐다.",
+      "subtext": "",
+      "design_note": ""
+    },
+    {
+      "slide_no": 3,
+      "role": "INSIGHT",
+      "headline": "자는 척하면서 천장을 오래 봤다.",
+      "subtext": "",
+      "design_note": "결론 문장 그대로"
+    },
+    {
+      "slide_no": 4,
+      "role": "CTA",
+      "headline": "카톡 채널에서 무료 진단 신청",
+      "subtext": "이 카드 배우자에게 공유해보세요",
+      "design_note": "오렌지 CTA 버튼"
+    }
+  ],
+  "caption_seed": "아들 방에서 자는 척했다.",
+  "hashtags": []
+}

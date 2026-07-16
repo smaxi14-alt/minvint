@@ -1,0 +1,52 @@
+{
+  "id": "20260716_thread_6a4de9f06361bde1fdcc05a4",
+  "source_type": "thread",
+  "source_ref": {
+    "post_id": "6a4de9f06361bde1fdcc05a4",
+    "slot": "noon",
+    "phase": 1,
+    "content_type": "economy_news"
+  },
+  "created_at": "2026-07-16T14:18:49.347302",
+  "status": "pending_selection",
+  "persona": "kim_bujang",
+  "slides": [
+    {
+      "slide_no": 1,
+      "role": "HOOK",
+      "headline": "4대 금융그룹 상반기 순이익 11조 돌파.",
+      "subtext": "",
+      "design_note": "빅넘버 강조, 딥네이비 배경"
+    },
+    {
+      "slide_no": 2,
+      "role": "PROBLEM",
+      "headline": "역대 최대라고 한다.",
+      "subtext": "",
+      "design_note": ""
+    },
+    {
+      "slide_no": 3,
+      "role": "INSIGHT",
+      "headline": "기사 한 줄에 자기가 어느 편에 서 있는지 드러난다.",
+      "subtext": "",
+      "design_note": "결론 문장 그대로"
+    },
+    {
+      "slide_no": 4,
+      "role": "EVIDENCE",
+      "headline": "증권 수천 장 들여다보니 이런 뉴스 나올 때마다 고객들 반응이 두 갈래로",
+      "subtext": "",
+      "design_note": "economy_news 근거 보강"
+    },
+    {
+      "slide_no": 5,
+      "role": "CTA",
+      "headline": "카톡 채널에서 무료 진단 신청",
+      "subtext": "이 카드 배우자에게 공유해보세요",
+      "design_note": "오렌지 CTA 버튼"
+    }
+  ],
+  "caption_seed": "4대 금융그룹 상반기 순이익 11조 돌파.",
+  "hashtags": []
+}

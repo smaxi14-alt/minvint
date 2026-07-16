@@ -1,0 +1,66 @@
+{
+  "id": "20260716_blog_배우자-사망-세대별-대응-전략-40대-50대",
+  "source_type": "blog",
+  "source_ref": {
+    "url": "https://blog.naver.com/smaxi/224348408088",
+    "series": "증권 진단 실사례",
+    "title": "배우자 사망 세대별 대응 전략 — 40대·50대·60대, 증권 정리 순서가 다릅니다",
+    "keyword": "배우자 사망 세대별 대응 전략"
+  },
+  "created_at": "2026-07-16T14:18:49.369645",
+  "status": "pending_selection",
+  "persona": "park_gwajang",
+  "slides": [
+    {
+      "slide_no": 1,
+      "role": "HOOK",
+      "headline": "배우자 사망이라는 단어를 검색창에 넣는 순간, 대부분은 남 얘기라고 생각하며 클릭하십니다. **배우자 사망 세대별 대응 전략**은 슬픈 상상이 ",
+      "subtext": "",
+      "design_note": "본문 첫 문단(두괄식 결론) 기반"
+    },
+    {
+      "slide_no": 2,
+      "role": "PROBLEM",
+      "headline": "왜 세대별로 봐야 할 항목이 다른가",
+      "subtext": "",
+      "design_note": ""
+    },
+    {
+      "slide_no": 3,
+      "role": "EVIDENCE",
+      "headline": "익명 진단 실사례 — 세대별로 갈린 세 집",
+      "subtext": "",
+      "design_note": "Before=레드(#C0392B)/After=그린·오렌지 빅넘버 카드"
+    },
+    {
+      "slide_no": 4,
+      "role": "INSIGHT",
+      "headline": "60대는 '금액'보다 '순서'입니다",
+      "subtext": "",
+      "design_note": ""
+    },
+    {
+      "slide_no": 5,
+      "role": "INSIGHT",
+      "headline": "지금 세대와 무관하게 할 수 있는 것",
+      "subtext": "",
+      "design_note": ""
+    },
+    {
+      "slide_no": 6,
+      "role": "DEEPER_DIVE",
+      "headline": "저는 증권을 팔지 않고, 봐드립니다.",
+      "subtext": "",
+      "design_note": "시그니처 문장 인용구"
+    },
+    {
+      "slide_no": 7,
+      "role": "CTA",
+      "headline": "카카오 오픈채팅 상담",
+      "subtext": "배우자와 상의해보세요",
+      "design_note": "오렌지 CTA 버튼"
+    }
+  ],
+  "caption_seed": "배우자 사망이라는 단어를 검색창에 넣는 순간, 대부분은 남 얘기라고 생각하며 클릭하십니다. **배우자 사망 세대별 대응 전략**은 슬픈 상상이 ",
+  "hashtags": []
+}

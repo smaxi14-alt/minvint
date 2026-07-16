@@ -1,0 +1,52 @@
+{
+  "id": "20260716_thread_6a4ca3c60f38429231703baa",
+  "source_type": "thread",
+  "source_ref": {
+    "post_id": "6a4ca3c60f38429231703baa",
+    "slot": "noon",
+    "phase": 1,
+    "content_type": "economy_news"
+  },
+  "created_at": "2026-07-16T14:18:49.342322",
+  "status": "pending_selection",
+  "persona": "common",
+  "slides": [
+    {
+      "slide_no": 1,
+      "role": "HOOK",
+      "headline": "자영업자 대출 잔액이 1,100조에 가까워졌다는 기사.",
+      "subtext": "5년",
+      "design_note": "빅넘버 강조, 딥네이비 배경"
+    },
+    {
+      "slide_no": 2,
+      "role": "PROBLEM",
+      "headline": "5년 전 2020년 말이 800조 수준이었다.",
+      "subtext": "",
+      "design_note": ""
+    },
+    {
+      "slide_no": 3,
+      "role": "INSIGHT",
+      "headline": "'퇴직하고 뭐라도 하지'라는 문장, 이제 계산기 두드릴 시점.",
+      "subtext": "",
+      "design_note": "결론 문장 그대로"
+    },
+    {
+      "slide_no": 4,
+      "role": "EVIDENCE",
+      "headline": "5년 만에 300조가 늘었다는 얘기다.",
+      "subtext": "",
+      "design_note": "economy_news 근거 보강"
+    },
+    {
+      "slide_no": 5,
+      "role": "CTA",
+      "headline": "카톡 채널에서 무료 진단 신청",
+      "subtext": "이 카드 배우자에게 공유해보세요",
+      "design_note": "오렌지 CTA 버튼"
+    }
+  ],
+  "caption_seed": "자영업자 대출 잔액이 1,100조에 가까워졌다는 기사.",
+  "hashtags": []
+}

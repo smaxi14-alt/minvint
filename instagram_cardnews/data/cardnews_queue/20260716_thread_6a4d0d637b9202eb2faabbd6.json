@@ -1,0 +1,45 @@
+{
+  "id": "20260716_thread_6a4d0d637b9202eb2faabbd6",
+  "source_type": "thread",
+  "source_ref": {
+    "post_id": "6a4d0d637b9202eb2faabbd6",
+    "slot": "evening",
+    "phase": 1,
+    "content_type": "agro_finance"
+  },
+  "created_at": "2026-07-16T14:18:49.343982",
+  "status": "pending_selection",
+  "persona": "common",
+  "slides": [
+    {
+      "slide_no": 1,
+      "role": "HOOK",
+      "headline": "상담하다 보면 40대 남자들한테 꼭 물어본다.",
+      "subtext": "90%",
+      "design_note": "빅넘버 강조, 딥네이비 배경"
+    },
+    {
+      "slide_no": 2,
+      "role": "PROBLEM",
+      "headline": "\"중학교 때 뭐 되고 싶으셨어요?\"\n\n돌아오는 답의 90%는 지금 직업이",
+      "subtext": "",
+      "design_note": ""
+    },
+    {
+      "slide_no": 3,
+      "role": "INSIGHT",
+      "headline": "40대들, 중학교 때 뭐 되고 싶었어요?",
+      "subtext": "",
+      "design_note": "결론 문장 그대로"
+    },
+    {
+      "slide_no": 4,
+      "role": "CTA",
+      "headline": "카톡 채널에서 무료 진단 신청",
+      "subtext": "이 카드 배우자에게 공유해보세요",
+      "design_note": "오렌지 CTA 버튼"
+    }
+  ],
+  "caption_seed": "상담하다 보면 40대 남자들한테 꼭 물어본다.",
+  "hashtags": []
+}
