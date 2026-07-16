@@ -27,12 +27,14 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 
-from config import BUFFER_IG_ACCESS_TOKEN, BUFFER_IG_CHANNEL_ID, BUFFER_IG_ORGANIZATION_ID, GITHUB_RAW_BASE
+from config import (
+    BUFFER_IG_ACCESS_TOKEN, BUFFER_IG_CHANNEL_ID, BUFFER_IG_ORGANIZATION_ID,
+    GITHUB_RAW_BASE, REPO_ROOT,
+)
 
 logger = logging.getLogger(__name__)
 
 GRAPHQL_URL = "https://api.buffer.com/graphql"
-REPO_ROOT = Path(__file__).parent.parent
 
 
 def _headers() -> dict:
