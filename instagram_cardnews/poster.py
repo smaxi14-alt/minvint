@@ -149,10 +149,13 @@ def _build_carousel_mutation(caption: str, media_urls: list[str]) -> str:
     틀렸던 것으로 확인됨).
 
     또한 인스타그램은 metadata.instagram.type이 필수다("Instagram posts
-    require a type" 오류로 실측 확인) — PostType enum에 실제로 존재하는
-    "carousel" 값을 사용(다른 값: post/reel/story/short 등, introspection으로
-    확인). shouldShareToFeed도 NON_NULL이라 항상 명시해야 한다.
-    isAiGenerated는 실제로 AI가 생성한 콘텐츠이므로 정직하게 true로 표기."""
+    require a type" 오류로 실측 확인). PostType enum 자체엔 "carousel"
+    값도 있지만, 인스타그램 채널에는 "Instagram does not support the
+    'carousel' post type. Valid types are post, story, or reel" 오류로
+    거부됨(2026-07-16 실측) — 여러 장의 assets를 넘기면 Buffer가 자동으로
+    캐러셀로 처리하고, type 자체는 "post"(피드 게시물)로 지정해야 한다.
+    shouldShareToFeed도 NON_NULL이라 항상 명시해야 한다. isAiGenerated는
+    실제로 AI가 생성한 콘텐츠이므로 정직하게 true로 표기."""
     escaped = caption.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
     asset_items = ", ".join(f'{{ image: {{ url: "{u}" }} }}' for u in media_urls)
     return f"""
@@ -163,7 +166,7 @@ mutation {{
     assets: [{asset_items}]
     metadata: {{
       instagram: {{
-        type: carousel
+        type: post
         shouldShareToFeed: true
         isAiGenerated: true
       }}
