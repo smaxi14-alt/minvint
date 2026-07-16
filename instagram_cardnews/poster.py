@@ -109,7 +109,14 @@ def publish_images_to_github(image_paths: list[Path], commit_message: str) -> li
     확보한다. Buffer의 media 필드가 로컬 업로드를 지원하지 않아 필요한
     경로 — 실제로 원격 저장소에 새 커밋을 만들고 푸시하는, 되돌리기 번거로운
     작업이므로 session.py가 사람이 있는 세션에서만 호출해야 한다."""
-    rel_paths = [str(Path(p).relative_to(REPO_ROOT)) for p in image_paths]
+    # Windows에서 str(Path)는 백슬래시 구분자를 쓴다 — 아래에서 "/"로 split해
+    # URL 세그먼트를 만들려 했으나 백슬래시라 split이 무의미해지고, 전체
+    # 경로가 통째로 encode돼 "%5C"(백슬래시)가 포함된 존재하지 않는 URL이
+    # 만들어지는 버그가 있었다(2026-07-16 실측 발견 — Buffer가 이 URL을
+    # "HTTP 404"로 계속 거부해서 CDN 전파 지연으로 착각했으나, 실제로는
+    # URL 자체가 애초에 유효한 GitHub 경로가 아니었다). as_posix()로 항상
+    # 슬래시 구분자를 쓰도록 고정.
+    rel_paths = [Path(p).relative_to(REPO_ROOT).as_posix() for p in image_paths]
 
     code, msg = _run_git(["add", *rel_paths])
     if code != 0:
