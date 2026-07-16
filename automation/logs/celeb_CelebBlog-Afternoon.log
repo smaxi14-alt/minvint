@@ -1,0 +1,32 @@
+2026-07-15 14:00:14,371 [INFO] [celeb] 헤드라인 72개 수집
+2026-07-15 14:00:25,679 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:00:25,708 [INFO] [celeb] 후보 21개 추출
+2026-07-15 14:00:25,711 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 디에잇
+2026-07-15 14:00:25,729 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 하하
+2026-07-15 14:00:25,782 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 이동휘
+2026-07-15 14:00:25,790 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 풍자
+2026-07-15 14:00:25,791 [INFO] [celeb] 최근 14일 내 이미 발행 — 제외: 이성민
+2026-07-15 14:00:25,852 [INFO] [celeb] 최근 14일 내 이미 발행 — 제외: 박보검
+2026-07-15 14:00:25,860 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 박도하
+2026-07-15 14:00:25,867 [INFO] [celeb] 후보 시도: 조이 — 밝고 싱그러운 여름 감성 메이크업과 헤어 ['celeb_beauty']
+2026-07-15 14:00:26,166 [INFO] [celeb] 조이 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 14:00:30,253 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:00:30,255 [WARNING] [celeb] 팩트 추출 실패: string indices must be integers, not 'str'
+2026-07-15 14:00:30,255 [INFO] [celeb] 조이: 팩트 부족 — 다음 후보로
+2026-07-15 14:00:30,255 [INFO] [celeb] 후보 시도: 장원영 — 여름 감성 메이크업과 헤어스타일 ['celeb_beauty']
+2026-07-15 14:00:30,559 [INFO] [celeb] 장원영 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 14:00:39,685 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:00:39,718 [INFO] [celeb] 장원영: 팩트 부족 — 다음 후보로
+2026-07-15 14:00:39,718 [INFO] [celeb] 후보 시도: 미미 — 근황 공개 ['celeb_fashion']
+2026-07-15 14:00:40,035 [INFO] [celeb] 미미 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 14:00:41,596 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:00:41,597 [INFO] [celeb] 미미: 팩트 부족 — 다음 후보로
+2026-07-15 14:00:41,597 [INFO] [celeb] 후보 시도: 리한나 — 제이지 콘서트 생 로랑 커스텀 룩 ['celeb_fashion']
+2026-07-15 14:00:41,926 [INFO] [celeb] 리한나 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 14:00:48,226 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:00:48,260 [INFO] [celeb] 리한나: 팩트 부족 — 다음 후보로
+2026-07-15 14:00:48,260 [INFO] [celeb] 후보 시도: 리사 — 나이키 월드컵 응원 룩 ['celeb_fashion']
+2026-07-15 14:00:48,585 [INFO] [celeb] 리사 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 14:00:56,799 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:00:56,800 [INFO] [celeb] 리사: 팩트 부족 — 다음 후보로
+2026-07-15 14:00:56,801 [INFO] [STATUS=ALL_CANDIDATES_FAILED] 후보 5개 전부 실패 — 이번 슬롯 건너뜀

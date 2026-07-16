@@ -1,0 +1,29 @@
+2026-07-15 11:40:25,884 [INFO] [celeb] 헤드라인 72개 수집
+2026-07-15 11:40:34,087 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:40:34,116 [INFO] [celeb] 후보 15개 추출
+2026-07-15 11:40:34,164 [INFO] [celeb] 최근 14일 내 이미 발행 — 제외: 닉쿤
+2026-07-15 11:40:34,180 [INFO] [celeb] 최근 14일 내 이미 발행 — 제외: 이성민
+2026-07-15 11:40:34,216 [INFO] [celeb] 최근 14일 내 이미 발행 — 제외: 이지아
+2026-07-15 11:40:34,216 [INFO] [celeb] 후보 시도: 장원영 — 공항 출국 시 패션 및 태도 ['celeb_fashion']
+2026-07-15 11:40:34,542 [INFO] [celeb] 장원영 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 11:40:34,542 [INFO] [celeb] IG 워치리스트 후보 — 수동 큐레이션 권장: 장원영 (주제가 SNS 게시물 기반 — 이미지 검색으로 원본 사진을 못 찾을 가능성 높음)
+2026-07-15 11:40:41,250 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:40:41,282 [INFO] [celeb] 장원영: 팩트 부족 — 다음 후보로
+2026-07-15 11:40:41,283 [INFO] [celeb] 후보 시도: 김소영 — 출산 후 다이어트 성공 ['celeb_diet']
+2026-07-15 11:40:41,582 [INFO] [celeb] 김소영 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 11:40:47,546 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:40:47,562 [INFO] [celeb] 김소영: 팩트 부족 — 다음 후보로
+2026-07-15 11:40:47,562 [INFO] [celeb] 후보 시도: 김규리 — 48세 동안 미모 및 뷰티 ['celeb_beauty']
+2026-07-15 11:40:47,887 [INFO] [celeb] 김규리 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 11:40:47,887 [INFO] [celeb] IG 워치리스트 후보 — 수동 큐레이션 권장: 김규리 (주제가 SNS 게시물 기반 — 이미지 검색으로 원본 사진을 못 찾을 가능성 높음)
+2026-07-15 11:40:54,075 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:40:54,107 [INFO] [celeb] 김규리: 팩트 부족 — 다음 후보로
+2026-07-15 11:40:54,108 [INFO] [celeb] 후보 시도: 리사 — 나이키 월드컵 응원 룩 ['celeb_fashion']
+2026-07-15 11:40:54,429 [INFO] [celeb] 리사 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 11:40:58,030 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:40:58,044 [INFO] [celeb] 리사: 팩트 부족 — 다음 후보로
+2026-07-15 11:40:58,044 [INFO] [celeb] 후보 시도: 리한나 — 제이지 콘서트 생 로랑 커스텀 룩 ['celeb_fashion']
+2026-07-15 11:40:58,428 [INFO] [celeb] 리한나 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 11:41:07,053 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:41:07,109 [INFO] [celeb] 리한나: 팩트 부족 — 다음 후보로
+2026-07-15 11:41:07,110 [INFO] [STATUS=ALL_CANDIDATES_FAILED] 후보 5개 전부 실패 — 이번 슬롯 건너뜀

@@ -1,0 +1,106 @@
+2026-07-15 14:44:24,953 [INFO] [celeb] 헤드라인 72개 수집
+2026-07-15 14:44:36,578 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:44:36,608 [INFO] [celeb] 후보 21개 추출
+2026-07-15 14:44:36,657 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 하하
+2026-07-15 14:44:36,674 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 정한
+2026-07-15 14:44:36,688 [INFO] [celeb] 최근 14일 내 이미 발행 — 제외: 박보검
+2026-07-15 14:44:36,694 [INFO] [celeb] 최근 14일 내 이미 발행 — 제외: 이성민
+2026-07-15 14:44:36,694 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 풍자
+2026-07-15 14:44:36,727 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 박도하
+2026-07-15 14:44:36,727 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 이동휘
+2026-07-15 14:44:36,743 [INFO] [celeb] 후보 시도: 조이 — 동물농장 출근길 여름 감성 메이크업과 패션 ['celeb_fashion', 'celeb_beauty']
+2026-07-15 14:44:37,101 [INFO] [celeb] 조이 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 14:44:43,699 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:44:43,701 [INFO] [celeb] 조이: 팩트 부족 — 다음 후보로
+2026-07-15 14:44:43,701 [INFO] [celeb] 후보 시도: 장원영 — 출국 공항패션 및 태도 ['celeb_fashion']
+2026-07-15 14:44:44,089 [INFO] [celeb] 장원영 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 14:44:52,917 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:44:55,477 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:44:55,478 [INFO] [celeb] YouTube 임베드 확보: 장원영
+2026-07-15 14:44:55,660 [WARNING] [celeb] Google CSE 검색 실패: HTTP Error 403: Forbidden
+2026-07-15 14:44:56,850 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:44:56,851 [INFO] [celeb] 이미지 검색 쿼리 생성: ['장원영 공항패션', '장원영 출국 공항 스타일', '장원영 공항룩 여행룩']
+2026-07-15 14:44:58,324 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:44:58,325 [INFO] [celeb] 시각적 후킹 요소 추출: 공항 또는 비행기 탑승 관련 배경에서 정장하거나 세련된 복장을 입은 채 우아한 자세를 취하고 있는 모습
+2026-07-15 14:45:02,459 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:45:06,299 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:45:11,822 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:45:15,055 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:45:19,576 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:45:22,977 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:45:26,442 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:45:31,925 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:45:35,073 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:45:38,480 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:45:44,558 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:45:48,732 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:45:52,493 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:45:56,866 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:46:00,562 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:46:04,135 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:46:13,332 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:46:17,246 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:46:21,480 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:46:25,643 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:46:29,216 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:46:32,914 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:46:36,269 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:46:39,913 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:46:44,354 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:46:48,224 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:46:48,626 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-07-15 14:46:48,629 [WARNING] [celeb] 사진 품질 판단 실패: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'messages.0.content.0.image.source.base64: The image was specified using the image/webp media type, but the image appears to be a image/jpeg image'}, 'request_id': 'req_011Cd3KEZ7BnHFbffhSr5pYB'}
+2026-07-15 14:46:52,158 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:46:56,122 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:47:01,283 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:47:05,651 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:47:09,949 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:47:13,967 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:47:17,324 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:47:21,856 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:47:25,192 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:47:29,210 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:47:32,997 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:47:36,617 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:47:39,952 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:47:44,221 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:47:44,222 [INFO] [celeb] 다운로드 실사 사진 4장 확보(후보 45건 중, 시각적 매칭 2장): 장원영
+2026-07-15 14:47:44,222 [WARNING] [celeb] PEXELS_API_KEY 없음 — 맥락 이미지 건너뜀
+2026-07-15 14:47:45,024 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-15 14:50:44,912 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-07-15 14:50:44,913 [WARNING] 이미지 생성 실패 (시도 1/3): 504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': 'DEADLINE_EXCEEDED'}}
+2026-07-15 14:50:46,913 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-15 14:51:06,013 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 200 OK"
+2026-07-15 14:51:06,335 [INFO] 이미지 생성 완료: C:\Users\ant_6\OneDrive\문서\마케팅\automation\data\celeb_images\card_장원영_0.png (535482 bytes, 시도 2)
+2026-07-15 14:51:06,337 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-15 14:51:27,242 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 200 OK"
+2026-07-15 14:51:27,492 [INFO] 이미지 생성 완료: C:\Users\ant_6\OneDrive\문서\마케팅\automation\data\celeb_images\card_장원영_1.png (419127 bytes, 시도 1)
+2026-07-15 14:51:56,874 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:51:56,875 [INFO] [celeb] 장원영 글 생성 완료 (1192자)
+2026-07-15 14:51:56,875 [WARNING] [celeb] 장원영: 검증 게이트 위반 1건(시도 1/3): ["부정/루머성 키워드 검출: '논란'"] — 사유를 반영해 재생성
+2026-07-15 14:52:25,277 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 14:52:25,279 [INFO] [celeb] 장원영 글 생성 완료 (1063자)
+2026-07-15 14:52:25,300 [INFO] ====== WebDriver manager ======
+2026-07-15 14:52:28,349 [INFO] Driver [C:\Users\ant_6\.wdm\drivers\chromedriver\win64\150.0.7871.124\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-07-15 14:52:36,518 [INFO] [naver] 저장된 세션으로 로그인 확인됨
+2026-07-15 14:52:50,800 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 14:52:58,817 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 14:52:58,817 [INFO] [naver] 이미지 삽입 완료 (1번째, style=photo)
+2026-07-15 14:53:15,192 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 14:53:23,201 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 14:53:23,201 [INFO] [naver] 이미지 삽입 완료 (2번째, style=photo)
+2026-07-15 14:53:39,456 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 14:53:47,466 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 14:53:47,466 [INFO] [naver] 이미지 삽입 완료 (3번째, style=photo)
+2026-07-15 14:53:54,982 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 14:54:02,992 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 14:54:02,992 [INFO] [naver] 이미지 삽입 완료 (4번째, style=infographic)
+2026-07-15 14:54:12,809 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 14:54:20,817 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 14:54:20,817 [INFO] [naver] 이미지 삽입 완료 (5번째, style=infographic)
+2026-07-15 14:54:28,263 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 14:54:36,287 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 14:54:36,287 [INFO] [naver] 이미지 삽입 완료 (6번째, style=photo)
+2026-07-15 14:54:50,055 [INFO] [naver] URL 자동 임베드 삽입: https://www.youtube.com/watch?v=RlxbdC3ROtI
+2026-07-15 14:55:10,616 [INFO] [naver] dry_run 완료 — 발행하지 않음. 스크린샷: C:\Users\ant_6\OneDrive\문서\마케팅\automation\data\naver_dry_run.png
+2026-07-15 14:55:13,416 [INFO] [STATUS=DRY_RUN] 장원영 — data/naver_dry_run.png 확인

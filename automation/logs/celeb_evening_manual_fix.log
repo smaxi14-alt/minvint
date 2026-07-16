@@ -1,0 +1,126 @@
+2026-07-15 23:10:42,035 [INFO] [celeb] 헤드라인 72개 수집
+2026-07-15 23:10:57,434 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:10:57,468 [INFO] [celeb] 후보 25개 추출
+2026-07-15 23:10:57,501 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 하하
+2026-07-15 23:10:57,501 [INFO] [celeb] 최근 14일 내 이미 발행 — 제외: 리한나
+2026-07-15 23:10:57,635 [INFO] [celeb] 후보 시도: 풍자 — 33kg 감량 다이어트 성공 ['celeb_diet']
+2026-07-15 23:10:57,993 [INFO] [celeb] 풍자 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 23:10:57,993 [INFO] [celeb] IG 워치리스트 후보 — 수동 큐레이션 권장: 풍자 (주제가 SNS 게시물 기반 — 이미지 검색으로 원본 사진을 못 찾을 가능성 높음)
+2026-07-15 23:11:06,592 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:11:11,068 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:11:11,069 [INFO] [celeb] YouTube 후보 중 적합한 영상 없음 판정: 검색어 "풍자 33kg 감량 다이어트 성공"과 관련된 영상이 없습니다. 제시된 목록의 모든 영상들은 다이어트 감량과 무관한 다른 주제(공동육아, 트랜스젠더 공개, 성전환 수술, 음식 관련, 커밍아웃 상담)를 다루고 있어 검색 의도와 맞지 않습니다. 적합한 영상이 없으므로 false로 표기합니다.
+2026-07-15 23:11:11,069 [INFO] [celeb] YouTube 검색 결과 5개('풍자 인터뷰') 중 적합한 영상 없음 — 건너뜀: 풍자
+2026-07-15 23:11:11,268 [WARNING] [celeb] Google CSE 검색 실패: HTTP Error 403: Forbidden
+2026-07-15 23:11:13,669 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:11:13,670 [INFO] [celeb] 이미지 검색 쿼리 생성: ['풍자 다이어트 전 과거 모습', '풍자 33kg 감량 후 최근 몸매 바디프로필']
+2026-07-15 23:11:16,370 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:11:16,371 [INFO] [celeb] 시각적 후킹 요소 추출: 33kg 감량 전후를 비교하는 사진으로, 같은 포즈나 각도에서 촬영한 신체 크기의 현저한 차이(체격 감소, 얼굴 라인 변화, 신체 둘레 감소 등)가 드러난 모습
+2026-07-15 23:11:20,299 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:11:25,258 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:11:29,426 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:11:33,421 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:11:38,564 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:11:41,972 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:11:45,572 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:11:49,372 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:11:53,169 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:11:57,007 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:12:00,291 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:12:03,672 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:12:07,550 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:12:11,319 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:12:15,306 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:12:19,698 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:12:23,346 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:12:27,638 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:12:31,843 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:12:35,481 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:12:40,906 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:12:45,187 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:12:49,518 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:12:49,521 [WARNING] [celeb] 시각적 후킹 사진 없음: 풍자 — '33kg 감량 전후를 비교하는 사진으로, 같은 포즈나 각도에서 촬영한 신체 크기의 현저한 차이(체격 감소, 얼굴 라인 변화, 신체 둘레 감소 등)가 드러난 모습' 매칭 실패
+2026-07-15 23:12:49,521 [INFO] [celeb] 다운로드 실사 사진 6장 확보(후보 30건 중, 시각적 매칭 0장): 풍자
+2026-07-15 23:12:49,521 [WARNING] [celeb] PEXELS_API_KEY 없음 — 맥락 이미지 건너뜀
+2026-07-15 23:12:50,490 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-15 23:13:08,540 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 200 OK"
+2026-07-15 23:13:08,896 [INFO] 이미지 생성 완료: C:\Users\ant_6\OneDrive\문서\마케팅\automation\data\celeb_images\card_풍자_0.png (403309 bytes, 시도 1)
+2026-07-15 23:13:08,897 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-15 23:13:27,410 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 200 OK"
+2026-07-15 23:13:27,623 [INFO] 이미지 생성 완료: C:\Users\ant_6\OneDrive\문서\마케팅\automation\data\celeb_images\card_풍자_1.png (428793 bytes, 시도 1)
+2026-07-15 23:13:57,949 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 23:13:57,950 [INFO] [celeb] 풍자 글 생성 완료 (1282자)
+2026-07-15 23:13:57,966 [INFO] ====== WebDriver manager ======
+2026-07-15 23:14:01,047 [INFO] Driver [C:\Users\ant_6\.wdm\drivers\chromedriver\win64\150.0.7871.124\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-07-15 23:14:09,261 [INFO] [naver] 저장된 세션으로 로그인 확인됨
+2026-07-15 23:14:26,928 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:14:34,965 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:14:34,965 [INFO] [naver] 이미지 삽입 완료 (1번째, style=photo)
+2026-07-15 23:14:58,223 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:15:06,234 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:15:06,234 [INFO] [naver] 이미지 삽입 완료 (2번째, style=infographic)
+2026-07-15 23:15:14,569 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:15:22,580 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:15:22,580 [INFO] [naver] 이미지 삽입 완료 (3번째, style=infographic)
+2026-07-15 23:15:36,239 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:15:44,250 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:15:44,250 [INFO] [naver] 이미지 삽입 완료 (4번째, style=photo)
+2026-07-15 23:15:56,166 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:16:04,175 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:16:04,175 [INFO] [naver] 이미지 삽입 완료 (5번째, style=photo)
+2026-07-15 23:16:18,482 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:16:26,492 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:16:26,492 [INFO] [naver] 이미지 삽입 완료 (6번째, style=photo)
+2026-07-15 23:16:36,312 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:16:44,322 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:16:44,322 [INFO] [naver] 이미지 삽입 완료 (7번째, style=photo)
+2026-07-15 23:16:59,774 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:17:07,782 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:17:07,782 [INFO] [naver] 이미지 삽입 완료 (8번째, style=photo)
+2026-07-15 23:17:38,518 [WARNING] [naver] 제목 반영 확인 실패 — 재확인 중 (1/3)
+2026-07-15 23:17:39,538 [WARNING] [naver] 제목 반영 확인 실패 — 재확인 중 (2/3)
+2026-07-15 23:17:40,559 [WARNING] [naver] 제목 반영 확인 실패 — 재확인 중 (3/3)
+2026-07-15 23:17:41,560 [WARNING] [naver] 제목이 화면에 반영되지 않은 것으로 보입니다. 스크린샷을 확인하세요.
+2026-07-15 23:17:43,953 [INFO] [naver] 카테고리 선택 완료: 셀럽 다이어트
+2026-07-15 23:18:03,203 [ERROR] [celeb] 풍자: 네이버 발행 실패 (시도 1/2) — 새 브라우저 세션으로 재시도
+Traceback (most recent call last):
+  File "C:\Users\ant_6\OneDrive\문서\마케팅\automation\run_celeb_pipeline.py", line 229, in _try_candidate
+    url = post_to_naver_blog(
+        title, body, draft["hashtags"], image_map=image_map, dry_run=dry_run,
+        blog_id=CELEB_NAVER_BLOG_ID, blog_pw=CELEB_NAVER_BLOG_PW, profile_dir=CELEB_PROFILE_DIR,
+        category=category, stylize=True,
+    )
+  File "C:\Users\ant_6\OneDrive\문서\마케팅\automation\naver_blog_poster.py", line 865, in post_to_naver_blog
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: 발행 버튼 클릭 후 실제 게시글 URL을 확인하지 못함 (현재 URL: https://blog.naver.com/kbyoung1120?Redirect=Write&) — 스크린샷: C:\Users\ant_6\OneDrive\문서\마케팅\automation\data\naver_publish_unconfirmed.png
+2026-07-15 23:18:03,208 [INFO] ====== WebDriver manager ======
+2026-07-15 23:18:07,519 [INFO] Driver [C:\Users\ant_6\.wdm\drivers\chromedriver\win64\150.0.7871.124\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-07-15 23:18:14,228 [INFO] [naver] 저장된 세션으로 로그인 확인됨
+2026-07-15 23:18:25,316 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:18:33,331 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:18:33,331 [INFO] [naver] 이미지 삽입 완료 (1번째, style=photo)
+2026-07-15 23:18:54,529 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:19:02,538 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:19:02,538 [INFO] [naver] 이미지 삽입 완료 (2번째, style=infographic)
+2026-07-15 23:19:09,652 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:19:17,661 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:19:17,661 [INFO] [naver] 이미지 삽입 완료 (3번째, style=infographic)
+2026-07-15 23:19:31,128 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:19:39,136 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:19:39,136 [INFO] [naver] 이미지 삽입 완료 (4번째, style=photo)
+2026-07-15 23:19:49,727 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:19:57,735 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:19:57,736 [INFO] [naver] 이미지 삽입 완료 (5번째, style=photo)
+2026-07-15 23:20:12,165 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:20:20,175 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:20:20,175 [INFO] [naver] 이미지 삽입 완료 (6번째, style=photo)
+2026-07-15 23:20:29,935 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:20:37,945 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:20:37,945 [INFO] [naver] 이미지 삽입 완료 (7번째, style=photo)
+2026-07-15 23:20:52,795 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 23:21:00,803 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 23:21:00,803 [INFO] [naver] 이미지 삽입 완료 (8번째, style=photo)
+2026-07-15 23:21:32,766 [INFO] [naver] 카테고리 선택 완료: 셀럽 다이어트
+2026-07-15 23:21:36,147 [INFO] [naver] 발행 완료: https://blog.naver.com/kbyoung1120/224347891139
+2026-07-15 23:21:41,405 [INFO] [STATUS=SUCCESS] 풍자 발행 완료: https://blog.naver.com/kbyoung1120/224347891139

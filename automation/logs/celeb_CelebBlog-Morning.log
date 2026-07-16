@@ -1,0 +1,92 @@
+2026-07-15 10:19:10,277 [INFO] [celeb] 헤드라인 72개 수집
+2026-07-15 10:19:24,959 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:19:25,036 [INFO] [celeb] 후보 17개 추출
+2026-07-15 10:19:25,123 [INFO] [celeb] 최근 14일 내 이미 발행 — 제외: 이성민
+2026-07-15 10:19:25,148 [INFO] [celeb] 최근 14일 내 이미 발행 — 제외: 이지아
+2026-07-15 10:19:25,156 [INFO] [celeb] 후보 시도: 닉쿤 — 3일간 계란 3개만 먹는 혹독한 단기 다이어트로 과거 '짐승돌' 몸매 복귀, 수영장에서 탄탄한 등 근육 자랑 ['celeb_diet']
+2026-07-15 10:19:25,514 [INFO] [celeb] 닉쿤 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 10:19:37,230 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:19:40,074 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:19:40,075 [INFO] [celeb] YouTube 후보 중 적합한 영상 없음 판정: 검색된 영상들 중 사용자가 요청한 "닉쿤 3일간 계란 3개만 먹는 단기 다이어트로 과거 몸매 복귀, 수영장에서 탄탄한 등 근육 자랑"이라는 주제와 일치하는 영상이 없습니다. 0번과 3번은 인터뷰 콘텐츠, 1번과 2번은 예능/엔터테인먼트 콘텐츠, 4번은 블락비 관련 뉴스로 모두 다이어트와 무관합니다.
+2026-07-15 10:19:40,075 [INFO] [celeb] YouTube 검색 결과 5개('닉쿤 인터뷰') 중 적합한 영상 없음 — 건너뜀: 닉쿤
+2026-07-15 10:19:40,296 [WARNING] [celeb] Google CSE 검색 실패: HTTP Error 403: Forbidden
+2026-07-15 10:19:42,220 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:19:42,221 [INFO] [celeb] 이미지 검색 쿼리 생성: ['닉쿤 짐승돌 과거 몸매', '닉쿤 최근 수영장 탄탄한 등 근육 바디프로필']
+2026-07-15 10:19:49,135 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:19:51,931 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:19:54,277 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:19:57,624 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:00,246 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:04,245 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:10,685 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:14,042 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:16,428 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:18,518 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:21,511 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:24,184 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:28,039 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:32,588 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:35,830 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:38,416 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:41,257 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:44,329 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:47,672 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:50,287 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:54,330 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:56,985 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:20:59,976 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:21:02,452 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:21:04,988 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:21:07,813 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:21:10,288 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 10:21:10,289 [INFO] [celeb] 다운로드 실사 사진 4장 확보(쿼리 2개, 후보 30건 중): 닉쿤
+2026-07-15 10:21:10,289 [WARNING] [celeb] PEXELS_API_KEY 없음 — 맥락 이미지 건너뜀
+2026-07-15 10:21:11,106 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-15 10:21:35,550 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 200 OK"
+2026-07-15 10:21:35,876 [INFO] 이미지 생성 완료: C:\Users\ant_6\OneDrive\문서\마케팅\automation\data\celeb_images\card_닉쿤_0.png (367752 bytes, 시도 1)
+2026-07-15 10:21:35,877 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-16 10:00:27,671 [INFO] [celeb] 헤드라인 72개 수집
+2026-07-16 10:00:44,462 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:00:44,519 [INFO] [celeb] 후보 27개 추출
+2026-07-16 10:00:44,573 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 하하
+2026-07-16 10:00:44,584 [INFO] [celeb] 최근 14일 내 이미 발행 — 제외: 리한나
+2026-07-16 10:00:44,594 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 정한
+2026-07-16 10:00:44,594 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 이동휘
+2026-07-16 10:00:44,594 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 홀란
+2026-07-16 10:00:44,660 [INFO] [celeb] 최근 14일 내 이미 발행 — 제외: 풍자
+2026-07-16 10:00:44,781 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 송민호
+2026-07-16 10:00:44,782 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 유아인
+2026-07-16 10:00:44,788 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 박도하
+2026-07-16 10:00:44,788 [INFO] [celeb] 후보 시도: 구혜선 — 악플에 반응한 다이어트 성공담 ['celeb_diet']
+2026-07-16 10:00:45,098 [INFO] [celeb] 구혜선 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-16 10:00:54,320 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:00:54,428 [INFO] [celeb] 구혜선: 논란/부정적 신호 감지 — 엄격 기준 적용 (confirmed 7/3)
+2026-07-16 10:00:56,981 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:00:56,983 [INFO] [celeb] YouTube 임베드 확보: 구혜선
+2026-07-16 10:00:58,522 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:00:58,526 [INFO] [celeb] 이미지 검색 쿼리 생성: ['구혜선 악플 다이어트 전 과거 모습', '구혜선 다이어트 성공 후 최근 몸매 변화']
+2026-07-16 10:01:00,578 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:01:00,579 [INFO] [celeb] 시각적 후킹 요소 추출: 체중 감량 후 더 슬림해진 신체를 드러내는 의류(민소매, 몸에 붙는 옷 등)를 입고 이전 모습과의 비교가 가능하도록 촬영된 사진
+2026-07-16 10:01:04,080 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:01:07,530 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:01:10,470 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:01:13,521 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:01:17,440 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:01:20,803 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:01:24,041 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:01:27,680 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:01:31,172 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:01:34,645 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:01:34,649 [WARNING] [celeb] 시각적 후킹 사진 없음: 구혜선 — '체중 감량 후 더 슬림해진 신체를 드러내는 의류(민소매, 몸에 붙는 옷 등)를 입고 이전 모습과의 비교가 가능하도록 촬영된 사진' 매칭 실패
+2026-07-16 10:01:34,649 [INFO] [celeb] 다운로드 실사 사진 6장 확보(후보 30건 중, 시각적 매칭 0장): 구혜선
+2026-07-16 10:01:34,649 [WARNING] [celeb] PEXELS_API_KEY 없음 — 맥락 이미지 건너뜀
+2026-07-16 10:01:35,508 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-16 10:01:57,219 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 200 OK"
+2026-07-16 10:01:57,536 [INFO] 이미지 생성 완료: C:\Users\ant_6\OneDrive\문서\마케팅\automation\data\celeb_images\card_구혜선_0.png (484022 bytes, 시도 1)
+2026-07-16 10:01:57,538 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-16 10:02:24,510 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 200 OK"
+2026-07-16 10:02:24,788 [INFO] 이미지 생성 완료: C:\Users\ant_6\OneDrive\문서\마케팅\automation\data\celeb_images\card_구혜선_1.png (466238 bytes, 시도 1)
+2026-07-16 10:02:54,171 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:02:54,173 [INFO] [celeb] 구혜선 글 생성 완료 (1209자)
+2026-07-16 10:02:54,177 [WARNING] [celeb] 구혜선: 검증 게이트 위반 1건(시도 1/3): ["부정/루머성 키워드 검출: '악플'"] — 사유를 반영해 재생성
+^C

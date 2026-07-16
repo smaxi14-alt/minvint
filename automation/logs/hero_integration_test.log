@@ -1,0 +1,49 @@
+2026-07-15 11:41:50,671 [INFO] [celeb] 후보 시도: 닉쿤 \u2014 3일간 계란 3개만 먹는 혹독한 단기 다이어트로 과거 '짐승돌' 몸매 복귀 ['celeb_diet']
+2026-07-15 11:41:51,081 [INFO] [celeb] 닉쿤 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 11:41:51,081 [INFO] [celeb] IG 워치리스트 후보 \u2014 수동 큐레이션 권장: 닉쿤 (주제가 SNS 게시물 기반 \u2014 이미지 검색으로 원본 사진을 못 찾을 가능성 높음)
+2026-07-15 11:42:02,553 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:05,470 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:05,473 [INFO] [celeb] YouTube 임베드 확보: 닉쿤
+2026-07-15 11:42:05,684 [WARNING] [celeb] Google CSE 검색 실패: HTTP Error 403: Forbidden
+2026-07-15 11:42:06,918 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:06,918 [INFO] [celeb] 이미지 검색 쿼리 생성: ['닉쿤 짐승돌 시절 몸매 복근', '닉쿤 최근 다이어트 후 바디프로필']
+2026-07-15 11:42:08,306 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:08,307 [INFO] [celeb] 시각적 후킹 요소 추출: 상의를 벗거나 몸에 붙는 옷을 입어 복부, 팔, 등의 근육이 명확하게 드러난 건강한 체형의 모습
+2026-07-15 11:42:12,391 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:16,502 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:19,405 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:22,836 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:26,015 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:29,313 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:32,326 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:36,585 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:40,290 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:48,672 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:52,884 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:56,367 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:42:59,518 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:03,593 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:07,056 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:10,399 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:13,492 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:16,982 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:20,477 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:23,991 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:27,333 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:30,614 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:34,038 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:38,012 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:42,174 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:46,101 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:50,113 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:54,146 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:58,033 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:43:58,034 [INFO] [celeb] 다운로드 실사 사진 3장 확보(후보 30건 중, 시각적 매칭 1장): 닉쿤
+2026-07-15 11:43:58,034 [WARNING] [celeb] PEXELS_API_KEY 없음 \u2014 맥락 이미지 건너뜀
+2026-07-15 11:43:58,835 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-15 11:46:56,813 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-07-15 11:46:56,816 [WARNING] 이미지 생성 실패 (시도 1/3): 504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': 'DEADLINE_EXCEEDED'}}
+2026-07-15 11:46:58,817 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-15 11:49:57,690 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-07-15 11:49:57,692 [WARNING] 이미지 생성 실패 (시도 2/3): 504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': 'DEADLINE_EXCEEDED'}}
+2026-07-15 11:49:59,693 [INFO] AFC is enabled with max remote calls: 10.

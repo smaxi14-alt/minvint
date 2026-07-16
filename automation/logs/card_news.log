@@ -1,0 +1,732 @@
+2026-05-18 16:39:31,995 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-18 16:39:31,996 [WARNING]   .env에 추가: GOOGLE_API_KEY  ← Google AI Studio에서 발급: https://aistudio.google.com/apikey
+2026-05-18 16:39:31,997 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-18 16:39:31,998 [INFO] 
+==================================================
+2026-05-18 16:39:31,998 [INFO] [01_HOOK] 시작
+2026-05-18 16:39:31,998 [INFO] [01_HOOK] 기존 이미지 사용: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01.png
+2026-05-18 16:39:31,999 [INFO] [01_HOOK] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:39:36,785 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:39:36,836 [WARNING] [01_HOOK] 오타 감지: []
+2026-05-18 16:39:37,468 [ERROR] [01_HOOK] Figma 처리 오류: 403 Client Error: Forbidden for url: https://api.figma.com/v1/files/b07LKxoTSXFiOJkXq5wtCZ
+2026-05-18 16:40:40,890 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-18 16:40:40,890 [WARNING]   .env에 추가: GOOGLE_API_KEY  ← Google AI Studio에서 발급: https://aistudio.google.com/apikey
+2026-05-18 16:40:40,890 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-18 16:40:40,891 [INFO] 
+==================================================
+2026-05-18 16:40:40,891 [INFO] [01_HOOK] 시작
+2026-05-18 16:40:40,891 [INFO] [01_HOOK] 기존 이미지 사용: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01.png
+2026-05-18 16:40:40,892 [INFO] [01_HOOK] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:40:45,233 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:40:45,272 [WARNING] [01_HOOK] 오타 감지: []
+2026-05-18 16:40:45,273 [WARNING] [01_HOOK] FIGMA_TOKEN 없음 — Figma 단계 건너뜀
+2026-05-18 16:40:45,297 [INFO] 
+==================================================
+2026-05-18 16:40:45,297 [INFO] [02_PROBLEM] 시작
+2026-05-18 16:40:45,298 [INFO] [02_PROBLEM] 기존 이미지 사용: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide02.png
+2026-05-18 16:40:45,298 [INFO] [02_PROBLEM] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:40:48,493 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:40:48,494 [WARNING] [02_PROBLEM] 오타 감지: []
+2026-05-18 16:40:48,494 [WARNING] [02_PROBLEM] FIGMA_TOKEN 없음 — Figma 단계 건너뜀
+2026-05-18 16:40:48,497 [INFO] 
+==================================================
+2026-05-18 16:40:48,497 [INFO] [03_INSIGHT] 시작
+2026-05-18 16:40:48,497 [INFO] [03_INSIGHT] 기존 이미지 사용: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide03.png
+2026-05-18 16:40:48,497 [INFO] [03_INSIGHT] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:40:53,188 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:40:53,189 [WARNING] [03_INSIGHT] 오타 감지: []
+2026-05-18 16:40:53,189 [WARNING] [03_INSIGHT] FIGMA_TOKEN 없음 — Figma 단계 건너뜀
+2026-05-18 16:40:53,191 [INFO] 
+==================================================
+2026-05-18 16:40:53,191 [INFO] [04_EVIDENCE] 시작
+2026-05-18 16:40:53,192 [INFO] [04_EVIDENCE] 기존 이미지 사용: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide04.png
+2026-05-18 16:40:53,192 [INFO] [04_EVIDENCE] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:40:56,339 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:40:56,340 [WARNING] [04_EVIDENCE] 오타 감지: []
+2026-05-18 16:40:56,340 [WARNING] [04_EVIDENCE] FIGMA_TOKEN 없음 — Figma 단계 건너뜀
+2026-05-18 16:40:56,342 [INFO] 
+==================================================
+2026-05-18 16:40:56,343 [INFO] [05_CTA] 시작
+2026-05-18 16:40:56,343 [INFO] [05_CTA] 기존 이미지 사용: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide05.png
+2026-05-18 16:40:56,343 [INFO] [05_CTA] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:41:00,525 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:41:00,526 [WARNING] [05_CTA] 오타 감지: []
+2026-05-18 16:41:00,526 [WARNING] [05_CTA] FIGMA_TOKEN 없음 — Figma 단계 건너뜀
+2026-05-18 16:41:00,528 [INFO] 
+==================================================
+2026-05-18 16:41:00,528 [INFO] 파이프라인 완료
+2026-05-18 16:41:00,528 [INFO]   01_HOOK: ⚠ 오타 있음
+2026-05-18 16:41:00,529 [INFO]   02_PROBLEM: ⚠ 오타 있음
+2026-05-18 16:41:00,530 [INFO]   03_INSIGHT: ⚠ 오타 있음
+2026-05-18 16:41:00,531 [INFO]   04_EVIDENCE: ⚠ 오타 있음
+2026-05-18 16:41:00,531 [INFO]   05_CTA: ⚠ 오타 있음
+2026-05-18 16:41:00,532 [INFO] 
+Figma 파일: https://www.figma.com/design/b07LKxoTSXFiOJkXq5wtCZ
+2026-05-18 16:41:49,621 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-18 16:41:49,628 [WARNING]   .env에 추가: GOOGLE_API_KEY  ← Google AI Studio에서 발급: https://aistudio.google.com/apikey
+2026-05-18 16:41:49,628 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-18 16:41:49,629 [INFO] 
+==================================================
+2026-05-18 16:41:49,629 [INFO] [01_HOOK] 시작
+2026-05-18 16:41:49,630 [INFO] [01_HOOK] 기존 이미지 사용: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01.png
+2026-05-18 16:41:49,630 [INFO] [01_HOOK] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:41:54,371 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:41:54,404 [WARNING] [01_HOOK] 오타 감지: []
+2026-05-18 16:41:54,412 [WARNING] [01_HOOK] FIGMA_TOKEN 없음 — Figma 단계 건너뜀
+2026-05-18 16:41:54,414 [INFO] 
+==================================================
+2026-05-18 16:41:54,414 [INFO] [02_PROBLEM] 시작
+2026-05-18 16:41:54,415 [INFO] [02_PROBLEM] 기존 이미지 사용: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide02.png
+2026-05-18 16:41:54,415 [INFO] [02_PROBLEM] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:41:57,677 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:41:57,678 [WARNING] [02_PROBLEM] 오타 감지: []
+2026-05-18 16:41:57,679 [WARNING] [02_PROBLEM] FIGMA_TOKEN 없음 — Figma 단계 건너뜀
+2026-05-18 16:41:57,680 [INFO] 
+==================================================
+2026-05-18 16:41:57,680 [INFO] [03_INSIGHT] 시작
+2026-05-18 16:41:57,681 [INFO] [03_INSIGHT] 기존 이미지 사용: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide03.png
+2026-05-18 16:41:57,681 [INFO] [03_INSIGHT] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:42:01,971 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:42:01,973 [WARNING] [03_INSIGHT] 오타 감지: []
+2026-05-18 16:42:01,973 [WARNING] [03_INSIGHT] FIGMA_TOKEN 없음 — Figma 단계 건너뜀
+2026-05-18 16:42:01,974 [INFO] 
+==================================================
+2026-05-18 16:42:01,975 [INFO] [04_EVIDENCE] 시작
+2026-05-18 16:42:01,975 [INFO] [04_EVIDENCE] 기존 이미지 사용: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide04.png
+2026-05-18 16:42:01,975 [INFO] [04_EVIDENCE] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:42:06,542 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:42:06,545 [WARNING] [04_EVIDENCE] 오타 감지: []
+2026-05-18 16:42:06,545 [WARNING] [04_EVIDENCE] FIGMA_TOKEN 없음 — Figma 단계 건너뜀
+2026-05-18 16:42:06,548 [INFO] 
+==================================================
+2026-05-18 16:42:06,549 [INFO] [05_CTA] 시작
+2026-05-18 16:42:06,549 [INFO] [05_CTA] 기존 이미지 사용: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide05.png
+2026-05-18 16:42:06,549 [INFO] [05_CTA] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:42:10,019 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:42:10,020 [WARNING] [05_CTA] 오타 감지: []
+2026-05-18 16:42:10,020 [WARNING] [05_CTA] FIGMA_TOKEN 없음 — Figma 단계 건너뜀
+2026-05-18 16:42:10,021 [INFO] 
+==================================================
+2026-05-18 16:42:10,021 [INFO] 파이프라인 완료
+2026-05-18 16:42:10,022 [INFO]   01_HOOK: [오타있음]
+2026-05-18 16:42:10,022 [INFO]   02_PROBLEM: [오타있음]
+2026-05-18 16:42:10,022 [INFO]   03_INSIGHT: [오타있음]
+2026-05-18 16:42:10,022 [INFO]   04_EVIDENCE: [오타있음]
+2026-05-18 16:42:10,022 [INFO]   05_CTA: [오타있음]
+2026-05-18 16:42:10,022 [INFO] 
+Figma 파일: https://www.figma.com/design/b07LKxoTSXFiOJkXq5wtCZ
+2026-05-18 16:51:44,336 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-18 16:51:44,337 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-18 16:51:44,338 [INFO] 
+==================================================
+2026-05-18 16:51:44,338 [INFO] [01_HOOK] 시작
+2026-05-18 16:51:44,338 [INFO] [01_HOOK] Gemini로 이미지 생성 중...
+2026-05-18 16:51:45,435 [ERROR] [01_HOOK] 생성 실패: module 'google.genai.types' has no attribute 'GenerateImageConfig'
+2026-05-18 16:51:45,437 [INFO] 
+==================================================
+2026-05-18 16:51:45,438 [INFO] [02_PROBLEM] 시작
+2026-05-18 16:51:45,438 [INFO] [02_PROBLEM] Gemini로 이미지 생성 중...
+2026-05-18 16:51:46,364 [ERROR] [02_PROBLEM] 생성 실패: module 'google.genai.types' has no attribute 'GenerateImageConfig'
+2026-05-18 16:51:46,367 [INFO] 
+==================================================
+2026-05-18 16:51:46,367 [INFO] [03_INSIGHT] 시작
+2026-05-18 16:51:46,367 [INFO] [03_INSIGHT] Gemini로 이미지 생성 중...
+2026-05-18 16:51:47,295 [ERROR] [03_INSIGHT] 생성 실패: module 'google.genai.types' has no attribute 'GenerateImageConfig'
+2026-05-18 16:51:47,298 [INFO] 
+==================================================
+2026-05-18 16:51:47,298 [INFO] [04_EVIDENCE] 시작
+2026-05-18 16:51:47,299 [INFO] [04_EVIDENCE] Gemini로 이미지 생성 중...
+2026-05-18 16:51:48,256 [ERROR] [04_EVIDENCE] 생성 실패: module 'google.genai.types' has no attribute 'GenerateImageConfig'
+2026-05-18 16:51:48,260 [INFO] 
+==================================================
+2026-05-18 16:51:48,260 [INFO] [05_CTA] 시작
+2026-05-18 16:51:48,260 [INFO] [05_CTA] Gemini로 이미지 생성 중...
+2026-05-18 16:51:49,199 [ERROR] [05_CTA] 생성 실패: module 'google.genai.types' has no attribute 'GenerateImageConfig'
+2026-05-18 16:51:49,202 [INFO] 
+==================================================
+2026-05-18 16:51:49,202 [INFO] 파이프라인 완료
+2026-05-18 16:51:49,202 [INFO]   01_HOOK: [정상]
+2026-05-18 16:51:49,202 [INFO]   02_PROBLEM: [정상]
+2026-05-18 16:51:49,203 [INFO]   03_INSIGHT: [정상]
+2026-05-18 16:51:49,203 [INFO]   04_EVIDENCE: [정상]
+2026-05-18 16:51:49,203 [INFO]   05_CTA: [정상]
+2026-05-18 16:51:49,203 [INFO] 
+Figma 파일: https://www.figma.com/design/b07LKxoTSXFiOJkXq5wtCZ
+2026-05-18 16:52:22,729 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-18 16:52:22,729 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-18 16:52:22,731 [INFO] 
+==================================================
+2026-05-18 16:52:22,732 [INFO] [01_HOOK] 시작
+2026-05-18 16:52:22,732 [INFO] [01_HOOK] Gemini로 이미지 생성 중...
+2026-05-18 16:52:24,054 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict "HTTP/1.1 404 Not Found"
+2026-05-18 16:52:24,057 [ERROR] [01_HOOK] 생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/imagen-3.0-generate-002 is not found for API version v1beta, or is not supported for predict. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-05-18 16:52:24,058 [INFO] 
+==================================================
+2026-05-18 16:52:24,058 [INFO] [02_PROBLEM] 시작
+2026-05-18 16:52:24,058 [INFO] [02_PROBLEM] Gemini로 이미지 생성 중...
+2026-05-18 16:52:25,331 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict "HTTP/1.1 404 Not Found"
+2026-05-18 16:52:25,332 [ERROR] [02_PROBLEM] 생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/imagen-3.0-generate-002 is not found for API version v1beta, or is not supported for predict. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-05-18 16:52:25,332 [INFO] 
+==================================================
+2026-05-18 16:52:25,332 [INFO] [03_INSIGHT] 시작
+2026-05-18 16:52:25,332 [INFO] [03_INSIGHT] Gemini로 이미지 생성 중...
+2026-05-18 16:52:26,696 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict "HTTP/1.1 404 Not Found"
+2026-05-18 16:52:26,697 [ERROR] [03_INSIGHT] 생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/imagen-3.0-generate-002 is not found for API version v1beta, or is not supported for predict. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-05-18 16:52:26,698 [INFO] 
+==================================================
+2026-05-18 16:52:26,698 [INFO] [04_EVIDENCE] 시작
+2026-05-18 16:52:26,698 [INFO] [04_EVIDENCE] Gemini로 이미지 생성 중...
+2026-05-18 16:52:27,907 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict "HTTP/1.1 404 Not Found"
+2026-05-18 16:52:27,908 [ERROR] [04_EVIDENCE] 생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/imagen-3.0-generate-002 is not found for API version v1beta, or is not supported for predict. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-05-18 16:52:27,908 [INFO] 
+==================================================
+2026-05-18 16:52:27,908 [INFO] [05_CTA] 시작
+2026-05-18 16:52:27,908 [INFO] [05_CTA] Gemini로 이미지 생성 중...
+2026-05-18 16:52:29,086 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict "HTTP/1.1 404 Not Found"
+2026-05-18 16:52:29,088 [ERROR] [05_CTA] 생성 실패: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/imagen-3.0-generate-002 is not found for API version v1beta, or is not supported for predict. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-05-18 16:52:29,088 [INFO] 
+==================================================
+2026-05-18 16:52:29,088 [INFO] 파이프라인 완료
+2026-05-18 16:52:29,088 [INFO]   01_HOOK: [정상]
+2026-05-18 16:52:29,089 [INFO]   02_PROBLEM: [정상]
+2026-05-18 16:52:29,089 [INFO]   03_INSIGHT: [정상]
+2026-05-18 16:52:29,089 [INFO]   04_EVIDENCE: [정상]
+2026-05-18 16:52:29,089 [INFO]   05_CTA: [정상]
+2026-05-18 16:52:29,090 [INFO] 
+Figma 파일: https://www.figma.com/design/b07LKxoTSXFiOJkXq5wtCZ
+2026-05-18 16:53:35,693 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-18 16:53:35,694 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-18 16:53:35,694 [INFO] 
+==================================================
+2026-05-18 16:53:35,695 [INFO] [01_HOOK] 시작
+2026-05-18 16:53:35,695 [INFO] [01_HOOK] Gemini로 이미지 생성 중...
+2026-05-18 16:53:37,050 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 400 Bad Request"
+2026-05-18 16:53:37,053 [ERROR] [01_HOOK] 생성 실패: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Only block_low_and_above is supported for safetySetting.', 'status': 'INVALID_ARGUMENT'}}
+2026-05-18 16:53:37,053 [INFO] 
+==================================================
+2026-05-18 16:53:37,053 [INFO] [02_PROBLEM] 시작
+2026-05-18 16:53:37,053 [INFO] [02_PROBLEM] Gemini로 이미지 생성 중...
+2026-05-18 16:53:38,291 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 400 Bad Request"
+2026-05-18 16:53:38,292 [ERROR] [02_PROBLEM] 생성 실패: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Only block_low_and_above is supported for safetySetting.', 'status': 'INVALID_ARGUMENT'}}
+2026-05-18 16:53:38,292 [INFO] 
+==================================================
+2026-05-18 16:53:38,292 [INFO] [03_INSIGHT] 시작
+2026-05-18 16:53:38,292 [INFO] [03_INSIGHT] Gemini로 이미지 생성 중...
+2026-05-18 16:53:39,440 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 400 Bad Request"
+2026-05-18 16:53:39,440 [ERROR] [03_INSIGHT] 생성 실패: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Only block_low_and_above is supported for safetySetting.', 'status': 'INVALID_ARGUMENT'}}
+2026-05-18 16:53:39,440 [INFO] 
+==================================================
+2026-05-18 16:53:39,440 [INFO] [04_EVIDENCE] 시작
+2026-05-18 16:53:39,441 [INFO] [04_EVIDENCE] Gemini로 이미지 생성 중...
+2026-05-18 16:53:40,586 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 400 Bad Request"
+2026-05-18 16:53:40,599 [ERROR] [04_EVIDENCE] 생성 실패: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Only block_low_and_above is supported for safetySetting.', 'status': 'INVALID_ARGUMENT'}}
+2026-05-18 16:53:40,599 [INFO] 
+==================================================
+2026-05-18 16:53:40,599 [INFO] [05_CTA] 시작
+2026-05-18 16:53:40,599 [INFO] [05_CTA] Gemini로 이미지 생성 중...
+2026-05-18 16:53:41,784 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 400 Bad Request"
+2026-05-18 16:53:41,785 [ERROR] [05_CTA] 생성 실패: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Only block_low_and_above is supported for safetySetting.', 'status': 'INVALID_ARGUMENT'}}
+2026-05-18 16:53:41,785 [INFO] 
+==================================================
+2026-05-18 16:53:41,785 [INFO] 파이프라인 완료
+2026-05-18 16:53:41,785 [INFO]   01_HOOK: [정상]
+2026-05-18 16:53:41,786 [INFO]   02_PROBLEM: [정상]
+2026-05-18 16:53:41,786 [INFO]   03_INSIGHT: [정상]
+2026-05-18 16:53:41,786 [INFO]   04_EVIDENCE: [정상]
+2026-05-18 16:53:41,786 [INFO]   05_CTA: [정상]
+2026-05-18 16:53:41,786 [INFO] 
+Figma 파일: https://www.figma.com/design/b07LKxoTSXFiOJkXq5wtCZ
+2026-05-18 16:54:12,185 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-18 16:54:12,185 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-18 16:54:12,186 [INFO] 
+==================================================
+2026-05-18 16:54:12,186 [INFO] [01_HOOK] 시작
+2026-05-18 16:54:12,187 [INFO] [01_HOOK] Gemini로 이미지 생성 중...
+2026-05-18 16:54:22,967 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 16:54:23,232 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01.png
+2026-05-18 16:54:23,234 [INFO] [01_HOOK] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:54:28,499 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:54:28,530 [WARNING] [01_HOOK] 오타 감지: []
+2026-05-18 16:54:28,531 [INFO] [01_HOOK] Figma 프레임 1:2 — 텍스트 레이어 추가 중...
+2026-05-18 16:54:28,576 [ERROR] claude CLI를 찾을 수 없음 — Claude Code가 설치되어 있는지 확인
+2026-05-18 16:54:28,578 [INFO] 
+==================================================
+2026-05-18 16:54:28,578 [INFO] [02_PROBLEM] 시작
+2026-05-18 16:54:28,578 [INFO] [02_PROBLEM] Gemini로 이미지 생성 중...
+2026-05-18 16:54:37,724 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 16:54:38,007 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide02.png
+2026-05-18 16:54:38,009 [INFO] [02_PROBLEM] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:54:42,968 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:54:42,969 [WARNING] [02_PROBLEM] 오타 감지: []
+2026-05-18 16:54:42,969 [INFO] [02_PROBLEM] Figma 프레임 2:2 — 텍스트 레이어 추가 중...
+2026-05-18 16:54:43,010 [ERROR] claude CLI를 찾을 수 없음 — Claude Code가 설치되어 있는지 확인
+2026-05-18 16:54:43,012 [INFO] 
+==================================================
+2026-05-18 16:54:43,012 [INFO] [03_INSIGHT] 시작
+2026-05-18 16:54:43,012 [INFO] [03_INSIGHT] Gemini로 이미지 생성 중...
+2026-05-18 16:54:53,099 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 16:54:53,372 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide03.png
+2026-05-18 16:54:53,373 [INFO] [03_INSIGHT] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:55:00,921 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:55:00,922 [WARNING] [03_INSIGHT] 오타 감지: []
+2026-05-18 16:55:00,922 [INFO] [03_INSIGHT] Figma 프레임 3:2 — 텍스트 레이어 추가 중...
+2026-05-18 16:55:00,959 [ERROR] claude CLI를 찾을 수 없음 — Claude Code가 설치되어 있는지 확인
+2026-05-18 16:55:00,960 [INFO] 
+==================================================
+2026-05-18 16:55:00,960 [INFO] [04_EVIDENCE] 시작
+2026-05-18 16:55:00,961 [INFO] [04_EVIDENCE] Gemini로 이미지 생성 중...
+2026-05-18 16:55:10,007 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 16:55:10,310 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide04.png
+2026-05-18 16:55:10,311 [INFO] [04_EVIDENCE] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:55:15,753 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:55:15,756 [WARNING] [04_EVIDENCE] 오타 감지: []
+2026-05-18 16:55:15,756 [INFO] [04_EVIDENCE] Figma 프레임 4:2 — 텍스트 레이어 추가 중...
+2026-05-18 16:55:15,813 [ERROR] claude CLI를 찾을 수 없음 — Claude Code가 설치되어 있는지 확인
+2026-05-18 16:55:15,815 [INFO] 
+==================================================
+2026-05-18 16:55:15,815 [INFO] [05_CTA] 시작
+2026-05-18 16:55:15,815 [INFO] [05_CTA] Gemini로 이미지 생성 중...
+2026-05-18 16:55:26,029 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 16:55:26,333 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide05.png
+2026-05-18 16:55:26,335 [INFO] [05_CTA] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:55:31,926 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:55:31,929 [WARNING] [05_CTA] 오타 감지: []
+2026-05-18 16:55:31,930 [INFO] [05_CTA] Figma 프레임 5:2 — 텍스트 레이어 추가 중...
+2026-05-18 16:55:31,982 [ERROR] claude CLI를 찾을 수 없음 — Claude Code가 설치되어 있는지 확인
+2026-05-18 16:55:31,984 [INFO] 
+==================================================
+2026-05-18 16:55:31,984 [INFO] 파이프라인 완료
+2026-05-18 16:55:31,984 [INFO]   01_HOOK: [오타있음]
+2026-05-18 16:55:31,984 [INFO]   02_PROBLEM: [오타있음]
+2026-05-18 16:55:31,984 [INFO]   03_INSIGHT: [오타있음]
+2026-05-18 16:55:31,984 [INFO]   04_EVIDENCE: [오타있음]
+2026-05-18 16:55:31,984 [INFO]   05_CTA: [오타있음]
+2026-05-18 16:55:31,984 [INFO] 
+Figma 파일: https://www.figma.com/design/b07LKxoTSXFiOJkXq5wtCZ
+2026-05-18 16:58:20,686 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-18 16:58:20,686 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-18 16:58:20,687 [INFO] 
+==================================================
+2026-05-18 16:58:20,687 [INFO] [01_HOOK] 시작
+2026-05-18 16:58:20,687 [INFO] [01_HOOK] Gemini로 이미지 생성 중...
+2026-05-18 16:58:30,037 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 16:58:30,330 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01.png
+2026-05-18 16:58:30,332 [INFO] [01_HOOK] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:58:35,056 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:58:35,097 [WARNING] [01_HOOK] 오타 감지: []
+2026-05-18 16:58:35,097 [INFO] [01_HOOK] Figma 프레임 1:2 — 텍스트 레이어 추가 중...
+2026-05-18 16:59:39,965 [INFO] [01_HOOK] Figma 텍스트 레이어 추가 완료 ✓
+2026-05-18 16:59:39,967 [INFO] 
+==================================================
+2026-05-18 16:59:39,967 [INFO] [02_PROBLEM] 시작
+2026-05-18 16:59:39,967 [INFO] [02_PROBLEM] Gemini로 이미지 생성 중...
+2026-05-18 16:59:49,401 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 16:59:49,673 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide02.png
+2026-05-18 16:59:49,675 [INFO] [02_PROBLEM] Claude vision으로 텍스트 검증 중...
+2026-05-18 16:59:54,575 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 16:59:54,577 [WARNING] [02_PROBLEM] 오타 감지: []
+2026-05-18 16:59:54,578 [INFO] [02_PROBLEM] Figma 프레임 2:2 — 텍스트 레이어 추가 중...
+2026-05-18 17:00:23,038 [INFO] [02_PROBLEM] Figma 텍스트 레이어 추가 완료 ✓
+2026-05-18 17:00:23,039 [INFO] 
+==================================================
+2026-05-18 17:00:23,040 [INFO] [03_INSIGHT] 시작
+2026-05-18 17:00:23,040 [INFO] [03_INSIGHT] Gemini로 이미지 생성 중...
+2026-05-18 17:00:32,689 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:00:32,917 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide03.png
+2026-05-18 17:00:32,919 [INFO] [03_INSIGHT] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:00:39,559 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:00:39,561 [WARNING] [03_INSIGHT] 오타 감지: []
+2026-05-18 17:00:39,562 [INFO] [03_INSIGHT] Figma 프레임 3:2 — 텍스트 레이어 추가 중...
+2026-05-18 17:01:03,833 [INFO] [03_INSIGHT] Figma 텍스트 레이어 추가 완료 ✓
+2026-05-18 17:01:03,834 [INFO] 
+==================================================
+2026-05-18 17:01:03,835 [INFO] [04_EVIDENCE] 시작
+2026-05-18 17:01:03,835 [INFO] [04_EVIDENCE] Gemini로 이미지 생성 중...
+2026-05-18 17:01:16,527 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:01:16,802 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide04.png
+2026-05-18 17:01:16,804 [INFO] [04_EVIDENCE] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:01:21,973 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:01:21,974 [WARNING] [04_EVIDENCE] 오타 감지: []
+2026-05-18 17:01:21,975 [INFO] [04_EVIDENCE] Figma 프레임 4:2 — 텍스트 레이어 추가 중...
+2026-05-18 17:06:31,882 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-18 17:06:31,883 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-18 17:06:31,884 [INFO] 
+==================================================
+2026-05-18 17:06:31,884 [INFO] [01_HOOK] 시작
+2026-05-18 17:06:31,885 [INFO] [01_HOOK] Gemini로 이미지 생성 중...
+2026-05-18 17:06:43,481 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:06:43,738 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01.png
+2026-05-18 17:06:43,740 [INFO] [01_HOOK] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:06:49,052 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:06:49,086 [WARNING] [01_HOOK] 오타 감지: []
+2026-05-18 17:06:49,087 [INFO] [01_HOOK] Figma 프레임 1:2 — 텍스트 레이어 추가 중...
+2026-05-18 17:07:23,362 [INFO] [01_HOOK] Figma 텍스트 레이어 추가 완료 ✓
+2026-05-18 17:07:23,363 [INFO] 
+==================================================
+2026-05-18 17:07:23,364 [INFO] [02_PROBLEM] 시작
+2026-05-18 17:07:23,364 [INFO] [02_PROBLEM] Gemini로 이미지 생성 중...
+2026-05-18 17:07:36,846 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:07:37,098 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide02.png
+2026-05-18 17:07:37,100 [INFO] [02_PROBLEM] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:07:41,648 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:07:41,649 [WARNING] [02_PROBLEM] 오타 감지: []
+2026-05-18 17:07:41,649 [INFO] [02_PROBLEM] Figma 프레임 2:2 — 텍스트 레이어 추가 중...
+2026-05-18 17:08:12,616 [INFO] [02_PROBLEM] Figma 텍스트 레이어 추가 완료 ✓
+2026-05-18 17:08:12,618 [INFO] 
+==================================================
+2026-05-18 17:08:12,619 [INFO] [03_INSIGHT] 시작
+2026-05-18 17:08:12,619 [INFO] [03_INSIGHT] Gemini로 이미지 생성 중...
+2026-05-18 17:08:24,363 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:08:24,637 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide03.png
+2026-05-18 17:08:24,639 [INFO] [03_INSIGHT] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:08:31,005 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:08:31,008 [WARNING] [03_INSIGHT] 오타 감지: []
+2026-05-18 17:08:31,010 [INFO] [03_INSIGHT] Figma 프레임 3:2 — 텍스트 레이어 추가 중...
+2026-05-18 17:09:03,408 [INFO] [03_INSIGHT] Figma 텍스트 레이어 추가 완료 ✓
+2026-05-18 17:09:03,410 [INFO] 
+==================================================
+2026-05-18 17:09:03,411 [INFO] [04_EVIDENCE] 시작
+2026-05-18 17:09:03,411 [INFO] [04_EVIDENCE] Gemini로 이미지 생성 중...
+2026-05-18 17:09:14,384 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:09:14,697 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide04.png
+2026-05-18 17:09:14,699 [INFO] [04_EVIDENCE] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:09:19,860 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:09:19,861 [WARNING] [04_EVIDENCE] 오타 감지: []
+2026-05-18 17:09:19,862 [INFO] [04_EVIDENCE] Figma 프레임 4:2 — 텍스트 레이어 추가 중...
+2026-05-18 17:09:49,450 [INFO] [04_EVIDENCE] Figma 텍스트 레이어 추가 완료 ✓
+2026-05-18 17:09:49,452 [INFO] 
+==================================================
+2026-05-18 17:09:49,452 [INFO] [05_CTA] 시작
+2026-05-18 17:09:49,452 [INFO] [05_CTA] Gemini로 이미지 생성 중...
+2026-05-18 17:09:57,751 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:09:58,009 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide05.png
+2026-05-18 17:09:58,010 [INFO] [05_CTA] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:10:03,729 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:10:03,730 [WARNING] [05_CTA] 오타 감지: []
+2026-05-18 17:10:03,730 [INFO] [05_CTA] Figma 프레임 5:2 — 텍스트 레이어 추가 중...
+2026-05-18 17:10:40,489 [INFO] [05_CTA] Figma 텍스트 레이어 추가 완료 ✓
+2026-05-18 17:10:40,491 [INFO] 
+==================================================
+2026-05-18 17:10:40,491 [INFO] 파이프라인 완료
+2026-05-18 17:10:40,491 [INFO]   01_HOOK: [오타있음]
+2026-05-18 17:10:40,491 [INFO]   02_PROBLEM: [오타있음]
+2026-05-18 17:10:40,491 [INFO]   03_INSIGHT: [오타있음]
+2026-05-18 17:10:40,492 [INFO]   04_EVIDENCE: [오타있음]
+2026-05-18 17:10:40,492 [INFO]   05_CTA: [오타있음]
+2026-05-18 17:10:40,492 [INFO] 
+Figma 파일: https://www.figma.com/design/b07LKxoTSXFiOJkXq5wtCZ
+2026-05-18 17:13:55,505 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-18 17:13:55,506 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-18 17:13:55,508 [INFO] 
+==================================================
+2026-05-18 17:13:55,509 [INFO] [01_HOOK] 시작
+2026-05-18 17:13:55,509 [INFO] [01_HOOK] Gemini로 이미지 생성 중...
+2026-05-18 17:14:03,498 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:14:03,761 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01.png
+2026-05-18 17:14:03,763 [INFO] [01_HOOK] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:14:08,707 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:14:08,742 [WARNING] [01_HOOK] 오타 감지: [{'expected': '건강검진 결과를 받고', 'found': '부여한 엄안 머가능', 'issue': '요청된 텍스트가 이미지에 없음'}, {'expected': '의사 말을 무시합니다', 'found': '머몀의 중앙 감량', 'issue': '요청된 텍스트가 이미지에 없음'}, {'expected': '보험 증권 진단가', 'found': '먼덕힌 걱기량', 'issue': '요청된 텍스트가 이미지에 없음'}]
+2026-05-18 17:14:08,743 [INFO] [01_HOOK] Figma 프레임 1:2 — 텍스트 레이어 추가 중...
+2026-05-18 17:15:05,539 [INFO] [01_HOOK] Figma 텍스트 레이어 추가 완료 ✓
+2026-05-18 17:15:05,541 [INFO] 
+==================================================
+2026-05-18 17:15:05,541 [INFO] 파이프라인 완료
+2026-05-18 17:15:05,541 [INFO]   01_HOOK: [오타있음]
+2026-05-18 17:15:05,541 [INFO] 
+Figma 파일: https://www.figma.com/design/b07LKxoTSXFiOJkXq5wtCZ
+2026-05-18 17:19:32,588 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-18 17:19:32,589 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-18 17:19:32,590 [INFO] 
+==================================================
+2026-05-18 17:19:32,590 [INFO] [01_HOOK] 시작
+2026-05-18 17:19:32,590 [INFO] [01_HOOK] Gemini로 이미지 생성 중...
+2026-05-18 17:19:41,202 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:19:41,479 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01.png
+2026-05-18 17:19:41,481 [INFO] [01_HOOK] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:19:46,656 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:19:46,688 [WARNING] [01_HOOK] 오타 감지: [{'expected': '3명 중 1명', 'found': 'ULTRA 3우일 꾸저 1황', 'issue': '실제 이미지의 텍스트가 요청된 텍스트와 일치하지 않음'}, {'expected': '건강검진 결과를 받고', 'found': '겨울 귀공은 채틍', 'issue': '실제 이미지의 텍스트가 요청된 텍스트와 일치하지 않음'}, {'expected': '의사 말을 무시합니다', 'found': '재수리 작은 내겨블', 'issue': '실제 이미지의 텍스트가 요청된 텍스트와 일치하지 않음'}, {'expected': '보험 증권 진단가', 'found': '규궁전 발작는 영정흘 입지장', 'issue': '실제 이미지의 텍스트가 요청된 텍스트와 일치하지 않음'}]
+2026-05-18 17:19:46,688 [INFO] [01_HOOK] Figma 프레임 1:2 — 텍스트 레이어 추가 중...
+2026-05-18 17:20:20,727 [INFO] [01_HOOK] Figma 텍스트 레이어 추가 완료 ✓
+2026-05-18 17:20:20,729 [INFO] 
+==================================================
+2026-05-18 17:20:20,729 [INFO] 파이프라인 완료
+2026-05-18 17:20:20,729 [INFO]   01_HOOK: [오타있음]
+2026-05-18 17:20:20,730 [INFO] 
+Figma 파일: https://www.figma.com/design/b07LKxoTSXFiOJkXq5wtCZ
+2026-05-18 17:24:48,153 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-18 17:24:48,153 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-18 17:24:48,154 [INFO] 
+==================================================
+2026-05-18 17:24:48,154 [INFO] [01_HOOK] 시작
+2026-05-18 17:24:48,155 [INFO] [01_HOOK] Imagen으로 이미지 생성 중... (시도 1/3)
+2026-05-18 17:24:57,863 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:24:58,107 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01.png
+2026-05-18 17:24:58,108 [INFO] [01_HOOK] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:25:03,469 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:25:03,506 [WARNING] [01_HOOK] 오타 감지 (시도 1/3): "3명 중 1명"→"3우러 가 1영", "건강검진 결과를 받고"→"해당 텍스트 없음", "의사 말을 무시합니다"→"해당 텍스트 없음", "보험 증권 진단가"→"해당 텍스트 없음"
+2026-05-18 17:25:03,507 [INFO] [01_HOOK] 교정 프롬프트로 재요청...
+2026-05-18 17:25:03,507 [INFO] [01_HOOK] Imagen으로 이미지 재생성 중... (시도 2/3)
+2026-05-18 17:25:15,423 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:25:15,702 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01.png
+2026-05-18 17:25:15,704 [INFO] [01_HOOK] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:25:21,020 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:25:21,022 [WARNING] [01_HOOK] 오타 감지 (시도 2/3): "3명 중 1명"→"3명 중 1명", "건강검진 결과를 받고"→"찾을 수 없음", "의사 말을 무시합니다"→"찾을 수 없음", "보험 증권 진단가"→"찾을 수 없음"
+2026-05-18 17:25:21,022 [INFO] [01_HOOK] 교정 프롬프트로 재요청...
+2026-05-18 17:25:21,022 [INFO] [01_HOOK] Imagen으로 이미지 재생성 중... (시도 3/3)
+2026-05-18 17:25:29,579 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:25:29,842 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01.png
+2026-05-18 17:25:29,844 [INFO] [01_HOOK] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:25:34,961 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:25:34,964 [WARNING] [01_HOOK] 오타 감지 (시도 3/3): "3명 중 1명"→"3우인 자드 1항", "건강검진 결과를 받고"→"해당 텍스트 없음", "의사 말을 무시합니다"→"해당 텍스트 없음", "보험 증권 진단가"→"해당 텍스트 없음"
+2026-05-18 17:25:34,964 [WARNING] [01_HOOK] 최대 재시도 초과 — 최종 결과 사용
+2026-05-18 17:25:34,964 [INFO] 
+==================================================
+2026-05-18 17:25:34,964 [INFO] 파이프라인 완료
+2026-05-18 17:25:34,965 [INFO]   01_HOOK: [오타있음]
+2026-05-18 17:25:34,965 [INFO] 
+생성 이미지: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진
+2026-05-18 17:31:43,712 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-18 17:31:43,713 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-18 17:31:43,714 [INFO] 
+==================================================
+2026-05-18 17:31:43,715 [INFO] [01_HOOK] 시작
+2026-05-18 17:31:43,715 [INFO] [01_HOOK] Imagen으로 배경 생성 중...
+2026-05-18 17:31:51,728 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:31:52,038 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01_bg.png
+2026-05-18 17:31:52,040 [INFO] [01_HOOK] PIL로 한국어 텍스트 합성 중...
+2026-05-18 17:31:52,268 [INFO] [01_HOOK] 텍스트 합성 완료: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01.png
+2026-05-18 17:31:52,269 [INFO] [01_HOOK] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:31:56,284 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:31:56,313 [INFO] [01_HOOK] 텍스트 검증 통과 ✓
+2026-05-18 17:31:56,313 [INFO] 
+==================================================
+2026-05-18 17:31:56,314 [INFO] 파이프라인 완료
+2026-05-18 17:31:56,315 [INFO]   01_HOOK: [정상]
+2026-05-18 17:31:56,315 [INFO] 
+생성 이미지: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진
+2026-05-18 17:32:49,831 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-18 17:32:49,832 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-18 17:32:49,833 [INFO] 
+==================================================
+2026-05-18 17:32:49,833 [INFO] [01_HOOK] 시작
+2026-05-18 17:32:49,833 [INFO] [01_HOOK] Imagen으로 배경 생성 중...
+2026-05-18 17:32:59,623 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:32:59,933 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01_bg.png
+2026-05-18 17:32:59,935 [INFO] [01_HOOK] PIL로 한국어 텍스트 합성 중...
+2026-05-18 17:33:00,214 [INFO] [01_HOOK] 텍스트 합성 완료: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01.png
+2026-05-18 17:33:00,215 [INFO] [01_HOOK] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:33:03,837 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:33:03,867 [INFO] [01_HOOK] 텍스트 검증 통과 ✓
+2026-05-18 17:33:03,867 [INFO] 
+==================================================
+2026-05-18 17:33:03,867 [INFO] [02_PROBLEM] 시작
+2026-05-18 17:33:03,867 [INFO] [02_PROBLEM] Imagen으로 배경 생성 중...
+2026-05-18 17:33:12,351 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:33:12,606 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide02_bg.png
+2026-05-18 17:33:12,608 [INFO] [02_PROBLEM] PIL로 한국어 텍스트 합성 중...
+2026-05-18 17:33:12,969 [INFO] [02_PROBLEM] 텍스트 합성 완료: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide02.png
+2026-05-18 17:33:12,969 [INFO] [02_PROBLEM] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:33:16,733 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:33:16,734 [INFO] [02_PROBLEM] 텍스트 검증 통과 ✓
+2026-05-18 17:33:16,734 [INFO] 
+==================================================
+2026-05-18 17:33:16,734 [INFO] [03_INSIGHT] 시작
+2026-05-18 17:33:16,734 [INFO] [03_INSIGHT] Imagen으로 배경 생성 중...
+2026-05-18 17:33:28,506 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:33:28,724 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide03_bg.png
+2026-05-18 17:33:28,726 [INFO] [03_INSIGHT] PIL로 한국어 텍스트 합성 중...
+2026-05-18 17:33:28,939 [INFO] [03_INSIGHT] 텍스트 합성 완료: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide03.png
+2026-05-18 17:33:28,945 [INFO] [03_INSIGHT] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:33:34,198 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:33:34,199 [INFO] [03_INSIGHT] 텍스트 검증 통과 ✓
+2026-05-18 17:33:34,199 [INFO] 
+==================================================
+2026-05-18 17:33:34,199 [INFO] [04_EVIDENCE] 시작
+2026-05-18 17:33:34,199 [INFO] [04_EVIDENCE] Imagen으로 배경 생성 중...
+2026-05-18 17:33:46,379 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:33:46,705 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide04_bg.png
+2026-05-18 17:33:46,708 [INFO] [04_EVIDENCE] PIL로 한국어 텍스트 합성 중...
+2026-05-18 17:33:46,952 [INFO] [04_EVIDENCE] 텍스트 합성 완료: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide04.png
+2026-05-18 17:33:46,953 [INFO] [04_EVIDENCE] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:33:51,996 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:33:51,997 [INFO] [04_EVIDENCE] 텍스트 검증 통과 ✓
+2026-05-18 17:33:51,997 [INFO] 
+==================================================
+2026-05-18 17:33:51,997 [INFO] [05_CTA] 시작
+2026-05-18 17:33:51,997 [INFO] [05_CTA] Imagen으로 배경 생성 중...
+2026-05-18 17:34:00,290 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-18 17:34:00,537 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide05_bg.png
+2026-05-18 17:34:00,539 [INFO] [05_CTA] PIL로 한국어 텍스트 합성 중...
+2026-05-18 17:34:00,832 [INFO] [05_CTA] 텍스트 합성 완료: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide05.png
+2026-05-18 17:34:00,832 [INFO] [05_CTA] Claude vision으로 텍스트 검증 중...
+2026-05-18 17:34:07,307 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-18 17:34:07,308 [WARNING] [05_CTA] 검증 불일치: ['지금 당신의 수치는', "아직 '경고'일 뿐입니다"]
+2026-05-18 17:34:07,308 [INFO] 
+==================================================
+2026-05-18 17:34:07,308 [INFO] 파이프라인 완료
+2026-05-18 17:34:07,308 [INFO]   01_HOOK: [정상]
+2026-05-18 17:34:07,308 [INFO]   02_PROBLEM: [정상]
+2026-05-18 17:34:07,309 [INFO]   03_INSIGHT: [정상]
+2026-05-18 17:34:07,309 [INFO]   04_EVIDENCE: [정상]
+2026-05-18 17:34:07,309 [INFO]   05_CTA: [오타있음]
+2026-05-18 17:34:07,309 [INFO] 
+생성 이미지: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진
+2026-05-19 13:12:26,083 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-19 13:12:26,084 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-19 13:12:26,085 [INFO] 
+==================================================
+2026-05-19 13:12:26,085 [INFO] [01_HOOK] 시작
+2026-05-19 13:12:26,086 [INFO] [01_HOOK] Gemini로 카드뉴스 생성 중...
+2026-05-19 13:12:27,349 [INFO] AFC is enabled with max remote calls: 10.
+2026-05-19 13:12:27,597 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-05-19 13:12:27,598 [WARNING] Gemini 생성 실패, Imagen으로 폴백: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-05-19 13:12:35,534 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-19 13:12:35,794 [INFO] 이미지 생성 (Imagen): C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01_gemini.png
+2026-05-19 13:12:35,794 [INFO] [01_HOOK] Claude vision으로 텍스트 검증 중...
+2026-05-19 13:12:41,666 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:12:41,692 [WARNING] [01_HOOK] Gemini 텍스트 불일치 — PIL 폴백: "3명 중 1명", "건강검진의 진실", "보험 증권 진단가"
+2026-05-19 13:12:41,867 [INFO] [01_HOOK] PIL 합성 후 재검증 중...
+2026-05-19 13:12:47,074 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:12:47,075 [INFO] [01_HOOK] PIL 폴백 검증 통과 ✓
+2026-05-19 13:12:47,076 [INFO] 
+==================================================
+2026-05-19 13:12:47,076 [INFO] [02_PROBLEM] 시작
+2026-05-19 13:12:47,076 [INFO] [02_PROBLEM] Gemini로 카드뉴스 생성 중...
+2026-05-19 13:12:47,817 [INFO] AFC is enabled with max remote calls: 10.
+2026-05-19 13:12:48,090 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-05-19 13:12:48,091 [WARNING] Gemini 생성 실패, Imagen으로 폴백: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-05-19 13:12:56,688 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-19 13:12:57,029 [INFO] 이미지 생성 (Imagen): C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide02_gemini.png
+2026-05-19 13:12:57,029 [INFO] [02_PROBLEM] Claude vision으로 텍스트 검증 중...
+2026-05-19 13:13:02,572 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:13:02,573 [WARNING] [02_PROBLEM] Gemini 텍스트 불일치 — PIL 폴백: "경고 수치를 방치하면 생기는 일", "검진 결과 무시", "의료비 폭증"
+2026-05-19 13:13:02,751 [INFO] [02_PROBLEM] PIL 합성 후 재검증 중...
+2026-05-19 13:13:08,213 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:13:08,215 [INFO] [02_PROBLEM] PIL 폴백 검증 통과 ✓
+2026-05-19 13:13:08,215 [INFO] 
+==================================================
+2026-05-19 13:13:08,215 [INFO] [03_INSIGHT] 시작
+2026-05-19 13:13:08,215 [INFO] [03_INSIGHT] Gemini로 카드뉴스 생성 중...
+2026-05-19 13:13:09,087 [INFO] AFC is enabled with max remote calls: 10.
+2026-05-19 13:13:09,329 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-05-19 13:13:09,330 [WARNING] Gemini 생성 실패, Imagen으로 폴백: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-05-19 13:13:18,083 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-19 13:13:18,370 [INFO] 이미지 생성 (Imagen): C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide03_gemini.png
+2026-05-19 13:13:18,371 [INFO] [03_INSIGHT] Claude vision으로 텍스트 검증 중...
+2026-05-19 13:13:23,096 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:13:23,097 [WARNING] [03_INSIGHT] Gemini 텍스트 불일치 — PIL 폴백: "증권 진단 전 vs 후", "3,000만원", "차이: 2,700만원"
+2026-05-19 13:13:23,258 [INFO] [03_INSIGHT] PIL 합성 후 재검증 중...
+2026-05-19 13:13:26,943 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:13:26,944 [INFO] [03_INSIGHT] PIL 폴백 검증 통과 ✓
+2026-05-19 13:13:26,944 [INFO] 
+==================================================
+2026-05-19 13:13:26,944 [INFO] [04_EVIDENCE] 시작
+2026-05-19 13:13:26,945 [INFO] [04_EVIDENCE] Gemini로 카드뉴스 생성 중...
+2026-05-19 13:13:27,727 [INFO] AFC is enabled with max remote calls: 10.
+2026-05-19 13:13:27,974 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-05-19 13:13:27,976 [WARNING] Gemini 생성 실패, Imagen으로 폴백: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-05-19 13:13:36,731 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-19 13:13:36,978 [INFO] 이미지 생성 (Imagen): C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide04_gemini.png
+2026-05-19 13:13:36,978 [INFO] [04_EVIDENCE] Claude vision으로 텍스트 검증 중...
+2026-05-19 13:13:41,774 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:13:41,775 [WARNING] [04_EVIDENCE] Gemini 텍스트 불일치 — PIL 폴백: "실제 사례", "48세 직장인", "보험 공백으로 전액 자기부담"
+2026-05-19 13:13:41,938 [INFO] [04_EVIDENCE] PIL 합성 후 재검증 중...
+2026-05-19 13:13:47,750 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:13:47,751 [INFO] [04_EVIDENCE] PIL 폴백 검증 통과 ✓
+2026-05-19 13:13:47,752 [INFO] 
+==================================================
+2026-05-19 13:13:47,752 [INFO] [05_CTA] 시작
+2026-05-19 13:13:47,752 [INFO] [05_CTA] Gemini로 카드뉴스 생성 중...
+2026-05-19 13:13:48,557 [INFO] AFC is enabled with max remote calls: 10.
+2026-05-19 13:13:48,802 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent "HTTP/1.1 404 Not Found"
+2026-05-19 13:13:48,803 [WARNING] Gemini 생성 실패, Imagen으로 폴백: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/gemini-2.0-flash-exp is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-05-19 13:13:56,578 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-19 13:13:56,880 [INFO] 이미지 생성 (Imagen): C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide05_gemini.png
+2026-05-19 13:13:56,881 [INFO] [05_CTA] Claude vision으로 텍스트 검증 중...
+2026-05-19 13:14:01,445 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:14:01,446 [WARNING] [05_CTA] Gemini 텍스트 불일치 — PIL 폴백: "지금 당신의 수치는", "아직 '경고'일 뿐입니다", "무료 1차 진단", "보험 증권 진단가"
+2026-05-19 13:14:01,604 [INFO] [05_CTA] PIL 합성 후 재검증 중...
+2026-05-19 13:14:07,648 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:14:07,648 [WARNING] [05_CTA] PIL 폴백 후에도 불일치 — 최종 결과 사용
+2026-05-19 13:14:07,649 [INFO] 
+==================================================
+2026-05-19 13:14:07,649 [INFO] 파이프라인 완료
+2026-05-19 13:14:07,649 [INFO]   01_HOOK: [정상]
+2026-05-19 13:14:07,649 [INFO]   02_PROBLEM: [정상]
+2026-05-19 13:14:07,649 [INFO]   03_INSIGHT: [정상]
+2026-05-19 13:14:07,649 [INFO]   04_EVIDENCE: [정상]
+2026-05-19 13:14:07,649 [INFO]   05_CTA: [오타있음]
+2026-05-19 13:14:07,649 [INFO] 
+생성 이미지: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진
+2026-05-19 13:17:20,162 [WARNING] 다음 환경변수가 없습니다 (이미지 생성 건너뜀):
+2026-05-19 13:17:20,163 [WARNING]   .env에 추가: FIGMA_TOKEN     ← Figma 계정 설정 > Personal access tokens에서 발급
+2026-05-19 13:17:20,163 [INFO] 
+==================================================
+2026-05-19 13:17:20,164 [INFO] [01_HOOK] 시작
+2026-05-19 13:17:20,164 [INFO] [01_HOOK] Gemini로 카드뉴스 생성 중...
+2026-05-19 13:17:28,064 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-19 13:17:28,315 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide01_gemini.png
+2026-05-19 13:17:28,316 [INFO] [01_HOOK] Claude vision으로 텍스트 검증 중...
+2026-05-19 13:17:31,343 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:17:31,382 [WARNING] [01_HOOK] Gemini 텍스트 불일치 — PIL 폴백: "3명 중 1명", "건강검진의 진실", "보험 증권 진단가"
+2026-05-19 13:17:31,561 [INFO] [01_HOOK] PIL 합성 후 재검증 중...
+2026-05-19 13:17:34,118 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:17:34,119 [INFO] [01_HOOK] PIL 폴백 검증 통과 ✓
+2026-05-19 13:17:34,120 [INFO] 
+==================================================
+2026-05-19 13:17:34,121 [INFO] [02_PROBLEM] 시작
+2026-05-19 13:17:34,121 [INFO] [02_PROBLEM] Gemini로 카드뉴스 생성 중...
+2026-05-19 13:17:41,229 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-19 13:17:41,449 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide02_gemini.png
+2026-05-19 13:17:41,451 [INFO] [02_PROBLEM] Claude vision으로 텍스트 검증 중...
+2026-05-19 13:17:45,850 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:17:45,851 [WARNING] [02_PROBLEM] Gemini 텍스트 불일치 — PIL 폴백: "경고 수치를 방치하면 생기는 일", "검진 결과 무시", "의료비 폭증"
+2026-05-19 13:17:46,001 [INFO] [02_PROBLEM] PIL 합성 후 재검증 중...
+2026-05-19 13:17:48,589 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:17:48,590 [WARNING] [02_PROBLEM] PIL 폴백 후에도 불일치 — 최종 결과 사용
+2026-05-19 13:17:48,590 [INFO] 
+==================================================
+2026-05-19 13:17:48,590 [INFO] [03_INSIGHT] 시작
+2026-05-19 13:17:48,590 [INFO] [03_INSIGHT] Gemini로 카드뉴스 생성 중...
+2026-05-19 13:17:56,242 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-19 13:17:56,508 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide03_gemini.png
+2026-05-19 13:17:56,510 [INFO] [03_INSIGHT] Claude vision으로 텍스트 검증 중...
+2026-05-19 13:17:59,909 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:17:59,912 [WARNING] [03_INSIGHT] Gemini 텍스트 불일치 — PIL 폴백: "증권 진단 전 vs 후", "3,000만원", "차이: 2,700만원"
+2026-05-19 13:18:00,084 [INFO] [03_INSIGHT] PIL 합성 후 재검증 중...
+2026-05-19 13:18:04,452 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:18:04,454 [INFO] [03_INSIGHT] PIL 폴백 검증 통과 ✓
+2026-05-19 13:18:04,455 [INFO] 
+==================================================
+2026-05-19 13:18:04,455 [INFO] [04_EVIDENCE] 시작
+2026-05-19 13:18:04,455 [INFO] [04_EVIDENCE] Gemini로 카드뉴스 생성 중...
+2026-05-19 13:18:13,041 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-19 13:18:13,277 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide04_gemini.png
+2026-05-19 13:18:13,278 [INFO] [04_EVIDENCE] Claude vision으로 텍스트 검증 중...
+2026-05-19 13:18:17,468 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:18:17,470 [WARNING] [04_EVIDENCE] Gemini 텍스트 불일치 — PIL 폴백: "실제 사례", "48세 직장인", "2,800만원", "보험 공백으로 전액 자기부담"
+2026-05-19 13:18:17,643 [INFO] [04_EVIDENCE] PIL 합성 후 재검증 중...
+2026-05-19 13:18:20,261 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:18:20,263 [INFO] [04_EVIDENCE] PIL 폴백 검증 통과 ✓
+2026-05-19 13:18:20,264 [INFO] 
+==================================================
+2026-05-19 13:18:20,264 [INFO] [05_CTA] 시작
+2026-05-19 13:18:20,265 [INFO] [05_CTA] Gemini로 카드뉴스 생성 중...
+2026-05-19 13:18:29,135 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict "HTTP/1.1 200 OK"
+2026-05-19 13:18:29,383 [INFO] 이미지 생성: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진\slide05_gemini.png
+2026-05-19 13:18:29,385 [INFO] [05_CTA] Claude vision으로 텍스트 검증 중...
+2026-05-19 13:18:32,304 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:18:32,306 [WARNING] [05_CTA] Gemini 텍스트 불일치 — PIL 폴백: "지금 당신의 수치는", "아직 경고일 뿐입니다", "무료 1차 진단", "보험 증권 진단가"
+2026-05-19 13:18:32,457 [INFO] [05_CTA] PIL 합성 후 재검증 중...
+2026-05-19 13:18:35,625 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-19 13:18:35,628 [INFO] [05_CTA] PIL 폴백 검증 통과 ✓
+2026-05-19 13:18:35,628 [INFO] 
+==================================================
+2026-05-19 13:18:35,629 [INFO] 파이프라인 완료
+2026-05-19 13:18:35,629 [INFO]   01_HOOK: [정상]
+2026-05-19 13:18:35,630 [INFO]   02_PROBLEM: [오타있음]
+2026-05-19 13:18:35,630 [INFO]   03_INSIGHT: [정상]
+2026-05-19 13:18:35,630 [INFO]   04_EVIDENCE: [정상]
+2026-05-19 13:18:35,631 [INFO]   05_CTA: [정상]
+2026-05-19 13:18:35,631 [INFO] 
+생성 이미지: C:\Users\ant_6\OneDrive\문서\마케팅\automation\..\콘텐츠\건강검진

@@ -1,0 +1,43 @@
+2026-07-15 12:57:01,665 [INFO] 안전검사 재확인 통과 — 발행 진행
+2026-07-15 12:57:02,790 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-15 13:00:02,005 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 504 Gateway Timeout"
+2026-07-15 13:00:02,006 [WARNING] 이미지 생성 실패 (시도 1/3): 504 DEADLINE_EXCEEDED. {'error': {'code': 504, 'message': 'Deadline expired before operation could complete.', 'status': 'DEADLINE_EXCEEDED'}}
+2026-07-15 13:00:04,007 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-15 13:01:50,360 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 200 OK"
+2026-07-15 13:01:50,668 [INFO] 이미지 생성 완료: c:\Users\ant_6\OneDrive\문서\마케팅\automation\data\blog_images\img_0.png (382527 bytes, 시도 2)
+2026-07-15 13:01:50,669 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-15 13:03:43,322 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 200 OK"
+2026-07-15 13:03:43,531 [INFO] 이미지 생성 완료: c:\Users\ant_6\OneDrive\문서\마케팅\automation\data\blog_images\img_1.png (422285 bytes, 시도 1)
+2026-07-15 13:03:43,532 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-15 13:04:07,551 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 200 OK"
+2026-07-15 13:04:07,782 [INFO] 이미지 생성 완료: c:\Users\ant_6\OneDrive\문서\마케팅\automation\data\blog_images\img_2.png (525855 bytes, 시도 1)
+2026-07-15 13:04:07,782 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-15 13:04:34,577 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 200 OK"
+2026-07-15 13:04:34,841 [INFO] 이미지 생성 완료: c:\Users\ant_6\OneDrive\문서\마케팅\automation\data\blog_images\img_3.png (729456 bytes, 시도 1)
+2026-07-15 13:04:34,841 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-15 13:05:00,614 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 200 OK"
+2026-07-15 13:05:00,845 [INFO] 이미지 생성 완료: c:\Users\ant_6\OneDrive\문서\마케팅\automation\data\blog_images\img_4.png (520479 bytes, 시도 1)
+2026-07-15 13:05:00,845 [INFO] 이미지 5/5개 확보
+2026-07-15 13:05:00,846 [INFO] ====== WebDriver manager ======
+2026-07-15 13:05:00,877 [WARNING] [naver] ChromeDriver 설치 확인 중 일시적 권한 오류 — 재시도 1/3
+2026-07-15 13:05:02,878 [INFO] ====== WebDriver manager ======
+2026-07-15 13:05:05,486 [INFO] Driver [C:\Users\ant_6\.wdm\drivers\chromedriver\win64\150.0.7871.124\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-07-15 13:05:12,429 [INFO] [naver] 저장된 세션으로 로그인 확인됨
+2026-07-15 13:05:22,689 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 13:05:30,702 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 13:05:30,702 [INFO] [naver] 이미지 삽입 완료 (1번째, style=infographic)
+2026-07-15 13:05:37,178 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 13:05:45,185 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 13:05:45,185 [INFO] [naver] 이미지 삽입 완료 (2번째, style=infographic)
+2026-07-15 13:05:51,335 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 13:05:59,345 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 13:05:59,345 [INFO] [naver] 이미지 삽입 완료 (3번째, style=infographic)
+2026-07-15 13:06:05,515 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 13:06:13,525 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 13:06:13,525 [INFO] [naver] 이미지 삽입 완료 (4번째, style=photo)
+2026-07-15 13:06:26,807 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 13:06:34,815 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 13:06:34,816 [INFO] [naver] 이미지 삽입 완료 (5번째, style=infographic)
+2026-07-15 13:06:44,587 [INFO] [naver] 발행 완료: https://blog.naver.com/smaxi/224347316818
+
+=== 결과: 성공 — https://blog.naver.com/smaxi/224347316818 ===

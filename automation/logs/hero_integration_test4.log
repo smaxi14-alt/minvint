@@ -1,0 +1,115 @@
+2026-07-15 12:03:18,050 [INFO] [celeb] 닉쿤 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-15 12:03:18,050 [INFO] [celeb] IG 워치리스트 후보 — 수동 큐레이션 권장: 닉쿤 (주제가 SNS 게시물 기반 — 이미지 검색으로 원본 사진을 못 찾을 가능성 높음)
+2026-07-15 12:03:28,439 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+
+=== confirmed facts (hook_strength 순) ===
+  [3] 닉쿤은 3일간 계란 3개만 먹는 극단적인 단기 다이어트로 체중을 줄였다.
+  [3] 닉쿤은 다이어트 성공 후 과거 '짐승돌' 시절을 연상시키는 탄탄한 몸매와 등 근육을 되찾았다.
+  [2] 닉쿤은 14일 자신의 SNS에 '집보다 나은 곳은 없다'는 글과 함께 상의를 탈의한 사진 여러 장을 게재했다.
+  [2] 닉쿤은 비만치료제 위고비를 사용하지 않고 식단만으로 다이어트에 성공했다.
+  [2] 닉쿤은 다이어트 이전 '후덕한' 비주얼로 지적받은 적이 있다.
+  [1] 닉쿤은 고향(본가)을 찾아 가족과 함께 휴식을 취하는 근황을 전했다.
+  [1] 닉쿤은 그룹 2PM의 멤버다.
+2026-07-15 12:03:31,774 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:03:31,777 [INFO] [celeb] YouTube 임베드 확보: 닉쿤
+2026-07-15 12:03:31,988 [WARNING] [celeb] Google CSE 검색 실패: HTTP Error 403: Forbidden
+2026-07-15 12:03:33,537 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:03:33,538 [INFO] [celeb] 이미지 검색 쿼리 생성: ['닉쿤 짐승돌 몸매 과거', '닉쿤 단기 다이어트 최근 바디프로필']
+2026-07-15 12:03:35,758 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:03:35,759 [INFO] [celeb] 시각적 후킹 요소 추출: 상의를 벗거나 몸에 붙는 옷을 입어 복근, 옆구리, 팔뚝 등 근육질의 상체 라인이 뚜렷하게 드러난 모습
+2026-07-15 12:03:39,334 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:03:42,214 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:03:45,143 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:03:48,736 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:03:52,372 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:03:55,610 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:03:58,595 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:01,607 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:04,968 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:08,059 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:11,501 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:14,601 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:18,267 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:21,441 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:24,791 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:27,950 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:31,215 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:34,213 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:37,400 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:40,945 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:44,151 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:47,444 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:50,807 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:54,681 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:04:57,580 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:05:03,772 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:05:07,351 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:05:08,978 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:05:08,979 [INFO] [celeb] 시각적 매칭 폴백 재검색: ['닉쿤 복근', '닉쿤 바디프로필']
+2026-07-15 12:05:13,187 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:05:16,356 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:05:21,170 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:05:24,329 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:05:27,369 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:05:30,461 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:05:34,989 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:05:38,115 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:05:46,244 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:05:49,637 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:05:53,225 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:05:56,846 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:06:00,245 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:06:05,584 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:06:09,070 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:06:12,539 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:06:15,859 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:06:18,865 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:06:22,345 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:06:26,113 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:06:29,682 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:06:29,682 [INFO] [celeb] 다운로드 실사 사진 4장 확보(후보 60건 중, 시각적 매칭 3장): 닉쿤
+2026-07-15 12:06:29,682 [WARNING] [celeb] PEXELS_API_KEY 없음 — 맥락 이미지 건너뜀
+
+=== assets (5개) ===
+  [0] type=embed matches=None alt=닉쿤 관련 영상: [아카이브K 오리지널] #032. 닉쿤 1편, 노래도 
+  [1] type=downloaded_photo matches=True alt=상의를 벗고 있는 남성이 물병을 들고 마시는 모습. 복근, 가슴, 팔뚝  <== HERO
+  [2] type=downloaded_photo matches=True alt=수영장에서 상의를 벗은 남성이 물 속에 서 있으며, 복근과 팔뚝 등 근육
+  [3] type=downloaded_photo matches=True alt=A young male figure wearing an open blac
+  [4] type=downloaded_photo matches=False alt=해변의 흰 바위 배경 앞에 서 있는 남성이 흰색 반팔 티셔츠와 흰색 반바
+2026-07-15 12:07:01,034 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:07:01,035 [INFO] [celeb] 닉쿤 글 생성 완료 (1250자)
+시도 1: 검증 실패 ["낚시성 제목 패턴 검출: '충격'"] — 재시도
+2026-07-15 12:07:37,915 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:07:37,916 [INFO] [celeb] 닉쿤 글 생성 완료 (1258자)
+시도 2: 검증 실패 ["낚시성 제목 패턴 검출: '충격'"] — 재시도
+2026-07-15 12:08:09,491 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 12:08:09,492 [INFO] [celeb] 닉쿤 글 생성 완료 (1109자)
+시도 3: 검증 통과
+
+제목: 닉쿤 3일 만에 '짐승돌' 복귀, 대체 뭘 먹은 걸까요
+
+hero_issues: []
+
+image_map: {0: 'c:\\Users\\ant_6\\OneDrive\\문서\\마케팅\\automation\\data\\celeb_images\\downloaded_닉쿤_0.jpg', 1: 'c:\\Users\\ant_6\\OneDrive\\문서\\마케팅\\automation\\data\\celeb_images\\downloaded_닉쿤_1.jpg', 2: 'c:\\Users\\ant_6\\OneDrive\\문서\\마케팅\\automation\\data\\celeb_images\\downloaded_닉쿤_2.jpg', 3: 'c:\\Users\\ant_6\\OneDrive\\문서\\마케팅\\automation\\data\\celeb_images\\downloaded_닉쿤_3.jpg'}
+
+hero asset index: 1, ref: c:\Users\ant_6\OneDrive\문서\마케팅\automation\data\celeb_images\downloaded_닉쿤_0.jpg
+image_map[0] (실제 첫 삽입 이미지): c:\Users\ant_6\OneDrive\문서\마케팅\automation\data\celeb_images\downloaded_닉쿤_0.jpg
+2026-07-15 12:08:09,493 [INFO] ====== WebDriver manager ======
+2026-07-15 12:08:11,840 [INFO] Driver [C:\Users\ant_6\.wdm\drivers\chromedriver\win64\150.0.7871.124\chromedriver-win64/chromedriver.exe] found in cache by browser version
+2026-07-15 12:08:17,715 [INFO] [naver] 저장된 세션으로 로그인 확인됨
+2026-07-15 12:08:30,331 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 12:08:38,343 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 12:08:38,343 [INFO] [naver] 이미지 삽입 완료 (1번째, style=photo)
+2026-07-15 12:08:54,939 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 12:09:02,981 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 12:09:02,982 [INFO] [naver] 이미지 삽입 완료 (2번째, style=photo)
+2026-07-15 12:09:18,678 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 12:09:26,691 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 12:09:26,692 [INFO] [naver] 이미지 삽입 완료 (3번째, style=photo)
+2026-07-15 12:09:46,730 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-15 12:09:54,739 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-15 12:09:54,739 [INFO] [naver] 이미지 삽입 완료 (4번째, style=photo)
+2026-07-15 12:10:14,044 [INFO] [naver] URL 자동 임베드 삽입: https://www.youtube.com/watch?v=QJi3SiSJvf8
+2026-07-15 12:10:33,408 [INFO] [naver] dry_run 완료 — 발행하지 않음. 스크린샷: c:\Users\ant_6\OneDrive\문서\마케팅\automation\data\naver_dry_run.png
+
+=== 결과: 성공 (dry-run 스크린샷 생성됨) ===

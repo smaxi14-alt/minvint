@@ -1,0 +1,83 @@
+2026-07-16 10:21:28,098 [INFO] [celeb] 헤드라인 72개 수집
+2026-07-16 10:21:43,164 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:21:43,204 [INFO] [celeb] 후보 28개 추출
+2026-07-16 10:21:43,240 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 하하
+2026-07-16 10:21:43,247 [INFO] [celeb] 최근 14일 내 이미 발행 — 제외: 리한나
+2026-07-16 10:21:43,295 [INFO] [celeb] 여성 타깃 기준 미달(남성, 여성 인기 미확인) — 제외: 홀란
+2026-07-16 10:21:43,330 [INFO] [celeb] 최근 14일 내 이미 발행 — 제외: 풍자
+2026-07-16 10:21:43,424 [INFO] [celeb] 후보 시도: 구혜선 — 악플에 의한 다이어트 경험 ['celeb_diet']
+2026-07-16 10:21:43,756 [INFO] [celeb] 구혜선 스니펫 수집: 뉴스=5 블로그=5 카페=5
+2026-07-16 10:21:51,512 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:21:51,577 [INFO] [celeb] 구혜선: 논란/부정적 신호 감지 — 엄격 기준 적용 (confirmed 4/3)
+2026-07-16 10:21:53,951 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:21:53,952 [INFO] [celeb] YouTube 임베드 확보: 구혜선
+2026-07-16 10:21:55,139 [INFO] [celeb] Instagram 게시물 자동 발견(Serper): 구혜선
+2026-07-16 10:21:55,139 [INFO] [celeb] Instagram 임베드 확보: 구혜선
+2026-07-16 10:21:56,205 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:21:56,206 [INFO] [celeb] 이미지 검색 쿼리 생성: ['구혜선 악플 다이어트 전 과거 모습', '구혜선 다이어트 후 최근 몸매 변화']
+2026-07-16 10:21:58,263 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:21:58,264 [INFO] [celeb] 시각적 후킹 요소 추출: 악플로 인한 신체 변화를 드러내기 위해 이전과 이후의 체형 차이가 명확히 보이는 모습, 또는 체중 감량 후 더 날씬해진 신체 라인이 드러나는 옷(타이트한 의류, 민소매, 반바지 등)을 입고 있는 모습
+2026-07-16 10:22:09,981 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:22:13,932 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:22:17,305 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:22:20,816 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:22:24,036 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:22:27,055 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:22:30,316 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:22:34,444 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:22:37,823 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:22:41,050 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:22:41,053 [INFO] [celeb] 다운로드 실사 사진 6장 확보(후보 80건 중, 시각적 매칭 1장): 구혜선
+2026-07-16 10:22:41,053 [WARNING] [celeb] PEXELS_API_KEY 없음 — 맥락 이미지 건너뜀
+2026-07-16 10:22:41,870 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-16 10:23:10,056 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 200 OK"
+2026-07-16 10:23:10,418 [INFO] 이미지 생성 완료: C:\Users\ant_6\OneDrive\문서\마케팅\automation\data\celeb_images\card_구혜선_0.png (372567 bytes, 시도 1)
+2026-07-16 10:23:10,420 [INFO] AFC is enabled with max remote calls: 10.
+2026-07-16 10:23:37,673 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image-preview:generateContent "HTTP/1.1 200 OK"
+2026-07-16 10:23:37,939 [INFO] 이미지 생성 완료: C:\Users\ant_6\OneDrive\문서\마케팅\automation\data\celeb_images\card_구혜선_1.png (480094 bytes, 시도 1)
+2026-07-16 10:24:07,192 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:24:07,195 [INFO] [celeb] 구혜선 글 생성 완료 (1189자)
+2026-07-16 10:24:07,203 [WARNING] [celeb] 구혜선: 검증 게이트 위반 2건(시도 1/3): ["부정/루머성 키워드 검출: '논란'", "부정/루머성 키워드 검출: '악플'"] — 사유를 반영해 재생성
+2026-07-16 10:24:38,006 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-16 10:24:38,008 [INFO] [celeb] 구혜선 글 생성 완료 (1174자)
+2026-07-16 10:24:38,028 [INFO] ====== WebDriver manager ======
+2026-07-16 10:24:43,077 [INFO] Get LATEST chromedriver version for google-chrome
+2026-07-16 10:24:43,811 [WARNING] [naver] ChromeDriver 설치 확인 중 일시적 권한 오류 — 재시도 1/3
+2026-07-16 10:24:45,812 [INFO] ====== WebDriver manager ======
+2026-07-16 10:24:49,726 [INFO] Get LATEST chromedriver version for google-chrome
+2026-07-16 10:24:52,224 [INFO] Get LATEST chromedriver version for google-chrome
+2026-07-16 10:24:53,484 [INFO] WebDriver version 150.0.7871.124 selected
+2026-07-16 10:24:53,491 [INFO] Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/150.0.7871.124/win64/chromedriver-win64.zip
+2026-07-16 10:24:53,491 [INFO] About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/150.0.7871.124/win64/chromedriver-win64.zip
+2026-07-16 10:24:54,106 [INFO] Driver downloading response is 200
+2026-07-16 10:24:55,691 [INFO] Driver has been saved in cache [C:\Users\ant_6\.wdm\drivers\chromedriver\win64\150.0.7871.124]
+2026-07-16 10:25:04,011 [INFO] [naver] 저장된 세션으로 로그인 확인됨
+2026-07-16 10:25:14,852 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-16 10:25:22,864 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-16 10:25:22,864 [INFO] [naver] 이미지 삽입 완료 (1번째, style=photo)
+2026-07-16 10:25:40,022 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-16 10:25:48,029 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-16 10:25:48,029 [INFO] [naver] 이미지 삽입 완료 (2번째, style=photo)
+2026-07-16 10:26:10,061 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-16 10:26:18,071 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-16 10:26:18,071 [INFO] [naver] 이미지 삽입 완료 (3번째, style=infographic)
+2026-07-16 10:26:26,030 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-16 10:26:34,040 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-16 10:26:34,040 [INFO] [naver] 이미지 삽입 완료 (4번째, style=photo)
+2026-07-16 10:26:46,829 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-16 10:26:54,844 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-16 10:26:54,844 [INFO] [naver] 이미지 삽입 완료 (5번째, style=infographic)
+2026-07-16 10:27:01,813 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-16 10:27:09,823 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-16 10:27:09,823 [INFO] [naver] 이미지 삽입 완료 (6번째, style=photo)
+2026-07-16 10:27:35,214 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-16 10:27:43,225 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-16 10:27:43,225 [INFO] [naver] 이미지 삽입 완료 (7번째, style=photo)
+2026-07-16 10:27:51,515 [INFO] [naver] 이미지 업로드 중... (시도 1/3)
+2026-07-16 10:27:59,525 [INFO] [naver] 이미지 업로드 성공 (시도 1/3)
+2026-07-16 10:27:59,525 [INFO] [naver] 이미지 삽입 완료 (8번째, style=photo)
+2026-07-16 10:28:20,606 [INFO] [naver] URL 자동 임베드 삽입: https://www.instagram.com/p/DNGz3FRBUjs/
+2026-07-16 10:28:30,395 [INFO] [naver] URL 자동 임베드 삽입: https://www.youtube.com/watch?v=lKD9yKVjUrY
+2026-07-16 10:28:46,464 [INFO] [naver] 카테고리 선택 완료: 셀럽 다이어트
+2026-07-16 10:28:50,084 [INFO] [naver] 발행 완료: https://blog.naver.com/kbyoung1120/224348234800
+2026-07-16 10:28:53,872 [INFO] [STATUS=SUCCESS] 구혜선 발행 완료: https://blog.naver.com/kbyoung1120/224348234800

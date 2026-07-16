@@ -1,0 +1,62 @@
+2026-07-15 11:51:47,147 [INFO] [celeb] ÈÄº¸ ½Ãµµ: ´ÐÄï \u2014 3ÀÏ°£ °è¶õ 3°³¸¸ ¸Ô´Â È¤µ¶ÇÑ ´Ü±â ´ÙÀÌ¾îÆ®·Î °ú°Å 'Áü½Âµ¹' ¸ö¸Å º¹±Í ['celeb_diet']
+2026-07-15 11:51:47,515 [INFO] [celeb] ´ÐÄï ½º´ÏÆê ¼öÁý: ´º½º=5 ºí·Î±×=5 Ä«Æä=5
+2026-07-15 11:51:47,516 [INFO] [celeb] IG ¿öÄ¡¸®½ºÆ® ÈÄº¸ \u2014 ¼öµ¿ Å¥·¹ÀÌ¼Ç ±ÇÀå: ´ÐÄï (ÁÖÁ¦°¡ SNS °Ô½Ã¹° ±â¹Ý \u2014 ÀÌ¹ÌÁö °Ë»öÀ¸·Î ¿øº» »çÁøÀ» ¸ø Ã£À» °¡´É¼º ³ôÀ½)
+2026-07-15 11:51:56,972 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:00,101 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:00,103 [INFO] [celeb] YouTube ÈÄº¸ Áß ÀûÇÕÇÑ ¿µ»ó ¾øÀ½ ÆÇÁ¤: °Ë»ö °á°úÀÇ ¸ðµç ¿µ»óÀÌ »ç¿ëÀÚ°¡ °Ë»öÇÑ "´ÐÄï 3ÀÏ°£ °è¶õ 3°³¸¸ ¸Ô´Â È¤µ¶ÇÑ ´Ü±â ´ÙÀÌ¾îÆ®"¿Í ¹«°üÇÕ´Ï´Ù. 0¹ø°ú 3¹øÀº ÀÎÅÍºä ¿µ»óÀÌÁö¸¸ ´ÙÀÌ¾îÆ® °ü·Ã ÄÜÅÙÃ÷°¡ ¾Æ´Ï°í, 1¹ø°ú 2¹øÀº °ø½Ä Ã¤³ÎÀÌÁö¸¸ Á¦¸ñÀÌ ´ÙÀÌ¾îÆ®¿Í °ü°è¾øÀ¸¸ç, 4¹øÀº ºí¶ôºñ °ü·Ã ´º½º·Î ´ÐÄïÀÌ ÁÖÀÎ°øÀÌ ¾Æ´Õ´Ï´Ù. µû¶ó¼­ ÀûÇÕÇÑ ¿µ»óÀÌ ¾ø½À´Ï´Ù.
+2026-07-15 11:52:00,103 [INFO] [celeb] YouTube °Ë»ö °á°ú 5°³('´ÐÄï ÀÎÅÍºä') Áß ÀûÇÕÇÑ ¿µ»ó ¾øÀ½ \u2014 °Ç³Ê¶Ü: ´ÐÄï
+2026-07-15 11:52:00,288 [WARNING] [celeb] Google CSE °Ë»ö ½ÇÆÐ: HTTP Error 403: Forbidden
+2026-07-15 11:52:02,368 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:02,369 [INFO] [celeb] ÀÌ¹ÌÁö °Ë»ö Äõ¸® »ý¼º: ['´ÐÄï Áü½Âµ¹ ¸ö¸Å °ú°Å', '´ÐÄï ÃÖ±Ù ´ÙÀÌ¾îÆ® ¹ÙµðÇÁ·ÎÇÊ']
+2026-07-15 11:52:07,620 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:07,621 [INFO] [celeb] ½Ã°¢Àû ÈÄÅ· ¿ä¼Ò ÃßÃâ: »óÀÇ¸¦ ¹þ°Å³ª ¸ö¿¡ ºÙ´Â ¿ÊÀ» ÀÔ¾î º¹ºÎ, ÆÈ, µîÀÇ ±ÙÀ° ¶óÀÎÀÌ ¸íÈ®ÇÏ°Ô µå·¯³­ ÅºÅºÇÑ Ã¼ÇüÀÇ ¸ð½À
+2026-07-15 11:52:12,703 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:15,717 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:18,717 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:22,317 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:25,590 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:28,985 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:32,027 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:39,231 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:43,118 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:46,799 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:51,040 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:54,047 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:52:58,607 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:01,816 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:05,012 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:08,264 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:11,911 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:15,214 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:18,697 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:21,694 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:25,603 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:30,520 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:33,557 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:37,388 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:38,285 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 400 Bad Request"
+2026-07-15 11:53:38,287 [WARNING] [celeb] »çÁø Ç°Áú ÆÇ´Ü ½ÇÆÐ: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Could not process image'}, 'request_id': 'req_011Cd362eKcsKYnnnK5Y9K9x'}
+2026-07-15 11:53:42,998 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:46,419 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:47,407 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:47,408 [INFO] [celeb] ½Ã°¢Àû ¸ÅÄª Æú¹é Àç°Ë»ö: ['´ÐÄï ½Ä½ºÆÑ', '´ÐÄï ±ÙÀ°Áú Ã¼Çü']
+2026-07-15 11:53:51,084 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:54,661 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:53:59,069 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:54:02,557 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:54:05,731 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:54:08,710 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:54:12,263 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:54:15,861 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:54:19,440 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:54:23,281 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:54:27,139 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:54:31,300 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:54:34,261 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:54:34,267 [INFO] [celeb] ´Ù¿î·Îµå ½Ç»ç »çÁø 6Àå È®º¸(ÈÄº¸ 60°Ç Áß, ½Ã°¢Àû ¸ÅÄª 5Àå): ´ÐÄï
+2026-07-15 11:54:34,267 [WARNING] [celeb] PEXELS_API_KEY ¾øÀ½ \u2014 ¸Æ¶ô ÀÌ¹ÌÁö °Ç³Ê¶Ü
+2026-07-15 11:55:05,199 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-07-15 11:55:05,203 [INFO] [celeb] ´ÐÄï ±Û »ý¼º ¿Ï·á (1236ÀÚ)
+2026-07-15 11:55:05,203 [WARNING] [celeb] ´ÐÄï: °ËÁõ °ÔÀÌÆ® ½ÇÆÐ(1°Ç): ["³¬½Ã¼º Á¦¸ñ ÆÐÅÏ °ËÃâ: 'Ãæ°Ý'"]
+
+=== ê²°ê³¼: ì‹¤íŒ¨ ===
