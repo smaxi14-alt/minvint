@@ -689,6 +689,20 @@
       "template": "reversal",
       "theme": "상속세·증여세 개편 논의와 40대 자산 이전 전략",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-16",
+      "timestamp": "2026-07-16T13:46:57.139847",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a58e0c8913a0681abd7af0b",
+      "text": "40대 남성 간질환 사망률, 20대의 27배.\n\n회식 자리에서 처음으로 \"저 오늘 못 마시겠습니다\" 했다.\n15년 전엔 상상도 못 했다.\n\n상담하다 보면 40대 후반부터 건강검진 결과지 들고 오는 사람이 늘어난다.\n숫자가 나쁘게 나오면 그때부터 돈 계획이 아니라 몸 계획을 세운다.\n\n거절도 훈련이더라.\n한 번 해보니까 두 번째는 쉽다.",
+      "tone": "직접적",
+      "ending_style": "독백형",
+      "template": "shock_stat",
+      "theme": "회식 '못 마시겠다' 첫 거절",
+      "is_trend": false
     }
   ]
 }
