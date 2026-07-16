@@ -116,7 +116,12 @@ def publish_images_to_github(image_paths: list[Path], commit_message: str) -> li
         raise RuntimeError(f"git add 실패: {msg}")
 
     code, msg = _run_git(["commit", "-m", commit_message])
-    if code != 0 and "nothing to commit" not in msg:
+    # "커밋할 변경사항 없음"은 실패가 아니다 — 이전 시도(예: 이후 단계에서
+    # 실패해 재시도하는 경우)에서 이미지가 이미 커밋+푸시됐을 수 있다.
+    # git 버전/상황에 따라 문구가 "nothing to commit"뿐 아니라
+    # "no changes added to commit"으로도 나타남을 실측 확인(2026-07-16).
+    nothing_to_commit = "nothing to commit" in msg or "no changes added to commit" in msg
+    if code != 0 and not nothing_to_commit:
         raise RuntimeError(f"git commit 실패: {msg}")
 
     code, msg = _run_git(["pull", "--rebase", "origin", "main"])
@@ -136,14 +141,20 @@ def publish_images_to_github(image_paths: list[Path], commit_message: str) -> li
 
 
 def _build_carousel_mutation(caption: str, media_urls: list[str]) -> str:
+    """2026-07-16 실측 GraphQL introspection으로 확정한 실제 스키마:
+    CreatePostInput.assets: [AssetInput!]!, AssetInput.image: ImageAssetInput,
+    ImageAssetInput.url: String!. 기존 `media: [{url,type}]` 필드는 스키마에
+    아예 존재하지 않아 "Field media is not defined by type CreatePostInput"
+    검증 오류로 항상 실패했다(과거 실험 스크립트 _post_instagram.py의 추측이
+    틀렸던 것으로 확인됨)."""
     escaped = caption.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
-    media_items = ", ".join(f'{{ url: "{u}", type: IMAGE }}' for u in media_urls)
+    asset_items = ", ".join(f'{{ image: {{ url: "{u}" }} }}' for u in media_urls)
     return f"""
 mutation {{
   createPost(input: {{
     channelId: "{BUFFER_IG_CHANNEL_ID}"
     text: "{escaped}"
-    media: [{media_items}]
+    assets: [{asset_items}]
     schedulingType: automatic
     mode: shareNow
   }}) {{
