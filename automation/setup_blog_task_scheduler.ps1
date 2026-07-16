@@ -1,4 +1,4 @@
-# 네이버 블로그 자동 발행 — Windows 작업 스케줄러 등록 스크립트
+﻿# 네이버 블로그 자동 발행 — Windows 작업 스케줄러 등록 스크립트
 # 반드시 로컬 PC에서만 실행 (클라우드 IP는 네이버 보안 인증에 막힘)
 # 실행 전 1회: python naver_blog_poster.py setup  으로 수동 로그인 필요
 # 실행: PowerShell에서 .\setup_blog_task_scheduler.ps1

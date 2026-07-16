@@ -4,10 +4,11 @@ import logging
 from datetime import date
 from anthropic import Anthropic
 from config import ANTHROPIC_API_KEY, START_DATE, DATA_DIR
-from content_tracker import get_recent_topics, get_recent_usage
+from content_tracker import get_recent_topics, get_recent_usage, get_recent_post_texts
 from performance_analyzer import get_top_patterns, build_weight_boosts, format_for_prompt
 from persona_manager import get_persona_summary
 from trend_researcher import get_trend_themes
+import market_data
 
 logger = logging.getLogger(__name__)
 client = Anthropic(api_key=ANTHROPIC_API_KEY)
@@ -202,6 +203,52 @@ def _brand_safety_check(text: str) -> tuple[bool, str]:
         return True, ""
 
 
+CONSISTENCY_CHECK_PROMPT = """아래는 같은 SNS 계정(48세 재무상담사 페르소나)이 과거에 발행한 글
+목록[과거 발행 글 목록]이고, 그 뒤에 [새 글] 1개가 있습니다.
+
+당신의 유일한 임무는 "[새 글]이 [과거 발행 글 목록] 중 하나와 모순되는가"만 판단하는 것입니다.
+과거 발행 글 목록 항목들끼리 서로 모순되더라도(예: 과거 글 2개가 이미 서로 다른 수치를 담고
+있더라도) 그건 이번 판단 대상이 아니니 완전히 무시하세요. 오직 [새 글]과 과거 글 하나하나를
+1대1로 비교해서, [새 글]이 과거 글 중 하나와 "같은 사건·같은 거래·같은 사실"을 언급하면서
+가격·날짜·수량·비율 같은 구체적 수치나 사실관계가 달라졌을 때만 모순입니다. 예: 과거 글에
+"삼성전자 8만원에 팔았다"가 있고 [새 글]도 똑같이 "삼성전자를 팔았다"는 내용인데 가격이
+"25만원"으로 다르면 모순. 소재·주제가 겹치는 것 자체는 문제가 아닙니다.
+
+판단: CONTRADICT 또는 OK 한 단어만 반환.
+CONTRADICT면 콜론 뒤에 [새 글]이 과거 글 몇 번과 무엇이 모순되는지 한 줄로 설명.
+OK면 그냥 OK만."""
+
+
+def _consistency_check(text: str, recent_posts: list[dict]) -> tuple[bool, str]:
+    """새 글이 과거 발행 글과 같은 사실을 다른 수치로 재서술해 자기모순을 만드는지
+    Claude haiku로 검사한다(2026-07-14 신설 — "삼성전자 8만원" 오기재를 나중에
+    다른 숫자로 다시 써서 기존 글과 앞뒤가 안 맞게 된 사례 방지).
+    반환: (통과: bool, 이유: str)"""
+    if not recent_posts:
+        return True, ""
+    history_str = "\n".join(
+        f"{i + 1}. ({p['date']}) {p['text'][:200]}" for i, p in enumerate(recent_posts)
+    )
+    try:
+        response = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=120,
+            messages=[{
+                "role": "user",
+                "content": f"{CONSISTENCY_CHECK_PROMPT}\n\n[과거 발행 글 목록]\n{history_str}\n\n[새 글]\n{text}",
+            }],
+        )
+        result = response.content[0].text.strip()
+        if result.upper().startswith("CONTRADICT"):
+            reason = result.split(":", 1)[-1].strip() if ":" in result else result
+            logger.warning(f"[consistency] CONTRADICT — {reason}")
+            return False, reason
+        return True, ""
+    except Exception as e:
+        logger.warning(f"[consistency] 검사 실패 (통과 처리): {e}")
+        return True, ""
+
+
 def get_current_phase() -> int:
     days = (date.today() - START_DATE).days
     if days < 90:
@@ -274,6 +321,14 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
         content_type = _alt
 
     cfg = CONTENT_CONFIG[content_type]
+
+    # economy_news는 코스피·삼성전자·환율 같은 실제 시장 수치를 언급할 여지가 커서,
+    # LLM이 학습 시점 기준 숫자를 지어내는 걸 막기 위해 실시간 스냅샷을 프롬프트에
+    # 주입하고 생성 후 대조 검증한다(2026-07-05 "삼성전자 8만원" 오발행 사례 대응).
+    market_snapshot = market_data.get_market_snapshot() if content_type == "economy_news" else {}
+    market_data_prompt_block = (
+        market_data.format_snapshot_for_prompt(market_snapshot) if content_type == "economy_news" else ""
+    )
 
     # 소재(theme) 선택 — 트렌드 혼합 → 시즌 필터 → 세션+override 중복 제거 → 다양성 가중치
     trend_themes = get_trend_themes(content_type)
@@ -401,12 +456,16 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
 [글쓰기 규칙]
 1. {length['instruction']}
 2. 줄바꿈 자주 — 2~3문장마다 한 줄씩
-3. 숫자는 구체적으로 (월 300만원 ❌ / 월 317만원 ✅)
+3. 숫자는 구체적으로 (월 300만원 ❌ / 월 317만원 ✅) — 단, 코스피·삼성전자·환율처럼
+   실제로 존재하는 시장 지수·종목·환율의 "현재 시세"를 언급할 때는 절대 임의로
+   숫자를 지어내지 마세요. 아래 [실시간 시장 데이터] 섹션에 값이 주어진 것만
+   그 숫자로 쓰고, 없는 종목/지수는 구체적 숫자 없이 방향성만 말하세요.
 4. 결론 먼저, 근거 뒤에
 5. 과장 표현 절대 금지 (최고, 완벽, 꼭, 반드시)
 6. 마무리: {ending_rule}
 7. 이모지 사용 안 함
 8. 어투: {tone['instruction']}
+{"[실시간 시장 데이터]" + chr(10) + market_data_prompt_block if market_data_prompt_block else ""}
 
 [운영 지침]
 {PHASE_INSTRUCTIONS[phase]}
@@ -447,6 +506,10 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
 {trend_note}
 위 조건으로 오늘 {slot} 슬롯에 올릴 쓰레드 글 1개를 작성하세요."""
 
+    # 과거 발행 글 전문 — 모순 검증용(2026-07-14 신설). 매 시도마다 새로 조회할
+    # 필요 없이 이번 generate_post() 호출 동안은 고정된 과거 이력이면 충분하다.
+    recent_post_texts = get_recent_post_texts(days=90)
+
     for attempt in range(3):
         response = client.messages.create(
             model="claude-opus-4-7",
@@ -458,18 +521,52 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
 
         # 브랜드 안전 검증 — 실패 시 최대 2회 재생성
         passed, fail_reason = _brand_safety_check(text)
+        violation_kind = "brand_safety" if not passed else None
+
+        # economy_news 실시간 수치 검증 — 실제 시세와 동떨어진 숫자를 지어냈으면
+        # 브랜드 안전과 별개로 재생성 대상(2026-07-05 "삼성전자 8만원" 사고 재발 방지)
+        market_violations = (
+            market_data.check_market_numbers(text, market_snapshot)
+            if content_type == "economy_news" else []
+        )
+        if market_violations:
+            passed = False
+            fail_reason = "실시간 시세 불일치: " + " / ".join(market_violations)
+            violation_kind = "market_data"
+
+        # 과거 발행 글과의 자기모순 검증 — 위 두 검사를 통과했을 때만 수행(비용 절약).
+        # 같은 사건(예: "삼성전자 팔았다")을 과거와 다른 수치로 다시 서술하면 잡아낸다.
+        consistency_reason = ""
+        if passed:
+            c_passed, consistency_reason = _consistency_check(text, recent_post_texts)
+            if not c_passed:
+                passed = False
+                fail_reason = "과거 발행 글과 모순: " + consistency_reason
+                violation_kind = "consistency"
+
         if passed:
             break
         if attempt < 2:
-            logger.warning(f"[brand_safety] 재생성 시도 {attempt + 1}/2 — {fail_reason}")
+            logger.warning(f"[content_check] 재생성 시도 {attempt + 1}/2 — {fail_reason}")
+            retry_notes = {
+                "brand_safety": "재정 결핍·열등감·동창 비교 소재를 완전히 제거하고 다시 작성하세요.",
+                "market_data": (
+                    "코스피·삼성전자·환율 등 실제 시세는 위 [실시간 시장 데이터]에 주어진 값만 "
+                    "그대로 쓰거나, 없는 종목은 구체적 숫자 없이 방향성만 서술하세요."
+                ),
+                "consistency": (
+                    "위에서 지적된 과거 글과 겹치는 사건/사실을 다른 소재로 바꾸거나, 같은 사건을 "
+                    "다시 쓰려면 과거 글과 동일한 구체적 수치를 그대로 사용하세요."
+                ),
+            }
             user_prompt_retry = (
                 f"{user_prompt}\n\n"
                 f"⚠️ 이전 생성글 거부됨: {fail_reason}\n"
-                "재정 결핍·열등감·동창 비교 소재를 완전히 제거하고 다시 작성하세요."
+                f"{retry_notes.get(violation_kind, '')}"
             )
             user_prompt = user_prompt_retry
         else:
-            logger.error(f"[brand_safety] 3회 시도 모두 실패. 마지막 글로 발행. 수동 확인 필요.")
+            logger.error(f"[content_check] 3회 시도 모두 실패. 마지막 글로 발행. 수동 확인 필요.")
 
     meta = {
         "tone": tone["name"],

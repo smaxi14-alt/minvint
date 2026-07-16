@@ -7,12 +7,29 @@
 
 ## ⚠️ 필수 자동화 규칙 — 모든 에이전트 반드시 준수
 
+### ⚠️ automation 폴더 위치 변경 (2026-07-16)
+
+`automation/` 폴더는 더 이상 이 저장소(`문서/마케팅/`) 안에 있지 않다 —
+**`C:\BlogAutomation\`로 이전됨.** 원인: 같은 날 이 저장소가 물려있던
+OneDrive 동기화 폴더(ReparsePoint 속성)에서 Windows 작업 스케줄러 작업
+4개가 서로 다른 방식(exit 1, STATUS_CONTROL_C_EXIT, Win32 오류 267)으로
+조용히 실패하고, 핵심 자동화 스크립트 13개가 통째로 사라졌다 복구되는
+사고까지 겹쳤다 — OneDrive 동기화 경합을 근본 원인으로 보고 자동화 폴더를
+로컬 전용 경로로 완전히 분리했다. `_context/`, `_templates/`, `콘텐츠/`
+등 나머지 저장소 폴더는 그대로 OneDrive(이 저장소)에 남아있다 — **오직
+automation/만 이동했다.**
+
+이후 automation 관련 모든 작업(스크립트 수정, 스케줄러 등록/확인, 로그
+확인 등)은 `C:\BlogAutomation\`을 기준으로 한다. 이 CLAUDE.md 파일 자체와
+`_context/`, `_templates/` 등은 계속 이 저장소(`문서/마케팅/`) 안에서 관리한다.
+
 ### automation/.env 수정 시 GitHub 동기화 의무
 
-`automation/.env` 파일의 값을 수정하면 **반드시 즉시** 아래 명령을 실행한다.
+`automation/.env`(현재 위치: `C:\BlogAutomation\.env`) 파일의 값을 수정하면
+**반드시 즉시** 아래 명령을 실행한다.
 
 ```powershell
-python automation/sync_github.py
+python C:\BlogAutomation\sync_github.py
 ```
 
 이 규칙은 예외 없이 적용된다. `.env`를 수정하고 동기화를 빠뜨리면 GitHub Actions 자동 발행이 구 설정으로 실행된다.
@@ -92,6 +109,32 @@ API:    Google API (.env의 GOOGLE_API_KEY 사용)
 
 - PIL, Pillow, 로컬 이미지 합성 라이브러리 사용 금지 (삭제됨)
 - Figma는 디자인 토큰 참조용으로만 사용, 이미지 생성에 사용하지 않음
+
+### ⚠️ 유일한 예외 — automation/run_daily_blog.py (1일 1글 무인 발행)
+
+> 이 예외는 `automation/run_daily_blog.py`와 그것이 호출하는
+> `automation/blog_image_direct.py` **단 하나의 경로에만** 적용된다.
+> 카드뉴스·수동 세션 작업·그 외 모든 이미지 생성은 위 규칙(nanobanana MCP)을
+> 예외 없이 따른다.
+
+`mcp__nanobanana__generate_image`는 Claude Code 세션 안에서만 호출 가능하다.
+1일 1글 무인 자동화(매일 11:00 KST, Windows 작업 스케줄러)는 사람이나
+Claude 세션이 옆에 없는 상태로 돌아가야 하므로, 이 경로에서만
+`automation/blog_image_direct.py`가 **같은 모델**(`gemini-3-pro-image-preview`,
+nanobanana pro가 감싸고 있는 바로 그 모델)을 google-genai SDK로 직접 호출한다.
+
+- 절대 다른 이미지 모델(Imagen 계열 등)로 대체하지 않는다. 과거
+  `imagen-4.0-generate-001` 직접 호출 시 한글 텍스트가 심하게 깨진 전례가 있다
+  (2026-05-18 `logs/card_news.log`). 2026-07-11 실측 검증 결과
+  `gemini-3-pro-image-preview` 직접 호출은 한글 텍스트를 정확히 렌더링해
+  이 문제가 재현되지 않았다 — 그래도 다른 모델로의 전환은 금지.
+- 이 모델은 프롬프트에 없는 태그라인·로고·가짜 브랜드명을 임의로 추가하는
+  경향이 실측 확인됐다(같은 날 nanobanana MCP·직접 API 양쪽에서 각각 재현).
+  `blog_image_direct.py`는 모든 프롬프트에 강제 금지 조항을 자동으로 덧붙이지만
+  완벽한 차단은 아니다 — `_context/blog-daily-automation-strategy.md` §7.2의
+  주간 배치 감사(일요일 저녁, 그 주 발행 이미지 육안 확인)가 최종 방어선이다.
+- 이 예외는 사용자 승인을 받아 도입했다(안전 분류기가 "헤드리스 Claude Code를
+  승인 생략 플래그로 무인 실행"하는 대체안을 차단한 뒤, 대신 택한 방식).
 
 ### 고정 순서
 

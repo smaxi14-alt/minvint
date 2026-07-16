@@ -56,6 +56,26 @@ def get_recent_topics(days: int = 7) -> list[str]:
     return topics
 
 
+def get_recent_post_texts(days: int = 90) -> list[dict]:
+    """최근 N일 발행 글의 (date, text) 전문을 반환한다 — 새 글이 과거 글과
+    같은 소재(예: "삼성전자 팔았다")를 다른 구체적 수치로 다시 쓰는 자기모순을
+    막기 위한 대조 검증용(2026-07-14, "삼성전자 8만원" 오기재 → 정정 후에도
+    같은 실수가 반복될 수 있다는 지적에서 신설). 전체 글 개수가 적은 초기
+    운영 단계라 90일 기본값으로도 API 호출 부담이 크지 않다.
+
+    retracted=True로 표시된 글(사용자가 라이브에서 직접 삭제한 오기재 글 등)은
+    제외한다 — 더 이상 공개돼 있지 않은 글과의 "모순"은 실질적 리스크가 아니고,
+    오히려 검증 체커가 이미 알려진 과거 오류와 그 정정글을 서로 모순으로 오판하게
+    만든다(실측 확인됨)."""
+    data = _load()
+    cutoff = date.today().toordinal() - days
+    return [
+        {"date": p["date"], "text": p["text"]}
+        for p in data["posts"]
+        if date.fromisoformat(p["date"]).toordinal() >= cutoff and not p.get("retracted")
+    ]
+
+
 def get_recent_usage(days: int = 14) -> dict:
     """최근 N일 theme / template / tone 사용 빈도 반환 — 다양성 선택에 활용"""
     data = _load()
