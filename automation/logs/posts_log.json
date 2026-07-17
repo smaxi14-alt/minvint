@@ -745,6 +745,20 @@
       "template": "numbers",
       "theme": "은퇴 후 필요 월 생활비 vs 현재 준비금",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-17",
+      "timestamp": "2026-07-17T23:27:34.947572",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a5aba5d399fe1a460f5dcd1",
+      "text": "40대 되면 체력이 먼저 무너질 줄 알았다.\n\n근데 아니더라.\n먼저 무너지는 건 \"다음에 하지 뭐\"라는 말이었다.\n\n미룰 시간이 줄어든 걸 몸이 먼저 안다.\n오래 하다 보니 알겠는데, 40대는 결정이 빨라지는 나이다.\n\n당신은 요즘 뭘 미루고 있나요?",
+      "tone": "회고적",
+      "ending_style": "질문형",
+      "template": "reversal",
+      "theme": "40대 되면서 처음으로 느낀 것",
+      "is_trend": false
     }
   ]
 }
