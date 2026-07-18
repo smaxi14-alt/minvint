@@ -759,6 +759,20 @@
       "template": "reversal",
       "theme": "40대 되면서 처음으로 느낀 것",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-18",
+      "timestamp": "2026-07-18T05:40:47.623172",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a5b11d8d0af22d144c94869",
+      "text": "메타 AI가 OpenAI보다 7배 싸다는 기사.\n\n가격전쟁 시작됐다는 얘긴데, 진짜 의미는 다르다.\n\n상담하다 보면 가격 내리는 쪽이 이기는 시장은 없었다.\n싸게 파는 순간 이익률이 무너지고, 이익률 무너지면 재투자 여력이 사라진다.\n결국 남는 건 브랜드 신뢰다.\n\n7배 싸다는 숫자보다 왜 7배 싸게 팔아야 하는지가 더 중요한 신호다.\n\n가격 경쟁 뉴스 볼 때 어느 쪽에 눈길 가는 편인가?",
+      "tone": "건조한",
+      "ending_style": "질문형",
+      "template": "two_numbers",
+      "theme": "OpenAI보다 7배 저렴한 메타 AI, 가격전쟁 시작",
+      "is_trend": true
     }
   ]
 }
