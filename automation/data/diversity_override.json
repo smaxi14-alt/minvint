@@ -1,15 +1,13 @@
 {
-  "generated_at": "2026-07-18T05:40:14",
-  "ending_boosts": {
-    "질문형": 1.38
-  },
+  "generated_at": "2026-07-18T13:10:19",
+  "ending_boosts": {},
   "template_boosts": {
-    "two_numbers": 2.05,
-    "shock_stat": 1.46,
-    "taboo": 2.05
+    "two_numbers": 1.5,
+    "shock_stat": 1.5,
+    "taboo": 2.1
   },
   "tone_boosts": {
-    "직접적": 1.82
+    "직접적": 1.87
   },
   "theme_exclusions": [
     "미·중 패권 경쟁, 한국 증시 변동성 커지는 중",
@@ -32,7 +30,8 @@
     "부동산 정책입안자들이 40대 직장인의 수도권 내 집 고민 모름",
     "메타의 움직임이 흔드는 반도체 업종",
     "은퇴 후 필요 월 생활비 vs 현재 준비금",
-    "40대 되면서 처음으로 느낀 것"
+    "40대 되면서 처음으로 느낀 것",
+    "OpenAI보다 7배 저렴한 메타 AI, 가격전쟁 시작"
   ],
   "content_type_exclusions": []
 }

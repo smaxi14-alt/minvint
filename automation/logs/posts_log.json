@@ -773,6 +773,20 @@
       "template": "two_numbers",
       "theme": "OpenAI보다 7배 저렴한 메타 AI, 가격전쟁 시작",
       "is_trend": true
+    },
+    {
+      "date": "2026-07-18",
+      "timestamp": "2026-07-18T13:10:37.805397",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a5b7b46a1f13bc0c99f6c60",
+      "text": "후배가 묻는 방식이 3년 전과 달라졌다.\n\n전에는 \"얼마 벌어요?\"\n요즘은 \"그거 어떻게 정리하셨어요?\"\n\n상담하다 보면 알게 되는데, 질문이 바뀌는 순간이 진짜 시작점이다.\n\n숫자를 궁금해하다가 구조를 궁금해하는 것.\n\n그 사이에 몇 년이 있다.",
+      "tone": "건조한",
+      "ending_style": "독백형",
+      "template": "numbers",
+      "theme": "직장 후배가 '어떻게 하셨어요' 묻는 질문이 달라졌다",
+      "is_trend": false
     }
   ]
 }
