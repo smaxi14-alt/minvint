@@ -1,33 +1,30 @@
 {
   "processed_ids": [
-    "LN1sVng70AM",
-    "Q2cXdlVoqA0",
-    "_zBLEFkW_bQ",
-    "qlrcRoTNS4Y",
+    "K1zqyTJbqJk",
     "a01KiZoxLvY",
-    "K1zqyTJbqJk"
+    "Q2cXdlVoqA0",
+    "qlrcRoTNS4Y",
+    "_zBLEFkW_bQ",
+    "LN1sVng70AM"
   ],
-  "last_check": "2026-07-18T05:40:31.669513+00:00",
-  "insights_date": "2026-07-18",
+  "last_check": "2026-07-19T06:11:21.693264+00:00",
+  "insights_date": "2026-07-19",
   "insights_by_type": {
     "agro": [],
-    "agro_finance": [
-      "코스피 6,000대, 이제 투자 전략을 바꿔야 할 시점"
-    ],
+    "agro_finance": [],
     "finance": [],
     "finance_insurance": [],
     "job_insight": [],
     "diagnosis": [],
     "economy_news": [
-      "하반기 시장 흐름 변화, 미리 준비하는 투자자와의 차이",
-      "코스피 6,000대 진입, 하반기 투자전략 재점검 필요",
-      "미·중 패권경쟁 속 한국 증시의 변화 신호",
-      "지정학적 갈등이 국내 수출에 미치는 영향",
-      "OpenAI보다 7배 저렴한 메타 AI, 가격전쟁 시작",
+      "하반기 시장 흐름 변화, 투자전략 미리 준비 필요",
+      "코스피 6,000대, 하반기 투자전략 재조정 필요",
+      "미·중 패권경쟁으로 한국 증시 불확실성 확대중",
+      "지정학적 갈등이 국내 수출 경제에 미치는 영향",
+      "OpenAI보다 7배 싼 AI 서비스, 메타의 독립 선언으로 시장 흔들림",
       "메타의 움직임이 반도체 시장을 뒤흔들고 있다",
       "삼성전자 잠정실적 발표 임박",
-      "반도체 급락의 5가지 악재 분석",
-      "수출 모멘텀이 경기 회복의 열쇠"
+      "반도체 약세로 주식시장 급락, 수출 모멘텀 악화"
     ],
     "book_insight": []
   }
