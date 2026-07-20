@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-20T06:29:53",
+  "generated_at": "2026-07-20T14:01:45",
   "ending_boosts": {},
   "template_boosts": {
-    "shock_stat": 1.46,
-    "taboo": 2.05
+    "shock_stat": 1.5,
+    "taboo": 2.1
   },
   "tone_boosts": {},
   "theme_exclusions": [
@@ -27,7 +27,8 @@
     "회사 선배 명예퇴직 통보 소식에 든 생각",
     "국민연금 수령 나이 늦춰지는 이유와 내 대응",
     "부모님 닮아가는 내 표정",
-    "와이프 생일에 직접 예약하고 챙긴 이야기"
+    "와이프 생일에 직접 예약하고 챙긴 이야기",
+    "금투세·종부세 변화가 내 포트폴리오에 미치는 영향"
   ],
   "content_type_exclusions": []
 }

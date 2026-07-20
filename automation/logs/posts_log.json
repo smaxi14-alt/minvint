@@ -857,6 +857,20 @@
       "template": "two_numbers",
       "theme": "금투세·종부세 변화가 내 포트폴리오에 미치는 영향",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-20",
+      "timestamp": "2026-07-20T14:02:12.323244",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a5e2a598bf3423935dfc136",
+      "text": "10년 다닌 식당 사장님이 내 얼굴 보자마자 주방에 대고 말한다. \"된장찌개, 밥 반공기, 김치 따로.\"\n\n주문받은 적도 없는데 다 안다.\n\n일하면서 느낀 건데, 오래 남는 관계는 대부분 이렇다. 말 안 해도 아는 것들이 쌓여서 유지된다.\n\n계약서보다 두꺼운 게 시간이다. 신뢰는 결국 반복의 결과다.",
+      "tone": "건조한",
+      "ending_style": "선언형",
+      "template": "observation",
+      "theme": "10년 단골 식당 주인이 내 주문 외워두는 것",
+      "is_trend": false
     }
   ]
 }
