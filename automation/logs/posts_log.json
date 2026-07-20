@@ -843,6 +843,20 @@
       "template": "observation",
       "theme": "와이프 생일에 직접 예약하고 챙긴 이야기",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-20",
+      "timestamp": "2026-07-20T06:30:22.776140",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a5dc076ea3f366b61a8716d",
+      "text": "금투세 유예 5년 vs 종부세 완화 3년.\n\n기사는 \"세금 부담 줄었다\"고 쓰는데, 상담하다 보면 이게 진짜 의미가 다르다.\n\n유예는 언젠가 온다는 뜻이고, 완화는 정권 바뀌면 뒤집힌다.\n\n포트폴리오는 세제가 아니라 내 시간표에 맞춘다.",
+      "tone": "직접적",
+      "ending_style": "선언형",
+      "template": "two_numbers",
+      "theme": "금투세·종부세 변화가 내 포트폴리오에 미치는 영향",
+      "is_trend": false
     }
   ]
 }

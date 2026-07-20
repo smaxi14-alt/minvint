@@ -1,14 +1,11 @@
 {
   "processed_ids": [
-    "K1zqyTJbqJk",
-    "a01KiZoxLvY",
-    "Q2cXdlVoqA0",
-    "qlrcRoTNS4Y",
-    "_zBLEFkW_bQ",
-    "LN1sVng70AM"
+    "LN1sVng70AM",
+    "Nv74y9kJBpw",
+    "a01KiZoxLvY"
   ],
-  "last_check": "2026-07-19T06:11:21.693264+00:00",
-  "insights_date": "2026-07-19",
+  "last_check": "2026-07-20T06:30:06.018288+00:00",
+  "insights_date": "2026-07-20",
   "insights_by_type": {
     "agro": [],
     "agro_finance": [],
@@ -17,14 +14,10 @@
     "job_insight": [],
     "diagnosis": [],
     "economy_news": [
-      "하반기 시장 흐름 변화, 투자전략 미리 준비 필요",
-      "코스피 6,000대, 하반기 투자전략 재조정 필요",
-      "미·중 패권경쟁으로 한국 증시 불확실성 확대중",
-      "지정학적 갈등이 국내 수출 경제에 미치는 영향",
-      "OpenAI보다 7배 싼 AI 서비스, 메타의 독립 선언으로 시장 흔들림",
+      "AI 투자 자금 이탈 시작, 시장 심리 변화 포착",
+      "OpenAI보다 7배 싼 메타 AI, 시장 재편 신호",
       "메타의 움직임이 반도체 시장을 뒤흔들고 있다",
-      "삼성전자 잠정실적 발표 임박",
-      "반도체 약세로 주식시장 급락, 수출 모멘텀 악화"
+      "삼성전자 잠정실적 발표 임박"
     ],
     "book_insight": []
   }
