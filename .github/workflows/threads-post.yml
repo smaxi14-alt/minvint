@@ -92,6 +92,7 @@ jobs:
           git add automation/data/diversity_override.json 2>/dev/null || true
           git add automation/data/persona_store.json 2>/dev/null || true
           git add automation/data/youtube_cache.json 2>/dev/null || true
+          git add automation/data/manual_threads_queue.json 2>/dev/null || true
           git diff --staged --quiet || git commit -m "log: ${{ steps.slot.outputs.slot }} $(TZ=Asia/Seoul date +%Y-%m-%d)"
           git push
 
