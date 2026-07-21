@@ -899,6 +899,20 @@
       "template": "shock_stat",
       "theme": "달러 강세 시기 달러 자산 비중 조정 판단",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-21",
+      "timestamp": "2026-07-21T04:02:47.248173",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a5eef5dca9685992e2b139e",
+      "text": "중1 딸한테 처음으로 용돈 말고 '돈' 얘기를 했다.\n\n만 원을 어디에 쓰는지 말고, 만 원이 어떻게 만 원이 되는지.\n\n상담하다 보면 정작 자기 자식한테는 돈 교육 한 번 안 해본 부모가 대부분이더라. 나도 얼마 전까지 그중 하나였다.\n\n지루해할 줄 알았는데 생각보다 진지하게 듣더라.\n\n그 나이 애들, 부모가 진짜로 대해주면 표정이 달라지는 게 보인다.",
+      "tone": "성찰적",
+      "ending_style": "관찰형",
+      "template": "confession",
+      "theme": "딸에게 처음 진지한 돈 얘기",
+      "is_trend": false
     }
   ]
 }
