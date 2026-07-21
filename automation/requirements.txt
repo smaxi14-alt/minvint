@@ -1,7 +1,5 @@
 anthropic>=0.44.0
-apscheduler>=3.10.4
 python-dotenv>=1.0.0
-pytz>=2024.1
 google-genai>=1.0.0
 youtube-transcript-api>=0.6.0
 selenium>=4.20.0

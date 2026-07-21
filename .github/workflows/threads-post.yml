@@ -17,6 +17,14 @@ on:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
+# 스케줄 실행과 수동 workflow_dispatch가 겹치면 was_posted_today() 가드가
+# 무력화돼 중복 발행이 날 수 있다(2026-07-20 실측) — 동시 실행 자체를 막는다.
+# cancel-in-progress: false → 겹치면 취소하지 않고 순서대로 대기시켜, 뒤 실행이
+# 시작할 때는 앞 실행의 로그 커밋이 이미 반영된 상태가 되게 한다.
+concurrency:
+  group: threads-post
+  cancel-in-progress: false
+
 jobs:
   post:
     runs-on: ubuntu-latest

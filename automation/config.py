@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).parent
@@ -8,6 +9,14 @@ DATA_DIR = BASE_DIR / "data"
 LOGS_DIR = BASE_DIR / "logs"
 
 load_dotenv(BASE_DIR / ".env")
+
+
+def today_kst() -> date:
+    """KST 기준 '오늘' 날짜. GitHub Actions(UTC 서버)에서 돌아가는 쓰레드
+    파이프라인이 naive date.today()(=UTC 날짜)를 쓰면 아침 슬롯(07:30 KST =
+    전날 22:30 UTC)의 날짜가 하루 밀린다 — content_tracker.py, content_generator.py,
+    diversity_monitor.py는 date.today() 대신 이 함수를 쓴다."""
+    return datetime.now(ZoneInfo("Asia/Seoul")).date()
 
 ANTHROPIC_API_KEY           = os.getenv("ANTHROPIC_API_KEY", "")
 GOOGLE_API_KEY               = os.getenv("GOOGLE_API_KEY", "")

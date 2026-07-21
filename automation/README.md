@@ -150,7 +150,6 @@ automation/
 │   ├── content_seeds.json  ← 주제·템플릿 데이터
 │   └── token.json          ← 토큰 자동 저장 (자동 생성)
 └── logs/
-    ├── scheduler.log       ← 실행 로그 (자동 생성)
     └── posts_log.json      ← 발행 이력 (자동 생성)
 ```
 
@@ -160,8 +159,8 @@ automation/
 
 **Q. 특정 슬롯을 수동으로 지금 바로 올리고 싶다면?**
 ```bash
-python -c "from scheduler import morning; morning()"
-# 또는 noon(), evening()
+python post_once.py --slot morning --force
+# 또는 --slot noon / --slot evening
 ```
 
 **Q. Phase를 수동으로 바꾸고 싶다면?**

@@ -1,9 +1,8 @@
 import json
 import random
 import logging
-from datetime import date
 from anthropic import Anthropic
-from config import ANTHROPIC_API_KEY, START_DATE, DATA_DIR
+from config import ANTHROPIC_API_KEY, START_DATE, DATA_DIR, today_kst
 from content_tracker import get_recent_topics, get_recent_usage, get_recent_post_texts
 from performance_analyzer import get_top_patterns, build_weight_boosts, format_for_prompt
 from persona_manager import get_persona_summary
@@ -91,9 +90,6 @@ PASS면 그냥 PASS만."""
 
 with open(DATA_DIR / "content_seeds.json", "r", encoding="utf-8") as f:
     SEEDS = json.load(f)
-
-# 같은 프로세스 실행 내 이미 사용한 소재 — 배치 중복 방지
-_SESSION_THEMES: set[str] = set()
 
 # Phase별 운영 지침
 PHASE_INSTRUCTIONS = {
@@ -250,7 +246,7 @@ def _consistency_check(text: str, recent_posts: list[dict]) -> tuple[bool, str]:
 
 
 def get_current_phase() -> int:
-    days = (date.today() - START_DATE).days
+    days = (today_kst() - START_DATE).days
     if days < 90:
         return 1
     elif days < 180:
@@ -267,7 +263,7 @@ def _in_season(theme: str) -> bool:
     allowed_months = _SEASONAL.get(theme)
     if not allowed_months:
         return True
-    return date.today().month in allowed_months
+    return today_kst().month in allowed_months
 
 
 def _filter_seasonal(themes: list[str]) -> list[str]:
@@ -278,7 +274,7 @@ def _filter_seasonal(themes: list[str]) -> list[str]:
         return themes
     removed = len(themes) - len(filtered)
     if removed:
-        logger.debug(f"계절 필터: {removed}개 소재 제외됨 (현재 {date.today().month}월)")
+        logger.debug(f"계절 필터: {removed}개 소재 제외됨 (현재 {today_kst().month}월)")
     return filtered
 
 
@@ -301,8 +297,6 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
         except Exception:
             pass
     _theme_excl  = set(_override.get("theme_exclusions", []))
-    _ending_boost = _override.get("ending_boosts",   {})
-    _tone_boost   = _override.get("tone_boosts",     {})
 
     # content_type_exclusions 강제 적용 — 일상글 비율 초과 시 대체 타입으로 교체
     _ct_excl = set(_override.get("content_type_exclusions", []))
@@ -330,17 +324,15 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
         market_data.format_snapshot_for_prompt(market_snapshot) if content_type == "economy_news" else ""
     )
 
-    # 소재(theme) 선택 — 트렌드 혼합 → 시즌 필터 → 세션+override 중복 제거 → 다양성 가중치
+    # 소재(theme) 선택 — 트렌드 혼합 → 시즌 필터 → override 중복 제거 → 다양성 가중치
     trend_themes = get_trend_themes(content_type)
     combined_pool = trend_themes * 2 + cfg["themes"]
     themes_pool = _filter_seasonal(combined_pool)
-    excl_all = _SESSION_THEMES | _theme_excl
-    deduped_pool = [t for t in themes_pool if t not in excl_all]
+    deduped_pool = [t for t in themes_pool if t not in _theme_excl]
     if not deduped_pool:
-        logger.debug("세션+override 중복 제거 후 후보 없음 — 전체 풀 사용")
+        logger.debug("override 중복 제거 후 후보 없음 — 전체 풀 사용")
         deduped_pool = themes_pool
     theme = _diversity_pick(deduped_pool, recent_usage["themes"])
-    _SESSION_THEMES.add(theme)
     is_trend = theme in trend_themes
 
     # 템플릿 선택 — 최근 자주 쓴 템플릿은 낮은 확률로
@@ -351,20 +343,16 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
     patterns = get_top_patterns()
     boosts = build_weight_boosts(patterns)
 
-    # 어투 선택 — 성과 보정(1.5배) + override boost + 다양성 패널티 동시 적용
+    # 어투 선택 — 성과 보정(1.5배) + 다양성 패널티 동시 적용
     tone_items = [
-        {**t, "weight": t["weight"]
-            * (1.5 if t["name"] == boosts.get("tone") else 1)
-            * _tone_boost.get(t["name"], 1.0)}
+        {**t, "weight": t["weight"] * (1.5 if t["name"] == boosts.get("tone") else 1)}
         for t in TONES
     ]
     tone = _diversity_pick(tone_items, recent_usage["tones"])
 
-    # 마무리 유형 선택 — 성과 보정 + override boost + 다양성 패널티 동시 적용
+    # 마무리 유형 선택 — 성과 보정 + 다양성 패널티 동시 적용
     ending_items = [
-        {**e, "weight": e["weight"]
-            * (1.5 if e["label"] == boosts.get("ending_style") else 1)
-            * _ending_boost.get(e["label"], 1.0)}
+        {**e, "weight": e["weight"] * (1.5 if e["label"] == boosts.get("ending_style") else 1)}
         for e in SEEDS["endings"].values()
     ]
     ending_style = _diversity_pick(ending_items, recent_usage["endings"], weight_key="label")

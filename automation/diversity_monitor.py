@@ -20,7 +20,7 @@ from collections import Counter
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-from config import LOGS_DIR, DATA_DIR, START_DATE
+from config import LOGS_DIR, DATA_DIR, START_DATE, today_kst
 
 logging.basicConfig(
     level=logging.INFO,
@@ -50,9 +50,6 @@ THRESHOLDS = {
     },
 }
 
-BOOST_STRENGTH = 2.5
-
-
 # ── 데이터 로딩 ───────────────────────────────────────────────
 
 def _load_posts() -> list[dict]:
@@ -63,7 +60,7 @@ def _load_posts() -> list[dict]:
 
 
 def _in_window(posts: list[dict], days: int) -> list[dict]:
-    cutoff = date.today() - timedelta(days=days)
+    cutoff = today_kst() - timedelta(days=days)
     return [p for p in posts if date.fromisoformat(p["date"]) >= cutoff]
 
 
@@ -113,7 +110,7 @@ def analyze_themes(posts: list[dict]) -> dict:
 
 
 def _current_phase() -> int:
-    days = (date.today() - START_DATE).days
+    days = (today_kst() - START_DATE).days
     if days < 90:
         return 1
     elif days < 180:
@@ -148,31 +145,14 @@ def analyze_content_types(posts: list[dict]) -> dict:
 
 
 # ── 자동 보정 계산 ────────────────────────────────────────────
+# ending/template/tone에 대한 boost 계산은 제거됐다(2026-07-21) — content_generator.py의
+# _diversity_pick()이 이미 동일한 14일 최근사용 패널티를 자체적으로 매겨서 중복이었고,
+# 특히 template_boosts는 content_generator.py 어디서도 읽지 않는 죽은 값이었다.
+# 여기 남기는 건 content_generator.py가 자체적으로 처리하지 못하는 두 가지뿐:
+# theme_exclusions(7일 하드컷 — 자체 로직은 14일 소프트 패널티뿐이라 더 강한 컷이 필요)와
+# content_type_exclusions(Phase별 일상글 비율 강제 — 이건 diversity_monitor만 아는 규칙).
 
-def _compute_boosts(counts: dict, targets: dict | None) -> dict:
-    if not counts:
-        return {}
-    total  = sum(counts.values())
-    boosts = {}
-
-    if targets:
-        t_total = sum(targets.values())
-        for kind, tw in targets.items():
-            target_r = tw / t_total
-            actual_r = counts.get(kind, 0) / total
-            if actual_r < target_r * 0.70:
-                ratio = target_r / (actual_r + 0.01)
-                boosts[kind] = round(min(ratio, BOOST_STRENGTH), 2)
-    else:
-        avg = total / len(counts)
-        for kind, cnt in counts.items():
-            if cnt < avg * 0.60:
-                boosts[kind] = round(min(avg / (cnt + 0.5), BOOST_STRENGTH), 2)
-
-    return boosts
-
-
-def build_override(ending_r, template_r, tone_r, theme_r, content_type_r) -> dict:
+def build_override(theme_r, content_type_r) -> dict:
     # 일상글 비율이 Phase별 목표를 초과할 때만 agro 계열 제외
     ct_cfg   = THRESHOLDS["content_type"]
     max_agro = content_type_r.get("max_agro", ct_cfg["max_agro_ratio"].get(_current_phase(), 0.10))
@@ -182,11 +162,8 @@ def build_override(ending_r, template_r, tone_r, theme_r, content_type_r) -> dic
         else []
     )
     return {
-        "generated_at":           datetime.now().isoformat(timespec="seconds"),
-        "ending_boosts":          _compute_boosts(ending_r["counts"],   THRESHOLDS["ending"]["targets"]),
-        "template_boosts":        _compute_boosts(template_r["counts"], None),
-        "tone_boosts":            _compute_boosts(tone_r["counts"],     None),
-        "theme_exclusions":       list(theme_r.get("repeated", {}).keys()),
+        "generated_at":            datetime.now().isoformat(timespec="seconds"),
+        "theme_exclusions":        list(theme_r.get("repeated", {}).keys()),
         "content_type_exclusions": ct_excl,
     }
 
@@ -207,7 +184,7 @@ def _bar(ratio: float, width: int = 18) -> str:
 def print_report(ending_r, template_r, tone_r, theme_r, content_type_r, override):
     W = 54
     print(f"\n{'═'*W}")
-    print(f"  다양성 모니터 보고서  {date.today().isoformat()}")
+    print(f"  다양성 모니터 보고서  {today_kst().isoformat()}")
     print(f"{'═'*W}")
 
     # 콘텐츠 타입 비율 (최상단 표시)
@@ -257,15 +234,6 @@ def print_report(ending_r, template_r, tone_r, theme_r, content_type_r, override
     if override.get("content_type_exclusions"):
         print(f"  콘텐츠타입 제외: {override['content_type_exclusions']}  ← 일상글 비율 초과")
         has_fix = True
-    if override["ending_boosts"]:
-        print(f"  엔딩 boost   : {override['ending_boosts']}")
-        has_fix = True
-    if override["template_boosts"]:
-        print(f"  템플릿 boost : {override['template_boosts']}")
-        has_fix = True
-    if override["tone_boosts"]:
-        print(f"  어투 boost   : {override['tone_boosts']}")
-        has_fix = True
     if override["theme_exclusions"]:
         print(f"  소재 제외    : {[t[:28] for t in override['theme_exclusions']]}")
         has_fix = True
@@ -302,7 +270,7 @@ def run_once(dry_run: bool = False, silent: bool = False) -> bool:
     tone_r        = analyze_tones(posts)
     theme_r       = analyze_themes(posts)
     content_type_r = analyze_content_types(posts)
-    override      = build_override(ending_r, template_r, tone_r, theme_r, content_type_r)
+    override      = build_override(theme_r, content_type_r)
 
     if not silent:
         print_report(ending_r, template_r, tone_r, theme_r, content_type_r, override)
@@ -318,8 +286,7 @@ def run_once(dry_run: bool = False, silent: bool = False) -> bool:
         if not silent:
             status = "업데이트" if any([
                 override.get("content_type_exclusions"),
-                override["ending_boosts"], override["template_boosts"],
-                override["tone_boosts"],   override["theme_exclusions"],
+                override["theme_exclusions"],
             ]) else "초기화(보정 불필요)"
             logger.info(f"diversity_override.json {status}")
         elif all_warnings:

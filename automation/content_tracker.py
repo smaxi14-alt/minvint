@@ -1,6 +1,6 @@
 import json
 from datetime import date, datetime
-from config import LOGS_DIR
+from config import LOGS_DIR, today_kst
 
 LOGS_DIR.mkdir(exist_ok=True)
 LOG_FILE = LOGS_DIR / "posts_log.json"
@@ -21,7 +21,7 @@ def _save(data):
 def log_post(slot: str, content_type: str, text: str, post_id: str, phase: int, meta: dict = None):
     data = _load()
     entry = {
-        "date": date.today().isoformat(),
+        "date": today_kst().isoformat(),
         "timestamp": datetime.now().isoformat(),
         "slot": slot,
         "content_type": content_type,
@@ -41,13 +41,13 @@ def log_post(slot: str, content_type: str, text: str, post_id: str, phase: int, 
 
 def was_posted_today(slot: str) -> bool:
     data = _load()
-    today = date.today().isoformat()
+    today = today_kst().isoformat()
     return any(p["date"] == today and p["slot"] == slot for p in data["posts"])
 
 
 def get_recent_topics(days: int = 7) -> list[str]:
     data = _load()
-    cutoff = date.today().toordinal() - days
+    cutoff = today_kst().toordinal() - days
     topics = []
     for p in data["posts"]:
         if date.fromisoformat(p["date"]).toordinal() >= cutoff:
@@ -68,7 +68,7 @@ def get_recent_post_texts(days: int = 90) -> list[dict]:
     오히려 검증 체커가 이미 알려진 과거 오류와 그 정정글을 서로 모순으로 오판하게
     만든다(실측 확인됨)."""
     data = _load()
-    cutoff = date.today().toordinal() - days
+    cutoff = today_kst().toordinal() - days
     return [
         {"date": p["date"], "text": p["text"]}
         for p in data["posts"]
@@ -79,7 +79,7 @@ def get_recent_post_texts(days: int = 90) -> list[dict]:
 def get_recent_usage(days: int = 14) -> dict:
     """최근 N일 theme / template / tone 사용 빈도 반환 — 다양성 선택에 활용"""
     data = _load()
-    cutoff = date.today().toordinal() - days
+    cutoff = today_kst().toordinal() - days
     themes: dict[str, int] = {}
     templates: dict[str, int] = {}
     tones: dict[str, int] = {}
