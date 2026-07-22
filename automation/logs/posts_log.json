@@ -927,6 +927,20 @@
       "template": "observation",
       "theme": "줄어드는 건 체력이 아니라 호기심",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-22",
+      "timestamp": "2026-07-22T06:08:32.278047",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a605e5624f2657e75be99de",
+      "text": "퇴직연금 넣어둔 분들, 작년 내 계좌 수익률 마지막으로 본 게 언제인가.\n\n10명 중 8명 넘게 원리금 보장형에 그대로 둔다. 그러다 보니 연 수익률이 물가 상승률도 못 따라가는 계좌가 수두룩하다.\n\n이 바닥 오래 있어보니, 퇴직연금은 '넣고 잊는' 게 제일 흔한 실수다. 잊는 순간 예금보다 못한 노후 자금이 된다.\n\n내 퇴직연금 계좌, 마지막으로 열어본 게 언제였나?",
+      "tone": "직접적",
+      "ending_style": "질문형",
+      "template": "shock_stat",
+      "theme": "퇴직연금 DC형 수익률 현실",
+      "is_trend": false
     }
   ]
 }
