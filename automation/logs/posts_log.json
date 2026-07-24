@@ -1025,6 +1025,20 @@
       "template": "two_numbers",
       "theme": "ISA·연금저축 세제 혜택 활용",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-24",
+      "timestamp": "2026-07-24T13:40:38.554812",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a636b5012fafbaf49c5cc28",
+      "text": "후배들 밥값 계산할 때 나는 머뭇거리지 않는다. 자랑이 아니라 습관이다.\n\n3만 원짜리 점심 한 끼로 후배가 한 달을 편하게 기억한다면, 그건 쓰는 게 아니라 남기는 거다.\n\n현장에 있다 보면, 돈을 잘 쓰는 사람과 그냥 많이 쓰는 사람은 완전히 다르더라. 잘 쓰는 사람은 그 돈이 어디에 남는지를 안다.\n\n밥 한 끼 앞에서 지갑 여는 속도를 보면, 그 사람이 뭘 우선하는지 대충 보인다.",
+      "tone": "성찰적",
+      "ending_style": "관찰형",
+      "template": "confession",
+      "theme": "후배한테 밥 사면서 든 생각",
+      "is_trend": false
     }
   ]
 }
