@@ -63,6 +63,7 @@ python C:\BlogAutomation\sync_github.py
 ├── CLAUDE.md                       ← 이 파일. 에이전트 팀 운영 헌장
 ├── .claude/
 │   └── agents/                     ← Claude Code 서브에이전트 정의 파일
+│       ├── strategy.md             ← 전략 에이전트 (Opus, 9개 마케팅 스킬 종합)
 │       ├── research.md             ← 리서치 에이전트 (Haiku, 읽기 전용)
 │       ├── copy.md                 ← 카피 에이전트 (Sonnet)
 │       ├── design.md               ← 디자인 에이전트 (Sonnet + nanobanana MCP)
@@ -80,6 +81,7 @@ python C:\BlogAutomation\sync_github.py
 │   ├── thurmbnail.2png.jpg         ← 인물+텍스트 다이나믹 썸네일 레퍼런스
 │   ├── card news1.jpg              ← 다크+오렌지 전문가 카드 시리즈 레퍼런스
 │   └── card news2.jpg              ← 빅넘버 데이터 인포그래픽 카드뉴스 레퍼런스
+├── 전략기획/                       ← 전략 에이전트가 생성한 마케팅 전략 기획서 저장 (신규)
 └── 콘텐츠/                         ← 완성된 콘텐츠 산출물 저장
     ├── 자기소개/
     │   └── 자기소개-카드뉴스.md    ← 자기소개 카드뉴스 (7슬라이드)
@@ -169,7 +171,12 @@ nanobanana pro가 감싸고 있는 바로 그 모델)을 google-genai SDK로 직
 ### 1. 전략 에이전트 (Strategy Agent)
 **담당**: 콘텐츠 기획, 월간 캘린더, 캠페인 기획, 포지셔닝 검토  
 **작업 기준**: `_context/business-context.md` + `_context/brand-guidelines.md`  
-**산출 형식**: 마크다운 기획서, 콘텐츠 캘린더 표
+**산출 형식**: 마크다운 기획서, 콘텐츠 캘린더 표  
+**에이전트 타입**: `strategy` (Opus) — `.claude/agents/strategy.md`에 코드화됨. 주제 하나를
+입력받아 marketing-plan / marketing-psychology / content-strategy / ai-seo /
+programmatic-seo / copywriting / ad-creative / lead-magnets / marketing-ideas 9개
+마케팅 스킬 방법론을 종합해 Phase 1(리서치) 이전에 실행되는 완결된 전략 기획서를
+`전략기획/` 폴더에 저장한다.
 
 ### 2. 카피라이팅 에이전트 (Copy Agent)
 **담당**: 블로그 초안, 인스타 캡션, 카드뉴스 텍스트, 유튜브 스크립트, 카톡 메시지  
@@ -238,6 +245,7 @@ SEO + 해시태그 + 배포 일정 → 최종 패키지
 모든 에이전트는 `.claude/agents/` 폴더에 코드화되어 자동 위임이 가능하다.
 ```
 .claude/agents/
+├── strategy.md     ← 전략 에이전트 (Opus, 9개 마케팅 스킬 종합)
 ├── research.md     ← 리서치 에이전트 (Haiku)
 ├── copy.md         ← 카피 에이전트 (Sonnet)
 ├── design.md       ← 디자인 에이전트 (Sonnet + nanobanana MCP)
@@ -355,6 +363,7 @@ SEO + 해시태그 + 배포 일정 → 최종 패키지
 | 은퇴 현금흐름 | 박과장 | 유튜브+블로그 | 30년 시뮬레이션 그래프 |
 | GA 설계사의 솔직한 말 | 전체 | 전 채널 | 비교 인포그래픽 |
 | 40대 보험 공백 시리즈 | 김부장 | 인스타+블로그 | TOP N 카드뉴스 |
+| 셀프 체크리스트 (신규, 2026-07-21) | 김부장 | 인스타(저장 전용) | 체크리스트형 카드뉴스 |
 
 ---
 
@@ -381,6 +390,7 @@ SEO + 해시태그 + 배포 일정 → 최종 패키지
 
 | 요청 키워드 | 호출 에이전트 | 모델 | 비고 |
 |------------|-------------|------|------|
+| 전략 짜줘, 마케팅 전략, 마케팅 계획, 캠페인 기획, 월간 기획, 포지셔닝 검토, 기획서 작성 | `strategy` | Opus | Phase 0, research 이전 |
 | 리서치, 검색해줘, 수치 확인, 트렌드 조사, 팩트체크, 키워드 분석 | `research` | Haiku | 병렬 2개 가능 |
 | 카피 써줘, 텍스트 작성, 카드뉴스 문구, 블로그 초안, 스크립트, 캡션 | `copy` | Sonnet | |
 | 디자인 만들어줘, 이미지 생성, 카드뉴스 디자인, 슬라이드, 썸네일, 나노바나나 | `design` | Sonnet | nanobanana MCP 사용 |
@@ -418,6 +428,7 @@ SEO + 해시태그 + 배포 일정 → 최종 패키지
 
 | Phase | 에이전트 | 선행 조건 |
 |-------|---------|---------|
+| 0 | strategy | 주제(topic) 하나만 있으면 시작 가능 — 산출물이 Phase 1의 리서치 소재가 됨 |
 | 1 | research | 시리즈명·타깃·키워드 소재 |
 | 2 | copy | Phase 1 리서치 결과 브리프 |
 | 3 | design | Phase 2 디자인 핸드오프 명세서 |
