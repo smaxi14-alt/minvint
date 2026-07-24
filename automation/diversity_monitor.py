@@ -31,6 +31,14 @@ logger = logging.getLogger(__name__)
 LOG_FILE      = LOGS_DIR / "posts_log.json"
 MONITOR_LOG   = LOGS_DIR / "diversity_monitor.log"
 OVERRIDE_FILE = DATA_DIR / "diversity_override.json"
+SEEDS_FILE    = DATA_DIR / "content_seeds.json"
+
+# content_generator.py의 THEME_COOLDOWN_DAYS(하드 컷)와 동일한 값으로 맞춘다 — 두 값이
+# 어긋나면 여기서 "정상"이라고 보고해도 실제 생성 단계에서는 다른 기간으로 걸러질 수 있다.
+# (import로 공유하지 않는 이유: content_generator.py는 모듈 로드 시 Anthropic 클라이언트를
+# 생성해 ANTHROPIC_API_KEY가 없는 실행 환경 — 예: GitHub Actions의 "Refresh diversity
+# override" 스텝 — 에서 임포트만으로 깨질 수 있음. 두 파일을 독립적으로 유지.)
+THEME_COOLDOWN_DAYS = 60
 
 # ── 임계값 ────────────────────────────────────────────────────
 THRESHOLDS = {
@@ -41,7 +49,12 @@ THRESHOLDS = {
     },
     "template":     {"window_days": 14, "max_ratio": 0.40},
     "tone":         {"window_days": 14, "max_ratio": 0.45},
-    "theme":        {"window_days": 7,  "max_count": 1},
+    # 2026-07-24: 7일 창은 "일주일 내 완전히 같은 소재"만 잡아서, 18일 간격으로 재발행된
+    # 반복 사고를 못 잡았다(아이 방 엿듣기 소재 7/6, 7/24 중복 발행). content_generator.py의
+    # THEME_COOLDOWN_DAYS와 맞춰 60일로 확장 — 이건 override 파일을 통한 보조 안전장치이고,
+    # 주 방어선은 content_generator.py의 하드 컷이다.
+    "theme":        {"window_days": THEME_COOLDOWN_DAYS, "max_count": 1},
+    "pool_exhaustion": {"warn_ratio": 0.5},  # 쿨다운 창 내 폴 소진 비율이 이 이상이면 경고
     "content_type": {
         "window_days": 14,
         "agro_types": ["agro", "agro_finance"],
@@ -94,6 +107,45 @@ def analyze_templates(posts: list[dict]) -> dict:
 def analyze_tones(posts: list[dict]) -> dict:
     cfg = THRESHOLDS["tone"]
     return _analyze_ratio(posts, "tone", cfg["window_days"], cfg["max_ratio"])
+
+
+def _load_seed_pools() -> dict[str, list[str]]:
+    if not SEEDS_FILE.exists():
+        return {}
+    with open(SEEDS_FILE, "r", encoding="utf-8") as f:
+        return json.load(f).get("themes", {})
+
+
+def analyze_pool_exhaustion(posts: list[dict]) -> dict:
+    """시드 폴 크기 대비 최근 소비량을 비교해 폴 소진을 경고한다.
+
+    theme 하드 쿨다운(THEME_COOLDOWN_DAYS)만 믿고 있으면, 폴이 (쿨다운일수 × 하루 소비
+    슬롯수)보다 작을 때 결국 폴이 매번 바닥나 다시 반복이 재발한다 — 2026-07-24
+    agro_empathy 35개 폴이 Phase1 하루 2슬롯 소비로 18일 만에 고갈된 사례가 실제로 있었다.
+    이 경고가 뜨면 코드가 아니라 content_seeds.json에 소재를 더 추가해야 한다."""
+    pools = _load_seed_pools()
+    if not pools:
+        return {"ok": True, "pools": {}, "warnings": []}
+
+    window = _in_window(posts, THEME_COOLDOWN_DAYS)
+    used_themes = {p.get("theme", "") for p in window if p.get("theme")}
+
+    warn_ratio = THRESHOLDS["pool_exhaustion"]["warn_ratio"]
+    result: dict[str, dict] = {}
+    warnings: list[str] = []
+    for pool_name, items in pools.items():
+        total = len(items)
+        if total == 0:
+            continue
+        used = sum(1 for t in items if t in used_themes)
+        ratio = used / total
+        result[pool_name] = {"total": total, "used": used, "ratio": ratio}
+        if ratio >= warn_ratio:
+            warnings.append(
+                f"[소재풀 소진] '{pool_name}' 최근 {THEME_COOLDOWN_DAYS}일 내 {used}/{total}개"
+                f"({ratio:.0%}) 소진 — content_seeds.json에 소재 추가 필요"
+            )
+    return {"ok": not warnings, "pools": result, "warnings": warnings}
 
 
 def analyze_themes(posts: list[dict]) -> dict:
@@ -181,7 +233,7 @@ def _bar(ratio: float, width: int = 18) -> str:
     return "█" * filled + "░" * (width - filled)
 
 
-def print_report(ending_r, template_r, tone_r, theme_r, content_type_r, override):
+def print_report(ending_r, template_r, tone_r, theme_r, content_type_r, override, pool_r=None):
     W = 54
     print(f"\n{'═'*W}")
     print(f"  다양성 모니터 보고서  {today_kst().isoformat()}")
@@ -219,8 +271,19 @@ def print_report(ending_r, template_r, tone_r, theme_r, content_type_r, override
     else:
         print("  없음 (정상)")
 
+    pool_r = pool_r or {"pools": {}, "warnings": []}
+    print(f"\n[소재풀 소진율] (최근 {THEME_COOLDOWN_DAYS}일 하드 쿨다운 기준)")
+    print("─" * W)
+    if pool_r["pools"]:
+        for name, p in sorted(pool_r["pools"].items(), key=lambda x: -x[1]["ratio"]):
+            flag = " ⚠" if p["ratio"] >= THRESHOLDS["pool_exhaustion"]["warn_ratio"] else ""
+            print(f"  {name:<18} {_bar(p['ratio'])} {p['used']:>3}/{p['total']:<3}({p['ratio']:5.0%}){flag}")
+    else:
+        print("  content_seeds.json 없음 — 확인 불가")
+
     all_w = (content_type_r["warnings"] + ending_r["warnings"] +
-             template_r["warnings"] + tone_r["warnings"] + theme_r["warnings"])
+             template_r["warnings"] + tone_r["warnings"] + theme_r["warnings"] +
+             pool_r["warnings"])
     print(f"\n[경고] {len(all_w)}건")
     print("─" * W)
     for w in all_w:
@@ -270,14 +333,16 @@ def run_once(dry_run: bool = False, silent: bool = False) -> bool:
     tone_r        = analyze_tones(posts)
     theme_r       = analyze_themes(posts)
     content_type_r = analyze_content_types(posts)
+    pool_r        = analyze_pool_exhaustion(posts)
     override      = build_override(theme_r, content_type_r)
 
     if not silent:
-        print_report(ending_r, template_r, tone_r, theme_r, content_type_r, override)
+        print_report(ending_r, template_r, tone_r, theme_r, content_type_r, override, pool_r)
 
     all_warnings = (
         content_type_r["warnings"] + ending_r["warnings"] +
-        template_r["warnings"] + tone_r["warnings"] + theme_r["warnings"]
+        template_r["warnings"] + tone_r["warnings"] + theme_r["warnings"] +
+        pool_r["warnings"]
     )
     _append_monitor_log(all_warnings)
 

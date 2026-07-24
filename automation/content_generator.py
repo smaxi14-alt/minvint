@@ -12,6 +12,15 @@ import market_data
 logger = logging.getLogger(__name__)
 client = Anthropic(api_key=ANTHROPIC_API_KEY)
 
+# 소재(theme) 하드 쿨다운 — 이 기간 내 쓴 시드는 후보 풀에서 아예 제외한다.
+# 2026-07-24 발견: theme도 template/tone/ending과 똑같이 14일 소프트 패널티만 걸려 있었는데,
+# 14일이 지나면 recent_counts=0이 되어 "한 번도 안 쓴 소재"와 완전히 같은 확률로 재선택됐다.
+# 그 결과 고정 시드 문자열("아이 방에서 자는 척하다 들은 말")이 18일 간격으로 재발행됨.
+# theme은 고정 문자열이라 반복 티가 크게 나므로 template/tone과 달리 소프트가 아닌 하드 컷을 둔다.
+# 주의: 시드 풀이 (쿨다운일수 × 하루 소비 슬롯수)보다 작으면 폴이 매번 바닥나 결국 다시
+# 반복된다 — diversity_monitor.py의 소재풀 소진 경고를 참고해 풀을 늘려야 한다.
+THEME_COOLDOWN_DAYS = 60
+
 TONES = [
     {"name": "건조한",   "weight": 30, "instruction": "건조하고 담담한 어투. 감정 표현 최소화. 사실만 전달."},
     {"name": "직접적",   "weight": 25, "instruction": "직접적이고 단호한 어투. 서론 없이 바로 핵심부터."},
@@ -297,6 +306,11 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
         except Exception:
             pass
     _theme_excl  = set(_override.get("theme_exclusions", []))
+    # 하드 쿨다운: 최근 THEME_COOLDOWN_DAYS(60일) 내 실제로 사용된 소재는 override 파일과
+    # 무관하게 항상 후보에서 제외한다 (14일 소프트 패널티만으로는 14일 초과 시 재선택되는
+    # 문제가 있었음 — 위 THEME_COOLDOWN_DAYS 주석 참고).
+    _theme_cooldown_usage = get_recent_usage(days=THEME_COOLDOWN_DAYS)["themes"]
+    _theme_excl |= {t for t, c in _theme_cooldown_usage.items() if c > 0}
 
     # content_type_exclusions 강제 적용 — 일상글 비율 초과 시 대체 타입으로 교체
     _ct_excl = set(_override.get("content_type_exclusions", []))
