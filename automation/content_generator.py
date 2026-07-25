@@ -567,6 +567,17 @@ def generate_post(slot: str, phase: int | None = None) -> tuple[str, str, dict]:
                 f"{retry_notes.get(violation_kind, '')}"
             )
             user_prompt = user_prompt_retry
+        elif violation_kind == "market_data":
+            # market_data 위반은 다른 위반(brand_safety/consistency)과 달리 "발행하되 수동
+            # 확인"으로 넘기지 않고 발행 자체를 막는다 — 2026-07-11 "코스피 2600대" 오발행
+            # 사고 재발 사례: 검증 로직은 위반을 잡아 재시도까지 했지만 3회 모두 실패하자
+            # 결국 틀린 시세를 그대로 발행해버렸다. 이 브랜드의 핵심 자산이 "숫자로 증명"인
+            # 만큼, 실시간 시세가 검증 안 된 글을 내보내는 것보다 이번 슬롯을 건너뛰고
+            # 잡(job)을 실패시켜 워크플로우의 실패 알림(GitHub 이슈)으로 사람이 확인하게
+            # 하는 편이 낫다.
+            raise RuntimeError(
+                f"[market_data] 3회 재시도에도 실시간 시세 불일치 해소 못 함 — 발행 중단: {fail_reason}"
+            )
         else:
             logger.error(f"[content_check] 3회 시도 모두 실패. 마지막 글로 발행. 수동 확인 필요.")
 

@@ -134,6 +134,25 @@ _MATCH_KEY_TO_INSTRUMENT = {
     "usdkrw": "usdkrw",
 }
 
+# "N년 전 A. 지금 B." 같은 시간축 비교 템플릿(threads-writing-guide.md 템플릿 C)에서
+# 두 번째 숫자("지금" 값)가 종목명을 다시 반복하지 않고 나오는 경우, 위 라벨-인접
+# 정규식은 이 숫자를 아예 못 잡는다 — 실제 사고 사례(2026-07-11 "5년 전 코스피
+# 3300. 지금 2600대." 발행분, 실제 코스피는 그 시점에도 이미 2600대가 아니었음)에서
+# "지금 2600대"에는 "코스피"가 없어 검증을 완전히 피해갔다. 종목명이 본문 어디든
+# 한 번이라도 등장하면 "지금/현재/오늘/요즘" 뒤에 오는 숫자도 같은 종목 값으로
+# 간주해 대조한다.
+_CURRENT_MARKER_NUMBER_RE = re.compile(
+    rf"(?:지금|현재|오늘|요즘)(?:은|는|이|가)?[^0-9]{{0,6}}{_PLAIN_NUMBER}"
+)
+_INSTRUMENT_LABEL_WORDS = {"kospi": "코스피", "samsung": "삼성전자"}
+
+# 라벨-인접 숫자라도 "N년 전"/"그때"/"당시" 같은 과거 시점 표지가 바로 앞에 있으면
+# 실시간 값과 다른 게 정상이다(시간축 비교 템플릿의 의도된 대조). 이 경우까지
+# 실시간 값과 대조해버리면 정확한 과거 수치를 쓴 정상 글도 매번 오탐으로 재생성
+# 대상이 된다 — 과거 표지가 붙은 라벨-인접 숫자는 검증에서 제외한다.
+_HISTORICAL_MARKER_RE = re.compile(r"\d+\s*년\s*전|그때|당시|예전엔|예전에는|전에는|과거엔|과거에는")
+_HISTORICAL_LOOKBACK_CHARS = 12
+
 # 실제 값과 이 비율 이상 차이나면 "지어낸 숫자"로 간주한다. 코스피·환율은 일중
 # 변동이 커도 이 정도 오차 안에 들어오고, 이보다 크게 벗어나면 사실상 다른
 # 시점(구식 학습 데이터) 기준 숫자를 썼다는 뜻이다.
@@ -161,6 +180,9 @@ def check_market_numbers(text: str, snapshot: dict[str, float]) -> list[str]:
         match = pattern.search(text)
         if not match:
             continue
+        preceding = text[max(0, match.start() - _HISTORICAL_LOOKBACK_CHARS):match.start()]
+        if _HISTORICAL_MARKER_RE.search(preceding):
+            continue  # 과거 시점 언급 — 실시간 값과 비교 대상 아님(seen_instruments에도 추가 안 함)
         seen_instruments.add(key)
         claimed = _extract_claimed_value(match_key, match)
         actual = snapshot.get(key)
@@ -175,6 +197,30 @@ def check_market_numbers(text: str, snapshot: dict[str, float]) -> list[str]:
             violations.append(
                 f"{INSTRUMENT_LABELS[key]} 본문 언급값 {claimed:,.0f} vs 실제값 {actual:,.2f} "
                 f"(오차 {diff_ratio:.1%}, 허용치 {_TOLERANCE:.0%} 초과) — 실시간 수치 미반영 의심"
+            )
+
+    # 라벨-인접 검사에서 못 잡은 종목만 "지금/현재" 표현으로 보완 검사한다.
+    for key, label in _INSTRUMENT_LABEL_WORDS.items():
+        if key in seen_instruments or label not in text:
+            continue
+        match = _CURRENT_MARKER_NUMBER_RE.search(text)
+        if not match:
+            continue
+        seen_instruments.add(key)
+        claimed = float(match.group(1).replace(",", ""))
+        actual = snapshot.get(key)
+        if actual is None:
+            violations.append(
+                f"{INSTRUMENT_LABELS[key]} 실시간 데이터 조회 실패 상태였는데 "
+                f"본문에 '지금/현재' 수치({claimed:,.0f})가 등장함 — 지어낸 수치일 가능성"
+            )
+            continue
+        diff_ratio = abs(claimed - actual) / actual
+        if diff_ratio > _TOLERANCE:
+            violations.append(
+                f"{INSTRUMENT_LABELS[key]} 본문의 '지금/현재' 언급값 {claimed:,.0f} vs 실제값 "
+                f"{actual:,.2f} (오차 {diff_ratio:.1%}, 허용치 {_TOLERANCE:.0%} 초과) — "
+                f"종목명 없이 '지금'에만 붙은 값이라 라벨-인접 검사를 피해간 케이스"
             )
     return violations
 
