@@ -1165,6 +1165,20 @@
       "template": "reversal",
       "theme": "5년 전 다짐과 지금 현실의 갭",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-28",
+      "timestamp": "2026-07-27T23:36:11.361487",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a67eb6392114c83a88ebed3",
+      "text": "어제 10년 전에 처음 설계해드린 고객한테 문자가 왔다.\n\n\"그때 말씀하신 대로 넣었던 거, 이제 매달 92만 원씩 나와요.\"\n\n이 일 하다 보면 계약서 쓸 때 듣는 고맙다는 인사보다, 이렇게 몇 년 지나서 오는 문자가 더 오래 남는다.\n\n당장 잘한 것 같은 상담보다, 시간이 증명해주는 상담이 진짜더라.\n\n10년 넘은 고객, 아직도 연락 오는 분들 있나.",
+      "tone": "회고적",
+      "ending_style": "질문형",
+      "template": "confession",
+      "theme": "10년 전 고객에게 온 문자",
+      "is_trend": false
     }
   ]
 }
