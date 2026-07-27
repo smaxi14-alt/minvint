@@ -1137,6 +1137,20 @@
       "template": "confession",
       "theme": "아침 기상이 루틴이 된 시점",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-27",
+      "timestamp": "2026-07-27T06:47:06.181481",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a66fee279ae388ebdb3c3ca",
+      "text": "10년 전만 해도 ETF 계좌 있는 40대가 드물었는데, 지금은 없는 사람 찾기가 더 어렵다.\n\n싸고 분산되고 편하다. 문제는 그 편함이 '아무거나 사도 된다'는 착각을 준다는 점이다.\n\n일 하다 보면 자주 듣는 말이, '요즘 뜬다는 테마 ETF 뭐 있어요'다. 10년 전 개별 주식 묻던 질문이 종목만 ETF로 바뀌었을 뿐, 쫓아가는 습관은 그대로다.\n\n도구가 좋아진 거지 내가 나아진 건 아니다. 그 둘을 구분하고 있나?",
+      "tone": "성찰적",
+      "ending_style": "질문형",
+      "template": "time_comparison",
+      "theme": "ETF 급성장의 기회와 함정",
+      "is_trend": false
     }
   ]
 }
