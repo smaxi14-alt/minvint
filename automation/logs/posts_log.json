@@ -1221,6 +1221,20 @@
       "template": "observation",
       "theme": "딸이 용돈기입장 쓰기 시작한 날",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-29",
+      "timestamp": "2026-07-29T06:12:03.147675",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a6999ab23997da158d0334c",
+      "text": "이 숫자 하나 때문에 기죽는 40대를 자주 본다.\n\n40대 가구 평균 순자산 5억. 통계에 그렇게 찍힌다.\n\n근데 같은 조사의 중위값은 그 절반 수준이다. 자산 많은 소수가 평균을 통째로 끌어올려서 생기는 착시다.\n\n평균은 '중간'이 아니다. 절반 넘는 집이 그 근처도 못 간다.\n\n기죽을 일이 아니라 비교 대상이 틀린 거다.\n\n평균 말고 중위값이랑 자기 자산 비교해본 사람 있나?",
+      "tone": "건조한",
+      "ending_style": "질문형",
+      "template": "two_numbers",
+      "theme": "평균 순자산이 만드는 착시",
+      "is_trend": false
     }
   ]
 }
