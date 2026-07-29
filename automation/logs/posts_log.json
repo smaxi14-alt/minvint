@@ -1235,6 +1235,20 @@
       "template": "two_numbers",
       "theme": "평균 순자산이 만드는 착시",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-29",
+      "timestamp": "2026-07-29T14:06:04.483282",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a6a08c41be9652c43cdc23d",
+      "text": "36% 더 받는 방법이 있는데, 안 하는 게 나은 사람이 있다.\n\n국민연금 얘기다. 받는 시기를 1년 미루면 7.2%씩 붙는다. 5년 미루면 36%.\n\n계산기만 보면 늦게 받는 쪽이 항상 유리해 보인다. 문제는 그 5년을 버틸 다른 현금이 있느냐다.\n\n이 선택엔 정답이 없다. 정답을 정하는 건 연금 계산기가 아니라 지금 내 통장이다.\n\n계산은 해봤는데 통장은 안 열어본 사람, 꽤 있을 거다.",
+      "tone": "직설적",
+      "ending_style": "관찰형",
+      "template": "reversal",
+      "theme": "연기연금 36%의 조건",
+      "is_trend": false
     }
   ]
 }
