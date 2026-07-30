@@ -1291,6 +1291,20 @@
       "template": "taboo",
       "theme": "상속은 준비의 문제",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-31",
+      "timestamp": "2026-07-30T23:34:26.850061",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a6bdf7aa7a516cf4d29d4ee",
+      "text": "5년째 안 딴 위스키가 한 병 있다.\n\n좋은 날 마시려고 사뒀다. 근데 그 '좋은 날'의 기준을 정해둔 적이 없다는 걸 얼마 전에 알았다.\n\n돈 얘기도 비슷하게들 한다. 나중에, 여유 생기면, 정리되면. 그 나중이 언제인지는 아무도 안 정해놓는다.\n\n날짜를 안 적으면 계획이 아니라 기분이다.\n\n'언젠가'로 미뤄둔 거 하나쯤 있는 40대 있나?",
+      "tone": "가벼운",
+      "ending_style": "질문형",
+      "template": "confession",
+      "theme": "안 딴 위스키와 미뤄둔 계획",
+      "is_trend": false
     }
   ]
 }
