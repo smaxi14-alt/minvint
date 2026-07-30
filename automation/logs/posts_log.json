@@ -1263,6 +1263,20 @@
       "template": "observation",
       "theme": "돈을 다루는 순서",
       "is_trend": false
+    },
+    {
+      "date": "2026-07-30",
+      "timestamp": "2026-07-30T06:04:18.286144",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a6ae95a2ac88778e5bbd3d2",
+      "text": "'최소 금액만 내시면 됩니다'라는 안내 문구가 제일 무섭다.\n\n카드 리볼빙 얘기다. 이월 잔액이 몇 년째 두 자릿수로 늘고 있다.\n\n이름은 결제 편의처럼 생겼는데 실제로 붙는 이자는 연 15~20%대다. 신용대출보다 비싼 구간이 흔하다.\n\n상담하다 보면 이걸 '카드값을 미룬 것'으로 아는 사람이 많다. 실제로는 고금리 대출을 새로 받은 쪽에 가깝다.\n\n이번 달 카드값 리볼빙으로 넘긴 적 있는 사람?",
+      "tone": "직설적",
+      "ending_style": "질문형",
+      "template": "shock_stat",
+      "theme": "리볼빙의 진짜 이자율",
+      "is_trend": false
     }
   ]
 }
