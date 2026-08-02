@@ -1417,6 +1417,20 @@
       "template": "time_comparison",
       "theme": "수수료 0.9%의 10년",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-03",
+      "timestamp": "2026-08-02T23:30:42.574157",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a6fd31a2bbc9e05874b29c9",
+      "text": "휴가 3일 동안 한 게 아무것도 없다.\n\n20년 넘게 휴가는 늘 계획표가 있었다. 몇 시에 어디, 뭘 먹고 어디서 자고.\n\n올해는 일부러 비워뒀다. 셋째 날 오후쯤 되니까 미뤄둔 것들이 머릿속에서 하나씩 떠오르더라.\n\n여백이 있어야 보이는 게 있다. 일정도 그렇고 통장도 그렇다. 매달 100% 다 채워 쓰는 사람은 자기 돈을 볼 시간이 없다.\n\n이번 여름, 아무것도 안 한 시간이 제일 남는다.",
+      "tone": "차분한",
+      "ending_style": "여운형",
+      "template": "confession",
+      "theme": "아무 계획 없던 휴가의 여백",
+      "is_trend": false
     }
   ]
 }
