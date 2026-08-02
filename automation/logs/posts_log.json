@@ -1389,6 +1389,20 @@
       "template": "observation",
       "theme": "일흔넷의 골프와 자기 거리",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-02",
+      "timestamp": "2026-08-02T06:16:43.694614",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a6ee0c3aacd241cfda67a85",
+      "text": "이 두 숫자 사이의 간격을 계산하고 나면 표정이 바뀐다.\n\n주된 직장에서 물러나는 평균 나이가 49세 언저리다. 기대수명은 83세를 넘는다.\n\n사이가 34년이다. 일한 기간만큼을 일 없이 더 산다는 뜻이다.\n\n은퇴를 '끝'으로 두면 계산이 안 맞는다. 인생의 3분의 1이 그 뒤에 남아 있다.\n\n미리 계산해본 사람과 아닌 사람은 마흔 후반에 표정부터 다르다.\n\n49세 뒤로 남는 34년, 계산해본 적 있는 사람?",
+      "tone": "건조한",
+      "ending_style": "질문형",
+      "template": "two_numbers",
+      "theme": "퇴직 49세 뒤 남는 34년",
+      "is_trend": false
     }
   ]
 }
