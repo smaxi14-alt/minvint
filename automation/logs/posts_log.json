@@ -1501,6 +1501,20 @@
       "template": "shock_stat",
       "theme": "정기예금 자동 재예치의 함정",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-05",
+      "timestamp": "2026-08-05T14:04:33.936406",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a7342e96a3bdc88c8fababa",
+      "text": "작년 건강검진에서 지적받은 수치, 이번 재검에서 다 정상으로 나왔다.\n\n특별한 걸 한 건 아니고 술 줄이고 걷는 시간을 늘렸을 뿐이다. 근데 병원비 아낀 것보다 마음이 더 가벼웠다.\n\n상담하다 보면 노후 자금은 꼼꼼히 계산하면서 정작 몸 관리는 뒷전인 분들이 많다.\n\n몸에 미리 투자한 시간이 나중에 나가는 병원비보다 항상 싸더라.\n\n올해 재검 결과 좋아진 40대, 있나?",
+      "tone": "담담한",
+      "ending_style": "질문형",
+      "template": "observation",
+      "theme": "건강검진 재검 결과와 의료비 대비 저축",
+      "is_trend": false
     }
   ]
 }
