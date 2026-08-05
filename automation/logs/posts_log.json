@@ -1515,6 +1515,20 @@
       "template": "observation",
       "theme": "건강검진 재검 결과와 의료비 대비 저축",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-06",
+      "timestamp": "2026-08-05T23:30:50.742175",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a73c7a04236a087025169c4",
+      "text": "사무실 서랍 정리하다 13년 전 쓰던 계산기를 또 못 버렸다.\n\n버튼 몇 개는 반쯤 지워졌고, 요즘은 다 프로그램으로 계산하니 쓸 일도 없다.\n\n근데 이걸로 첫 고객 증권을 분석했던 기억이 있어서 손이 안 간다. 물건보다 그 물건이 붙잡고 있는 시간을 못 버리는 거더라.\n\n오래돼서 못 버리는 물건 하나쯤 있는 40대 있나?",
+      "tone": "애착형",
+      "ending_style": "여운형",
+      "template": "confession",
+      "theme": "13년 전 계산기를 못 버리는 이유",
+      "is_trend": false
     }
   ]
 }
