@@ -1571,6 +1571,20 @@
       "template": "observation",
       "theme": "20년 단골 이발소가 문을 닫는다는 소식",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-07",
+      "timestamp": "2026-08-07T05:10:07.720224",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a7568a797f541294420092d",
+      "text": "공항 환전소 환율과 미리 은행 앱으로 환전한 환율, 같은 날인데도 차이가 난다.\n\n여행 경비 200만원 기준으로 따지면 그 차이가 3~5만원씩 벌어지기도 한다.\n\n출국 당일 급하게 공항에서 바꾸는 사람과 출발 일주일 전 환율 우대로 미리 바꿔둔 사람, 같은 여행에 경비 차이가 생긴다.\n\n환전, 출국 며칠 전에 미리 해두는 사람 있나?",
+      "tone": "건조한",
+      "ending_style": "질문형",
+      "template": "two_numbers",
+      "theme": "여름 해외여행 환전 타이밍",
+      "is_trend": false
     }
   ]
 }
