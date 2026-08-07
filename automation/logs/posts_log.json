@@ -1599,6 +1599,20 @@
       "template": "observation",
       "theme": "장인어른의 평생 계산기 습관",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-08",
+      "timestamp": "2026-08-07T23:07:36.759384",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a766530eb086b1202cdcb5d",
+      "text": "입사 3년 차 후배가 처음으로 천만원을 모았다고 밥을 사겠다고 했다.\n\n금액보다 그 표정이 좋았다. 첫 천만원을 만들어본 사람은 그다음 천만원 만드는 법을 이미 아는 사람이다.\n\n13년 보면서 느낀 건데, 첫 종잣돈을 만들어본 사람과 안 만들어본 사람은 그 뒤 속도가 완전히 다르다.\n\n본인 첫 천만원, 언제 만들었는지 기억하는 사람?",
+      "tone": "흐뭇한",
+      "ending_style": "질문형",
+      "template": "observation",
+      "theme": "후배가 처음 종잣돈 천만원을 모은 날",
+      "is_trend": false
     }
   ]
 }
