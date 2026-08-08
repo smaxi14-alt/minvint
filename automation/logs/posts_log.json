@@ -1627,6 +1627,20 @@
       "template": "taboo",
       "theme": "퇴직금 중간정산, 아무 때나 안 된다는 사실",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-08",
+      "timestamp": "2026-08-08T12:42:49.754184",
+      "slot": "evening",
+      "content_type": "agro_finance",
+      "phase": 1,
+      "post_id": "6a77243feb086b1202d7e817",
+      "text": "3년 전에 산 제습기가 장마철마다 값을 한다.\n\n그때는 20만원 넘는 가격에 살짝 망설였다. 근데 3년째 매년 여름 곰팡이 걱정 없이 지나가는 거 보면, 이건 지출이 아니라 투자였다.\n\n싼 걸 두 번 사는 것보다 처음에 제대로 된 걸 한 번 사는 게 결국 싸게 먹힌다.\n\n오래 쓰려고 비싸게 산 물건, 본전 뽑은 거 있는 40대?",
+      "tone": "실용적",
+      "ending_style": "질문형",
+      "template": "reversal",
+      "theme": "3년 전 제습기 값을 매년 뽑는 이유",
+      "is_trend": false
     }
   ]
 }
