@@ -1641,6 +1641,20 @@
       "template": "reversal",
       "theme": "3년 전 제습기 값을 매년 뽑는 이유",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-09",
+      "timestamp": "2026-08-08T22:59:19.641387",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a77b4bfa69527d8fa619162",
+      "text": "요 며칠 아침 매미 소리가 확실히 줄었다.\n\n한 달 전엔 시끄러워서 창문을 닫았는데 요즘은 그마저 조용하다. 계절이 바뀌는 신호를 매미 소리로 알아챈다.\n\n돈도 비슷하더라. 매달 통장을 보면 그대로인 것 같은데, 계절 하나 지나고 보면 어느새 달라져 있다.\n\n이번 여름 지나면서 통장에 뭐가 달라졌는지 확인해본 사람?",
+      "tone": "관찰적",
+      "ending_style": "질문형",
+      "template": "observation",
+      "theme": "매미 소리로 알아챈 계절의 변화",
+      "is_trend": false
     }
   ]
 }
