@@ -1683,6 +1683,20 @@
       "template": "confession",
       "theme": "삼계탕 앞에서도 원가 계산하는 직업병",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-10",
+      "timestamp": "2026-08-09T23:01:30.197918",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a7906c27ce1ee4f8f2a1ac5",
+      "text": "이번 여름엔 골프 대신 가족 캠핑을 몇 번 갔다.\n\n차 트렁크에 골프백 대신 캠핑 의자와 아이스박스가 실렸다. 비용은 라운드 한 번 값도 안 됐는데 아이들이랑 있었던 시간은 훨씬 길었다.\n\n돈을 많이 쓴 여름과 잘 쓴 여름은 다르다는 걸 이 나이 되니 좀 알겠다.\n\n올여름, 돈보다 시간을 더 쓴 40대 있나?",
+      "tone": "여유로운",
+      "ending_style": "질문형",
+      "template": "observation",
+      "theme": "골프 대신 캠핑으로 채운 여름",
+      "is_trend": false
     }
   ]
 }
