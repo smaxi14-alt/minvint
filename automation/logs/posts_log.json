@@ -1655,6 +1655,20 @@
       "template": "observation",
       "theme": "매미 소리로 알아챈 계절의 변화",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-09",
+      "timestamp": "2026-08-09T04:42:23.356256",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a780526529955fa90336c26",
+      "text": "침수차 뉴스 나올 때마다 다 보상받는 줄 아는 분들이 있다.\n\n실제로는 자기차량손해 담보에 가입돼 있어야만 침수 피해가 보상 대상이다. 이 담보를 빼고 최소한으로만 가입한 차가 생각보다 많다.\n\n보험료 몇만원 아끼려다 차 값 전체를 못 건지는 경우를 여러 번 봤다.\n\n본인 자동차보험, 자차 담보 들어있는지 아는 사람?",
+      "tone": "직설적",
+      "ending_style": "질문형",
+      "template": "shock_stat",
+      "theme": "장마철 차량 침수, 보상 안 되는 경우가 더 많다",
+      "is_trend": false
     }
   ]
 }
