@@ -1725,6 +1725,20 @@
       "template": "time_comparison",
       "theme": "저녁 산책하며 확인한 상반기 저축 결산",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-11",
+      "timestamp": "2026-08-10T23:08:22.139773",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a7a59dc399fea065b4da6d9",
+      "text": "고1 딸이 어제 처음으로 아르바이트 면접을 보고 왔다.\n\n떨려서 무슨 말을 했는지 기억도 안 난다고 하더라. 그런데 정작 시급이 얼마인지, 근로계약서는 쓰는지 물어보지도 못했다고 했다.\n\n그 얘기 듣고 계약서부터 같이 확인해보자고 했다. 첫 사회생활에서 배우는 게 일 자체보다 이런 확인 습관 아닐까 싶다.\n\n딸, 아들 첫 알바 앞두고 계약서부터 챙겨본 부모님 있나?",
+      "tone": "흐뭇한",
+      "ending_style": "질문형",
+      "template": "observation",
+      "theme": "딸의 첫 아르바이트 면접, 근로계약서 확인 습관",
+      "is_trend": false
     }
   ]
 }
