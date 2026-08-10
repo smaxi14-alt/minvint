@@ -1697,6 +1697,20 @@
       "template": "observation",
       "theme": "골프 대신 캠핑으로 채운 여름",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-10",
+      "timestamp": "2026-08-10T05:02:08.140259",
+      "slot": "noon",
+      "content_type": "economy_news",
+      "phase": 1,
+      "post_id": "6a795b47e6cde72bc906f00e",
+      "text": "카드사 통계를 보면 매년 8월 가계 카드 지출이 다른 달보다 확실히 높게 나온다.\n\n휴가, 냉방 요금, 외식이 겹치는 달이라 그렇다. 근데 다음 달 카드값 보고 놀라는 사람은 매년 반복해서 놀란다.\n\n8월은 원래 새는 달이라는 걸 미리 알고 예산을 넉넉히 잡아두면, 9월에 놀랄 일이 없다.\n\n8월 카드값, 미리 각오하고 있는 사람?",
+      "tone": "건조한",
+      "ending_style": "질문형",
+      "template": "two_numbers",
+      "theme": "8월 카드 지출이 유독 높은 이유",
+      "is_trend": false
     }
   ]
 }
