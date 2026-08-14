@@ -1893,6 +1893,20 @@
       "template": "I",
       "theme": "보험금 청구할 때 자주 놓치는 것 3가지",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-15",
+      "timestamp": "2026-08-14T22:51:51.200147",
+      "slot": "morning",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a7f9bffc24f3ce4fb5196e9",
+      "text": "연휴 마지막 날, 미뤄뒀던 이번 달 가계부를 몰아서 정리했다.\n\n예상보다 외식비가 많이 나갔는데, 정작 후회되는 지출은 하나도 없었다. 다 같이 먹고 웃었던 시간들이라 그런가 보다.\n\n돈을 아까워하지 않은 지출과 아까운 지출은 확실히 다르게 남는다.\n\n이번 여름 지출 중에 하나도 안 아까운 거 있었나?",
+      "tone": "성찰적",
+      "ending_style": "질문형",
+      "template": "observation",
+      "theme": "여름휴가 마지막날 밀린 가계부 정산하다 든 생각",
+      "is_trend": false
     }
   ]
 }
