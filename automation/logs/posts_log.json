@@ -1907,6 +1907,20 @@
       "template": "observation",
       "theme": "여름휴가 마지막날 밀린 가계부 정산하다 든 생각",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-15",
+      "timestamp": "2026-08-15T04:00:06.001016",
+      "slot": "noon",
+      "content_type": "finance_insurance",
+      "phase": 1,
+      "post_id": "6a7fe43d72d7f70e3e235e64",
+      "text": "보험료를 많이 내는데 정작 불안하다는 사람들 상담을 많이 한다.\n\n왜 그런가 보면 공식이 어긋나 있다.\n\n월 보험료 = 소득의 일정 비율을 넘지 않아야 함\n보장금액 = 소득 공백을 실제로 메울 수 있는 수준이어야 함\n\n이 두 가지가 반대로 된 경우가 많다. 보험료는 부담스러운데 정작 보장은 부족한 상태.\n\n본인 증권도 이 공식으로 한 번 대입해보면 답이 나온다.",
+      "tone": "담담한",
+      "ending_style": "자연스러운CTA",
+      "template": "formula_reveal",
+      "theme": "보장 적정성 공식 — 보험료와 보장금액이 반대로 된 경우",
+      "is_trend": false
     }
   ]
 }
