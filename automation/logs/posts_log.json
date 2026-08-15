@@ -1921,6 +1921,20 @@
       "template": "formula_reveal",
       "theme": "보장 적정성 공식 — 보험료와 보장금액이 반대로 된 경우",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-15",
+      "timestamp": "2026-08-15T12:36:50.098000",
+      "slot": "evening",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a805d5937f9ee87b328187e",
+      "text": "장마 끝났다고 다 지나간 게 아니다.\n\n1. 베란다·창틀 결로 자국 있는지 확인 (곰팡이 초기 신호)\n2. 에어컨 실외기 배수 상태 점검 (막히면 다음 장마 때 역류)\n3. 습기 먹은 옷장·신발장 환기 한 번 시켜주기\n\n지금 안 하면 다음 장마 때 똑같이 반복된다.",
+      "tone": "직설적",
+      "ending_style": "무CTA형",
+      "template": "J",
+      "theme": "장마 지나고 놓치기 쉬운 집 안 점검 3가지",
+      "is_trend": false
     }
   ]
 }
