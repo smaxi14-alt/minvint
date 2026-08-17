@@ -2005,6 +2005,20 @@
       "template": "observation",
       "theme": "개학 준비물 사러 갔다가 문득 든 생각",
       "is_trend": false
+    },
+    {
+      "date": "2026-08-17",
+      "timestamp": "2026-08-17T12:39:18.449025",
+      "slot": "evening",
+      "content_type": "agro",
+      "phase": 1,
+      "post_id": "6a8300ef2076ab9916ffee00",
+      "text": "개학이 코앞이라 이것저것 챙기다 보니 매번 빠뜨리는 게 있다.\n\n· 아이 건강보험증 사본 (학교 제출용)\n· 예방접종 확인서 갱신 여부\n· 방과후·돌봄 신청 마감일\n· 급식비·현장학습비 자동이체 등록 여부\n\n이 중에 매년 까먹는 항목 있으면 알려주면 좋겠다.",
+      "tone": "실용적",
+      "ending_style": "정보제보형",
+      "template": "H",
+      "theme": "새 학기 앞두고 놓치기 쉬운 확인 목록",
+      "is_trend": false
     }
   ]
 }
